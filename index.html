@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Guía para correr la auditoría</title>
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--tx:#1d232b;--mu:#5b6470;--li:#d9dee5;--ac:#1f5fbf;--acs:#e8f0fc;--code:#1e232a;--codetx:#e6e9ee;--ok:#2e7d4f;--bad:#b03a2e;--warn:#fff6e0;--warnli:#e8c66b}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14171b;--card:#1d2127;--tx:#e6e9ee;--mu:#9aa3ae;--li:#323842;--ac:#7fb0ff;--acs:#1f2b3d;--code:#0f1216;--codetx:#e6e9ee;--ok:#5cc28a;--bad:#ef7d70;--warn:#2b2516;--warnli:#6b5a2a}}
+:root[data-theme="dark"]{--bg:#14171b;--card:#1d2127;--tx:#e6e9ee;--mu:#9aa3ae;--li:#323842;--ac:#7fb0ff;--acs:#1f2b3d;--code:#0f1216;--codetx:#e6e9ee;--ok:#5cc28a;--bad:#ef7d70;--warn:#2b2516;--warnli:#6b5a2a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+.wrap{max-width:960px;margin:0 auto;padding:0 16px}
+header{padding:32px 0 12px}
+h1{font-size:1.75rem;margin:0 0 6px}
+.sub{color:var(--mu)}
+.cifras{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 6px}
+.cifra{background:var(--card);border:1px solid var(--li);border-radius:10px;padding:10px 14px;min-width:120px}
+.cifra b{display:block;font-size:1.35rem;line-height:1.2}
+.cifra span{color:var(--mu);font-size:.85rem}
+nav{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--li);z-index:5}
+nav .wrap{display:flex;gap:6px;overflow-x:auto;padding:8px 16px}
+nav a{white-space:nowrap;text-decoration:none;color:var(--tx);border:1px solid var(--li);background:var(--card);border-radius:999px;padding:5px 12px;font-size:.88rem}
+nav a:hover{border-color:var(--ac);color:var(--ac)}
+section{background:var(--card);border:1px solid var(--li);border-radius:12px;padding:18px 20px;margin:18px 0;scroll-margin-top:60px}
+h2{font-size:1.2rem;margin:0 0 10px;display:flex;align-items:center;gap:10px}
+h2 .n{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--ac);color:#fff;font-size:.9rem;flex:none}
+h3{font-size:1rem;margin:16px 0 6px}
+p{margin:0 0 10px}
+.mu{color:var(--mu)}
+pre{position:relative;background:var(--code);color:var(--codetx);border-radius:8px;padding:12px 14px;margin:8px 0 12px;overflow-x:auto;font:14px/1.55 ui-monospace,Consolas,monospace}
+pre .c{color:#8b96a5}
+code{font-family:ui-monospace,Consolas,monospace;font-size:.9em;background:var(--acs);padding:1px 5px;border-radius:4px}
+pre code{background:none;padding:0;font-size:1em}
+.copiar{position:absolute;top:8px;right:8px;border:1px solid #3a414b;background:#2a3038;color:#cfd5dd;border-radius:6px;font-size:.75rem;padding:3px 8px;cursor:pointer}
+.copiar:hover{background:#353c46}
+table{width:100%;border-collapse:collapse;font-size:.92rem;margin:6px 0 12px}
+th,td{text-align:left;padding:7px 9px;border-bottom:1px solid var(--li);vertical-align:top}
+th{color:var(--mu);font-weight:600;font-size:.85rem}
+.tabla{overflow-x:auto}
+.nota{background:var(--warn);border:1px solid var(--warnli);border-radius:8px;padding:10px 14px;margin:10px 0}
+.ok{color:var(--ok);font-weight:700}.bad{color:var(--bad);font-weight:700}
+ol,ul{margin:4px 0 12px 22px;padding:0}
+li{margin:3px 0}
+.so{display:inline-block;font-size:.75rem;border:1px solid var(--li);border-radius:6px;padding:0 6px;color:var(--mu);margin-left:6px}
+footer{color:var(--mu);font-size:.85rem;padding:12px 0 40px}
+</style>
+</head>
+<body>
+<header class="wrap">
+<h1>Guía para correr la auditoría</h1>
+<div class="sub">Pruebas automatizadas de <b>El Campus También Se Daña</b> con Playwright · Frederick Alexandro Abril Mogollón y Santiago Abril Monroy · Testing y QA, UNIMINUTO</div>
+<div class="cifras">
+<div class="cifra"><b>57</b><span>casos automatizados</span></div>
+<div class="cifra"><b class="ok">46</b><span>aprobados</span></div>
+<div class="cifra"><b class="bad">11</b><span>fallan por defectos reales</span></div>
+<div class="cifra"><b>~4 min</b><span>la suite completa</span></div>
+<div class="cifra"><b>85,8 %</b><span>líneas de la API</span></div>
+</div>
+</header>
+<nav><div class="wrap">
+<a href="#requisitos">0. Requisitos</a><a href="#carpetas">1. Carpetas</a><a href="#app">2. Aplicación</a><a href="#instalar">3. Instalar</a>
+<a href="#correr">4. Correr todo</a><a href="#partes">5. Por partes</a><a href="#resultados">6. Resultados</a><a href="#cobertura">7. Cobertura</a>
+<a href="#actions">8. GitHub Actions</a><a href="#problemas">9. Problemas</a><a href="#apagar">10. Apagar</a>
+</div></nav>
+
+<main class="wrap">
+<p class="mu" style="margin-top:16px">Los comandos son para <b>PowerShell en Windows</b>; cuando cambian en Linux o macOS se indica al lado. La primera vez toma unos 20 minutos, casi todo en <code>npm install</code>.</p>
+
+<section id="requisitos"><h2><span class="n">0</span>Requisitos</h2>
+<div class="tabla"><table>
+<tr><th>Programa</th><th>Versión usada</th><th>Cómo comprobarlo</th></tr>
+<tr><td>Node.js</td><td>22.18.0</td><td><code>node -v</code></td></tr>
+<tr><td>Git</td><td>reciente</td><td><code>git --version</code></td></tr>
+<tr><td>Docker Desktop</td><td>4.x, encendido</td><td><code>docker ps</code> no debe dar error</td></tr>
+</table></div>
+<div class="nota">Abre Docker Desktop <b>antes</b> de empezar y espera a que diga <i>Engine running</i>.</div>
+</section>
+
+<section id="carpetas"><h2><span class="n">1</span>Organizar las carpetas</h2>
+<p>Las pruebas buscan la aplicación en <code>..\..\Hackaton</code> respecto a la carpeta de pruebas. Lo más fácil es dejar esta estructura:</p>
+<pre><code>playwright\
+├── Hackaton\              (la aplicación auditada)
+└── auditoria\
+    └── auditoria-qa\      (este proyecto)</code></pre>
+<pre><code>mkdir playwright; cd playwright
+git clone https://github.com/MrRoar154/Hackaton.git
+mkdir auditoria; cd auditoria
+git clone https://github.com/Fredpuff/auditoria-qa-campus.git auditoria-qa
+cd ..</code></pre>
+<p>Si la aplicación queda en otro lugar, indícalo antes de correr las pruebas:</p>
+<pre><code>$env:APP_DIR = "C:\ruta\a\Hackaton"   <span class="c"># Linux/macOS: export APP_DIR=/ruta/a/Hackaton</span></code></pre>
+</section>
+
+<section id="app"><h2><span class="n">2</span>Encender la aplicación en el commit auditado</h2>
+<pre><code>cd Hackaton
+git checkout 16ebe4d
+copy .env.example .env     <span class="c"># Linux/macOS: cp .env.example .env</span>
+npm install
+npm run db:up              <span class="c"># PostgreSQL 16 + pgvector en Docker (puerto 5434)</span>
+npm run db:deploy          <span class="c"># crea las tablas</span>
+npm run db:seed            <span class="c"># 2 sedes, 38 espacios, 10 usuarios, 63 incidencias</span>
+npm run dev                <span class="c"># API http://localhost:4000 · web http://127.0.0.1:5173</span></code></pre>
+<p>Deja <b>esta terminal abierta</b>. En otra terminal comprueba que la API responde:</p>
+<pre><code>curl.exe http://localhost:4000/api/health   <span class="c"># {"status":"ok",...}</span></code></pre>
+<p>Abre <a href="http://127.0.0.1:5173">http://127.0.0.1:5173</a>. Todos los usuarios de prueba usan la contraseña <code>campus123</code> (por ejemplo <code>supervisor@campus.edu.co</code>).</p>
+<div class="nota">El <code>.env</code> se copia tal cual de <code>.env.example</code>, como dice el README de la aplicación. Esa configuración es la que deja ver BUG-04 (acceso rápido) y BUG-05 (secreto JWT de ejemplo).</div>
+</section>
+
+<section id="instalar"><h2><span class="n">3</span>Instalar las pruebas</h2>
+<p>En una <b>segunda terminal</b>:</p>
+<pre><code>cd playwright\auditoria\auditoria-qa
+npm install
+npx playwright install chromium</code></pre>
+</section>
+
+<section id="correr"><h2><span class="n">4</span>Correr la suite completa</h2>
+<pre><code>npx playwright test</code></pre>
+<p>Qué hace, en orden:</p>
+<ol>
+<li><b>Recarga los datos de ejemplo</b> (<code>npm run db:seed</code> en Hackaton), porque los SLA vencen con el reloj.</li>
+<li>Inicia sesión con 8 usuarios y <b>espera 61 segundos</b> (caché de espacios de la API y límite de 10 ingresos por minuto). Es normal que la consola se quede quieta.</li>
+<li>Corre los casos de API (<code>tests/api</code>) y de la web (<code>tests/e2e</code>), uno por uno.</li>
+<li>Al final espera otro minuto y corre los 2 casos del bloqueo de ingresos (<code>tests/limite</code>).</li>
+</ol>
+<h3>Resultado esperado</h3>
+<pre><code>  11 failed
+  47 passed</code></pre>
+<p>Los 47 son los 46 casos aprobados más la preparación. Los 11 en rojo <b>son los defectos de la aplicación</b> y cada uno lleva su código en el título:</p>
+<div class="tabla"><table>
+<tr><th>Caso</th><th>Defecto</th><th>Severidad</th></tr>
+<tr><td>CP-07</td><td>BUG-01 Las fotos se descargan sin sesión</td><td>Alta</td></tr>
+<tr><td>CP-32</td><td>BUG-04 Acceso rápido sin contraseña</td><td>Alta</td></tr>
+<tr><td>CP-30</td><td>BUG-05 La API acepta el secreto JWT de ejemplo</td><td>Alta</td></tr>
+<tr><td>CP-57</td><td>BUG-07 El bloqueo de ingresos se evita con X-Forwarded-For</td><td>Alta</td></tr>
+<tr><td>CP-09</td><td>BUG-02 Los filtros en "false" hacen lo contrario</td><td>Media</td></tr>
+<tr><td>CP-54</td><td>BUG-06 Dos técnicos toman el mismo caso</td><td>Media</td></tr>
+<tr><td>CP-31</td><td>BUG-08 La sesión no se cierra en el servidor</td><td>Media</td></tr>
+<tr><td>CP-08</td><td>BUG-03 Un filtro inválido se ignora</td><td>Baja</td></tr>
+<tr><td>CP-37</td><td>BUG-09 Mensajes de validación en inglés</td><td>Baja</td></tr>
+<tr><td>CP-48</td><td>BUG-10 Se cambia el riesgo de un caso verificado</td><td>Baja</td></tr>
+<tr><td>CP-49</td><td>BUG-11 Se suben fotos a un caso verificado</td><td>Baja</td></tr>
+</table></div>
+<p class="mu">Si salen en rojo <b>otros</b> casos, mira la sección <a href="#problemas">9. Problemas comunes</a>.</p>
+</section>
+
+<section id="partes"><h2><span class="n">5</span>Correr por partes</h2>
+<div class="tabla"><table>
+<tr><th>Qué</th><th>Comando</th></tr>
+<tr><td>Solo la API</td><td><code>npm run test:api</code></td></tr>
+<tr><td>Solo la web</td><td><code>npm run test:e2e</code></td></tr>
+<tr><td>La web viendo el navegador</td><td><code>npm run test:headed</code></td></tr>
+<tr><td>Un caso</td><td><code>npx playwright test -g "CP-18"</code></td></tr>
+<tr><td>Varios casos</td><td><code>npx playwright test -g "CP-18|CP-07|CP-09"</code></td></tr>
+<tr><td>Demo de la sustentación (CP-18 pasa; CP-07 y CP-09 fallan)</td><td><code>npm run test:demo</code></td></tr>
+<tr><td>Sin recargar los datos</td><td><code>$env:SIN_SEED="1"; npx playwright test -g "CP-18"</code></td></tr>
+</table></div>
+<ul>
+<li>Aunque elijas un solo proyecto, siempre corre primero la preparación (seed y espera de 61 s).</li>
+<li>Con <code>--project=api</code> o <code>--project=e2e</code> completos, al final también corren los 2 casos del bloqueo.</li>
+<li>Para volver a la recarga normal: <code>Remove-Item Env:SIN_SEED</code> <span class="so">Linux/macOS: unset SIN_SEED</span></li>
+</ul>
+</section>
+
+<section id="resultados"><h2><span class="n">6</span>Ver los resultados</h2>
+<pre><code>npm run report     <span class="c"># abre el reporte HTML de la última ejecución</span></code></pre>
+<div class="tabla"><table>
+<tr><th>Dónde</th><th>Qué hay</th></tr>
+<tr><td><code>resultados\local\html\</code></td><td>Reporte HTML (en cada fallo: error, captura, video y traza)</td></tr>
+<tr><td><code>resultados\local\resultados.json</code></td><td>Resultado en JSON</td></tr>
+<tr><td><code>resultados\local\junit.xml</code></td><td>Resultado en JUnit</td></tr>
+<tr><td><code>evidencias\local\CP-XX.json</code></td><td>Cada petición del caso: quién, cuerpo, código HTTP y respuesta</td></tr>
+<tr><td><code>evidencias\capturas\local\</code></td><td>Capturas de los casos de la web</td></tr>
+</table></div>
+<p>Para guardar una ejecución con otro nombre: <code>$env:EJECUCION="mi-prueba"; npx playwright test</code>.</p>
+<p>El repositorio ya trae los resultados oficiales del 16/11/2026 en <code>resultados\ejecucion-1..3\</code> y <code>evidencias\ejecucion-1..3\</code>.</p>
+</section>
+
+<section id="cobertura"><h2><span class="n">7</span>Tres ejecuciones + cobertura de la API</h2>
+<p>La cobertura arranca la API con <code>c8</code>, así que la API <b>no puede estar corriendo</b> antes.</p>
+<ol>
+<li>En la terminal de la aplicación, detén <code>npm run dev</code> con <code>Ctrl + C</code>.</li>
+<li>Deja solo la web:
+<pre><code>cd playwright\Hackaton
+npm run dev -w @campus/web</code></pre></li>
+<li>En la terminal de las pruebas:
+<pre><code>npm run cobertura           <span class="c"># una ejecución con cobertura</span>
+npm run tres-ejecuciones    <span class="c"># tres seguidas con cobertura (~15 min)</span></code></pre></li>
+</ol>
+<p>El script arranca la API con c8 a través de <code>cobertura\servidor-api.mjs</code>, que solo importa <code>apps/api/src/main.ts</code> sin modificarlo; corre la suite y apaga la API limpiamente.</p>
+<div class="tabla"><table>
+<tr><th>Dónde</th><th>Qué hay</th></tr>
+<tr><td><code>cobertura\reporte-api\index.html</code></td><td>Reporte HTML de cobertura (doble clic)</td></tr>
+<tr><td><code>cobertura\reporte-api\resumen-consola.txt</code></td><td>Tabla por archivo y totales</td></tr>
+<tr><td><code>resultados\ejecuciones.json</code></td><td>Duración y código de salida de cada ejecución</td></tr>
+</table></div>
+<p>Referencia: líneas 85,82 %, ramas 82,3 %, funciones 91,66 %. Entre ejecuciones es normal ver <code>Ingreso bloqueado por la ejecución anterior; esperando 53 s</code>.</p>
+<p>Al terminar, detén la web sola y vuelve a encender todo con <code>npm run dev</code>.</p>
+</section>
+
+<section id="actions"><h2><span class="n">8</span>GitHub Actions</h2>
+<p>El flujo <code>.github\workflows\pruebas.yml</code> hace todo en un servidor de GitHub: PostgreSQL con pgvector, la aplicación en el commit <code>16ebe4d</code>, los datos, la API, la web y la suite.</p>
+<ul>
+<li>Se ejecuta solo con cada <code>git push</code> a <code>main</code>.</li>
+<li>A mano: pestaña <b>Actions</b> → <b>Pruebas de la auditoría</b> → <b>Run workflow</b>.</li>
+<li>Termina en rojo porque fallan los 11 casos de los defectos; es lo esperado. Los reportes se descargan en <b>Artifacts</b> (<code>reportes-auditoria</code>).</li>
+</ul>
+</section>
+
+<section id="problemas"><h2><span class="n">9</span>Problemas comunes</h2>
+<div class="tabla"><table>
+<tr><th>Síntoma</th><th>Causa</th><th>Solución</th></tr>
+<tr><td><code>No se pudo iniciar sesión como supervisor: HTTP 429</code></td><td>La ejecución anterior terminó con el bloqueo de ingresos</td><td>Espera 1 minuto y vuelve a correr</td></tr>
+<tr><td><code>fetch failed</code> o <code>ECONNREFUSED</code></td><td>La API no está encendida</td><td>Revisa <code>npm run dev</code> y <code>curl.exe http://localhost:4000/api/health</code></td></tr>
+<tr><td><code>npm run cobertura</code> dice que la API ya está encendida</td><td><code>npm run dev</code> sigue corriendo</td><td>Detenlo y deja solo <code>npm run dev -w @campus/web</code></td></tr>
+<tr><td><code>Can't reach database server at localhost:5434</code></td><td>Docker cerrado o contenedor apagado</td><td>Abre Docker Desktop y corre <code>npm run db:up</code> en Hackaton</td></tr>
+<tr><td>Puerto 5434, 4000 o 5173 ocupado</td><td>Quedó otro proceso corriendo</td><td><code>Get-NetTCPConnection -LocalPort 4000</code> y cierra ese proceso</td></tr>
+<tr><td>Los casos de la web fallan por tiempo</td><td>La web no está en 127.0.0.1:5173</td><td>Revisa <code>npm run dev</code>; si usa otra dirección: <code>$env:WEB_URL="http://..."</code></td></tr>
+<tr><td>Muchos 429 al crear reportes</td><td>Casos sueltos repetidos muchas veces</td><td>La API admite 30 reportes por minuto; espera un minuto</td></tr>
+<tr><td><code>Cannot find module ...packages\shared</code></td><td>La aplicación no está en <code>..\..\Hackaton</code></td><td>Define <code>$env:APP_DIR</code> (sección 1)</td></tr>
+<tr><td>La consola se queda quieta un minuto</td><td>Espera de 61 s de la preparación</td><td>Normal</td></tr>
+</table></div>
+</section>
+
+<section id="apagar"><h2><span class="n">10</span>Apagar todo</h2>
+<pre><code><span class="c"># En la terminal de la aplicación: Ctrl + C para detener npm run dev</span>
+cd playwright\Hackaton
+docker compose stop postgres   <span class="c"># apaga la base sin borrar datos</span></code></pre>
+<p>Para borrar también los datos: <code>docker compose down -v</code> (luego hay que repetir <code>db:up</code>, <code>db:deploy</code> y <code>db:seed</code>).</p>
+</section>
+</main>
+<footer class="wrap">Aplicación auditada: MrRoar154/Hackaton, commit 16ebe4d. Las pruebas no modifican el código de la aplicación.</footer>
+<script>
+document.querySelectorAll('pre').forEach(pre=>{
+  const b=document.createElement('button');b.className='copiar';b.type='button';b.textContent='Copiar';
+  b.onclick=async()=>{const t=pre.querySelector('code').innerText.split('\n').map(l=>l.replace(/\s*#.*$/,'')).join('\n').trim();
+    try{await navigator.clipboard.writeText(t);b.textContent='Copiado'}catch(e){b.textContent='No se pudo'}setTimeout(()=>b.textContent='Copiar',1500)};
+  pre.appendChild(b);
+});
+</script>
+</body>
+</html>
