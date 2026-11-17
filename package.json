@@ -11,7 +11,7 @@
     "test:demo": "playwright test -g \"CP-18|CP-07|CP-09\" --project=api",
     "report": "playwright show-report resultados/local/html",
     "cobertura": "node cobertura/ejecutar-con-cobertura.mjs",
-    "tres-ejecuciones": "node scripts/tres-ejecuciones.mjs"
+    "tres-ejecuciones": "node cobertura/ejecutar-con-cobertura.mjs 3"
   },
   "devDependencies": {
     "@playwright/test": "1.63.0",

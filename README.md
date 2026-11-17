@@ -8,6 +8,8 @@ Proyecto de pruebas de la auditoría de calidad hecha por Frederick Alexandro Ab
 - 57 casos automatizados (CP-01 a CP-57). 11 fallan a propósito: cada uno está ligado a un defecto real (BUG-01 a BUG-11).
   No se usa `test.fail()` ni `skip`: si un defecto se corrige, su caso pasa a verde.
 
+**Guía completa paso a paso (instalar, correr, ver reportes, cobertura, GitHub Actions y problemas comunes): [GUIA.md](GUIA.md).**
+
 ## Estructura
 
 ```
