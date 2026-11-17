@@ -1,0 +1,59 @@
+{
+  "_nota": "Cada caso usa un espacio y una descripción distintos: la aplicación agrupa sola los reportes parecidos del mismo salón. Los nombres con barra indican el bloque (A/Aula 101).",
+  "CP-02": { "espacio": "A/Aula 101", "category": "LIGHTING", "riskLevel": "LOW", "description": "Dos lámparas del fondo del salón no encienden" },
+  "CP-03": { "espacio": "Laboratorio de Electrónica", "category": "ELECTRICAL", "riskLevel": "HIGH", "description": "La toma del mesón de soldadura suelta chispas" },
+  "CP-07": { "espacio": "Recepción y atención", "category": "FURNITURE", "riskLevel": "LOW", "description": "La banca de espera tiene un tornillo salido que rasga la ropa" },
+  "CP-10": { "espacio": "Registro académico", "category": "STRUCTURAL", "riskLevel": "LOW", "description": "Puerta " },
+  "CP-11": { "espacio": "Coordinación académica", "category": "STRUCTURAL", "riskLevel": "LOW", "description": "Puerta r" },
+  "CP-13": { "espacio": "Dirección de sede", "category": "COSMETIC", "riskLevel": "NONE", "description": "Mancha de humedad sobre el escritorio de dirección" },
+  "CP-14": { "espacio": "Infraestructura", "category": "FURNITURE", "riskLevel": "LOW", "description": "El archivador de planos no cierra el segundo cajón" },
+  "CP-15": { "espacio": "Laboratorio de Redes", "category": "COSMETIC", "riskLevel": "NONE", "description": "Pared del rack rayada con marcador negro" },
+  "CP-16": { "espacio": "Baño bienestar", "category": "SANITARY", "riskLevel": "LOW", "description": "El secador de manos no arranca al acercar las manos" },
+  "CP-17": { "espacio": "Auditorio", "category": "FURNITURE", "riskLevel": "LOW", "description": "Butaca de la fila siete con el brazo flojo" },
+  "CP-18": { "espacio": "Cafetería", "category": "COSMETIC", "riskLevel": "NONE", "description": "Azulejo despegado detrás de la caja registradora" },
+  "CP-19": { "espacio": "Biblioteca", "category": "STRUCTURAL", "riskLevel": "LOW", "description": "La ventana junto al segundo estante no cierra" },
+  "CP-20": { "espacio": "Sala de Cómputo 2", "category": "FURNITURE", "riskLevel": "LOW", "description": "Teclado del puesto quince con teclas hundidas" },
+  "CP-23": { "espacio": "Laboratorio de Química", "category": "FURNITURE", "riskLevel": "NONE", "description": "Mesa del fondo cojea y se mueve al escribir" },
+  "CP-24": [
+    { "espacio": "Zona de estudio", "category": "WATER_LEAK", "riskLevel": "MEDIUM", "description": "Gotea el aire acondicionado sobre la mesa larga", "hotspot": { "x": 2, "y": 2.5, "z": 1 } },
+    { "espacio": "Zona de estudio", "category": "WATER_LEAK", "riskLevel": "MEDIUM", "description": "El aire acondicionado gotea encima de la mesa larga", "hotspot": { "x": 2.5, "y": 2.5, "z": 1 } }
+  ],
+  "CP-25": { "espacio": "Sala de Cómputo Norte", "category": "COSMETIC", "riskLevel": "NONE", "description": "La pantalla del puesto tres tiene un rayón en la esquina" },
+  "CP-26": { "busqueda": "profesores", "espacio": "Sala de profesores", "categoria": "Mobiliario", "riesgo": "Bajo", "description": "El archivador metálico tiene la puerta descolgada" },
+  "CP-34": { "espacio": "Taller de Diseño", "category": "COSMETIC", "riskLevel": "NONE", "description": "Mesa de corte con marcas profundas de bisturí" },
+  "CP-35": { "espacio": "Laboratorio de Física", "category": "COSMETIC", "riskLevel": "NONE", "description": "<img src=x onerror=\"window.__xss=1\"> Pizarra manchada con marcador permanente" },
+  "CP-36": { "espacio": "Baño laboratorios", "category": "SANITARY", "riskLevel": "LOW", "frase": "El inodoro del fondo descarga sin parar y moja el piso. " },
+  "CP-38": { "espacio": "E/Aula 302", "category": "STRUCTURAL", "riskLevel": "LOW", "description": "Persiana rota en la ventana del fondo del aula" },
+  "CP-39": [
+    { "espacio": "A/Aula 302", "category": "LIGHTING", "riskLevel": "MEDIUM", "description": "Reflector del techo cuelga de un solo cable", "hotspot": { "x": 50, "y": 20, "z": -50 } },
+    { "espacio": "E/Aula 202", "category": "STRUCTURAL", "riskLevel": "LOW", "description": "Zócalo despegado en la esquina de la puerta", "hotspot": { "x": -50, "y": -10, "z": 50 } },
+    { "espacio": "A/Aula 202", "category": "STRUCTURAL", "riskLevel": "LOW", "description": "Grieta fina en el muro al lado del tablero", "hotspot": { "x": 50.01, "y": 0, "z": 0 } },
+    { "espacio": "A/Aula 202", "category": "STRUCTURAL", "riskLevel": "LOW", "description": "Grieta fina en el muro al lado del tablero", "hotspot": { "x": 0, "y": 20.01, "z": 0 } }
+  ],
+  "CP-44": { "espacio": "A/Aula 201", "category": "COSMETIC", "riskLevel": "NONE", "description": "Mancha de tinta en el piso junto a la entrada" },
+  "CP-46": { "espacio": "E/Aula 101", "category": "FURNITURE", "riskLevel": "LOW", "description": "Perchero de pared arrancado del muro" },
+  "CP-47": { "espacio": "E/Aula 102", "category": "COSMETIC", "riskLevel": "NONE", "description": "Puerta del salón con pintura descascarada" },
+  "CP-48": [
+    { "espacio": "E/Aula 201", "category": "FURNITURE", "riskLevel": "NONE", "description": "Cortina enrollable trabada a media altura" },
+    { "espacio": "A/Aula 401", "category": "COSMETIC", "riskLevel": "NONE", "description": "Pizarra blanca con manchas que no salen" }
+  ],
+  "CP-49": { "espacio": "A/Aula 102", "category": "FURNITURE", "riskLevel": "LOW", "description": "Escritorio del docente con la gaveta rota" },
+  "CP-50": [
+    { "espacio": "Sala de Cómputo 1", "category": "ELECTRICAL", "riskLevel": "LOW", "description": "El proyector se apaga solo cada cinco minutos", "hotspot": { "x": -3, "y": 2, "z": 4 } },
+    { "espacio": "Sala de Cómputo 1", "category": "ELECTRICAL", "riskLevel": "LOW", "description": "Cada cinco minutos el proyector se apaga solo", "hotspot": { "x": -3.5, "y": 2, "z": 4 } },
+    { "espacio": "Sala de Cómputo 1", "category": "FURNITURE", "riskLevel": "LOW", "description": "Falta el espaldar de una silla giratoria" },
+    { "espacio": "Laboratorio de Biología", "category": "ELECTRICAL", "riskLevel": "LOW", "description": "El proyector se apaga solo cada cinco minutos" }
+  ],
+  "CP-51": { "espacio": "A/Aula 301", "category": "FURNITURE", "riskLevel": "LOW", "description": "Tablero de corcho desprendido de la pared lateral" },
+  "CP-52": { "espacio": "A/Aula 402", "category": "FURNITURE", "riskLevel": "LOW", "description": "Pupitre para zurdos con la paleta partida" },
+  "CP-53": { "espacio": "A/Baño primer piso", "category": "SANITARY", "riskLevel": "LOW", "description": "Lavamanos de la izquierda no tiene desagüe" },
+  "CP-54": { "espacio": "A/Baño tercer piso", "category": "SANITARY", "riskLevel": "LOW", "description": "Dispensador de jabón despegado de la pared" },
+  "CP-55": [
+    { "espacio": "E/Baño principal", "category": "WATER_LEAK", "riskLevel": "MEDIUM", "description": "La llave del orinal queda abierta y bota agua", "hotspot": { "x": 1, "y": 1, "z": -2 } },
+    { "espacio": "E/Baño principal", "category": "WATER_LEAK", "riskLevel": "MEDIUM", "description": "Bota agua la llave del orinal porque queda abierta", "hotspot": { "x": 1.4, "y": 1, "z": -2 } }
+  ],
+  "CP-56": [
+    { "espacio": "Laboratorio de Electrónica", "category": "WATER_LEAK", "riskLevel": "MEDIUM", "description": "Escurre agua del techo sobre el osciloscopio", "hotspot": { "x": 4, "y": 3, "z": -1 } },
+    { "espacio": "Laboratorio de Electrónica", "category": "WATER_LEAK", "riskLevel": "MEDIUM", "description": "Sobre el osciloscopio escurre agua del techo", "hotspot": { "x": 4.5, "y": 3, "z": -1 } }
+  ]
+}

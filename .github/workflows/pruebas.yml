@@ -1,0 +1,76 @@
+name: Pruebas de la auditoría
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  playwright:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    services:
+      postgres:
+        image: pgvector/pgvector:pg16
+        env:
+          POSTGRES_USER: campus
+          POSTGRES_PASSWORD: campus
+          POSTGRES_DB: campus
+        ports: ["5434:5432"]
+        options: >-
+          --health-cmd "pg_isready -U campus" --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      APP_DIR: ${{ github.workspace }}/app
+      API_URL: http://localhost:4000
+      WEB_URL: http://127.0.0.1:5173
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: qa
+
+      - name: Descargar la aplicación auditada (commit 16ebe4d)
+        uses: actions/checkout@v4
+        with:
+          repository: MrRoar154/Hackaton
+          ref: 16ebe4d
+          path: app
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Instalar y preparar la aplicación
+        working-directory: app
+        run: |
+          cp .env.example .env
+          npm ci
+          npm run db:deploy
+          npm run db:seed
+
+      - name: Encender API y web
+        working-directory: app
+        run: |
+          nohup npm run dev > ../app.log 2>&1 &
+          npx wait-on -t 120000 http://localhost:4000/api/health http://127.0.0.1:5173
+
+      - name: Instalar las pruebas
+        working-directory: qa
+        run: |
+          npm ci
+          npx playwright install --with-deps chromium
+
+      - name: Correr la suite
+        working-directory: qa
+        run: npx playwright test
+        env:
+          EJECUCION: ci
+
+      - name: Guardar reportes y evidencias
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reportes-auditoria
+          path: |
+            qa/resultados/ci
+            qa/evidencias/ci
+            app.log

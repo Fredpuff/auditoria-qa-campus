@@ -1,0 +1,132 @@
+{
+  "caso": "CP-07",
+  "titulo": "CP-07 | BUG-01 | La foto de evidencia se descarga sin sesión",
+  "ejecucion": "ejecucion-2",
+  "fecha": "2026-11-17T01:49:31.218Z",
+  "estado": "Fallido",
+  "error": "Error: la foto de un reporte solo debe verla un usuario autenticado\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 401\nReceived: 200",
+  "pasos": [
+    {
+      "n": 1,
+      "peticion": "POST /api/incidents",
+      "quien": "estudiante1",
+      "cuerpo": {
+        "spaceId": "065de10b-8920-4b95-8c6c-c82c771d441e",
+        "category": "FURNITURE",
+        "riskLevel": "LOW",
+        "description": "La banca de espera tiene un tornillo salido que rasga la ropa",
+        "hotspot": null
+      },
+      "estado": 201,
+      "respuesta": {
+        "id": "d6446ecb-b17f-49ae-bd8c-ad615bd2d464",
+        "number": 69,
+        "code": "INC-00069",
+        "description": "La banca de espera tiene un tornillo salido que rasga la ropa",
+        "category": "FURNITURE",
+        "riskLevel": "LOW",
+        "status": "PENDING",
+        "priorityScore": 31.9,
+        "priorityLevel": "MEDIUM",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 30,
+            "weight": 0.35,
+            "contribution": 10.5
+          },
+          "space": {
+            "value": 64,
+            "weight": 0.1,
+            "contribution": 6.4
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 40,
+            "weight": 0.25,
+            "contribution": 10
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T13:49:31.149Z",
+        "resolutionDueAt": "2026-11-20T01:49:31.149Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:49:31.149Z",
+        "updatedAt": "2026-11-17T01:49:31.152Z",
+        "stageStartedAt": "2026-11-17T01:49:31.149Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": null,
+        "space": {
+          "id": "065de10b-8920-4b95-8c6c-c82c771d441e",
+          "code": "REC",
+          "name": "Recepción y atención",
+          "type": "COMMON",
+          "floor": 1,
+          "capacity": 40,
+          "block": {
+            "id": "fa014b7e-82fd-4205-9d13-96a59e2357e3",
+            "code": "D",
+            "name": "Bloque D · Administrativo"
+          },
+          "campus": {
+            "id": "d48328b3-aeba-4d7e-b677-20b6a5627fe1",
+            "code": "PRI",
+            "name": "Sede Principal"
+          }
+        },
+        "reporter": {
+          "id": "ef8cdb81-b899-4829-96aa-29208ad05e35",
+          "name": "Valentina Ruiz",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null
+      },
+      "ms": 38
+    },
+    {
+      "n": 2,
+      "peticion": "POST /api/incidents/d6446ecb-b17f-49ae-bd8c-ad615bd2d464/evidence",
+      "quien": "estudiante1",
+      "cuerpo": {
+        "archivo": "foto-dano.png",
+        "tipo": "image/png",
+        "bytes": 69
+      },
+      "estado": 201,
+      "respuesta": {
+        "id": "31295d8d-a451-462b-872f-1ba02f6fd200",
+        "stage": "REPORT",
+        "kind": "PHOTO",
+        "url": "/uploads/e686a776-72a6-403f-898d-d1560b08db11.webp",
+        "text": null,
+        "width": 1,
+        "height": 1,
+        "createdAt": "2026-11-17T01:49:31.198Z"
+      },
+      "ms": 24
+    },
+    {
+      "n": 3,
+      "peticion": "GET /uploads/e686a776-72a6-403f-898d-d1560b08db11.webp",
+      "quien": "sin sesión",
+      "estado": 200,
+      "respuesta": "[imagen image/webp, 68 bytes]",
+      "ms": 11
+    }
+  ]
+}

@@ -1,0 +1,154 @@
+{
+  "caso": "CP-03",
+  "titulo": "CP-03 | Vista previa de prioridad con desglose de 5 factores",
+  "ejecucion": "ejecucion-3",
+  "fecha": "2026-11-17T01:54:16.843Z",
+  "estado": "Aprobado",
+  "error": null,
+  "pasos": [
+    {
+      "n": 1,
+      "peticion": "POST /api/incidents/preview",
+      "quien": "estudiante1",
+      "cuerpo": {
+        "spaceId": "d6891b63-a060-4bf0-92a8-90119a0f7b00",
+        "category": "ELECTRICAL",
+        "riskLevel": "HIGH",
+        "description": "La toma del mesón de soldadura suelta chispas",
+        "hotspot": null
+      },
+      "estado": 200,
+      "respuesta": {
+        "score": 75,
+        "level": "CRITICAL",
+        "breakdown": {
+          "risk": {
+            "value": 100,
+            "weight": 0.35,
+            "contribution": 35
+          },
+          "damageType": {
+            "value": 100,
+            "weight": 0.25,
+            "contribution": 25
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "space": {
+            "value": 100,
+            "weight": 0.1,
+            "contribution": 10
+          },
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          }
+        },
+        "responseHours": 1,
+        "resolutionHours": 4,
+        "duplicates": [
+          {
+            "incident": {
+              "id": "d07693f7-a319-4fd7-b282-c32a132c4eb9",
+              "number": 48,
+              "code": "INC-00048",
+              "description": "Hay un cable expuesto cerca de la toma del escritorio del docente",
+              "category": "ELECTRICAL",
+              "riskLevel": "HIGH",
+              "status": "PENDING",
+              "priorityScore": 90,
+              "priorityLevel": "CRITICAL",
+              "priorityBreakdown": {
+                "age": {
+                  "value": 100,
+                  "weight": 0.1,
+                  "contribution": 10
+                },
+                "risk": {
+                  "value": 100,
+                  "weight": 0.35,
+                  "contribution": 35
+                },
+                "space": {
+                  "value": 100,
+                  "weight": 0.1,
+                  "contribution": 10
+                },
+                "similar": {
+                  "value": 50,
+                  "weight": 0.2,
+                  "contribution": 10
+                },
+                "damageType": {
+                  "value": 100,
+                  "weight": 0.25,
+                  "contribution": 25
+                }
+              },
+              "escalationSteps": 1,
+              "isOverdue": true,
+              "responseDueAt": "2026-11-16T22:22:18.964Z",
+              "resolutionDueAt": "2026-11-17T01:22:18.964Z",
+              "slaWarnedAt": null,
+              "createdAt": "2026-11-16T20:22:18.964Z",
+              "updatedAt": "2026-11-17T01:54:00.337Z",
+              "stageStartedAt": "2026-11-16T20:22:18.964Z",
+              "firstResponseAt": null,
+              "resolvedAt": null,
+              "verifiedAt": null,
+              "hotspot": {
+                "x": -3.47,
+                "y": 0.4,
+                "z": -3.45
+              },
+              "space": {
+                "id": "d6891b63-a060-4bf0-92a8-90119a0f7b00",
+                "code": "101",
+                "name": "Laboratorio de Electrónica",
+                "type": "LAB",
+                "floor": 1,
+                "capacity": 30,
+                "block": {
+                  "id": "d36f5a58-7076-484d-85fc-fe93cb59a5a4",
+                  "code": "B",
+                  "name": "Bloque B · Laboratorios"
+                },
+                "campus": {
+                  "id": "9a0c65ff-7a7d-470b-955a-efbc7b0f11d2",
+                  "code": "PRI",
+                  "name": "Sede Principal"
+                }
+              },
+              "reporter": {
+                "id": "f16abaae-5754-49bb-a28e-acf02bd5c531",
+                "name": "Santiago Herrera",
+                "role": "STUDENT"
+              },
+              "assignee": null,
+              "clusterId": "5966c07a-3ae7-4128-b8ed-32d8e1d33856",
+              "isClusterPrimary": true,
+              "clusterSize": 3,
+              "thumbnailUrl": null
+            },
+            "similarity": {
+              "location": 0.8,
+              "category": 1,
+              "text": 0.134,
+              "time": 0.959,
+              "score": 0.579,
+              "hotspotDistance": null,
+              "textSource": "tfidf"
+            },
+            "explanation": "mismo salón, misma categoría, texto 13 % similar",
+            "decision": "suggest"
+          }
+        ]
+      },
+      "ms": 46
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "caso": "CP-29",
+  "titulo": "CP-29 | Token vencido",
+  "ejecucion": "ejecucion-2",
+  "fecha": "2026-11-17T01:49:34.041Z",
+  "estado": "Aprobado",
+  "error": null,
+  "pasos": [
+    {
+      "n": 1,
+      "peticion": "GET /api/incidents",
+      "quien": "token vencido hace 1 hora",
+      "estado": 401,
+      "respuesta": {
+        "error": "Tu sesión expiró, vuelve a iniciar sesión"
+      },
+      "ms": 10
+    }
+  ]
+}

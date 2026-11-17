@@ -1,0 +1,170 @@
+{
+  "caso": "CP-49",
+  "titulo": "CP-49 | BUG-11 | Se pueden subir fotos a un caso ya verificado",
+  "ejecucion": "ejecucion-3",
+  "fecha": "2026-11-17T01:55:17.919Z",
+  "estado": "Fallido",
+  "error": "Error: un caso verificado es el estado final y no debería recibir evidencia\n\nexpect(received).toBeGreaterThanOrEqual(expected)\n\nExpected: >= 400\nReceived:    201",
+  "pasos": [
+    {
+      "n": 1,
+      "peticion": "POST /api/incidents",
+      "quien": "estudiante4",
+      "cuerpo": {
+        "spaceId": "a13aa211-40bf-4fbe-be53-6699c181fedc",
+        "category": "FURNITURE",
+        "riskLevel": "LOW",
+        "description": "Escritorio del docente con la gaveta rota",
+        "hotspot": null
+      },
+      "estado": 201,
+      "respuesta": {
+        "id": "d973b821-3216-412e-b6ed-7aac4c34afa3",
+        "number": 86,
+        "code": "INC-00086",
+        "description": "Escritorio del docente con la gaveta rota",
+        "category": "FURNITURE",
+        "riskLevel": "LOW",
+        "status": "PENDING",
+        "priorityScore": 35.1,
+        "priorityLevel": "MEDIUM",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 30,
+            "weight": 0.35,
+            "contribution": 10.5
+          },
+          "space": {
+            "value": 95.5,
+            "weight": 0.1,
+            "contribution": 9.6
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 40,
+            "weight": 0.25,
+            "contribution": 10
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T13:55:17.743Z",
+        "resolutionDueAt": "2026-11-20T01:55:17.743Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:55:17.743Z",
+        "updatedAt": "2026-11-17T01:55:17.745Z",
+        "stageStartedAt": "2026-11-17T01:55:17.743Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": null,
+        "space": {
+          "id": "a13aa211-40bf-4fbe-be53-6699c181fedc",
+          "code": "102",
+          "name": "Aula 102",
+          "type": "CLASSROOM",
+          "floor": 1,
+          "capacity": 55,
+          "block": {
+            "id": "9fcdb09f-e967-45ab-89a6-417bb046bf6b",
+            "code": "A",
+            "name": "Bloque A · Aulas"
+          },
+          "campus": {
+            "id": "9a0c65ff-7a7d-470b-955a-efbc7b0f11d2",
+            "code": "PRI",
+            "name": "Sede Principal"
+          }
+        },
+        "reporter": {
+          "id": "661a9c77-758b-4e46-9cb0-ebf61a13e1e0",
+          "name": "Juan Esteban Díaz",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null
+      },
+      "ms": 64
+    },
+    {
+      "n": 2,
+      "peticion": "POST /api/incidents/d973b821-3216-412e-b6ed-7aac4c34afa3/transition",
+      "quien": "tecnico1",
+      "cuerpo": {
+        "to": "IN_PROGRESS"
+      },
+      "estado": 200,
+      "respuesta": {
+        "incidentId": "d973b821-3216-412e-b6ed-7aac4c34afa3",
+        "from": "PENDING",
+        "to": "IN_PROGRESS"
+      },
+      "ms": 43
+    },
+    {
+      "n": 3,
+      "peticion": "POST /api/incidents/d973b821-3216-412e-b6ed-7aac4c34afa3/transition",
+      "quien": "tecnico1",
+      "cuerpo": {
+        "to": "RESOLVED",
+        "note": "Se cambió la pieza dañada"
+      },
+      "estado": 200,
+      "respuesta": {
+        "incidentId": "d973b821-3216-412e-b6ed-7aac4c34afa3",
+        "from": "IN_PROGRESS",
+        "to": "RESOLVED"
+      },
+      "ms": 36
+    },
+    {
+      "n": 4,
+      "peticion": "POST /api/incidents/d973b821-3216-412e-b6ed-7aac4c34afa3/transition",
+      "quien": "supervisor",
+      "cuerpo": {
+        "to": "VERIFIED"
+      },
+      "estado": 200,
+      "respuesta": {
+        "incidentId": "d973b821-3216-412e-b6ed-7aac4c34afa3",
+        "from": "RESOLVED",
+        "to": "VERIFIED"
+      },
+      "ms": 24
+    },
+    {
+      "n": 5,
+      "peticion": "POST /api/incidents/d973b821-3216-412e-b6ed-7aac4c34afa3/evidence?stage=REPORT",
+      "quien": "estudiante4",
+      "cuerpo": {
+        "archivo": "foto-dano.png",
+        "tipo": "image/png",
+        "bytes": 69
+      },
+      "estado": 201,
+      "respuesta": {
+        "id": "f958c9b7-2ed0-458e-afdc-2e55d46bf51c",
+        "stage": "REPORT",
+        "kind": "PHOTO",
+        "url": "/uploads/d8c2914d-39f9-4b0d-a34c-160b360e842c.webp",
+        "text": null,
+        "width": 1,
+        "height": 1,
+        "createdAt": "2026-11-17T01:55:17.906Z"
+      },
+      "ms": 23
+    }
+  ]
+}

@@ -1,0 +1,660 @@
+{
+  "caso": "CP-23",
+  "titulo": "CP-23 | Supervisor corrige el riesgo y la prioridad se recalcula",
+  "ejecucion": "ejecucion-3",
+  "fecha": "2026-11-17T01:54:17.300Z",
+  "estado": "Aprobado",
+  "error": null,
+  "pasos": [
+    {
+      "n": 1,
+      "peticion": "POST /api/incidents",
+      "quien": "estudiante4",
+      "cuerpo": {
+        "spaceId": "66288093-5673-47be-9816-ffbd632b8dc3",
+        "category": "FURNITURE",
+        "riskLevel": "NONE",
+        "description": "Mesa del fondo cojea y se mueve al escribir",
+        "hotspot": null
+      },
+      "estado": 201,
+      "respuesta": {
+        "id": "21590131-b22d-417a-8632-1730e0ae1c14",
+        "number": 65,
+        "code": "INC-00065",
+        "description": "Mesa del fondo cojea y se mueve al escribir",
+        "category": "FURNITURE",
+        "riskLevel": "NONE",
+        "status": "PENDING",
+        "priorityScore": 25,
+        "priorityLevel": "MEDIUM",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 0,
+            "weight": 0.35,
+            "contribution": 0
+          },
+          "space": {
+            "value": 100,
+            "weight": 0.1,
+            "contribution": 10
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 40,
+            "weight": 0.25,
+            "contribution": 10
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T13:54:17.074Z",
+        "resolutionDueAt": "2026-11-20T01:54:17.074Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:54:17.074Z",
+        "updatedAt": "2026-11-17T01:54:17.077Z",
+        "stageStartedAt": "2026-11-17T01:54:17.074Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": null,
+        "space": {
+          "id": "66288093-5673-47be-9816-ffbd632b8dc3",
+          "code": "102",
+          "name": "Laboratorio de Química",
+          "type": "LAB",
+          "floor": 1,
+          "capacity": 28,
+          "block": {
+            "id": "d36f5a58-7076-484d-85fc-fe93cb59a5a4",
+            "code": "B",
+            "name": "Bloque B · Laboratorios"
+          },
+          "campus": {
+            "id": "9a0c65ff-7a7d-470b-955a-efbc7b0f11d2",
+            "code": "PRI",
+            "name": "Sede Principal"
+          }
+        },
+        "reporter": {
+          "id": "661a9c77-758b-4e46-9cb0-ebf61a13e1e0",
+          "name": "Juan Esteban Díaz",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null
+      },
+      "ms": 39
+    },
+    {
+      "n": 2,
+      "peticion": "PATCH /api/incidents/21590131-b22d-417a-8632-1730e0ae1c14/risk",
+      "quien": "supervisor",
+      "cuerpo": {
+        "riskLevel": "HIGH",
+        "note": "La mesa puede caer sobre alguien"
+      },
+      "estado": 204,
+      "respuesta": null,
+      "ms": 27
+    },
+    {
+      "n": 3,
+      "peticion": "GET /api/incidents/21590131-b22d-417a-8632-1730e0ae1c14",
+      "quien": "supervisor",
+      "estado": 200,
+      "respuesta": {
+        "id": "21590131-b22d-417a-8632-1730e0ae1c14",
+        "number": 65,
+        "code": "INC-00065",
+        "description": "Mesa del fondo cojea y se mueve al escribir",
+        "category": "FURNITURE",
+        "riskLevel": "HIGH",
+        "status": "PENDING",
+        "priorityScore": 25,
+        "priorityLevel": "MEDIUM",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 0,
+            "weight": 0.35,
+            "contribution": 0
+          },
+          "space": {
+            "value": 100,
+            "weight": 0.1,
+            "contribution": 10
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 40,
+            "weight": 0.25,
+            "contribution": 10
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T13:54:17.074Z",
+        "resolutionDueAt": "2026-11-20T01:54:17.074Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:54:17.074Z",
+        "updatedAt": "2026-11-17T01:54:17.116Z",
+        "stageStartedAt": "2026-11-17T01:54:17.074Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": null,
+        "space": {
+          "id": "66288093-5673-47be-9816-ffbd632b8dc3",
+          "code": "102",
+          "name": "Laboratorio de Química",
+          "type": "LAB",
+          "floor": 1,
+          "capacity": 28,
+          "block": {
+            "id": "d36f5a58-7076-484d-85fc-fe93cb59a5a4",
+            "code": "B",
+            "name": "Bloque B · Laboratorios"
+          },
+          "campus": {
+            "id": "9a0c65ff-7a7d-470b-955a-efbc7b0f11d2",
+            "code": "PRI",
+            "name": "Sede Principal"
+          }
+        },
+        "reporter": {
+          "id": "661a9c77-758b-4e46-9cb0-ebf61a13e1e0",
+          "name": "Juan Esteban Díaz",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null,
+        "evidence": [],
+        "history": [
+          {
+            "id": "7f65fbc5-9d4f-49a7-b272-97f4b4271e66",
+            "fromStatus": null,
+            "toStatus": "PENDING",
+            "changedBy": {
+              "id": "661a9c77-758b-4e46-9cb0-ebf61a13e1e0",
+              "name": "Juan Esteban Díaz",
+              "role": "STUDENT"
+            },
+            "changedAt": "2026-11-17T01:54:17.074Z",
+            "durationInPrevMs": null,
+            "reason": "MANUAL",
+            "note": null
+          }
+        ],
+        "events": [
+          {
+            "id": "3eb891cd-5351-46d2-8503-80343590205b",
+            "type": "CREATED",
+            "payload": {
+              "level": "MEDIUM",
+              "score": 25,
+              "breakdown": {
+                "age": {
+                  "value": 0,
+                  "weight": 0.1,
+                  "contribution": 0
+                },
+                "risk": {
+                  "value": 0,
+                  "weight": 0.35,
+                  "contribution": 0
+                },
+                "space": {
+                  "value": 100,
+                  "weight": 0.1,
+                  "contribution": 10
+                },
+                "similar": {
+                  "value": 25,
+                  "weight": 0.2,
+                  "contribution": 5
+                },
+                "damageType": {
+                  "value": 40,
+                  "weight": 0.25,
+                  "contribution": 10
+                }
+              },
+              "joinIncidentId": null
+            },
+            "actor": {
+              "id": "661a9c77-758b-4e46-9cb0-ebf61a13e1e0",
+              "name": "Juan Esteban Díaz",
+              "role": "STUDENT"
+            },
+            "createdAt": "2026-11-17T01:54:17.087Z"
+          },
+          {
+            "id": "2e7c6672-5355-4152-90e2-2cc3f833b65e",
+            "type": "RISK_CORRECTED",
+            "payload": {
+              "to": "HIGH",
+              "from": "NONE",
+              "note": "La mesa puede caer sobre alguien"
+            },
+            "actor": {
+              "id": "85097184-9f92-4da7-a80c-77f0a3198962",
+              "name": "Laura Méndez",
+              "role": "SUPERVISOR"
+            },
+            "createdAt": "2026-11-17T01:54:17.122Z"
+          }
+        ],
+        "clusterMembers": [],
+        "availableTransitions": [
+          {
+            "from": "PENDING",
+            "to": "IN_PROGRESS",
+            "roles": [
+              "TECHNICIAN",
+              "SUPERVISOR"
+            ],
+            "label": "Tomar caso",
+            "description": "El técnico toma el caso o el supervisor lo asigna"
+          }
+        ]
+      },
+      "ms": 15
+    },
+    {
+      "n": 4,
+      "peticion": "GET /api/incidents/21590131-b22d-417a-8632-1730e0ae1c14",
+      "quien": "supervisor",
+      "estado": 200,
+      "respuesta": {
+        "id": "21590131-b22d-417a-8632-1730e0ae1c14",
+        "number": 65,
+        "code": "INC-00065",
+        "description": "Mesa del fondo cojea y se mueve al escribir",
+        "category": "FURNITURE",
+        "riskLevel": "HIGH",
+        "status": "PENDING",
+        "priorityScore": 60,
+        "priorityLevel": "HIGH",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 100,
+            "weight": 0.35,
+            "contribution": 35
+          },
+          "space": {
+            "value": 100,
+            "weight": 0.1,
+            "contribution": 10
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 40,
+            "weight": 0.25,
+            "contribution": 10
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T05:54:17.074Z",
+        "resolutionDueAt": "2026-11-18T01:54:17.074Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:54:17.074Z",
+        "updatedAt": "2026-11-17T01:54:17.134Z",
+        "stageStartedAt": "2026-11-17T01:54:17.074Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": null,
+        "space": {
+          "id": "66288093-5673-47be-9816-ffbd632b8dc3",
+          "code": "102",
+          "name": "Laboratorio de Química",
+          "type": "LAB",
+          "floor": 1,
+          "capacity": 28,
+          "block": {
+            "id": "d36f5a58-7076-484d-85fc-fe93cb59a5a4",
+            "code": "B",
+            "name": "Bloque B · Laboratorios"
+          },
+          "campus": {
+            "id": "9a0c65ff-7a7d-470b-955a-efbc7b0f11d2",
+            "code": "PRI",
+            "name": "Sede Principal"
+          }
+        },
+        "reporter": {
+          "id": "661a9c77-758b-4e46-9cb0-ebf61a13e1e0",
+          "name": "Juan Esteban Díaz",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null,
+        "evidence": [],
+        "history": [
+          {
+            "id": "7f65fbc5-9d4f-49a7-b272-97f4b4271e66",
+            "fromStatus": null,
+            "toStatus": "PENDING",
+            "changedBy": {
+              "id": "661a9c77-758b-4e46-9cb0-ebf61a13e1e0",
+              "name": "Juan Esteban Díaz",
+              "role": "STUDENT"
+            },
+            "changedAt": "2026-11-17T01:54:17.074Z",
+            "durationInPrevMs": null,
+            "reason": "MANUAL",
+            "note": null
+          }
+        ],
+        "events": [
+          {
+            "id": "3eb891cd-5351-46d2-8503-80343590205b",
+            "type": "CREATED",
+            "payload": {
+              "level": "MEDIUM",
+              "score": 25,
+              "breakdown": {
+                "age": {
+                  "value": 0,
+                  "weight": 0.1,
+                  "contribution": 0
+                },
+                "risk": {
+                  "value": 0,
+                  "weight": 0.35,
+                  "contribution": 0
+                },
+                "space": {
+                  "value": 100,
+                  "weight": 0.1,
+                  "contribution": 10
+                },
+                "similar": {
+                  "value": 25,
+                  "weight": 0.2,
+                  "contribution": 5
+                },
+                "damageType": {
+                  "value": 40,
+                  "weight": 0.25,
+                  "contribution": 10
+                }
+              },
+              "joinIncidentId": null
+            },
+            "actor": {
+              "id": "661a9c77-758b-4e46-9cb0-ebf61a13e1e0",
+              "name": "Juan Esteban Díaz",
+              "role": "STUDENT"
+            },
+            "createdAt": "2026-11-17T01:54:17.087Z"
+          },
+          {
+            "id": "2e7c6672-5355-4152-90e2-2cc3f833b65e",
+            "type": "RISK_CORRECTED",
+            "payload": {
+              "to": "HIGH",
+              "from": "NONE",
+              "note": "La mesa puede caer sobre alguien"
+            },
+            "actor": {
+              "id": "85097184-9f92-4da7-a80c-77f0a3198962",
+              "name": "Laura Méndez",
+              "role": "SUPERVISOR"
+            },
+            "createdAt": "2026-11-17T01:54:17.122Z"
+          },
+          {
+            "id": "32f6a982-c410-481e-8788-2c27b4945492",
+            "type": "PRIORITY_CHANGED",
+            "payload": {
+              "to": "HIGH",
+              "from": "MEDIUM",
+              "score": 60,
+              "reason": "RISK_CORRECTED"
+            },
+            "actor": null,
+            "createdAt": "2026-11-17T01:54:17.141Z"
+          }
+        ],
+        "clusterMembers": [],
+        "availableTransitions": [
+          {
+            "from": "PENDING",
+            "to": "IN_PROGRESS",
+            "roles": [
+              "TECHNICIAN",
+              "SUPERVISOR"
+            ],
+            "label": "Tomar caso",
+            "description": "El técnico toma el caso o el supervisor lo asigna"
+          }
+        ]
+      },
+      "ms": 22
+    },
+    {
+      "n": 5,
+      "peticion": "GET /api/incidents/21590131-b22d-417a-8632-1730e0ae1c14",
+      "quien": "supervisor",
+      "estado": 200,
+      "respuesta": {
+        "id": "21590131-b22d-417a-8632-1730e0ae1c14",
+        "number": 65,
+        "code": "INC-00065",
+        "description": "Mesa del fondo cojea y se mueve al escribir",
+        "category": "FURNITURE",
+        "riskLevel": "HIGH",
+        "status": "PENDING",
+        "priorityScore": 60,
+        "priorityLevel": "HIGH",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 100,
+            "weight": 0.35,
+            "contribution": 35
+          },
+          "space": {
+            "value": 100,
+            "weight": 0.1,
+            "contribution": 10
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 40,
+            "weight": 0.25,
+            "contribution": 10
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T05:54:17.074Z",
+        "resolutionDueAt": "2026-11-18T01:54:17.074Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:54:17.074Z",
+        "updatedAt": "2026-11-17T01:54:17.134Z",
+        "stageStartedAt": "2026-11-17T01:54:17.074Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": null,
+        "space": {
+          "id": "66288093-5673-47be-9816-ffbd632b8dc3",
+          "code": "102",
+          "name": "Laboratorio de Química",
+          "type": "LAB",
+          "floor": 1,
+          "capacity": 28,
+          "block": {
+            "id": "d36f5a58-7076-484d-85fc-fe93cb59a5a4",
+            "code": "B",
+            "name": "Bloque B · Laboratorios"
+          },
+          "campus": {
+            "id": "9a0c65ff-7a7d-470b-955a-efbc7b0f11d2",
+            "code": "PRI",
+            "name": "Sede Principal"
+          }
+        },
+        "reporter": {
+          "id": "661a9c77-758b-4e46-9cb0-ebf61a13e1e0",
+          "name": "Juan Esteban Díaz",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null,
+        "evidence": [],
+        "history": [
+          {
+            "id": "7f65fbc5-9d4f-49a7-b272-97f4b4271e66",
+            "fromStatus": null,
+            "toStatus": "PENDING",
+            "changedBy": {
+              "id": "661a9c77-758b-4e46-9cb0-ebf61a13e1e0",
+              "name": "Juan Esteban Díaz",
+              "role": "STUDENT"
+            },
+            "changedAt": "2026-11-17T01:54:17.074Z",
+            "durationInPrevMs": null,
+            "reason": "MANUAL",
+            "note": null
+          }
+        ],
+        "events": [
+          {
+            "id": "3eb891cd-5351-46d2-8503-80343590205b",
+            "type": "CREATED",
+            "payload": {
+              "level": "MEDIUM",
+              "score": 25,
+              "breakdown": {
+                "age": {
+                  "value": 0,
+                  "weight": 0.1,
+                  "contribution": 0
+                },
+                "risk": {
+                  "value": 0,
+                  "weight": 0.35,
+                  "contribution": 0
+                },
+                "space": {
+                  "value": 100,
+                  "weight": 0.1,
+                  "contribution": 10
+                },
+                "similar": {
+                  "value": 25,
+                  "weight": 0.2,
+                  "contribution": 5
+                },
+                "damageType": {
+                  "value": 40,
+                  "weight": 0.25,
+                  "contribution": 10
+                }
+              },
+              "joinIncidentId": null
+            },
+            "actor": {
+              "id": "661a9c77-758b-4e46-9cb0-ebf61a13e1e0",
+              "name": "Juan Esteban Díaz",
+              "role": "STUDENT"
+            },
+            "createdAt": "2026-11-17T01:54:17.087Z"
+          },
+          {
+            "id": "2e7c6672-5355-4152-90e2-2cc3f833b65e",
+            "type": "RISK_CORRECTED",
+            "payload": {
+              "to": "HIGH",
+              "from": "NONE",
+              "note": "La mesa puede caer sobre alguien"
+            },
+            "actor": {
+              "id": "85097184-9f92-4da7-a80c-77f0a3198962",
+              "name": "Laura Méndez",
+              "role": "SUPERVISOR"
+            },
+            "createdAt": "2026-11-17T01:54:17.122Z"
+          },
+          {
+            "id": "32f6a982-c410-481e-8788-2c27b4945492",
+            "type": "PRIORITY_CHANGED",
+            "payload": {
+              "to": "HIGH",
+              "from": "MEDIUM",
+              "score": 60,
+              "reason": "RISK_CORRECTED"
+            },
+            "actor": null,
+            "createdAt": "2026-11-17T01:54:17.141Z"
+          }
+        ],
+        "clusterMembers": [],
+        "availableTransitions": [
+          {
+            "from": "PENDING",
+            "to": "IN_PROGRESS",
+            "roles": [
+              "TECHNICIAN",
+              "SUPERVISOR"
+            ],
+            "label": "Tomar caso",
+            "description": "El técnico toma el caso o el supervisor lo asigna"
+          }
+        ]
+      },
+      "ms": 23
+    }
+  ]
+}

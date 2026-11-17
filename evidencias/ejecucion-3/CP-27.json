@@ -1,0 +1,20 @@
+{
+  "caso": "CP-27",
+  "titulo": "CP-27 | Token con el rol alterado sin volver a firmar",
+  "ejecucion": "ejecucion-3",
+  "fecha": "2026-11-17T01:54:20.669Z",
+  "estado": "Aprobado",
+  "error": null,
+  "pasos": [
+    {
+      "n": 1,
+      "peticion": "GET /api/similarity/suggestions",
+      "quien": "token de estudiante1 con role=SUPERVISOR",
+      "estado": 401,
+      "respuesta": {
+        "error": "Tu sesión expiró, vuelve a iniciar sesión"
+      },
+      "ms": 28
+    }
+  ]
+}

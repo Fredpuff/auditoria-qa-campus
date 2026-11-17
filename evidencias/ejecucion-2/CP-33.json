@@ -1,0 +1,55 @@
+{
+  "caso": "CP-33",
+  "titulo": "CP-33 | Espacio, categoría y código QR que no existen",
+  "ejecucion": "ejecucion-2",
+  "fecha": "2026-11-17T01:49:35.840Z",
+  "estado": "Aprobado",
+  "error": null,
+  "pasos": [
+    {
+      "n": 1,
+      "peticion": "POST /api/incidents",
+      "quien": "estudiante2",
+      "cuerpo": {
+        "spaceId": "00000000-0000-4000-8000-000000000000",
+        "category": "STRUCTURAL",
+        "riskLevel": "LOW",
+        "description": "Ventana rota en un salón que no existe",
+        "hotspot": null
+      },
+      "estado": 404,
+      "respuesta": {
+        "error": "El espacio no existe"
+      },
+      "ms": 48
+    },
+    {
+      "n": 2,
+      "peticion": "POST /api/incidents",
+      "quien": "estudiante2",
+      "cuerpo": {
+        "spaceId": "7a0b1b7b-fbc5-4cbf-91c2-42b91368ded7",
+        "category": "NUCLEAR",
+        "riskLevel": "LOW",
+        "description": "Categoría que no existe en la lista",
+        "hotspot": null
+      },
+      "estado": 400,
+      "respuesta": {
+        "error": "Elige una categoría",
+        "field": "category"
+      },
+      "ms": 14
+    },
+    {
+      "n": 3,
+      "peticion": "GET /api/locations/qr/no-existe-123",
+      "quien": "estudiante2",
+      "estado": 404,
+      "respuesta": {
+        "error": "Ese código QR no corresponde a ningún espacio"
+      },
+      "ms": 14
+    }
+  ]
+}

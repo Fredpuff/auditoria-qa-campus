@@ -1,0 +1,30 @@
+{
+  "caso": "CP-21",
+  "titulo": "CP-21 | Ingreso con correo en mayúsculas y espacios",
+  "ejecucion": "ejecucion-1",
+  "fecha": "2026-11-17T01:44:44.321Z",
+  "estado": "Aprobado",
+  "error": null,
+  "pasos": [
+    {
+      "n": 1,
+      "peticion": "POST /api/auth/login",
+      "quien": "sin sesión",
+      "cuerpo": {
+        "email": "  ESTUDIANTE1@Campus.edu.co ",
+        "password": "campus123"
+      },
+      "estado": 200,
+      "respuesta": {
+        "token": "eyJhbGciOiJIUzI1NiIs…",
+        "user": {
+          "id": "713f52b5-7328-4cb8-8d44-cfd59dd8b7f5",
+          "name": "Valentina Ruiz",
+          "email": "estudiante1@campus.edu.co",
+          "role": "STUDENT"
+        }
+      },
+      "ms": 133
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "caso": "CP-31",
+  "titulo": "CP-31 | BUG-08 | El token sigue sirviendo después de cerrar sesión",
+  "ejecucion": "ejecucion-3",
+  "fecha": "2026-11-17T01:55:46.114Z",
+  "estado": "Fallido",
+  "error": "Error: al cerrar sesión el token debería quedar inválido\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 401\nReceived: 200",
+  "pasos": [
+    {
+      "n": 1,
+      "peticion": "GET /api/auth/me",
+      "quien": "token de estudiante1 después de pulsar Salir",
+      "estado": 200,
+      "respuesta": {
+        "user": {
+          "id": "8d61d3b4-1907-4f2a-b562-340c554fe341",
+          "name": "Valentina Ruiz",
+          "email": "estudiante1@campus.edu.co",
+          "role": "STUDENT"
+        }
+      },
+      "ms": 47
+    }
+  ]
+}

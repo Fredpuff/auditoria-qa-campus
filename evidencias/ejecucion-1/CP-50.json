@@ -1,0 +1,1127 @@
+{
+  "caso": "CP-50",
+  "titulo": "CP-50 | Cuándo se agrupan dos reportes",
+  "ejecucion": "ejecucion-1",
+  "fecha": "2026-11-17T01:45:50.559Z",
+  "estado": "Aprobado",
+  "error": null,
+  "pasos": [
+    {
+      "n": 1,
+      "peticion": "POST /api/incidents",
+      "quien": "estudiante5",
+      "cuerpo": {
+        "spaceId": "d7d58898-7733-4951-bc03-c490785175c6",
+        "category": "ELECTRICAL",
+        "riskLevel": "LOW",
+        "description": "El proyector se apaga solo cada cinco minutos",
+        "hotspot": {
+          "x": -3,
+          "y": 2,
+          "z": 4
+        }
+      },
+      "estado": 201,
+      "respuesta": {
+        "id": "a847ba34-b54e-4312-b561-448883f5c53c",
+        "number": 87,
+        "code": "INC-00087",
+        "description": "El proyector se apaga solo cada cinco minutos",
+        "category": "ELECTRICAL",
+        "riskLevel": "LOW",
+        "status": "PENDING",
+        "priorityScore": 50.5,
+        "priorityLevel": "HIGH",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 30,
+            "weight": 0.35,
+            "contribution": 10.5
+          },
+          "space": {
+            "value": 100,
+            "weight": 0.1,
+            "contribution": 10
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 100,
+            "weight": 0.25,
+            "contribution": 25
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T05:45:45.957Z",
+        "resolutionDueAt": "2026-11-18T01:45:45.957Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:45:45.957Z",
+        "updatedAt": "2026-11-17T01:45:45.961Z",
+        "stageStartedAt": "2026-11-17T01:45:45.957Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": {
+          "x": -3,
+          "y": 2,
+          "z": 4
+        },
+        "space": {
+          "id": "d7d58898-7733-4951-bc03-c490785175c6",
+          "code": "202",
+          "name": "Sala de Cómputo 1",
+          "type": "LAB",
+          "floor": 2,
+          "capacity": 40,
+          "block": {
+            "id": "1d87c11b-b967-47ea-830c-8a779adb056a",
+            "code": "B",
+            "name": "Bloque B · Laboratorios"
+          },
+          "campus": {
+            "id": "9d3da020-a7b9-4b8c-8f69-615e560cb551",
+            "code": "PRI",
+            "name": "Sede Principal"
+          }
+        },
+        "reporter": {
+          "id": "766b859e-a959-4ab5-ad27-973fefb89ec6",
+          "name": "Sofía Castro",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null
+      },
+      "ms": 58
+    },
+    {
+      "n": 2,
+      "peticion": "POST /api/incidents",
+      "quien": "estudiante1",
+      "cuerpo": {
+        "spaceId": "d7d58898-7733-4951-bc03-c490785175c6",
+        "category": "ELECTRICAL",
+        "riskLevel": "LOW",
+        "description": "Cada cinco minutos el proyector se apaga solo",
+        "hotspot": {
+          "x": -3.5,
+          "y": 2,
+          "z": 4
+        }
+      },
+      "estado": 201,
+      "respuesta": {
+        "id": "8b01e73e-2559-4bd8-8fe8-48c3ee326f94",
+        "number": 88,
+        "code": "INC-00088",
+        "description": "Cada cinco minutos el proyector se apaga solo",
+        "category": "ELECTRICAL",
+        "riskLevel": "LOW",
+        "status": "PENDING",
+        "priorityScore": 50.5,
+        "priorityLevel": "HIGH",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 30,
+            "weight": 0.35,
+            "contribution": 10.5
+          },
+          "space": {
+            "value": 100,
+            "weight": 0.1,
+            "contribution": 10
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 100,
+            "weight": 0.25,
+            "contribution": 25
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T05:45:46.010Z",
+        "resolutionDueAt": "2026-11-18T01:45:46.010Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:45:46.010Z",
+        "updatedAt": "2026-11-17T01:45:46.012Z",
+        "stageStartedAt": "2026-11-17T01:45:46.010Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": {
+          "x": -3.5,
+          "y": 2,
+          "z": 4
+        },
+        "space": {
+          "id": "d7d58898-7733-4951-bc03-c490785175c6",
+          "code": "202",
+          "name": "Sala de Cómputo 1",
+          "type": "LAB",
+          "floor": 2,
+          "capacity": 40,
+          "block": {
+            "id": "1d87c11b-b967-47ea-830c-8a779adb056a",
+            "code": "B",
+            "name": "Bloque B · Laboratorios"
+          },
+          "campus": {
+            "id": "9d3da020-a7b9-4b8c-8f69-615e560cb551",
+            "code": "PRI",
+            "name": "Sede Principal"
+          }
+        },
+        "reporter": {
+          "id": "713f52b5-7328-4cb8-8d44-cfd59dd8b7f5",
+          "name": "Valentina Ruiz",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null
+      },
+      "ms": 40
+    },
+    {
+      "n": 3,
+      "peticion": "POST /api/incidents",
+      "quien": "estudiante2",
+      "cuerpo": {
+        "spaceId": "d7d58898-7733-4951-bc03-c490785175c6",
+        "category": "FURNITURE",
+        "riskLevel": "LOW",
+        "description": "Falta el espaldar de una silla giratoria",
+        "hotspot": null
+      },
+      "estado": 201,
+      "respuesta": {
+        "id": "aaed3e69-ec4d-49fc-b49c-f11f58e19ef7",
+        "number": 89,
+        "code": "INC-00089",
+        "description": "Falta el espaldar de una silla giratoria",
+        "category": "FURNITURE",
+        "riskLevel": "LOW",
+        "status": "PENDING",
+        "priorityScore": 35.5,
+        "priorityLevel": "MEDIUM",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 30,
+            "weight": 0.35,
+            "contribution": 10.5
+          },
+          "space": {
+            "value": 100,
+            "weight": 0.1,
+            "contribution": 10
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 40,
+            "weight": 0.25,
+            "contribution": 10
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T13:45:46.043Z",
+        "resolutionDueAt": "2026-11-20T01:45:46.043Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:45:46.043Z",
+        "updatedAt": "2026-11-17T01:45:46.045Z",
+        "stageStartedAt": "2026-11-17T01:45:46.043Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": null,
+        "space": {
+          "id": "d7d58898-7733-4951-bc03-c490785175c6",
+          "code": "202",
+          "name": "Sala de Cómputo 1",
+          "type": "LAB",
+          "floor": 2,
+          "capacity": 40,
+          "block": {
+            "id": "1d87c11b-b967-47ea-830c-8a779adb056a",
+            "code": "B",
+            "name": "Bloque B · Laboratorios"
+          },
+          "campus": {
+            "id": "9d3da020-a7b9-4b8c-8f69-615e560cb551",
+            "code": "PRI",
+            "name": "Sede Principal"
+          }
+        },
+        "reporter": {
+          "id": "1d59cb73-da3b-458e-9e47-507107691453",
+          "name": "Santiago Herrera",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null
+      },
+      "ms": 40
+    },
+    {
+      "n": 4,
+      "peticion": "POST /api/incidents",
+      "quien": "estudiante3",
+      "cuerpo": {
+        "spaceId": "41c1bb8d-dc67-4975-9d56-cf74fee864be",
+        "category": "ELECTRICAL",
+        "riskLevel": "LOW",
+        "description": "El proyector se apaga solo cada cinco minutos",
+        "hotspot": null
+      },
+      "estado": 201,
+      "respuesta": {
+        "id": "3f346596-7109-409d-a21c-0fb56bc9f83e",
+        "number": 90,
+        "code": "INC-00090",
+        "description": "El proyector se apaga solo cada cinco minutos",
+        "category": "ELECTRICAL",
+        "riskLevel": "LOW",
+        "status": "PENDING",
+        "priorityScore": 50.5,
+        "priorityLevel": "HIGH",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 30,
+            "weight": 0.35,
+            "contribution": 10.5
+          },
+          "space": {
+            "value": 100,
+            "weight": 0.1,
+            "contribution": 10
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 100,
+            "weight": 0.25,
+            "contribution": 25
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T05:45:46.439Z",
+        "resolutionDueAt": "2026-11-18T01:45:46.439Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:45:46.439Z",
+        "updatedAt": "2026-11-17T01:45:46.442Z",
+        "stageStartedAt": "2026-11-17T01:45:46.439Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": null,
+        "space": {
+          "id": "41c1bb8d-dc67-4975-9d56-cf74fee864be",
+          "code": "101",
+          "name": "Laboratorio de Biología",
+          "type": "LAB",
+          "floor": 1,
+          "capacity": 26,
+          "block": {
+            "id": "446b2bba-6bd6-47a0-804b-b1e1e0a57f68",
+            "code": "F",
+            "name": "Bloque F · Laboratorios"
+          },
+          "campus": {
+            "id": "d13b72e9-002b-4bdc-a642-7ff811b30038",
+            "code": "NOR",
+            "name": "Sede Norte"
+          }
+        },
+        "reporter": {
+          "id": "8f8d016d-c598-4abf-9c26-6af40a143182",
+          "name": "Camila Ortiz",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null
+      },
+      "ms": 29
+    },
+    {
+      "n": 5,
+      "peticion": "GET /api/incidents/8b01e73e-2559-4bd8-8fe8-48c3ee326f94",
+      "quien": "supervisor",
+      "estado": 200,
+      "respuesta": {
+        "id": "8b01e73e-2559-4bd8-8fe8-48c3ee326f94",
+        "number": 88,
+        "code": "INC-00088",
+        "description": "Cada cinco minutos el proyector se apaga solo",
+        "category": "ELECTRICAL",
+        "riskLevel": "LOW",
+        "status": "PENDING",
+        "priorityScore": 53.4,
+        "priorityLevel": "HIGH",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 30,
+            "weight": 0.35,
+            "contribution": 10.5
+          },
+          "space": {
+            "value": 100,
+            "weight": 0.1,
+            "contribution": 10
+          },
+          "similar": {
+            "value": 39.6,
+            "weight": 0.2,
+            "contribution": 7.9
+          },
+          "damageType": {
+            "value": 100,
+            "weight": 0.25,
+            "contribution": 25
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T05:45:45.957Z",
+        "resolutionDueAt": "2026-11-18T01:45:45.957Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:45:46.010Z",
+        "updatedAt": "2026-11-17T01:45:46.122Z",
+        "stageStartedAt": "2026-11-17T01:45:46.010Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": {
+          "x": -3.5,
+          "y": 2,
+          "z": 4
+        },
+        "space": {
+          "id": "d7d58898-7733-4951-bc03-c490785175c6",
+          "code": "202",
+          "name": "Sala de Cómputo 1",
+          "type": "LAB",
+          "floor": 2,
+          "capacity": 40,
+          "block": {
+            "id": "1d87c11b-b967-47ea-830c-8a779adb056a",
+            "code": "B",
+            "name": "Bloque B · Laboratorios"
+          },
+          "campus": {
+            "id": "9d3da020-a7b9-4b8c-8f69-615e560cb551",
+            "code": "PRI",
+            "name": "Sede Principal"
+          }
+        },
+        "reporter": {
+          "id": "713f52b5-7328-4cb8-8d44-cfd59dd8b7f5",
+          "name": "Valentina Ruiz",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": "6eb0e567-f10e-4419-a1bd-7eb2209c6fda",
+        "isClusterPrimary": false,
+        "clusterSize": 2,
+        "thumbnailUrl": null,
+        "evidence": [],
+        "history": [
+          {
+            "id": "88ce6176-85bb-4130-8fde-129b9992bf16",
+            "fromStatus": null,
+            "toStatus": "PENDING",
+            "changedBy": {
+              "id": "713f52b5-7328-4cb8-8d44-cfd59dd8b7f5",
+              "name": "Valentina Ruiz",
+              "role": "STUDENT"
+            },
+            "changedAt": "2026-11-17T01:45:46.010Z",
+            "durationInPrevMs": null,
+            "reason": "MANUAL",
+            "note": null
+          }
+        ],
+        "events": [
+          {
+            "id": "1d30e67e-6c2c-4e85-a117-1a36ba87c572",
+            "type": "CREATED",
+            "payload": {
+              "level": "HIGH",
+              "score": 50.5,
+              "breakdown": {
+                "age": {
+                  "value": 0,
+                  "weight": 0.1,
+                  "contribution": 0
+                },
+                "risk": {
+                  "value": 30,
+                  "weight": 0.35,
+                  "contribution": 10.5
+                },
+                "space": {
+                  "value": 100,
+                  "weight": 0.1,
+                  "contribution": 10
+                },
+                "similar": {
+                  "value": 25,
+                  "weight": 0.2,
+                  "contribution": 5
+                },
+                "damageType": {
+                  "value": 100,
+                  "weight": 0.25,
+                  "contribution": 25
+                }
+              },
+              "joinIncidentId": null
+            },
+            "actor": {
+              "id": "713f52b5-7328-4cb8-8d44-cfd59dd8b7f5",
+              "name": "Valentina Ruiz",
+              "role": "STUDENT"
+            },
+            "createdAt": "2026-11-17T01:45:46.017Z"
+          },
+          {
+            "id": "e3395257-97a0-4b1a-ac49-2fd9a046a96b",
+            "type": "GROUPED",
+            "payload": {
+              "mode": "auto",
+              "moved": 1,
+              "clusterId": "6eb0e567-f10e-4419-a1bd-7eb2209c6fda",
+              "similarity": {
+                "text": 1,
+                "time": 1,
+                "score": 1,
+                "category": 1,
+                "location": 1,
+                "textSource": "tfidf",
+                "hotspotDistance": 0.5
+              },
+              "primaryIncidentId": "a847ba34-b54e-4312-b561-448883f5c53c"
+            },
+            "actor": null,
+            "createdAt": "2026-11-17T01:45:46.103Z"
+          }
+        ],
+        "clusterMembers": [
+          {
+            "id": "a847ba34-b54e-4312-b561-448883f5c53c",
+            "code": "INC-00087",
+            "description": "El proyector se apaga solo cada cinco minutos",
+            "status": "PENDING",
+            "createdAt": "2026-11-17T01:45:45.957Z",
+            "isClusterPrimary": true,
+            "reporterName": "Sofía Castro",
+            "similarity": null
+          },
+          {
+            "id": "8b01e73e-2559-4bd8-8fe8-48c3ee326f94",
+            "code": "INC-00088",
+            "description": "Cada cinco minutos el proyector se apaga solo",
+            "status": "PENDING",
+            "createdAt": "2026-11-17T01:45:46.010Z",
+            "isClusterPrimary": false,
+            "reporterName": "Valentina Ruiz",
+            "similarity": {
+              "text": 1,
+              "time": 1,
+              "score": 1,
+              "category": 1,
+              "location": 1,
+              "textSource": "tfidf",
+              "hotspotDistance": 0.5
+            }
+          }
+        ],
+        "availableTransitions": []
+      },
+      "ms": 23
+    },
+    {
+      "n": 6,
+      "peticion": "GET /api/incidents/a847ba34-b54e-4312-b561-448883f5c53c",
+      "quien": "supervisor",
+      "estado": 200,
+      "respuesta": {
+        "id": "a847ba34-b54e-4312-b561-448883f5c53c",
+        "number": 87,
+        "code": "INC-00087",
+        "description": "El proyector se apaga solo cada cinco minutos",
+        "category": "ELECTRICAL",
+        "riskLevel": "LOW",
+        "status": "PENDING",
+        "priorityScore": 53.4,
+        "priorityLevel": "HIGH",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 30,
+            "weight": 0.35,
+            "contribution": 10.5
+          },
+          "space": {
+            "value": 100,
+            "weight": 0.1,
+            "contribution": 10
+          },
+          "similar": {
+            "value": 39.6,
+            "weight": 0.2,
+            "contribution": 7.9
+          },
+          "damageType": {
+            "value": 100,
+            "weight": 0.25,
+            "contribution": 25
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T05:45:45.957Z",
+        "resolutionDueAt": "2026-11-18T01:45:45.957Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:45:45.957Z",
+        "updatedAt": "2026-11-17T01:45:46.122Z",
+        "stageStartedAt": "2026-11-17T01:45:45.957Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": {
+          "x": -3,
+          "y": 2,
+          "z": 4
+        },
+        "space": {
+          "id": "d7d58898-7733-4951-bc03-c490785175c6",
+          "code": "202",
+          "name": "Sala de Cómputo 1",
+          "type": "LAB",
+          "floor": 2,
+          "capacity": 40,
+          "block": {
+            "id": "1d87c11b-b967-47ea-830c-8a779adb056a",
+            "code": "B",
+            "name": "Bloque B · Laboratorios"
+          },
+          "campus": {
+            "id": "9d3da020-a7b9-4b8c-8f69-615e560cb551",
+            "code": "PRI",
+            "name": "Sede Principal"
+          }
+        },
+        "reporter": {
+          "id": "766b859e-a959-4ab5-ad27-973fefb89ec6",
+          "name": "Sofía Castro",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": "6eb0e567-f10e-4419-a1bd-7eb2209c6fda",
+        "isClusterPrimary": true,
+        "clusterSize": 2,
+        "thumbnailUrl": null,
+        "evidence": [],
+        "history": [
+          {
+            "id": "99e1984a-1e0a-42a4-8664-a205c4fe0ad9",
+            "fromStatus": null,
+            "toStatus": "PENDING",
+            "changedBy": {
+              "id": "766b859e-a959-4ab5-ad27-973fefb89ec6",
+              "name": "Sofía Castro",
+              "role": "STUDENT"
+            },
+            "changedAt": "2026-11-17T01:45:45.957Z",
+            "durationInPrevMs": null,
+            "reason": "MANUAL",
+            "note": null
+          }
+        ],
+        "events": [
+          {
+            "id": "e03cef87-ccbc-4371-bce7-d1ba1021fa71",
+            "type": "CREATED",
+            "payload": {
+              "level": "HIGH",
+              "score": 50.5,
+              "breakdown": {
+                "age": {
+                  "value": 0,
+                  "weight": 0.1,
+                  "contribution": 0
+                },
+                "risk": {
+                  "value": 30,
+                  "weight": 0.35,
+                  "contribution": 10.5
+                },
+                "space": {
+                  "value": 100,
+                  "weight": 0.1,
+                  "contribution": 10
+                },
+                "similar": {
+                  "value": 25,
+                  "weight": 0.2,
+                  "contribution": 5
+                },
+                "damageType": {
+                  "value": 100,
+                  "weight": 0.25,
+                  "contribution": 25
+                }
+              },
+              "joinIncidentId": null
+            },
+            "actor": {
+              "id": "766b859e-a959-4ab5-ad27-973fefb89ec6",
+              "name": "Sofía Castro",
+              "role": "STUDENT"
+            },
+            "createdAt": "2026-11-17T01:45:45.969Z"
+          },
+          {
+            "id": "9cd2cc0b-0c87-4486-a1df-c9669a9c89aa",
+            "type": "GROUPED",
+            "payload": {
+              "mode": "auto",
+              "clusterId": "6eb0e567-f10e-4419-a1bd-7eb2209c6fda",
+              "similarity": {
+                "text": 1,
+                "time": 1,
+                "score": 1,
+                "category": 1,
+                "location": 1,
+                "textSource": "tfidf",
+                "hotspotDistance": 0.5
+              },
+              "reportsCount": 2,
+              "joinedIncidentId": "8b01e73e-2559-4bd8-8fe8-48c3ee326f94"
+            },
+            "actor": null,
+            "createdAt": "2026-11-17T01:45:46.104Z"
+          }
+        ],
+        "clusterMembers": [
+          {
+            "id": "a847ba34-b54e-4312-b561-448883f5c53c",
+            "code": "INC-00087",
+            "description": "El proyector se apaga solo cada cinco minutos",
+            "status": "PENDING",
+            "createdAt": "2026-11-17T01:45:45.957Z",
+            "isClusterPrimary": true,
+            "reporterName": "Sofía Castro",
+            "similarity": null
+          },
+          {
+            "id": "8b01e73e-2559-4bd8-8fe8-48c3ee326f94",
+            "code": "INC-00088",
+            "description": "Cada cinco minutos el proyector se apaga solo",
+            "status": "PENDING",
+            "createdAt": "2026-11-17T01:45:46.010Z",
+            "isClusterPrimary": false,
+            "reporterName": "Valentina Ruiz",
+            "similarity": {
+              "text": 1,
+              "time": 1,
+              "score": 1,
+              "category": 1,
+              "location": 1,
+              "textSource": "tfidf",
+              "hotspotDistance": 0.5
+            }
+          }
+        ],
+        "availableTransitions": [
+          {
+            "from": "PENDING",
+            "to": "IN_PROGRESS",
+            "roles": [
+              "TECHNICIAN",
+              "SUPERVISOR"
+            ],
+            "label": "Tomar caso",
+            "description": "El técnico toma el caso o el supervisor lo asigna"
+          }
+        ]
+      },
+      "ms": 22
+    },
+    {
+      "n": 7,
+      "peticion": "GET /api/incidents/aaed3e69-ec4d-49fc-b49c-f11f58e19ef7",
+      "quien": "supervisor",
+      "estado": 200,
+      "respuesta": {
+        "id": "aaed3e69-ec4d-49fc-b49c-f11f58e19ef7",
+        "number": 89,
+        "code": "INC-00089",
+        "description": "Falta el espaldar de una silla giratoria",
+        "category": "FURNITURE",
+        "riskLevel": "LOW",
+        "status": "PENDING",
+        "priorityScore": 35.5,
+        "priorityLevel": "MEDIUM",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 30,
+            "weight": 0.35,
+            "contribution": 10.5
+          },
+          "space": {
+            "value": 100,
+            "weight": 0.1,
+            "contribution": 10
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 40,
+            "weight": 0.25,
+            "contribution": 10
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T13:45:46.043Z",
+        "resolutionDueAt": "2026-11-20T01:45:46.043Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:45:46.043Z",
+        "updatedAt": "2026-11-17T01:45:46.045Z",
+        "stageStartedAt": "2026-11-17T01:45:46.043Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": null,
+        "space": {
+          "id": "d7d58898-7733-4951-bc03-c490785175c6",
+          "code": "202",
+          "name": "Sala de Cómputo 1",
+          "type": "LAB",
+          "floor": 2,
+          "capacity": 40,
+          "block": {
+            "id": "1d87c11b-b967-47ea-830c-8a779adb056a",
+            "code": "B",
+            "name": "Bloque B · Laboratorios"
+          },
+          "campus": {
+            "id": "9d3da020-a7b9-4b8c-8f69-615e560cb551",
+            "code": "PRI",
+            "name": "Sede Principal"
+          }
+        },
+        "reporter": {
+          "id": "1d59cb73-da3b-458e-9e47-507107691453",
+          "name": "Santiago Herrera",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null,
+        "evidence": [],
+        "history": [
+          {
+            "id": "a48c35fc-aad1-47c8-91e2-5aa7d098bcc9",
+            "fromStatus": null,
+            "toStatus": "PENDING",
+            "changedBy": {
+              "id": "1d59cb73-da3b-458e-9e47-507107691453",
+              "name": "Santiago Herrera",
+              "role": "STUDENT"
+            },
+            "changedAt": "2026-11-17T01:45:46.043Z",
+            "durationInPrevMs": null,
+            "reason": "MANUAL",
+            "note": null
+          }
+        ],
+        "events": [
+          {
+            "id": "a3d81ce4-af5e-4022-9fef-898250134157",
+            "type": "CREATED",
+            "payload": {
+              "level": "MEDIUM",
+              "score": 35.5,
+              "breakdown": {
+                "age": {
+                  "value": 0,
+                  "weight": 0.1,
+                  "contribution": 0
+                },
+                "risk": {
+                  "value": 30,
+                  "weight": 0.35,
+                  "contribution": 10.5
+                },
+                "space": {
+                  "value": 100,
+                  "weight": 0.1,
+                  "contribution": 10
+                },
+                "similar": {
+                  "value": 25,
+                  "weight": 0.2,
+                  "contribution": 5
+                },
+                "damageType": {
+                  "value": 40,
+                  "weight": 0.25,
+                  "contribution": 10
+                }
+              },
+              "joinIncidentId": null
+            },
+            "actor": {
+              "id": "1d59cb73-da3b-458e-9e47-507107691453",
+              "name": "Santiago Herrera",
+              "role": "STUDENT"
+            },
+            "createdAt": "2026-11-17T01:45:46.057Z"
+          }
+        ],
+        "clusterMembers": [],
+        "availableTransitions": [
+          {
+            "from": "PENDING",
+            "to": "IN_PROGRESS",
+            "roles": [
+              "TECHNICIAN",
+              "SUPERVISOR"
+            ],
+            "label": "Tomar caso",
+            "description": "El técnico toma el caso o el supervisor lo asigna"
+          }
+        ]
+      },
+      "ms": 18
+    },
+    {
+      "n": 8,
+      "peticion": "GET /api/incidents/3f346596-7109-409d-a21c-0fb56bc9f83e",
+      "quien": "supervisor",
+      "estado": 200,
+      "respuesta": {
+        "id": "3f346596-7109-409d-a21c-0fb56bc9f83e",
+        "number": 90,
+        "code": "INC-00090",
+        "description": "El proyector se apaga solo cada cinco minutos",
+        "category": "ELECTRICAL",
+        "riskLevel": "LOW",
+        "status": "PENDING",
+        "priorityScore": 50.5,
+        "priorityLevel": "HIGH",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 30,
+            "weight": 0.35,
+            "contribution": 10.5
+          },
+          "space": {
+            "value": 100,
+            "weight": 0.1,
+            "contribution": 10
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 100,
+            "weight": 0.25,
+            "contribution": 25
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T05:45:46.439Z",
+        "resolutionDueAt": "2026-11-18T01:45:46.439Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:45:46.439Z",
+        "updatedAt": "2026-11-17T01:45:46.442Z",
+        "stageStartedAt": "2026-11-17T01:45:46.439Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": null,
+        "space": {
+          "id": "41c1bb8d-dc67-4975-9d56-cf74fee864be",
+          "code": "101",
+          "name": "Laboratorio de Biología",
+          "type": "LAB",
+          "floor": 1,
+          "capacity": 26,
+          "block": {
+            "id": "446b2bba-6bd6-47a0-804b-b1e1e0a57f68",
+            "code": "F",
+            "name": "Bloque F · Laboratorios"
+          },
+          "campus": {
+            "id": "d13b72e9-002b-4bdc-a642-7ff811b30038",
+            "code": "NOR",
+            "name": "Sede Norte"
+          }
+        },
+        "reporter": {
+          "id": "8f8d016d-c598-4abf-9c26-6af40a143182",
+          "name": "Camila Ortiz",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null,
+        "evidence": [],
+        "history": [
+          {
+            "id": "e5839416-6478-4413-9691-3de74dc4a8b7",
+            "fromStatus": null,
+            "toStatus": "PENDING",
+            "changedBy": {
+              "id": "8f8d016d-c598-4abf-9c26-6af40a143182",
+              "name": "Camila Ortiz",
+              "role": "STUDENT"
+            },
+            "changedAt": "2026-11-17T01:45:46.439Z",
+            "durationInPrevMs": null,
+            "reason": "MANUAL",
+            "note": null
+          }
+        ],
+        "events": [
+          {
+            "id": "18a94b1a-56f4-44d3-88b2-c71e91512733",
+            "type": "CREATED",
+            "payload": {
+              "level": "HIGH",
+              "score": 50.5,
+              "breakdown": {
+                "age": {
+                  "value": 0,
+                  "weight": 0.1,
+                  "contribution": 0
+                },
+                "risk": {
+                  "value": 30,
+                  "weight": 0.35,
+                  "contribution": 10.5
+                },
+                "space": {
+                  "value": 100,
+                  "weight": 0.1,
+                  "contribution": 10
+                },
+                "similar": {
+                  "value": 25,
+                  "weight": 0.2,
+                  "contribution": 5
+                },
+                "damageType": {
+                  "value": 100,
+                  "weight": 0.25,
+                  "contribution": 25
+                }
+              },
+              "joinIncidentId": null
+            },
+            "actor": {
+              "id": "8f8d016d-c598-4abf-9c26-6af40a143182",
+              "name": "Camila Ortiz",
+              "role": "STUDENT"
+            },
+            "createdAt": "2026-11-17T01:45:46.446Z"
+          }
+        ],
+        "clusterMembers": [],
+        "availableTransitions": [
+          {
+            "from": "PENDING",
+            "to": "IN_PROGRESS",
+            "roles": [
+              "TECHNICIAN",
+              "SUPERVISOR"
+            ],
+            "label": "Tomar caso",
+            "description": "El técnico toma el caso o el supervisor lo asigna"
+          }
+        ]
+      },
+      "ms": 20
+    }
+  ]
+}

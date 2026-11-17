@@ -1,0 +1,124 @@
+{
+  "caso": "CP-35",
+  "titulo": "CP-35 | Texto con HTML en la descripción se muestra como texto",
+  "ejecucion": "ejecucion-1",
+  "fecha": "2026-11-17T01:46:20.991Z",
+  "estado": "Aprobado",
+  "error": null,
+  "pasos": [
+    {
+      "n": 1,
+      "peticion": "POST /api/incidents",
+      "quien": "estudiante2",
+      "cuerpo": {
+        "spaceId": "47dc3286-0003-4b2b-90ea-20941ae454b2",
+        "category": "COSMETIC",
+        "riskLevel": "NONE",
+        "description": "<img src=x onerror=\"window.__xss=1\"> Pizarra manchada con marcador permanente",
+        "hotspot": null
+      },
+      "estado": 201,
+      "respuesta": {
+        "id": "fc281201-8cdb-45f8-8713-a915b698db21",
+        "number": 103,
+        "code": "INC-00103",
+        "description": "<img src=x onerror=\"window.__xss=1\"> Pizarra manchada con marcador permanente",
+        "category": "COSMETIC",
+        "riskLevel": "NONE",
+        "status": "PENDING",
+        "priorityScore": 18.8,
+        "priorityLevel": "LOW",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 0,
+            "weight": 0.35,
+            "contribution": 0
+          },
+          "space": {
+            "value": 100,
+            "weight": 0.1,
+            "contribution": 10
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 15,
+            "weight": 0.25,
+            "contribution": 3.8
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-19T01:46:15.309Z",
+        "resolutionDueAt": "2026-11-24T01:46:15.309Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:46:15.309Z",
+        "updatedAt": "2026-11-17T01:46:15.313Z",
+        "stageStartedAt": "2026-11-17T01:46:15.309Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": null,
+        "space": {
+          "id": "47dc3286-0003-4b2b-90ea-20941ae454b2",
+          "code": "201",
+          "name": "Laboratorio de Física",
+          "type": "LAB",
+          "floor": 2,
+          "capacity": 30,
+          "block": {
+            "id": "1d87c11b-b967-47ea-830c-8a779adb056a",
+            "code": "B",
+            "name": "Bloque B · Laboratorios"
+          },
+          "campus": {
+            "id": "9d3da020-a7b9-4b8c-8f69-615e560cb551",
+            "code": "PRI",
+            "name": "Sede Principal"
+          }
+        },
+        "reporter": {
+          "id": "1d59cb73-da3b-458e-9e47-507107691453",
+          "name": "Santiago Herrera",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null
+      },
+      "ms": 70
+    },
+    {
+      "n": 2,
+      "peticion": "POST /api/incidents/fc281201-8cdb-45f8-8713-a915b698db21/comments",
+      "quien": "estudiante2",
+      "cuerpo": {
+        "text": "<script>window.__xss=2</script><b>sigue igual</b>"
+      },
+      "estado": 204,
+      "respuesta": null,
+      "ms": 26
+    },
+    {
+      "n": 3,
+      "peticion": "Revisión en el navegador",
+      "quien": "-",
+      "estado": 0,
+      "respuesta": {
+        "ventanasEmergentes": [],
+        "variableInyectada": null
+      },
+      "ms": 0
+    }
+  ]
+}

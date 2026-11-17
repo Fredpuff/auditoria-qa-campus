@@ -1,0 +1,1001 @@
+{
+  "caso": "CP-24",
+  "titulo": "CP-24 | Dos estudiantes reportan el mismo daño y quedan agrupados",
+  "ejecucion": "ejecucion-1",
+  "fecha": "2026-11-17T01:44:45.395Z",
+  "estado": "Aprobado",
+  "error": null,
+  "pasos": [
+    {
+      "n": 1,
+      "peticion": "POST /api/incidents",
+      "quien": "estudiante2",
+      "cuerpo": {
+        "spaceId": "f3779dcd-4da8-48a1-a4ee-20ce240e97cc",
+        "category": "WATER_LEAK",
+        "riskLevel": "MEDIUM",
+        "description": "Gotea el aire acondicionado sobre la mesa larga",
+        "hotspot": {
+          "x": 2,
+          "y": 2.5,
+          "z": 1
+        }
+      },
+      "estado": 201,
+      "respuesta": {
+        "id": "6eaf710b-0000-4b96-bfbb-0abea9bbc9c6",
+        "number": 66,
+        "code": "INC-00066",
+        "description": "Gotea el aire acondicionado sobre la mesa larga",
+        "category": "WATER_LEAK",
+        "riskLevel": "MEDIUM",
+        "status": "PENDING",
+        "priorityScore": 52.6,
+        "priorityLevel": "HIGH",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 60,
+            "weight": 0.35,
+            "contribution": 21
+          },
+          "space": {
+            "value": 66,
+            "weight": 0.1,
+            "contribution": 6.6
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 80,
+            "weight": 0.25,
+            "contribution": 20
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T05:44:44.710Z",
+        "resolutionDueAt": "2026-11-18T01:44:44.710Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:44:44.710Z",
+        "updatedAt": "2026-11-17T01:44:44.713Z",
+        "stageStartedAt": "2026-11-17T01:44:44.710Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": {
+          "x": 2,
+          "y": 2.5,
+          "z": 1
+        },
+        "space": {
+          "id": "f3779dcd-4da8-48a1-a4ee-20ce240e97cc",
+          "code": "LOU",
+          "name": "Zona de estudio",
+          "type": "COMMON",
+          "floor": 2,
+          "capacity": 60,
+          "block": {
+            "id": "446b2bba-6bd6-47a0-804b-b1e1e0a57f68",
+            "code": "F",
+            "name": "Bloque F · Laboratorios"
+          },
+          "campus": {
+            "id": "d13b72e9-002b-4bdc-a642-7ff811b30038",
+            "code": "NOR",
+            "name": "Sede Norte"
+          }
+        },
+        "reporter": {
+          "id": "1d59cb73-da3b-458e-9e47-507107691453",
+          "name": "Santiago Herrera",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null
+      },
+      "ms": 47
+    },
+    {
+      "n": 2,
+      "peticion": "POST /api/incidents",
+      "quien": "estudiante3",
+      "cuerpo": {
+        "spaceId": "f3779dcd-4da8-48a1-a4ee-20ce240e97cc",
+        "category": "WATER_LEAK",
+        "riskLevel": "MEDIUM",
+        "description": "El aire acondicionado gotea encima de la mesa larga",
+        "hotspot": {
+          "x": 2.5,
+          "y": 2.5,
+          "z": 1
+        }
+      },
+      "estado": 201,
+      "respuesta": {
+        "id": "22880477-2a67-4433-88a0-66d67d84655c",
+        "number": 67,
+        "code": "INC-00067",
+        "description": "El aire acondicionado gotea encima de la mesa larga",
+        "category": "WATER_LEAK",
+        "riskLevel": "MEDIUM",
+        "status": "PENDING",
+        "priorityScore": 52.6,
+        "priorityLevel": "HIGH",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 60,
+            "weight": 0.35,
+            "contribution": 21
+          },
+          "space": {
+            "value": 66,
+            "weight": 0.1,
+            "contribution": 6.6
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 80,
+            "weight": 0.25,
+            "contribution": 20
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T05:44:44.755Z",
+        "resolutionDueAt": "2026-11-18T01:44:44.755Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:44:44.755Z",
+        "updatedAt": "2026-11-17T01:44:44.759Z",
+        "stageStartedAt": "2026-11-17T01:44:44.755Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": {
+          "x": 2.5,
+          "y": 2.5,
+          "z": 1
+        },
+        "space": {
+          "id": "f3779dcd-4da8-48a1-a4ee-20ce240e97cc",
+          "code": "LOU",
+          "name": "Zona de estudio",
+          "type": "COMMON",
+          "floor": 2,
+          "capacity": 60,
+          "block": {
+            "id": "446b2bba-6bd6-47a0-804b-b1e1e0a57f68",
+            "code": "F",
+            "name": "Bloque F · Laboratorios"
+          },
+          "campus": {
+            "id": "d13b72e9-002b-4bdc-a642-7ff811b30038",
+            "code": "NOR",
+            "name": "Sede Norte"
+          }
+        },
+        "reporter": {
+          "id": "8f8d016d-c598-4abf-9c26-6af40a143182",
+          "name": "Camila Ortiz",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null
+      },
+      "ms": 34
+    },
+    {
+      "n": 3,
+      "peticion": "GET /api/incidents/22880477-2a67-4433-88a0-66d67d84655c",
+      "quien": "supervisor",
+      "estado": 200,
+      "respuesta": {
+        "id": "22880477-2a67-4433-88a0-66d67d84655c",
+        "number": 67,
+        "code": "INC-00067",
+        "description": "El aire acondicionado gotea encima de la mesa larga",
+        "category": "WATER_LEAK",
+        "riskLevel": "MEDIUM",
+        "status": "PENDING",
+        "priorityScore": 52.6,
+        "priorityLevel": "HIGH",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 60,
+            "weight": 0.35,
+            "contribution": 21
+          },
+          "space": {
+            "value": 66,
+            "weight": 0.1,
+            "contribution": 6.6
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 80,
+            "weight": 0.25,
+            "contribution": 20
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T05:44:44.755Z",
+        "resolutionDueAt": "2026-11-18T01:44:44.755Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:44:44.755Z",
+        "updatedAt": "2026-11-17T01:44:44.759Z",
+        "stageStartedAt": "2026-11-17T01:44:44.755Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": {
+          "x": 2.5,
+          "y": 2.5,
+          "z": 1
+        },
+        "space": {
+          "id": "f3779dcd-4da8-48a1-a4ee-20ce240e97cc",
+          "code": "LOU",
+          "name": "Zona de estudio",
+          "type": "COMMON",
+          "floor": 2,
+          "capacity": 60,
+          "block": {
+            "id": "446b2bba-6bd6-47a0-804b-b1e1e0a57f68",
+            "code": "F",
+            "name": "Bloque F · Laboratorios"
+          },
+          "campus": {
+            "id": "d13b72e9-002b-4bdc-a642-7ff811b30038",
+            "code": "NOR",
+            "name": "Sede Norte"
+          }
+        },
+        "reporter": {
+          "id": "8f8d016d-c598-4abf-9c26-6af40a143182",
+          "name": "Camila Ortiz",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null,
+        "evidence": [],
+        "history": [
+          {
+            "id": "e08b14f3-cc47-4871-b1a0-72619df7e8b0",
+            "fromStatus": null,
+            "toStatus": "PENDING",
+            "changedBy": {
+              "id": "8f8d016d-c598-4abf-9c26-6af40a143182",
+              "name": "Camila Ortiz",
+              "role": "STUDENT"
+            },
+            "changedAt": "2026-11-17T01:44:44.755Z",
+            "durationInPrevMs": null,
+            "reason": "MANUAL",
+            "note": null
+          }
+        ],
+        "events": [
+          {
+            "id": "856b03f5-29e0-47df-8460-7637d048441d",
+            "type": "CREATED",
+            "payload": {
+              "level": "HIGH",
+              "score": 52.6,
+              "breakdown": {
+                "age": {
+                  "value": 0,
+                  "weight": 0.1,
+                  "contribution": 0
+                },
+                "risk": {
+                  "value": 60,
+                  "weight": 0.35,
+                  "contribution": 21
+                },
+                "space": {
+                  "value": 66,
+                  "weight": 0.1,
+                  "contribution": 6.6
+                },
+                "similar": {
+                  "value": 25,
+                  "weight": 0.2,
+                  "contribution": 5
+                },
+                "damageType": {
+                  "value": 80,
+                  "weight": 0.25,
+                  "contribution": 20
+                }
+              },
+              "joinIncidentId": null
+            },
+            "actor": {
+              "id": "8f8d016d-c598-4abf-9c26-6af40a143182",
+              "name": "Camila Ortiz",
+              "role": "STUDENT"
+            },
+            "createdAt": "2026-11-17T01:44:44.764Z"
+          }
+        ],
+        "clusterMembers": [],
+        "availableTransitions": [
+          {
+            "from": "PENDING",
+            "to": "IN_PROGRESS",
+            "roles": [
+              "TECHNICIAN",
+              "SUPERVISOR"
+            ],
+            "label": "Tomar caso",
+            "description": "El técnico toma el caso o el supervisor lo asigna"
+          }
+        ]
+      },
+      "ms": 19
+    },
+    {
+      "n": 4,
+      "peticion": "GET /api/incidents/22880477-2a67-4433-88a0-66d67d84655c",
+      "quien": "supervisor",
+      "estado": 200,
+      "respuesta": {
+        "id": "22880477-2a67-4433-88a0-66d67d84655c",
+        "number": 67,
+        "code": "INC-00067",
+        "description": "El aire acondicionado gotea encima de la mesa larga",
+        "category": "WATER_LEAK",
+        "riskLevel": "MEDIUM",
+        "status": "PENDING",
+        "priorityScore": 55.5,
+        "priorityLevel": "HIGH",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 60,
+            "weight": 0.35,
+            "contribution": 21
+          },
+          "space": {
+            "value": 66,
+            "weight": 0.1,
+            "contribution": 6.6
+          },
+          "similar": {
+            "value": 39.6,
+            "weight": 0.2,
+            "contribution": 7.9
+          },
+          "damageType": {
+            "value": 80,
+            "weight": 0.25,
+            "contribution": 20
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T05:44:44.710Z",
+        "resolutionDueAt": "2026-11-18T01:44:44.710Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:44:44.755Z",
+        "updatedAt": "2026-11-17T01:44:44.888Z",
+        "stageStartedAt": "2026-11-17T01:44:44.755Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": {
+          "x": 2.5,
+          "y": 2.5,
+          "z": 1
+        },
+        "space": {
+          "id": "f3779dcd-4da8-48a1-a4ee-20ce240e97cc",
+          "code": "LOU",
+          "name": "Zona de estudio",
+          "type": "COMMON",
+          "floor": 2,
+          "capacity": 60,
+          "block": {
+            "id": "446b2bba-6bd6-47a0-804b-b1e1e0a57f68",
+            "code": "F",
+            "name": "Bloque F · Laboratorios"
+          },
+          "campus": {
+            "id": "d13b72e9-002b-4bdc-a642-7ff811b30038",
+            "code": "NOR",
+            "name": "Sede Norte"
+          }
+        },
+        "reporter": {
+          "id": "8f8d016d-c598-4abf-9c26-6af40a143182",
+          "name": "Camila Ortiz",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": "1f55fa0f-c693-41a5-9d7b-0c3fb2de3ba0",
+        "isClusterPrimary": false,
+        "clusterSize": 2,
+        "thumbnailUrl": null,
+        "evidence": [],
+        "history": [
+          {
+            "id": "e08b14f3-cc47-4871-b1a0-72619df7e8b0",
+            "fromStatus": null,
+            "toStatus": "PENDING",
+            "changedBy": {
+              "id": "8f8d016d-c598-4abf-9c26-6af40a143182",
+              "name": "Camila Ortiz",
+              "role": "STUDENT"
+            },
+            "changedAt": "2026-11-17T01:44:44.755Z",
+            "durationInPrevMs": null,
+            "reason": "MANUAL",
+            "note": null
+          }
+        ],
+        "events": [
+          {
+            "id": "856b03f5-29e0-47df-8460-7637d048441d",
+            "type": "CREATED",
+            "payload": {
+              "level": "HIGH",
+              "score": 52.6,
+              "breakdown": {
+                "age": {
+                  "value": 0,
+                  "weight": 0.1,
+                  "contribution": 0
+                },
+                "risk": {
+                  "value": 60,
+                  "weight": 0.35,
+                  "contribution": 21
+                },
+                "space": {
+                  "value": 66,
+                  "weight": 0.1,
+                  "contribution": 6.6
+                },
+                "similar": {
+                  "value": 25,
+                  "weight": 0.2,
+                  "contribution": 5
+                },
+                "damageType": {
+                  "value": 80,
+                  "weight": 0.25,
+                  "contribution": 20
+                }
+              },
+              "joinIncidentId": null
+            },
+            "actor": {
+              "id": "8f8d016d-c598-4abf-9c26-6af40a143182",
+              "name": "Camila Ortiz",
+              "role": "STUDENT"
+            },
+            "createdAt": "2026-11-17T01:44:44.764Z"
+          },
+          {
+            "id": "f7a32c14-9f90-44ff-92b4-6533f68d1c46",
+            "type": "GROUPED",
+            "payload": {
+              "mode": "auto",
+              "moved": 1,
+              "clusterId": "1f55fa0f-c693-41a5-9d7b-0c3fb2de3ba0",
+              "similarity": {
+                "text": 0.869,
+                "time": 1,
+                "score": 0.947,
+                "category": 1,
+                "location": 1,
+                "textSource": "tfidf",
+                "hotspotDistance": 0.5
+              },
+              "primaryIncidentId": "6eaf710b-0000-4b96-bfbb-0abea9bbc9c6"
+            },
+            "actor": null,
+            "createdAt": "2026-11-17T01:44:44.855Z"
+          }
+        ],
+        "clusterMembers": [
+          {
+            "id": "6eaf710b-0000-4b96-bfbb-0abea9bbc9c6",
+            "code": "INC-00066",
+            "description": "Gotea el aire acondicionado sobre la mesa larga",
+            "status": "PENDING",
+            "createdAt": "2026-11-17T01:44:44.710Z",
+            "isClusterPrimary": true,
+            "reporterName": "Santiago Herrera",
+            "similarity": null
+          },
+          {
+            "id": "22880477-2a67-4433-88a0-66d67d84655c",
+            "code": "INC-00067",
+            "description": "El aire acondicionado gotea encima de la mesa larga",
+            "status": "PENDING",
+            "createdAt": "2026-11-17T01:44:44.755Z",
+            "isClusterPrimary": false,
+            "reporterName": "Camila Ortiz",
+            "similarity": {
+              "text": 0.869,
+              "time": 1,
+              "score": 0.947,
+              "category": 1,
+              "location": 1,
+              "textSource": "tfidf",
+              "hotspotDistance": 0.5
+            }
+          }
+        ],
+        "availableTransitions": []
+      },
+      "ms": 29
+    },
+    {
+      "n": 5,
+      "peticion": "GET /api/incidents/6eaf710b-0000-4b96-bfbb-0abea9bbc9c6",
+      "quien": "supervisor",
+      "estado": 200,
+      "respuesta": {
+        "id": "6eaf710b-0000-4b96-bfbb-0abea9bbc9c6",
+        "number": 66,
+        "code": "INC-00066",
+        "description": "Gotea el aire acondicionado sobre la mesa larga",
+        "category": "WATER_LEAK",
+        "riskLevel": "MEDIUM",
+        "status": "PENDING",
+        "priorityScore": 55.5,
+        "priorityLevel": "HIGH",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 60,
+            "weight": 0.35,
+            "contribution": 21
+          },
+          "space": {
+            "value": 66,
+            "weight": 0.1,
+            "contribution": 6.6
+          },
+          "similar": {
+            "value": 39.6,
+            "weight": 0.2,
+            "contribution": 7.9
+          },
+          "damageType": {
+            "value": 80,
+            "weight": 0.25,
+            "contribution": 20
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T05:44:44.710Z",
+        "resolutionDueAt": "2026-11-18T01:44:44.710Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:44:44.710Z",
+        "updatedAt": "2026-11-17T01:44:44.888Z",
+        "stageStartedAt": "2026-11-17T01:44:44.710Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": {
+          "x": 2,
+          "y": 2.5,
+          "z": 1
+        },
+        "space": {
+          "id": "f3779dcd-4da8-48a1-a4ee-20ce240e97cc",
+          "code": "LOU",
+          "name": "Zona de estudio",
+          "type": "COMMON",
+          "floor": 2,
+          "capacity": 60,
+          "block": {
+            "id": "446b2bba-6bd6-47a0-804b-b1e1e0a57f68",
+            "code": "F",
+            "name": "Bloque F · Laboratorios"
+          },
+          "campus": {
+            "id": "d13b72e9-002b-4bdc-a642-7ff811b30038",
+            "code": "NOR",
+            "name": "Sede Norte"
+          }
+        },
+        "reporter": {
+          "id": "1d59cb73-da3b-458e-9e47-507107691453",
+          "name": "Santiago Herrera",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": "1f55fa0f-c693-41a5-9d7b-0c3fb2de3ba0",
+        "isClusterPrimary": true,
+        "clusterSize": 2,
+        "thumbnailUrl": null,
+        "evidence": [],
+        "history": [
+          {
+            "id": "5dfe4c9c-fdbf-4791-a044-4ea9f22b5cac",
+            "fromStatus": null,
+            "toStatus": "PENDING",
+            "changedBy": {
+              "id": "1d59cb73-da3b-458e-9e47-507107691453",
+              "name": "Santiago Herrera",
+              "role": "STUDENT"
+            },
+            "changedAt": "2026-11-17T01:44:44.710Z",
+            "durationInPrevMs": null,
+            "reason": "MANUAL",
+            "note": null
+          }
+        ],
+        "events": [
+          {
+            "id": "858a5f37-e98c-4c0c-89c4-68737a2263bf",
+            "type": "CREATED",
+            "payload": {
+              "level": "HIGH",
+              "score": 52.6,
+              "breakdown": {
+                "age": {
+                  "value": 0,
+                  "weight": 0.1,
+                  "contribution": 0
+                },
+                "risk": {
+                  "value": 60,
+                  "weight": 0.35,
+                  "contribution": 21
+                },
+                "space": {
+                  "value": 66,
+                  "weight": 0.1,
+                  "contribution": 6.6
+                },
+                "similar": {
+                  "value": 25,
+                  "weight": 0.2,
+                  "contribution": 5
+                },
+                "damageType": {
+                  "value": 80,
+                  "weight": 0.25,
+                  "contribution": 20
+                }
+              },
+              "joinIncidentId": null
+            },
+            "actor": {
+              "id": "1d59cb73-da3b-458e-9e47-507107691453",
+              "name": "Santiago Herrera",
+              "role": "STUDENT"
+            },
+            "createdAt": "2026-11-17T01:44:44.724Z"
+          },
+          {
+            "id": "8e18435f-9a23-4aad-93f6-7be3ce967269",
+            "type": "GROUPED",
+            "payload": {
+              "mode": "auto",
+              "clusterId": "1f55fa0f-c693-41a5-9d7b-0c3fb2de3ba0",
+              "similarity": {
+                "text": 0.869,
+                "time": 1,
+                "score": 0.947,
+                "category": 1,
+                "location": 1,
+                "textSource": "tfidf",
+                "hotspotDistance": 0.5
+              },
+              "reportsCount": 2,
+              "joinedIncidentId": "22880477-2a67-4433-88a0-66d67d84655c"
+            },
+            "actor": null,
+            "createdAt": "2026-11-17T01:44:44.860Z"
+          }
+        ],
+        "clusterMembers": [
+          {
+            "id": "6eaf710b-0000-4b96-bfbb-0abea9bbc9c6",
+            "code": "INC-00066",
+            "description": "Gotea el aire acondicionado sobre la mesa larga",
+            "status": "PENDING",
+            "createdAt": "2026-11-17T01:44:44.710Z",
+            "isClusterPrimary": true,
+            "reporterName": "Santiago Herrera",
+            "similarity": null
+          },
+          {
+            "id": "22880477-2a67-4433-88a0-66d67d84655c",
+            "code": "INC-00067",
+            "description": "El aire acondicionado gotea encima de la mesa larga",
+            "status": "PENDING",
+            "createdAt": "2026-11-17T01:44:44.755Z",
+            "isClusterPrimary": false,
+            "reporterName": "Camila Ortiz",
+            "similarity": {
+              "text": 0.869,
+              "time": 1,
+              "score": 0.947,
+              "category": 1,
+              "location": 1,
+              "textSource": "tfidf",
+              "hotspotDistance": 0.5
+            }
+          }
+        ],
+        "availableTransitions": [
+          {
+            "from": "PENDING",
+            "to": "IN_PROGRESS",
+            "roles": [
+              "TECHNICIAN",
+              "SUPERVISOR"
+            ],
+            "label": "Tomar caso",
+            "description": "El técnico toma el caso o el supervisor lo asigna"
+          }
+        ]
+      },
+      "ms": 26
+    },
+    {
+      "n": 6,
+      "peticion": "GET /api/incidents/6eaf710b-0000-4b96-bfbb-0abea9bbc9c6",
+      "quien": "supervisor",
+      "estado": 200,
+      "respuesta": {
+        "id": "6eaf710b-0000-4b96-bfbb-0abea9bbc9c6",
+        "number": 66,
+        "code": "INC-00066",
+        "description": "Gotea el aire acondicionado sobre la mesa larga",
+        "category": "WATER_LEAK",
+        "riskLevel": "MEDIUM",
+        "status": "PENDING",
+        "priorityScore": 55.5,
+        "priorityLevel": "HIGH",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 60,
+            "weight": 0.35,
+            "contribution": 21
+          },
+          "space": {
+            "value": 66,
+            "weight": 0.1,
+            "contribution": 6.6
+          },
+          "similar": {
+            "value": 39.6,
+            "weight": 0.2,
+            "contribution": 7.9
+          },
+          "damageType": {
+            "value": 80,
+            "weight": 0.25,
+            "contribution": 20
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T05:44:44.710Z",
+        "resolutionDueAt": "2026-11-18T01:44:44.710Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:44:44.710Z",
+        "updatedAt": "2026-11-17T01:44:44.888Z",
+        "stageStartedAt": "2026-11-17T01:44:44.710Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": {
+          "x": 2,
+          "y": 2.5,
+          "z": 1
+        },
+        "space": {
+          "id": "f3779dcd-4da8-48a1-a4ee-20ce240e97cc",
+          "code": "LOU",
+          "name": "Zona de estudio",
+          "type": "COMMON",
+          "floor": 2,
+          "capacity": 60,
+          "block": {
+            "id": "446b2bba-6bd6-47a0-804b-b1e1e0a57f68",
+            "code": "F",
+            "name": "Bloque F · Laboratorios"
+          },
+          "campus": {
+            "id": "d13b72e9-002b-4bdc-a642-7ff811b30038",
+            "code": "NOR",
+            "name": "Sede Norte"
+          }
+        },
+        "reporter": {
+          "id": "1d59cb73-da3b-458e-9e47-507107691453",
+          "name": "Santiago Herrera",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": "1f55fa0f-c693-41a5-9d7b-0c3fb2de3ba0",
+        "isClusterPrimary": true,
+        "clusterSize": 2,
+        "thumbnailUrl": null,
+        "evidence": [],
+        "history": [
+          {
+            "id": "5dfe4c9c-fdbf-4791-a044-4ea9f22b5cac",
+            "fromStatus": null,
+            "toStatus": "PENDING",
+            "changedBy": {
+              "id": "1d59cb73-da3b-458e-9e47-507107691453",
+              "name": "Santiago Herrera",
+              "role": "STUDENT"
+            },
+            "changedAt": "2026-11-17T01:44:44.710Z",
+            "durationInPrevMs": null,
+            "reason": "MANUAL",
+            "note": null
+          }
+        ],
+        "events": [
+          {
+            "id": "858a5f37-e98c-4c0c-89c4-68737a2263bf",
+            "type": "CREATED",
+            "payload": {
+              "level": "HIGH",
+              "score": 52.6,
+              "breakdown": {
+                "age": {
+                  "value": 0,
+                  "weight": 0.1,
+                  "contribution": 0
+                },
+                "risk": {
+                  "value": 60,
+                  "weight": 0.35,
+                  "contribution": 21
+                },
+                "space": {
+                  "value": 66,
+                  "weight": 0.1,
+                  "contribution": 6.6
+                },
+                "similar": {
+                  "value": 25,
+                  "weight": 0.2,
+                  "contribution": 5
+                },
+                "damageType": {
+                  "value": 80,
+                  "weight": 0.25,
+                  "contribution": 20
+                }
+              },
+              "joinIncidentId": null
+            },
+            "actor": {
+              "id": "1d59cb73-da3b-458e-9e47-507107691453",
+              "name": "Santiago Herrera",
+              "role": "STUDENT"
+            },
+            "createdAt": "2026-11-17T01:44:44.724Z"
+          },
+          {
+            "id": "8e18435f-9a23-4aad-93f6-7be3ce967269",
+            "type": "GROUPED",
+            "payload": {
+              "mode": "auto",
+              "clusterId": "1f55fa0f-c693-41a5-9d7b-0c3fb2de3ba0",
+              "similarity": {
+                "text": 0.869,
+                "time": 1,
+                "score": 0.947,
+                "category": 1,
+                "location": 1,
+                "textSource": "tfidf",
+                "hotspotDistance": 0.5
+              },
+              "reportsCount": 2,
+              "joinedIncidentId": "22880477-2a67-4433-88a0-66d67d84655c"
+            },
+            "actor": null,
+            "createdAt": "2026-11-17T01:44:44.860Z"
+          }
+        ],
+        "clusterMembers": [
+          {
+            "id": "6eaf710b-0000-4b96-bfbb-0abea9bbc9c6",
+            "code": "INC-00066",
+            "description": "Gotea el aire acondicionado sobre la mesa larga",
+            "status": "PENDING",
+            "createdAt": "2026-11-17T01:44:44.710Z",
+            "isClusterPrimary": true,
+            "reporterName": "Santiago Herrera",
+            "similarity": null
+          },
+          {
+            "id": "22880477-2a67-4433-88a0-66d67d84655c",
+            "code": "INC-00067",
+            "description": "El aire acondicionado gotea encima de la mesa larga",
+            "status": "PENDING",
+            "createdAt": "2026-11-17T01:44:44.755Z",
+            "isClusterPrimary": false,
+            "reporterName": "Camila Ortiz",
+            "similarity": {
+              "text": 0.869,
+              "time": 1,
+              "score": 0.947,
+              "category": 1,
+              "location": 1,
+              "textSource": "tfidf",
+              "hotspotDistance": 0.5
+            }
+          }
+        ],
+        "availableTransitions": [
+          {
+            "from": "PENDING",
+            "to": "IN_PROGRESS",
+            "roles": [
+              "TECHNICIAN",
+              "SUPERVISOR"
+            ],
+            "label": "Tomar caso",
+            "description": "El técnico toma el caso o el supervisor lo asigna"
+          }
+        ]
+      },
+      "ms": 28
+    }
+  ]
+}

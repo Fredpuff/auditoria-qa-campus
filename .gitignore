@@ -1,0 +1,18 @@
+node_modules/
+.auth/
+tmp/
+cobertura/.v8/
+resultados/*/artefactos/
+resultados/local/
+evidencias/local/
+test-results/
+playwright-report/
+
+# Pesado o regenerable: no se sube
+resultados/*/html/
+evidencias/capturas/prueba/
+evidencias/capturas/ejecucion-2/
+evidencias/capturas/ejecucion-3/
+*.gif
+*.pptx
+*.docx

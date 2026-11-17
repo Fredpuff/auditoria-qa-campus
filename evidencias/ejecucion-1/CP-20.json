@@ -1,0 +1,613 @@
+{
+  "caso": "CP-20",
+  "titulo": "CP-20 | Reabrir Resuelto → En proceso",
+  "ejecucion": "ejecucion-1",
+  "fecha": "2026-11-17T01:45:51.473Z",
+  "estado": "Aprobado",
+  "error": null,
+  "pasos": [
+    {
+      "n": 1,
+      "peticion": "POST /api/incidents",
+      "quien": "estudiante1",
+      "cuerpo": {
+        "spaceId": "514c500d-3a3d-4674-9012-ad846b8c3797",
+        "category": "FURNITURE",
+        "riskLevel": "LOW",
+        "description": "Teclado del puesto quince con teclas hundidas",
+        "hotspot": null
+      },
+      "estado": 201,
+      "respuesta": {
+        "id": "e2048620-f35e-42a7-8aeb-a7027eb2f7d8",
+        "number": 93,
+        "code": "INC-00093",
+        "description": "Teclado del puesto quince con teclas hundidas",
+        "category": "FURNITURE",
+        "riskLevel": "LOW",
+        "status": "PENDING",
+        "priorityScore": 35.5,
+        "priorityLevel": "MEDIUM",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 30,
+            "weight": 0.35,
+            "contribution": 10.5
+          },
+          "space": {
+            "value": 100,
+            "weight": 0.1,
+            "contribution": 10
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 40,
+            "weight": 0.25,
+            "contribution": 10
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T13:45:51.280Z",
+        "resolutionDueAt": "2026-11-20T01:45:51.280Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:45:51.280Z",
+        "updatedAt": "2026-11-17T01:45:51.283Z",
+        "stageStartedAt": "2026-11-17T01:45:51.280Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": null,
+        "space": {
+          "id": "514c500d-3a3d-4674-9012-ad846b8c3797",
+          "code": "301",
+          "name": "Sala de Cómputo 2",
+          "type": "LAB",
+          "floor": 3,
+          "capacity": 40,
+          "block": {
+            "id": "1d87c11b-b967-47ea-830c-8a779adb056a",
+            "code": "B",
+            "name": "Bloque B · Laboratorios"
+          },
+          "campus": {
+            "id": "9d3da020-a7b9-4b8c-8f69-615e560cb551",
+            "code": "PRI",
+            "name": "Sede Principal"
+          }
+        },
+        "reporter": {
+          "id": "713f52b5-7328-4cb8-8d44-cfd59dd8b7f5",
+          "name": "Valentina Ruiz",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null
+      },
+      "ms": 45
+    },
+    {
+      "n": 2,
+      "peticion": "POST /api/incidents/e2048620-f35e-42a7-8aeb-a7027eb2f7d8/transition",
+      "quien": "tecnico1",
+      "cuerpo": {
+        "to": "IN_PROGRESS"
+      },
+      "estado": 200,
+      "respuesta": {
+        "incidentId": "e2048620-f35e-42a7-8aeb-a7027eb2f7d8",
+        "from": "PENDING",
+        "to": "IN_PROGRESS"
+      },
+      "ms": 40
+    },
+    {
+      "n": 3,
+      "peticion": "POST /api/incidents/e2048620-f35e-42a7-8aeb-a7027eb2f7d8/transition",
+      "quien": "tecnico1",
+      "cuerpo": {
+        "to": "RESOLVED",
+        "note": "Se cambió la pieza dañada"
+      },
+      "estado": 200,
+      "respuesta": {
+        "incidentId": "e2048620-f35e-42a7-8aeb-a7027eb2f7d8",
+        "from": "IN_PROGRESS",
+        "to": "RESOLVED"
+      },
+      "ms": 34
+    },
+    {
+      "n": 4,
+      "peticion": "GET /api/incidents/e2048620-f35e-42a7-8aeb-a7027eb2f7d8",
+      "quien": "supervisor",
+      "estado": 200,
+      "respuesta": {
+        "id": "e2048620-f35e-42a7-8aeb-a7027eb2f7d8",
+        "number": 93,
+        "code": "INC-00093",
+        "description": "Teclado del puesto quince con teclas hundidas",
+        "category": "FURNITURE",
+        "riskLevel": "LOW",
+        "status": "RESOLVED",
+        "priorityScore": 35.5,
+        "priorityLevel": "MEDIUM",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 30,
+            "weight": 0.35,
+            "contribution": 10.5
+          },
+          "space": {
+            "value": 100,
+            "weight": 0.1,
+            "contribution": 10
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 40,
+            "weight": 0.25,
+            "contribution": 10
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T13:45:51.280Z",
+        "resolutionDueAt": "2026-11-20T01:45:51.280Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:45:51.280Z",
+        "updatedAt": "2026-11-17T01:45:51.368Z",
+        "stageStartedAt": "2026-11-17T01:45:51.366Z",
+        "firstResponseAt": "2026-11-17T01:45:51.323Z",
+        "resolvedAt": "2026-11-17T01:45:51.366Z",
+        "verifiedAt": null,
+        "hotspot": null,
+        "space": {
+          "id": "514c500d-3a3d-4674-9012-ad846b8c3797",
+          "code": "301",
+          "name": "Sala de Cómputo 2",
+          "type": "LAB",
+          "floor": 3,
+          "capacity": 40,
+          "block": {
+            "id": "1d87c11b-b967-47ea-830c-8a779adb056a",
+            "code": "B",
+            "name": "Bloque B · Laboratorios"
+          },
+          "campus": {
+            "id": "9d3da020-a7b9-4b8c-8f69-615e560cb551",
+            "code": "PRI",
+            "name": "Sede Principal"
+          }
+        },
+        "reporter": {
+          "id": "713f52b5-7328-4cb8-8d44-cfd59dd8b7f5",
+          "name": "Valentina Ruiz",
+          "role": "STUDENT"
+        },
+        "assignee": {
+          "id": "5ab89084-815e-4f26-8183-974fdbd91b8e",
+          "name": "Carlos Rojas",
+          "role": "TECHNICIAN"
+        },
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null,
+        "evidence": [
+          {
+            "id": "f1344ca9-2a28-4fb0-a7e2-1f244364e119",
+            "stage": "FIX",
+            "kind": "TEXT",
+            "url": null,
+            "text": "Se cambió la pieza dañada",
+            "width": null,
+            "height": null,
+            "createdAt": "2026-11-17T01:45:51.377Z"
+          }
+        ],
+        "history": [
+          {
+            "id": "5049f49a-1613-4624-89f3-9cc6519e66bc",
+            "fromStatus": null,
+            "toStatus": "PENDING",
+            "changedBy": {
+              "id": "713f52b5-7328-4cb8-8d44-cfd59dd8b7f5",
+              "name": "Valentina Ruiz",
+              "role": "STUDENT"
+            },
+            "changedAt": "2026-11-17T01:45:51.280Z",
+            "durationInPrevMs": null,
+            "reason": "MANUAL",
+            "note": null
+          },
+          {
+            "id": "d58c4b65-f977-4194-98e3-57d59fa68f29",
+            "fromStatus": "PENDING",
+            "toStatus": "IN_PROGRESS",
+            "changedBy": {
+              "id": "5ab89084-815e-4f26-8183-974fdbd91b8e",
+              "name": "Carlos Rojas",
+              "role": "TECHNICIAN"
+            },
+            "changedAt": "2026-11-17T01:45:51.323Z",
+            "durationInPrevMs": 43,
+            "reason": "MANUAL",
+            "note": null
+          },
+          {
+            "id": "92488d7b-27ab-43f0-bf44-eb90c6f9660a",
+            "fromStatus": "IN_PROGRESS",
+            "toStatus": "RESOLVED",
+            "changedBy": {
+              "id": "5ab89084-815e-4f26-8183-974fdbd91b8e",
+              "name": "Carlos Rojas",
+              "role": "TECHNICIAN"
+            },
+            "changedAt": "2026-11-17T01:45:51.366Z",
+            "durationInPrevMs": 43,
+            "reason": "MANUAL",
+            "note": "Se cambió la pieza dañada"
+          }
+        ],
+        "events": [
+          {
+            "id": "148c72dd-04c0-443b-bb51-f02321fc6d0d",
+            "type": "CREATED",
+            "payload": {
+              "level": "MEDIUM",
+              "score": 35.5,
+              "breakdown": {
+                "age": {
+                  "value": 0,
+                  "weight": 0.1,
+                  "contribution": 0
+                },
+                "risk": {
+                  "value": 30,
+                  "weight": 0.35,
+                  "contribution": 10.5
+                },
+                "space": {
+                  "value": 100,
+                  "weight": 0.1,
+                  "contribution": 10
+                },
+                "similar": {
+                  "value": 25,
+                  "weight": 0.2,
+                  "contribution": 5
+                },
+                "damageType": {
+                  "value": 40,
+                  "weight": 0.25,
+                  "contribution": 10
+                }
+              },
+              "joinIncidentId": null
+            },
+            "actor": {
+              "id": "713f52b5-7328-4cb8-8d44-cfd59dd8b7f5",
+              "name": "Valentina Ruiz",
+              "role": "STUDENT"
+            },
+            "createdAt": "2026-11-17T01:45:51.290Z"
+          },
+          {
+            "id": "95cf8bb7-f9bd-4aa2-8541-5db64220daeb",
+            "type": "ASSIGNED",
+            "payload": {
+              "by": "5ab89084-815e-4f26-8183-974fdbd91b8e",
+              "assigneeId": "5ab89084-815e-4f26-8183-974fdbd91b8e"
+            },
+            "actor": {
+              "id": "5ab89084-815e-4f26-8183-974fdbd91b8e",
+              "name": "Carlos Rojas",
+              "role": "TECHNICIAN"
+            },
+            "createdAt": "2026-11-17T01:45:51.343Z"
+          }
+        ],
+        "clusterMembers": [],
+        "availableTransitions": [
+          {
+            "from": "RESOLVED",
+            "to": "VERIFIED",
+            "roles": [
+              "SUPERVISOR",
+              "STUDENT"
+            ],
+            "condition": "reporterIfStudent",
+            "label": "Verificar",
+            "description": "El supervisor o el estudiante que reportó confirman el arreglo"
+          },
+          {
+            "from": "RESOLVED",
+            "to": "IN_PROGRESS",
+            "roles": [
+              "SUPERVISOR",
+              "STUDENT"
+            ],
+            "condition": "reporterIfStudent",
+            "requires": [
+              "note"
+            ],
+            "label": "Reabrir",
+            "description": "El arreglo no funcionó; se reabre con una nota"
+          }
+        ]
+      },
+      "ms": 18
+    },
+    {
+      "n": 5,
+      "peticion": "POST /api/incidents/e2048620-f35e-42a7-8aeb-a7027eb2f7d8/transition",
+      "quien": "estudiante1",
+      "cuerpo": {
+        "to": "IN_PROGRESS"
+      },
+      "estado": 400,
+      "respuesta": {
+        "error": "Esta transición necesita una nota",
+        "field": "note"
+      },
+      "ms": 17
+    },
+    {
+      "n": 6,
+      "peticion": "POST /api/incidents/e2048620-f35e-42a7-8aeb-a7027eb2f7d8/transition",
+      "quien": "estudiante1",
+      "cuerpo": {
+        "to": "IN_PROGRESS",
+        "note": "La mancha volvió a salir"
+      },
+      "estado": 200,
+      "respuesta": {
+        "incidentId": "e2048620-f35e-42a7-8aeb-a7027eb2f7d8",
+        "from": "RESOLVED",
+        "to": "IN_PROGRESS"
+      },
+      "ms": 26
+    },
+    {
+      "n": 7,
+      "peticion": "GET /api/incidents/e2048620-f35e-42a7-8aeb-a7027eb2f7d8",
+      "quien": "supervisor",
+      "estado": 200,
+      "respuesta": {
+        "id": "e2048620-f35e-42a7-8aeb-a7027eb2f7d8",
+        "number": 93,
+        "code": "INC-00093",
+        "description": "Teclado del puesto quince con teclas hundidas",
+        "category": "FURNITURE",
+        "riskLevel": "LOW",
+        "status": "IN_PROGRESS",
+        "priorityScore": 35.5,
+        "priorityLevel": "MEDIUM",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 30,
+            "weight": 0.35,
+            "contribution": 10.5
+          },
+          "space": {
+            "value": 100,
+            "weight": 0.1,
+            "contribution": 10
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 40,
+            "weight": 0.25,
+            "contribution": 10
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T13:45:51.280Z",
+        "resolutionDueAt": "2026-11-20T01:45:51.434Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:45:51.280Z",
+        "updatedAt": "2026-11-17T01:45:51.436Z",
+        "stageStartedAt": "2026-11-17T01:45:51.434Z",
+        "firstResponseAt": "2026-11-17T01:45:51.323Z",
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": null,
+        "space": {
+          "id": "514c500d-3a3d-4674-9012-ad846b8c3797",
+          "code": "301",
+          "name": "Sala de Cómputo 2",
+          "type": "LAB",
+          "floor": 3,
+          "capacity": 40,
+          "block": {
+            "id": "1d87c11b-b967-47ea-830c-8a779adb056a",
+            "code": "B",
+            "name": "Bloque B · Laboratorios"
+          },
+          "campus": {
+            "id": "9d3da020-a7b9-4b8c-8f69-615e560cb551",
+            "code": "PRI",
+            "name": "Sede Principal"
+          }
+        },
+        "reporter": {
+          "id": "713f52b5-7328-4cb8-8d44-cfd59dd8b7f5",
+          "name": "Valentina Ruiz",
+          "role": "STUDENT"
+        },
+        "assignee": {
+          "id": "5ab89084-815e-4f26-8183-974fdbd91b8e",
+          "name": "Carlos Rojas",
+          "role": "TECHNICIAN"
+        },
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null,
+        "evidence": [
+          {
+            "id": "f1344ca9-2a28-4fb0-a7e2-1f244364e119",
+            "stage": "FIX",
+            "kind": "TEXT",
+            "url": null,
+            "text": "Se cambió la pieza dañada",
+            "width": null,
+            "height": null,
+            "createdAt": "2026-11-17T01:45:51.377Z"
+          }
+        ],
+        "history": [
+          {
+            "id": "5049f49a-1613-4624-89f3-9cc6519e66bc",
+            "fromStatus": null,
+            "toStatus": "PENDING",
+            "changedBy": {
+              "id": "713f52b5-7328-4cb8-8d44-cfd59dd8b7f5",
+              "name": "Valentina Ruiz",
+              "role": "STUDENT"
+            },
+            "changedAt": "2026-11-17T01:45:51.280Z",
+            "durationInPrevMs": null,
+            "reason": "MANUAL",
+            "note": null
+          },
+          {
+            "id": "d58c4b65-f977-4194-98e3-57d59fa68f29",
+            "fromStatus": "PENDING",
+            "toStatus": "IN_PROGRESS",
+            "changedBy": {
+              "id": "5ab89084-815e-4f26-8183-974fdbd91b8e",
+              "name": "Carlos Rojas",
+              "role": "TECHNICIAN"
+            },
+            "changedAt": "2026-11-17T01:45:51.323Z",
+            "durationInPrevMs": 43,
+            "reason": "MANUAL",
+            "note": null
+          },
+          {
+            "id": "92488d7b-27ab-43f0-bf44-eb90c6f9660a",
+            "fromStatus": "IN_PROGRESS",
+            "toStatus": "RESOLVED",
+            "changedBy": {
+              "id": "5ab89084-815e-4f26-8183-974fdbd91b8e",
+              "name": "Carlos Rojas",
+              "role": "TECHNICIAN"
+            },
+            "changedAt": "2026-11-17T01:45:51.366Z",
+            "durationInPrevMs": 43,
+            "reason": "MANUAL",
+            "note": "Se cambió la pieza dañada"
+          },
+          {
+            "id": "520f317e-6d12-406f-b1db-eec3b6b954f4",
+            "fromStatus": "RESOLVED",
+            "toStatus": "IN_PROGRESS",
+            "changedBy": {
+              "id": "713f52b5-7328-4cb8-8d44-cfd59dd8b7f5",
+              "name": "Valentina Ruiz",
+              "role": "STUDENT"
+            },
+            "changedAt": "2026-11-17T01:45:51.434Z",
+            "durationInPrevMs": 68,
+            "reason": "MANUAL",
+            "note": "La mancha volvió a salir"
+          }
+        ],
+        "events": [
+          {
+            "id": "148c72dd-04c0-443b-bb51-f02321fc6d0d",
+            "type": "CREATED",
+            "payload": {
+              "level": "MEDIUM",
+              "score": 35.5,
+              "breakdown": {
+                "age": {
+                  "value": 0,
+                  "weight": 0.1,
+                  "contribution": 0
+                },
+                "risk": {
+                  "value": 30,
+                  "weight": 0.35,
+                  "contribution": 10.5
+                },
+                "space": {
+                  "value": 100,
+                  "weight": 0.1,
+                  "contribution": 10
+                },
+                "similar": {
+                  "value": 25,
+                  "weight": 0.2,
+                  "contribution": 5
+                },
+                "damageType": {
+                  "value": 40,
+                  "weight": 0.25,
+                  "contribution": 10
+                }
+              },
+              "joinIncidentId": null
+            },
+            "actor": {
+              "id": "713f52b5-7328-4cb8-8d44-cfd59dd8b7f5",
+              "name": "Valentina Ruiz",
+              "role": "STUDENT"
+            },
+            "createdAt": "2026-11-17T01:45:51.290Z"
+          },
+          {
+            "id": "95cf8bb7-f9bd-4aa2-8541-5db64220daeb",
+            "type": "ASSIGNED",
+            "payload": {
+              "by": "5ab89084-815e-4f26-8183-974fdbd91b8e",
+              "assigneeId": "5ab89084-815e-4f26-8183-974fdbd91b8e"
+            },
+            "actor": {
+              "id": "5ab89084-815e-4f26-8183-974fdbd91b8e",
+              "name": "Carlos Rojas",
+              "role": "TECHNICIAN"
+            },
+            "createdAt": "2026-11-17T01:45:51.343Z"
+          }
+        ],
+        "clusterMembers": [],
+        "availableTransitions": []
+      },
+      "ms": 23
+    }
+  ]
+}

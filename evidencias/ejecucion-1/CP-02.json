@@ -1,0 +1,102 @@
+{
+  "caso": "CP-02",
+  "titulo": "CP-02 | Estudiante registra una incidencia válida",
+  "ejecucion": "ejecucion-1",
+  "fecha": "2026-11-17T01:44:44.049Z",
+  "estado": "Aprobado",
+  "error": null,
+  "pasos": [
+    {
+      "n": 1,
+      "peticion": "POST /api/incidents",
+      "quien": "estudiante1",
+      "cuerpo": {
+        "spaceId": "d1460b19-7ddf-4358-8855-d4df2e8dda37",
+        "category": "LIGHTING",
+        "riskLevel": "LOW",
+        "description": "Dos lámparas del fondo del salón no encienden",
+        "hotspot": null
+      },
+      "estado": 201,
+      "respuesta": {
+        "id": "475f4d1a-9f7b-4874-807c-bd66cef7ceec",
+        "number": 64,
+        "code": "INC-00064",
+        "description": "Dos lámparas del fondo del salón no encienden",
+        "category": "LIGHTING",
+        "riskLevel": "LOW",
+        "status": "PENDING",
+        "priorityScore": 37.5,
+        "priorityLevel": "MEDIUM",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 30,
+            "weight": 0.35,
+            "contribution": 10.5
+          },
+          "space": {
+            "value": 94.5,
+            "weight": 0.1,
+            "contribution": 9.5
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 50,
+            "weight": 0.25,
+            "contribution": 12.5
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T13:44:44.000Z",
+        "resolutionDueAt": "2026-11-20T01:44:44.000Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:44:44.000Z",
+        "updatedAt": "2026-11-17T01:44:44.004Z",
+        "stageStartedAt": "2026-11-17T01:44:44.000Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": null,
+        "space": {
+          "id": "d1460b19-7ddf-4358-8855-d4df2e8dda37",
+          "code": "101",
+          "name": "Aula 101",
+          "type": "CLASSROOM",
+          "floor": 1,
+          "capacity": 45,
+          "block": {
+            "id": "8b767556-6e1a-43e1-9d61-b3e25172f707",
+            "code": "A",
+            "name": "Bloque A · Aulas"
+          },
+          "campus": {
+            "id": "9d3da020-a7b9-4b8c-8f69-615e560cb551",
+            "code": "PRI",
+            "name": "Sede Principal"
+          }
+        },
+        "reporter": {
+          "id": "713f52b5-7328-4cb8-8d44-cfd59dd8b7f5",
+          "name": "Valentina Ruiz",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null
+      },
+      "ms": 72
+    }
+  ]
+}

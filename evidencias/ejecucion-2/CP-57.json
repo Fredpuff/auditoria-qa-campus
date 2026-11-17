@@ -1,0 +1,199 @@
+{
+  "caso": "CP-57",
+  "titulo": "CP-57 | BUG-07 | El límite de ingresos se evita cambiando la cabecera X-Forwarded-For",
+  "ejecucion": "ejecucion-2",
+  "fecha": "2026-11-17T01:52:14.012Z",
+  "estado": "Fallido",
+  "error": "Error: el intento 11 en adelante debería bloquearse\n\nexpect(received).toBeGreaterThanOrEqual(expected)\n\nExpected: >= 2\nReceived:    0",
+  "pasos": [
+    {
+      "n": 1,
+      "peticion": "POST /api/auth/login",
+      "quien": "sin sesión",
+      "cuerpo": {
+        "email": "supervisor@campus.edu.co",
+        "password": "adivinanza-1"
+      },
+      "estado": 401,
+      "respuesta": {
+        "error": "Correo o contraseña incorrectos"
+      },
+      "ms": 114
+    },
+    {
+      "n": 2,
+      "peticion": "POST /api/auth/login",
+      "quien": "sin sesión",
+      "cuerpo": {
+        "email": "supervisor@campus.edu.co",
+        "password": "adivinanza-2"
+      },
+      "estado": 401,
+      "respuesta": {
+        "error": "Correo o contraseña incorrectos"
+      },
+      "ms": 114
+    },
+    {
+      "n": 3,
+      "peticion": "POST /api/auth/login",
+      "quien": "sin sesión",
+      "cuerpo": {
+        "email": "supervisor@campus.edu.co",
+        "password": "adivinanza-3"
+      },
+      "estado": 401,
+      "respuesta": {
+        "error": "Correo o contraseña incorrectos"
+      },
+      "ms": 100
+    },
+    {
+      "n": 4,
+      "peticion": "POST /api/auth/login",
+      "quien": "sin sesión",
+      "cuerpo": {
+        "email": "supervisor@campus.edu.co",
+        "password": "adivinanza-4"
+      },
+      "estado": 401,
+      "respuesta": {
+        "error": "Correo o contraseña incorrectos"
+      },
+      "ms": 102
+    },
+    {
+      "n": 5,
+      "peticion": "POST /api/auth/login",
+      "quien": "sin sesión",
+      "cuerpo": {
+        "email": "supervisor@campus.edu.co",
+        "password": "adivinanza-5"
+      },
+      "estado": 401,
+      "respuesta": {
+        "error": "Correo o contraseña incorrectos"
+      },
+      "ms": 101
+    },
+    {
+      "n": 6,
+      "peticion": "POST /api/auth/login",
+      "quien": "sin sesión",
+      "cuerpo": {
+        "email": "supervisor@campus.edu.co",
+        "password": "adivinanza-6"
+      },
+      "estado": 401,
+      "respuesta": {
+        "error": "Correo o contraseña incorrectos"
+      },
+      "ms": 106
+    },
+    {
+      "n": 7,
+      "peticion": "POST /api/auth/login",
+      "quien": "sin sesión",
+      "cuerpo": {
+        "email": "supervisor@campus.edu.co",
+        "password": "adivinanza-7"
+      },
+      "estado": 401,
+      "respuesta": {
+        "error": "Correo o contraseña incorrectos"
+      },
+      "ms": 116
+    },
+    {
+      "n": 8,
+      "peticion": "POST /api/auth/login",
+      "quien": "sin sesión",
+      "cuerpo": {
+        "email": "supervisor@campus.edu.co",
+        "password": "adivinanza-8"
+      },
+      "estado": 401,
+      "respuesta": {
+        "error": "Correo o contraseña incorrectos"
+      },
+      "ms": 93
+    },
+    {
+      "n": 9,
+      "peticion": "POST /api/auth/login",
+      "quien": "sin sesión",
+      "cuerpo": {
+        "email": "supervisor@campus.edu.co",
+        "password": "adivinanza-9"
+      },
+      "estado": 401,
+      "respuesta": {
+        "error": "Correo o contraseña incorrectos"
+      },
+      "ms": 100
+    },
+    {
+      "n": 10,
+      "peticion": "POST /api/auth/login",
+      "quien": "sin sesión",
+      "cuerpo": {
+        "email": "supervisor@campus.edu.co",
+        "password": "adivinanza-10"
+      },
+      "estado": 401,
+      "respuesta": {
+        "error": "Correo o contraseña incorrectos"
+      },
+      "ms": 106
+    },
+    {
+      "n": 11,
+      "peticion": "POST /api/auth/login",
+      "quien": "sin sesión",
+      "cuerpo": {
+        "email": "supervisor@campus.edu.co",
+        "password": "adivinanza-11"
+      },
+      "estado": 401,
+      "respuesta": {
+        "error": "Correo o contraseña incorrectos"
+      },
+      "ms": 109
+    },
+    {
+      "n": 12,
+      "peticion": "POST /api/auth/login",
+      "quien": "sin sesión",
+      "cuerpo": {
+        "email": "supervisor@campus.edu.co",
+        "password": "adivinanza-12"
+      },
+      "estado": 401,
+      "respuesta": {
+        "error": "Correo o contraseña incorrectos"
+      },
+      "ms": 118
+    },
+    {
+      "n": 13,
+      "peticion": "Estados de los 12 intentos con IP falsa",
+      "quien": "-",
+      "estado": 0,
+      "respuesta": [
+        401,
+        401,
+        401,
+        401,
+        401,
+        401,
+        401,
+        401,
+        401,
+        401,
+        401,
+        401
+      ],
+      "ms": 0
+    }
+  ]
+}

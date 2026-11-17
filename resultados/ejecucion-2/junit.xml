@@ -1,0 +1,666 @@
+<testsuites id="" name="" tests="58" failures="11" skipped="0" errors="0" time="283.605263">
+<testsuite name="preparacion\api-disponible.setup.ts" timestamp="2026-11-17T01:49:28.103Z" hostname="preparacion" tests="1" failures="0" skipped="0" time="0.073" errors="0">
+<testcase name="preparación: la API responde" classname="preparacion\api-disponible.setup.ts" time="0.073">
+</testcase>
+</testsuite>
+<testsuite name="api\01-positivas.spec.ts" timestamp="2026-11-17T01:49:28.103Z" hostname="api" tests="7" failures="0" skipped="0" time="1.512" errors="0">
+<testcase name="Pruebas positivas › CP-02 | Estudiante registra una incidencia válida" classname="api\01-positivas.spec.ts" time="0.111">
+</testcase>
+<testcase name="Pruebas positivas › CP-03 | Vista previa de prioridad con desglose de 5 factores" classname="api\01-positivas.spec.ts" time="0.089">
+</testcase>
+<testcase name="Pruebas positivas › CP-21 | Ingreso con correo en mayúsculas y espacios" classname="api\01-positivas.spec.ts" time="0.209">
+</testcase>
+<testcase name="Pruebas positivas › CP-22 | Buscar un espacio por su código QR" classname="api\01-positivas.spec.ts" time="0.04">
+</testcase>
+<testcase name="Pruebas positivas › CP-23 | Supervisor corrige el riesgo y la prioridad se recalcula" classname="api\01-positivas.spec.ts" time="0.272">
+</testcase>
+<testcase name="Pruebas positivas › CP-24 | Dos estudiantes reportan el mismo daño y quedan agrupados" classname="api\01-positivas.spec.ts" time="0.701">
+</testcase>
+<testcase name="Pruebas positivas › CP-25 | Comentario en un reporte propio queda en el detalle" classname="api\01-positivas.spec.ts" time="0.09">
+</testcase>
+</testsuite>
+<testsuite name="api\02-negativas.spec.ts" timestamp="2026-11-17T01:49:28.103Z" hostname="api" tests="11" failures="5" skipped="0" time="1.121" errors="0">
+<testcase name="Pruebas negativas › CP-06 | Consultar incidencias sin token" classname="api\02-negativas.spec.ts" time="0.024">
+</testcase>
+<testcase name="Pruebas negativas › CP-07 | BUG-01 | La foto de evidencia se descarga sin sesión" classname="api\02-negativas.spec.ts" time="0.114">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|artefactos\02-negativas-Pruebas-negat-fdee8-ncia-se-descarga-sin-sesión-api\error-context.md]]
+
+[[ATTACHMENT|artefactos\02-negativas-Pruebas-negat-fdee8-ncia-se-descarga-sin-sesión-api\trace.zip]]
+]]>
+</system-out>
+<failure message="la foto de un reporte solo debe verla un usuario autenticado" type="expect.toBe">
+<![CDATA[  [api] › api\02-negativas.spec.ts:12:7 › Pruebas negativas › CP-07 | BUG-01 | La foto de evidencia se descarga sin sesión 
+
+    Error: la foto de un reporte solo debe verla un usuario autenticado
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 401
+    Received: 200
+
+      17 |     // Sin cabecera Authorization: la foto no debería entregarse.
+      18 |     const sinSesion = await api.descargar(subida.body.url);
+    > 19 |     expect(sinSesion.status, 'la foto de un reporte solo debe verla un usuario autenticado').toBe(401);
+         |                                                                                              ^
+      20 |   });
+      21 |
+      22 |   test('CP-08 | BUG-03 | Un filtro de estado inexistente se ignora', async ({ api }) => {
+        at C:\Users\ingsu\mi_app\lib\playwright\auditoria\auditoria-qa\tests\api\02-negativas.spec.ts:19:94
+
+    Error Context: ..\resultados\ejecucion-2\artefactos\02-negativas-Pruebas-negat-fdee8-ncia-se-descarga-sin-sesión-api\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\resultados\ejecucion-2\artefactos\02-negativas-Pruebas-negat-fdee8-ncia-se-descarga-sin-sesión-api\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\resultados\ejecucion-2\artefactos\02-negativas-Pruebas-negat-fdee8-ncia-se-descarga-sin-sesión-api\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+<testcase name="Pruebas negativas › CP-08 | BUG-03 | Un filtro de estado inexistente se ignora" classname="api\02-negativas.spec.ts" time="0.174">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|artefactos\02-negativas-Pruebas-negat-5a76a-stado-inexistente-se-ignora-api\error-context.md]]
+
+[[ATTACHMENT|artefactos\02-negativas-Pruebas-negat-5a76a-stado-inexistente-se-ignora-api\trace.zip]]
+]]>
+</system-out>
+<failure message="devolvió 58 de 58 incidencias" type="expect.toBe">
+<![CDATA[  [api] › api\02-negativas.spec.ts:22:7 › Pruebas negativas › CP-08 | BUG-03 | Un filtro de estado inexistente se ignora 
+
+    Error: devolvió 58 de 58 incidencias
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 58
+
+      27 |     // Se espera 400, o al menos una lista vacía; nunca la lista completa como si no hubiera filtro.
+      28 |     for (const r of [foo, nivel]) {
+    > 29 |       if (r.status !== 400) expect.soft(r.body.length, `devolvió ${r.body.length} de ${todas.body.length} incidencias`).toBe(0);
+         |                                                                                                                         ^
+      30 |     }
+      31 |   });
+      32 |
+        at C:\Users\ingsu\mi_app\lib\playwright\auditoria\auditoria-qa\tests\api\02-negativas.spec.ts:29:121
+
+    Error: devolvió 58 de 58 incidencias
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 58
+
+      27 |     // Se espera 400, o al menos una lista vacía; nunca la lista completa como si no hubiera filtro.
+      28 |     for (const r of [foo, nivel]) {
+    > 29 |       if (r.status !== 400) expect.soft(r.body.length, `devolvió ${r.body.length} de ${todas.body.length} incidencias`).toBe(0);
+         |                                                                                                                         ^
+      30 |     }
+      31 |   });
+      32 |
+        at C:\Users\ingsu\mi_app\lib\playwright\auditoria\auditoria-qa\tests\api\02-negativas.spec.ts:29:121
+
+    Error Context: ..\resultados\ejecucion-2\artefactos\02-negativas-Pruebas-negat-5a76a-stado-inexistente-se-ignora-api\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\resultados\ejecucion-2\artefactos\02-negativas-Pruebas-negat-5a76a-stado-inexistente-se-ignora-api\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\resultados\ejecucion-2\artefactos\02-negativas-Pruebas-negat-5a76a-stado-inexistente-se-ignora-api\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+<testcase name="Pruebas negativas › CP-09 | BUG-02 | overdue=false devuelve solo vencidas" classname="api\02-negativas.spec.ts" time="0.242">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|artefactos\02-negativas-Pruebas-negat-9c430-alse-devuelve-solo-vencidas-api\error-context.md]]
+
+[[ATTACHMENT|artefactos\02-negativas-Pruebas-negat-9c430-alse-devuelve-solo-vencidas-api\trace.zip]]
+]]>
+</system-out>
+<failure message="overdue=false" type="expect.toBe">
+<![CDATA[  [api] › api\02-negativas.spec.ts:33:7 › Pruebas negativas › CP-09 | BUG-02 | overdue=false devuelve solo vencidas 
+
+    Error: overdue=false
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 58
+    Received: 30
+
+      39 |     const asignFalse = await api.get('/api/incidents?assignedToMe=false', { como: 'tecnico1' });
+      40 |     // "false" no debe filtrar: cada consulta debe traer lo mismo que sin el parámetro.
+    > 41 |     expect.soft(noVencidas.body.length, 'overdue=false').toBe(todas.body.length);
+         |                                                          ^
+      42 |     expect.soft(mineFalse.body.length, 'mine=false').toBe(misTodas.body.length);
+      43 |     expect.soft(asignFalse.body.length, 'assignedToMe=false').toBe(tecTodas.body.length);
+      44 |   });
+        at C:\Users\ingsu\mi_app\lib\playwright\auditoria\auditoria-qa\tests\api\02-negativas.spec.ts:41:58
+
+    Error: mine=false
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 58
+    Received: 8
+
+      40 |     // "false" no debe filtrar: cada consulta debe traer lo mismo que sin el parámetro.
+      41 |     expect.soft(noVencidas.body.length, 'overdue=false').toBe(todas.body.length);
+    > 42 |     expect.soft(mineFalse.body.length, 'mine=false').toBe(misTodas.body.length);
+         |                                                      ^
+      43 |     expect.soft(asignFalse.body.length, 'assignedToMe=false').toBe(tecTodas.body.length);
+      44 |   });
+      45 |
+        at C:\Users\ingsu\mi_app\lib\playwright\auditoria\auditoria-qa\tests\api\02-negativas.spec.ts:42:54
+
+    Error: assignedToMe=false
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 58
+    Received: 14
+
+      41 |     expect.soft(noVencidas.body.length, 'overdue=false').toBe(todas.body.length);
+      42 |     expect.soft(mineFalse.body.length, 'mine=false').toBe(misTodas.body.length);
+    > 43 |     expect.soft(asignFalse.body.length, 'assignedToMe=false').toBe(tecTodas.body.length);
+         |                                                               ^
+      44 |   });
+      45 |
+      46 |   test('CP-27 | Token con el rol alterado sin volver a firmar', async ({ api }) => {
+        at C:\Users\ingsu\mi_app\lib\playwright\auditoria\auditoria-qa\tests\api\02-negativas.spec.ts:43:63
+
+    Error Context: ..\resultados\ejecucion-2\artefactos\02-negativas-Pruebas-negat-9c430-alse-devuelve-solo-vencidas-api\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\resultados\ejecucion-2\artefactos\02-negativas-Pruebas-negat-9c430-alse-devuelve-solo-vencidas-api\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\resultados\ejecucion-2\artefactos\02-negativas-Pruebas-negat-9c430-alse-devuelve-solo-vencidas-api\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+<testcase name="Pruebas negativas › CP-27 | Token con el rol alterado sin volver a firmar" classname="api\02-negativas.spec.ts" time="0.076">
+</testcase>
+<testcase name="Pruebas negativas › CP-28 | Token firmado con otra clave" classname="api\02-negativas.spec.ts" time="0.03">
+</testcase>
+<testcase name="Pruebas negativas › CP-29 | Token vencido" classname="api\02-negativas.spec.ts" time="0.025">
+</testcase>
+<testcase name="Pruebas negativas › CP-30 | BUG-05 | Un token firmado con el secreto de .env.example es aceptado" classname="api\02-negativas.spec.ts" time="0.058">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|artefactos\02-negativas-Pruebas-negat-b9b08--de-env-example-es-aceptado-api\error-context.md]]
+
+[[ATTACHMENT|artefactos\02-negativas-Pruebas-negat-b9b08--de-env-example-es-aceptado-api\trace.zip]]
+]]>
+</system-out>
+<failure message="el servidor no debería aceptar el secreto publicado en el repositorio" type="expect.toBe">
+<![CDATA[  [api] › api\02-negativas.spec.ts:66:7 › Pruebas negativas › CP-30 | BUG-05 | Un token firmado con el secreto de .env.example es aceptado 
+
+    Error: el servidor no debería aceptar el secreto publicado en el repositorio
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 401
+    Received: 200
+
+      69 |     // Con ese token un estudiante actúa como supervisor (la ruta solo admite SUPERVISOR o TECHNICIAN).
+      70 |     const r = await api.get('/api/similarity/suggestions', { como: { token: falso, etiqueta: 'token fabricado con el secreto publicado' } });
+    > 71 |     expect(r.status, 'el servidor no debería aceptar el secreto publicado en el repositorio').toBe(401);
+         |                                                                                               ^
+      72 |   });
+      73 |
+      74 |   test('CP-32 | BUG-04 | Acceso rápido sin contraseña habilitado en la configuración de ejemplo', async ({ api }) => {
+        at C:\Users\ingsu\mi_app\lib\playwright\auditoria\auditoria-qa\tests\api\02-negativas.spec.ts:71:95
+
+    Error Context: ..\resultados\ejecucion-2\artefactos\02-negativas-Pruebas-negat-b9b08--de-env-example-es-aceptado-api\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\resultados\ejecucion-2\artefactos\02-negativas-Pruebas-negat-b9b08--de-env-example-es-aceptado-api\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\resultados\ejecucion-2\artefactos\02-negativas-Pruebas-negat-b9b08--de-env-example-es-aceptado-api\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+<testcase name="Pruebas negativas › CP-32 | BUG-04 | Acceso rápido sin contraseña habilitado en la configuración de ejemplo" classname="api\02-negativas.spec.ts" time="0.104">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|artefactos\02-negativas-Pruebas-negat-7b4ea-la-configuración-de-ejemplo-api\error-context.md]]
+
+[[ATTACHMENT|artefactos\02-negativas-Pruebas-negat-7b4ea-la-configuración-de-ejemplo-api\trace.zip]]
+]]>
+</system-out>
+<failure message="sin sesión no debería listar usuarios con su correo" type="expect.toBe">
+<![CDATA[  [api] › api\02-negativas.spec.ts:74:7 › Pruebas negativas › CP-32 | BUG-04 | Acceso rápido sin contraseña habilitado en la configuración de ejemplo 
+
+    Error: sin sesión no debería listar usuarios con su correo
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 10
+
+      75 |     const lista = await api.get('/api/auth/dev-users');
+      76 |     const acceso = await api.post('/api/auth/dev-login', { body: { role: 'SUPERVISOR' } });
+    > 77 |     expect.soft(lista.body.users?.length ?? 0, 'sin sesión no debería listar usuarios con su correo').toBe(0);
+         |                                                                                                       ^
+      78 |     expect.soft(acceso.status, 'sin contraseña no debería entregar un token de supervisor').toBe(403);
+      79 |   });
+      80 |
+        at C:\Users\ingsu\mi_app\lib\playwright\auditoria\auditoria-qa\tests\api\02-negativas.spec.ts:77:103
+
+    Error: sin contraseña no debería entregar un token de supervisor
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 403
+    Received: 200
+
+      76 |     const acceso = await api.post('/api/auth/dev-login', { body: { role: 'SUPERVISOR' } });
+      77 |     expect.soft(lista.body.users?.length ?? 0, 'sin sesión no debería listar usuarios con su correo').toBe(0);
+    > 78 |     expect.soft(acceso.status, 'sin contraseña no debería entregar un token de supervisor').toBe(403);
+         |                                                                                             ^
+      79 |   });
+      80 |
+      81 |   test('CP-33 | Espacio, categoría y código QR que no existen', async ({ api }) => {
+        at C:\Users\ingsu\mi_app\lib\playwright\auditoria\auditoria-qa\tests\api\02-negativas.spec.ts:78:93
+
+    Error Context: ..\resultados\ejecucion-2\artefactos\02-negativas-Pruebas-negat-7b4ea-la-configuración-de-ejemplo-api\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\resultados\ejecucion-2\artefactos\02-negativas-Pruebas-negat-7b4ea-la-configuración-de-ejemplo-api\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\resultados\ejecucion-2\artefactos\02-negativas-Pruebas-negat-7b4ea-la-configuración-de-ejemplo-api\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+<testcase name="Pruebas negativas › CP-33 | Espacio, categoría y código QR que no existen" classname="api\02-negativas.spec.ts" time="0.121">
+</testcase>
+<testcase name="Pruebas negativas › CP-34 | Archivos que no son imagen y nombre con ../" classname="api\02-negativas.spec.ts" time="0.153">
+</testcase>
+</testsuite>
+<testsuite name="api\03-valores-limite.spec.ts" timestamp="2026-11-17T01:49:28.103Z" hostname="api" tests="11" failures="1" skipped="0" time="1.754" errors="0">
+<testcase name="Pruebas de valores límite › CP-10 | Descripción de 7 caracteres (mínimo − 1)" classname="api\03-valores-limite.spec.ts" time="0.024">
+</testcase>
+<testcase name="Pruebas de valores límite › CP-11 | Descripción de 8 caracteres (mínimo)" classname="api\03-valores-limite.spec.ts" time="0.052">
+</testcase>
+<testcase name="Pruebas de valores límite › CP-12 | Umbrales de nivel de prioridad 25 / 50 / 75" classname="api\03-valores-limite.spec.ts" time="0.479">
+</testcase>
+<testcase name="Pruebas de valores límite › CP-13 | Foto de 5 MB + 1 byte" classname="api\03-valores-limite.spec.ts" time="0.166">
+</testcase>
+<testcase name="Pruebas de valores límite › CP-36 | Descripción de 1000 caracteres (máximo)" classname="api\03-valores-limite.spec.ts" time="0.053">
+</testcase>
+<testcase name="Pruebas de valores límite › CP-37 | BUG-09 | Descripción de 1001 caracteres responde un mensaje en inglés" classname="api\03-valores-limite.spec.ts" time="0.055">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|artefactos\03-valores-limite-Pruebas--ef895-sponde-un-mensaje-en-inglés-api\error-context.md]]
+
+[[ATTACHMENT|artefactos\03-valores-limite-Pruebas--ef895-sponde-un-mensaje-en-inglés-api\trace.zip]]
+]]>
+</system-out>
+<failure message="el mensaje que ve el usuario debe estar en español" type="expect.toMatch">
+<![CDATA[  [api] › api\03-valores-limite.spec.ts:48:7 › Pruebas de valores límite › CP-37 | BUG-09 | Descripción de 1001 caracteres responde un mensaje en inglés 
+
+    Error: el mensaje que ve el usuario debe estar en español
+
+    expect(received).toMatch(expected)
+
+    Expected pattern: /caracteres/
+    Received string:  "String must contain at most 1000 character(s)"
+
+      52 |     expect(r.body.field).toBe('description');
+      53 |     // Los demás mensajes de la aplicación están en español ("Describe el daño con al menos 8 caracteres").
+    > 54 |     expect(r.body.error, 'el mensaje que ve el usuario debe estar en español').toMatch(/caracteres/);
+         |                                                                                ^
+      55 |   });
+      56 |
+      57 |   test('CP-38 | Foto de exactamente 5 MB', async ({ api }) => {
+        at C:\Users\ingsu\mi_app\lib\playwright\auditoria\auditoria-qa\tests\api\03-valores-limite.spec.ts:54:80
+
+    Error Context: ..\resultados\ejecucion-2\artefactos\03-valores-limite-Pruebas--ef895-sponde-un-mensaje-en-inglés-api\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\resultados\ejecucion-2\artefactos\03-valores-limite-Pruebas--ef895-sponde-un-mensaje-en-inglés-api\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\resultados\ejecucion-2\artefactos\03-valores-limite-Pruebas--ef895-sponde-un-mensaje-en-inglés-api\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+<testcase name="Pruebas de valores límite › CP-38 | Foto de exactamente 5 MB" classname="api\03-valores-limite.spec.ts" time="0.228">
+</testcase>
+<testcase name="Pruebas de valores límite › CP-39 | Punto exacto (hotspot) en los bordes del salón" classname="api\03-valores-limite.spec.ts" time="0.123">
+</testcase>
+<testcase name="Pruebas de valores límite › CP-40 | Parámetro limit en 0, 1, 500 y 501" classname="api\03-valores-limite.spec.ts" time="0.082">
+</testcase>
+<testcase name="Pruebas de valores límite › CP-41 | Aviso de SLA al 80 % y vencimiento al 100 %" classname="api\03-valores-limite.spec.ts" time="0.479">
+</testcase>
+<testcase name="Pruebas de valores límite › CP-42 | Factor de reportes similares con 1, 2, 14 y 15 reportes" classname="api\03-valores-limite.spec.ts" time="0.013">
+</testcase>
+</testsuite>
+<testsuite name="api\04-tablas-decision.spec.ts" timestamp="2026-11-17T01:49:28.103Z" hostname="api" tests="11" failures="2" skipped="0" time="55.82" errors="0">
+<testcase name="Pruebas basadas en tablas de decisión › CP-14 | Supervisor asigna un caso" classname="api\04-tablas-decision.spec.ts" time="0.131">
+</testcase>
+<testcase name="Pruebas basadas en tablas de decisión › CP-15 | Quién puede marcar Resuelto y con qué evidencia" classname="api\04-tablas-decision.spec.ts" time="0.182">
+</testcase>
+<testcase name="Pruebas basadas en tablas de decisión › CP-16 | Técnico intenta resolver su propio reporte" classname="api\04-tablas-decision.spec.ts" time="0.102">
+</testcase>
+<testcase name="Pruebas basadas en tablas de decisión › CP-17 | Quién puede verificar un arreglo" classname="api\04-tablas-decision.spec.ts" time="0.177">
+</testcase>
+<testcase name="Pruebas basadas en tablas de decisión › CP-44 | Quién puede corregir el riesgo de un reporte" classname="api\04-tablas-decision.spec.ts" time="0.086">
+</testcase>
+<testcase name="Pruebas basadas en tablas de decisión › CP-45 | Consultas reservadas al personal según el rol" classname="api\04-tablas-decision.spec.ts" time="0.072">
+</testcase>
+<testcase name="Pruebas basadas en tablas de decisión › CP-46 | Quién adjunta evidencia del daño y del arreglo" classname="api\04-tablas-decision.spec.ts" time="0.222">
+</testcase>
+<testcase name="Pruebas basadas en tablas de decisión › CP-47 | Quién puede reabrir un arreglo y con qué datos" classname="api\04-tablas-decision.spec.ts" time="0.197">
+</testcase>
+<testcase name="Pruebas basadas en tablas de decisión › CP-48 | BUG-10 | Se puede cambiar el riesgo de un caso ya verificado" classname="api\04-tablas-decision.spec.ts" time="0.275">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|artefactos\04-tablas-decision-Pruebas-22568-go-de-un-caso-ya-verificado-api\error-context.md]]
+
+[[ATTACHMENT|artefactos\04-tablas-decision-Pruebas-22568-go-de-un-caso-ya-verificado-api\trace.zip]]
+]]>
+</system-out>
+<failure message="un caso verificado es el estado final y no debería modificarse" type="expect.toBeGreaterThanOrEqual">
+<![CDATA[  [api] › api\04-tablas-decision.spec.ts:119:7 › Pruebas basadas en tablas de decisión › CP-48 | BUG-10 | Se puede cambiar el riesgo de un caso ya verificado 
+
+    Error: un caso verificado es el estado final y no debería modificarse
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 400
+    Received:    204
+
+      124 |     const enCerrado = await api.patch(`/api/incidents/${cerrado.id}/risk`, { como: 'supervisor', body: { riskLevel: 'HIGH' } });
+      125 |     expect(enAbierto.status).toBe(204);
+    > 126 |     expect(enCerrado.status, 'un caso verificado es el estado final y no debería modificarse').toBeGreaterThanOrEqual(400);
+          |                                                                                                ^
+      127 |     expect((await detalle(api, cerrado.id)).body.riskLevel).toBe('NONE');
+      128 |   });
+      129 |
+        at C:\Users\ingsu\mi_app\lib\playwright\auditoria\auditoria-qa\tests\api\04-tablas-decision.spec.ts:126:96
+
+    Error Context: ..\resultados\ejecucion-2\artefactos\04-tablas-decision-Pruebas-22568-go-de-un-caso-ya-verificado-api\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\resultados\ejecucion-2\artefactos\04-tablas-decision-Pruebas-22568-go-de-un-caso-ya-verificado-api\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\resultados\ejecucion-2\artefactos\04-tablas-decision-Pruebas-22568-go-de-un-caso-ya-verificado-api\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+<testcase name="Pruebas basadas en tablas de decisión › CP-49 | BUG-11 | Se pueden subir fotos a un caso ya verificado" classname="api\04-tablas-decision.spec.ts" time="49.747">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|artefactos\04-tablas-decision-Pruebas-4fa83-tos-a-un-caso-ya-verificado-api\error-context.md]]
+
+[[ATTACHMENT|artefactos\04-tablas-decision-Pruebas-4fa83-tos-a-un-caso-ya-verificado-api\trace.zip]]
+]]>
+</system-out>
+<failure message="un caso verificado es el estado final y no debería recibir evidencia" type="expect.toBeGreaterThanOrEqual">
+<![CDATA[  [api] › api\04-tablas-decision.spec.ts:130:7 › Pruebas basadas en tablas de decisión › CP-49 | BUG-11 | Se pueden subir fotos a un caso ya verificado 
+
+    Error: un caso verificado es el estado final y no debería recibir evidencia
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 400
+    Received:    201
+
+      132 |     await hastaVerificado(api, inc.id);
+      133 |     const r = await api.subir(inc.id, fotoPng(), { como: 'estudiante4', etapa: 'REPORT' });
+    > 134 |     expect(r.status, 'un caso verificado es el estado final y no debería recibir evidencia').toBeGreaterThanOrEqual(400);
+          |                                                                                              ^
+      135 |   });
+      136 |
+      137 |   test('CP-50 | Cuándo se agrupan dos reportes', async ({ api }) => {
+        at C:\Users\ingsu\mi_app\lib\playwright\auditoria\auditoria-qa\tests\api\04-tablas-decision.spec.ts:134:94
+
+    Error Context: ..\resultados\ejecucion-2\artefactos\04-tablas-decision-Pruebas-4fa83-tos-a-un-caso-ya-verificado-api\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\resultados\ejecucion-2\artefactos\04-tablas-decision-Pruebas-4fa83-tos-a-un-caso-ya-verificado-api\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\resultados\ejecucion-2\artefactos\04-tablas-decision-Pruebas-4fa83-tos-a-un-caso-ya-verificado-api\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+<testcase name="Pruebas basadas en tablas de decisión › CP-50 | Cuándo se agrupan dos reportes" classname="api\04-tablas-decision.spec.ts" time="4.629">
+</testcase>
+</testsuite>
+<testsuite name="api\05-transiciones.spec.ts" timestamp="2026-11-17T01:49:28.103Z" hostname="api" tests="9" failures="1" skipped="0" time="3.184" errors="0">
+<testcase name="Pruebas de transición de estados › CP-18 | Flujo completo Pendiente → Verificado con historial" classname="api\05-transiciones.spec.ts" time="0.172">
+</testcase>
+<testcase name="Pruebas de transición de estados › CP-19 | Saltar de Pendiente a Resuelto" classname="api\05-transiciones.spec.ts" time="0.472">
+</testcase>
+<testcase name="Pruebas de transición de estados › CP-20 | Reabrir Resuelto → En proceso" classname="api\05-transiciones.spec.ts" time="0.203">
+</testcase>
+<testcase name="Pruebas de transición de estados › CP-51 | Un caso verificado no cambia a ningún estado" classname="api\05-transiciones.spec.ts" time="0.222">
+</testcase>
+<testcase name="Pruebas de transición de estados › CP-52 | Reabrir un caso que sigue Pendiente" classname="api\05-transiciones.spec.ts" time="0.085">
+</testcase>
+<testcase name="Pruebas de transición de estados › CP-53 | Reabrir el mismo caso tres veces" classname="api\05-transiciones.spec.ts" time="0.361">
+</testcase>
+<testcase name="Pruebas de transición de estados › CP-54 | BUG-06 | Dos técnicos toman el mismo caso al mismo tiempo" classname="api\05-transiciones.spec.ts" time="0.171">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|artefactos\05-transiciones-Pruebas-de-ebdad--mismo-caso-al-mismo-tiempo-api\error-context.md]]
+
+[[ATTACHMENT|artefactos\05-transiciones-Pruebas-de-ebdad--mismo-caso-al-mismo-tiempo-api\trace.zip]]
+]]>
+</system-out>
+<failure message="respuestas 200" type="expect.toHaveLength">
+<![CDATA[  [api] › api\05-transiciones.spec.ts:74:7 › Pruebas de transición de estados › CP-54 | BUG-06 | Dos técnicos toman el mismo caso al mismo tiempo 
+
+    Error: respuestas 200
+
+    expect(received).toHaveLength(expected)
+
+    Expected length: 1
+    Received length: 2
+    Received array:  [200, 200]
+
+      82 |     api.nota('Resultado de la carrera', { tecnico1: a.status, tecnico2: b.status, asignado: d.assignee?.name, tomasEnHistorial: tomas.length });
+      83 |     // Solo uno debe quedarse con el caso; el otro debe recibir un rechazo.
+    > 84 |     expect.soft([a.status, b.status].filter((s) => s === 200), 'respuestas 200').toHaveLength(1);
+         |                                                                                  ^
+      85 |     expect.soft(tomas, 'registros PENDING → IN_PROGRESS en el historial').toHaveLength(1);
+      86 |   });
+      87 |
+        at C:\Users\ingsu\mi_app\lib\playwright\auditoria\auditoria-qa\tests\api\05-transiciones.spec.ts:84:82
+
+    Error: registros PENDING → IN_PROGRESS en el historial
+
+    expect(received).toHaveLength(expected)
+
+    Expected length: 1
+    Received length: 2
+    Received array:  [{"changedAt": "2026-11-17T01:50:37.841Z", "changedBy": {"id": "bf8b7142-8763-49fc-a7f7-bac3dc547dfd", "name": "Carlos Rojas", "role": "TECHNICIAN"}, "durationInPrevMs": 38, "fromStatus": "PENDING", "id": "d6bdcc7e-85ec-4a41-bb97-048b896233d5", "note": null, "reason": "MANUAL", "toStatus": "IN_PROGRESS"}, {"changedAt": "2026-11-17T01:50:37.845Z", "changedBy": {"id": "b7df2037-287e-4aa4-af10-a093e5fb3282", "name": "Andrea Pineda", "role": "TECHNICIAN"}, "durationInPrevMs": 4, "fromStatus": "PENDING", "id": "3ada9777-5171-4ed2-a1a2-395e3cd92aba", "note": null, "reason": "MANUAL", "toStatus": "IN_PROGRESS"}]
+
+      83 |     // Solo uno debe quedarse con el caso; el otro debe recibir un rechazo.
+      84 |     expect.soft([a.status, b.status].filter((s) => s === 200), 'respuestas 200').toHaveLength(1);
+    > 85 |     expect.soft(tomas, 'registros PENDING → IN_PROGRESS en el historial').toHaveLength(1);
+         |                                                                           ^
+      86 |   });
+      87 |
+      88 |   test('CP-55 | Un reporte agrupado no cambia de estado por su cuenta', async ({ api }) => {
+        at C:\Users\ingsu\mi_app\lib\playwright\auditoria\auditoria-qa\tests\api\05-transiciones.spec.ts:85:75
+
+    Error Context: ..\resultados\ejecucion-2\artefactos\05-transiciones-Pruebas-de-ebdad--mismo-caso-al-mismo-tiempo-api\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\resultados\ejecucion-2\artefactos\05-transiciones-Pruebas-de-ebdad--mismo-caso-al-mismo-tiempo-api\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\resultados\ejecucion-2\artefactos\05-transiciones-Pruebas-de-ebdad--mismo-caso-al-mismo-tiempo-api\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+<testcase name="Pruebas de transición de estados › CP-55 | Un reporte agrupado no cambia de estado por su cuenta" classname="api\05-transiciones.spec.ts" time="0.728">
+</testcase>
+<testcase name="Pruebas de transición de estados › CP-56 | Cerrar la incidencia madre cierra también la hija" classname="api\05-transiciones.spec.ts" time="0.77">
+</testcase>
+</testsuite>
+<testsuite name="e2e\web.spec.ts" timestamp="2026-11-17T01:49:28.103Z" hostname="e2e" tests="6" failures="1" skipped="0" time="26.913" errors="0">
+<testcase name="Pruebas de la interfaz web › CP-01 | Ingreso con credenciales válidas" classname="e2e\web.spec.ts" time="5.927">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|artefactos\web-Pruebas-de-la-interfaz-df27e-so-con-credenciales-válidas-e2e\attachments\CP-01-png-55d23b88bdacfc0c4a0f778714159977f5014e15.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Pruebas de la interfaz web › CP-04 | Consultar el resumen del panel" classname="e2e\web.spec.ts" time="3.089">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|artefactos\web-Pruebas-de-la-interfaz-47367-sultar-el-resumen-del-panel-e2e\attachments\CP-04-png-94f012ee22bf31122b238026cdf3ea01dd69c7ec.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Pruebas de la interfaz web › CP-05 | Ingreso con contraseña incorrecta" classname="e2e\web.spec.ts" time="2.375">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|artefactos\web-Pruebas-de-la-interfaz-805de-o-con-contraseña-incorrecta-e2e\attachments\CP-05-png-6bd57eb670b2204c3857b19dbf10804d0d904b81.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Pruebas de la interfaz web › vista de celular › CP-26 | Estudiante registra un reporte desde el asistente del celular" classname="e2e\web.spec.ts" time="4.413">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|artefactos\web-Pruebas-de-la-interfaz-3a789-de-el-asistente-del-celular-e2e\attachments\CP-26-png-59a6dab997f69ee5045598c1952e33ad45b00ce5.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Pruebas de la interfaz web › CP-31 | BUG-08 | El token sigue sirviendo después de cerrar sesión" classname="e2e\web.spec.ts" time="3.962">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|artefactos\web-Pruebas-de-la-interfaz-45320-do-después-de-cerrar-sesión-e2e\attachments\CP-31-png-b76e01c851e2758de13b3adf05f7cccb345925db.png]]
+
+[[ATTACHMENT|artefactos\web-Pruebas-de-la-interfaz-45320-do-después-de-cerrar-sesión-e2e\test-failed-1.png]]
+
+[[ATTACHMENT|artefactos\web-Pruebas-de-la-interfaz-45320-do-después-de-cerrar-sesión-e2e\video.webm]]
+
+[[ATTACHMENT|artefactos\web-Pruebas-de-la-interfaz-45320-do-después-de-cerrar-sesión-e2e\error-context.md]]
+
+[[ATTACHMENT|artefactos\web-Pruebas-de-la-interfaz-45320-do-después-de-cerrar-sesión-e2e\trace.zip]]
+]]>
+</system-out>
+<failure message="al cerrar sesión el token debería quedar inválido" type="expect.toBe">
+<![CDATA[  [e2e] › e2e\web.spec.ts:79:7 › Pruebas de la interfaz web › CP-31 | BUG-08 | El token sigue sirviendo después de cerrar sesión 
+
+    Error: al cerrar sesión el token debería quedar inválido
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 401
+    Received: 200
+
+      88 |     // Quien copió el token antes de salir lo sigue usando.
+      89 |     const r = await api.get('/api/auth/me', { como: { token, etiqueta: 'token de estudiante1 después de pulsar Salir' } });
+    > 90 |     expect(r.status, 'al cerrar sesión el token debería quedar inválido').toBe(401);
+         |                                                                           ^
+      91 |   });
+      92 |
+      93 |   test('CP-35 | Texto con HTML en la descripción se muestra como texto', async ({ page, api }, info) => {
+        at C:\Users\ingsu\mi_app\lib\playwright\auditoria\auditoria-qa\tests\e2e\web.spec.ts:90:75
+
+    attachment #1: CP-31.png (image/png) ───────────────────────────────────────────────────────────
+    ..\resultados\ejecucion-2\artefactos\web-Pruebas-de-la-interfaz-45320-do-después-de-cerrar-sesión-e2e\attachments\CP-31-png-b76e01c851e2758de13b3adf05f7cccb345925db.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\resultados\ejecucion-2\artefactos\web-Pruebas-de-la-interfaz-45320-do-después-de-cerrar-sesión-e2e\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #4: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\resultados\ejecucion-2\artefactos\web-Pruebas-de-la-interfaz-45320-do-después-de-cerrar-sesión-e2e\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\resultados\ejecucion-2\artefactos\web-Pruebas-de-la-interfaz-45320-do-después-de-cerrar-sesión-e2e\error-context.md
+
+    attachment #6: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\resultados\ejecucion-2\artefactos\web-Pruebas-de-la-interfaz-45320-do-después-de-cerrar-sesión-e2e\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\resultados\ejecucion-2\artefactos\web-Pruebas-de-la-interfaz-45320-do-después-de-cerrar-sesión-e2e\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+<testcase name="Pruebas de la interfaz web › CP-35 | Texto con HTML en la descripción se muestra como texto" classname="e2e\web.spec.ts" time="7.147">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|artefactos\web-Pruebas-de-la-interfaz-0ebcb-pción-se-muestra-como-texto-e2e\attachments\CP-35-png-b230d2873d590a59724fe583162f9448d4dc3661.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="limite\limite-ingreso.spec.ts" timestamp="2026-11-17T01:49:28.103Z" hostname="limite-ingreso" tests="2" failures="1" skipped="0" time="2.61" errors="0">
+<testcase name="Límite de 10 ingresos por minuto › CP-43 | Límite de 10 intentos de ingreso por minuto (10 pasan, el 11 se bloquea)" classname="limite\limite-ingreso.spec.ts" time="1.277">
+</testcase>
+<testcase name="Límite de 10 ingresos por minuto › CP-57 | BUG-07 | El límite de ingresos se evita cambiando la cabecera X-Forwarded-For" classname="limite\limite-ingreso.spec.ts" time="1.333">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|artefactos\limite-ingreso-Límite-de-1-49548-la-cabecera-X-Forwarded-For-limite-ingreso\error-context.md]]
+
+[[ATTACHMENT|artefactos\limite-ingreso-Límite-de-1-49548-la-cabecera-X-Forwarded-For-limite-ingreso\trace.zip]]
+]]>
+</system-out>
+<failure message="el intento 11 en adelante debería bloquearse" type="expect.toBeGreaterThanOrEqual">
+<![CDATA[  [limite-ingreso] › limite\limite-ingreso.spec.ts:26:7 › Límite de 10 ingresos por minuto › CP-57 | BUG-07 | El límite de ingresos se evita cambiando la cabecera X-Forwarded-For 
+
+    Error: el intento 11 en adelante debería bloquearse
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 2
+    Received:    0
+
+      35 |     }
+      36 |     api.nota('Estados de los 12 intentos con IP falsa', estados);
+    > 37 |     expect(estados.filter((s) => s === 429).length, 'el intento 11 en adelante debería bloquearse').toBeGreaterThanOrEqual(2);
+         |                                                                                                     ^
+      38 |   });
+      39 | });
+      40 |
+        at C:\Users\ingsu\mi_app\lib\playwright\auditoria\auditoria-qa\tests\limite\limite-ingreso.spec.ts:37:101
+
+    Error Context: ..\resultados\ejecucion-2\artefactos\limite-ingreso-Límite-de-1-49548-la-cabecera-X-Forwarded-For-limite-ingreso\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\resultados\ejecucion-2\artefactos\limite-ingreso-Límite-de-1-49548-la-cabecera-X-Forwarded-For-limite-ingreso\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\resultados\ejecucion-2\artefactos\limite-ingreso-Límite-de-1-49548-la-cabecera-X-Forwarded-For-limite-ingreso\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+</testsuite>
+</testsuites>

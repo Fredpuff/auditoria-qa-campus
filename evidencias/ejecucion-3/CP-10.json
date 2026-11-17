@@ -1,0 +1,28 @@
+{
+  "caso": "CP-10",
+  "titulo": "CP-10 | Descripción de 7 caracteres (mínimo − 1)",
+  "ejecucion": "ejecucion-3",
+  "fecha": "2026-11-17T01:54:22.494Z",
+  "estado": "Aprobado",
+  "error": null,
+  "pasos": [
+    {
+      "n": 1,
+      "peticion": "POST /api/incidents",
+      "quien": "estudiante2",
+      "cuerpo": {
+        "spaceId": "383984a6-2bb0-47ca-8310-a7b959186f26",
+        "category": "STRUCTURAL",
+        "riskLevel": "LOW",
+        "description": "Puerta ",
+        "hotspot": null
+      },
+      "estado": 400,
+      "respuesta": {
+        "error": "Describe el daño con al menos 8 caracteres",
+        "field": "description"
+      },
+      "ms": 10
+    }
+  ]
+}

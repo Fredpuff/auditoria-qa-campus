@@ -1,0 +1,25 @@
+{
+  "caso": "CP-26",
+  "titulo": "CP-26 | Estudiante registra un reporte desde el asistente del celular",
+  "ejecucion": "ejecucion-3",
+  "fecha": "2026-11-17T01:55:42.816Z",
+  "estado": "Aprobado",
+  "error": null,
+  "pasos": [
+    {
+      "n": 1,
+      "peticion": "POST /api/incidents desde el asistente",
+      "quien": "-",
+      "estado": 0,
+      "respuesta": {
+        "estado": 201,
+        "code": "INC-00102",
+        "status": "PENDING",
+        "espacio": "Sala de profesores",
+        "categoria": "FURNITURE",
+        "riesgo": "LOW"
+      },
+      "ms": 0
+    }
+  ]
+}

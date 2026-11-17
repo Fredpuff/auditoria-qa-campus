@@ -1,0 +1,102 @@
+{
+  "caso": "CP-11",
+  "titulo": "CP-11 | Descripción de 8 caracteres (mínimo)",
+  "ejecucion": "ejecucion-3",
+  "fecha": "2026-11-17T01:54:22.563Z",
+  "estado": "Aprobado",
+  "error": null,
+  "pasos": [
+    {
+      "n": 1,
+      "peticion": "POST /api/incidents",
+      "quien": "estudiante2",
+      "cuerpo": {
+        "spaceId": "b4b35918-f453-48d4-8d96-daa58c43c945",
+        "category": "STRUCTURAL",
+        "riskLevel": "LOW",
+        "description": "Puerta r",
+        "hotspot": null
+      },
+      "estado": 201,
+      "respuesta": {
+        "id": "9d399850-4c58-486d-8153-5a57a16ecde1",
+        "number": 71,
+        "code": "INC-00071",
+        "description": "Puerta r",
+        "category": "STRUCTURAL",
+        "riskLevel": "LOW",
+        "status": "PENDING",
+        "priorityScore": 37.1,
+        "priorityLevel": "MEDIUM",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 30,
+            "weight": 0.35,
+            "contribution": 10.5
+          },
+          "space": {
+            "value": 41,
+            "weight": 0.1,
+            "contribution": 4.1
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 70,
+            "weight": 0.25,
+            "contribution": 17.5
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T13:54:22.530Z",
+        "resolutionDueAt": "2026-11-20T01:54:22.530Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:54:22.530Z",
+        "updatedAt": "2026-11-17T01:54:22.533Z",
+        "stageStartedAt": "2026-11-17T01:54:22.530Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": null,
+        "space": {
+          "id": "b4b35918-f453-48d4-8d96-daa58c43c945",
+          "code": "201",
+          "name": "Coordinación académica",
+          "type": "OFFICE",
+          "floor": 2,
+          "capacity": 10,
+          "block": {
+            "id": "0d729e82-4826-4384-9f89-fdbf114edea8",
+            "code": "D",
+            "name": "Bloque D · Administrativo"
+          },
+          "campus": {
+            "id": "9a0c65ff-7a7d-470b-955a-efbc7b0f11d2",
+            "code": "PRI",
+            "name": "Sede Principal"
+          }
+        },
+        "reporter": {
+          "id": "f16abaae-5754-49bb-a28e-acf02bd5c531",
+          "name": "Santiago Herrera",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null
+      },
+      "ms": 39
+    }
+  ]
+}

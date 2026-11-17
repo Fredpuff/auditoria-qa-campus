@@ -1,0 +1,275 @@
+{
+  "caso": "CP-52",
+  "titulo": "CP-52 | Reabrir un caso que sigue Pendiente",
+  "ejecucion": "ejecucion-1",
+  "fecha": "2026-11-17T01:45:51.845Z",
+  "estado": "Aprobado",
+  "error": null,
+  "pasos": [
+    {
+      "n": 1,
+      "peticion": "POST /api/incidents",
+      "quien": "estudiante3",
+      "cuerpo": {
+        "spaceId": "d4186e5e-685d-4aff-84fd-98d097412d3a",
+        "category": "FURNITURE",
+        "riskLevel": "LOW",
+        "description": "Pupitre para zurdos con la paleta partida",
+        "hotspot": null
+      },
+      "estado": 201,
+      "respuesta": {
+        "id": "404ba598-e759-4dbf-97f6-3918d1aa7e55",
+        "number": 95,
+        "code": "INC-00095",
+        "description": "Pupitre para zurdos con la paleta partida",
+        "category": "FURNITURE",
+        "riskLevel": "LOW",
+        "status": "PENDING",
+        "priorityScore": 35.1,
+        "priorityLevel": "MEDIUM",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 30,
+            "weight": 0.35,
+            "contribution": 10.5
+          },
+          "space": {
+            "value": 95.5,
+            "weight": 0.1,
+            "contribution": 9.6
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 40,
+            "weight": 0.25,
+            "contribution": 10
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T13:45:51.783Z",
+        "resolutionDueAt": "2026-11-20T01:45:51.783Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:45:51.783Z",
+        "updatedAt": "2026-11-17T01:45:51.787Z",
+        "stageStartedAt": "2026-11-17T01:45:51.783Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": null,
+        "space": {
+          "id": "d4186e5e-685d-4aff-84fd-98d097412d3a",
+          "code": "402",
+          "name": "Aula 402",
+          "type": "CLASSROOM",
+          "floor": 4,
+          "capacity": 55,
+          "block": {
+            "id": "8b767556-6e1a-43e1-9d61-b3e25172f707",
+            "code": "A",
+            "name": "Bloque A · Aulas"
+          },
+          "campus": {
+            "id": "9d3da020-a7b9-4b8c-8f69-615e560cb551",
+            "code": "PRI",
+            "name": "Sede Principal"
+          }
+        },
+        "reporter": {
+          "id": "8f8d016d-c598-4abf-9c26-6af40a143182",
+          "name": "Camila Ortiz",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null
+      },
+      "ms": 37
+    },
+    {
+      "n": 2,
+      "peticion": "POST /api/incidents/404ba598-e759-4dbf-97f6-3918d1aa7e55/transition",
+      "quien": "estudiante3",
+      "cuerpo": {
+        "to": "IN_PROGRESS",
+        "note": "Lo reabro"
+      },
+      "estado": 403,
+      "respuesta": {
+        "error": "Tu rol no puede ejecutar esta transición"
+      },
+      "ms": 15
+    },
+    {
+      "n": 3,
+      "peticion": "GET /api/incidents/404ba598-e759-4dbf-97f6-3918d1aa7e55",
+      "quien": "supervisor",
+      "estado": 200,
+      "respuesta": {
+        "id": "404ba598-e759-4dbf-97f6-3918d1aa7e55",
+        "number": 95,
+        "code": "INC-00095",
+        "description": "Pupitre para zurdos con la paleta partida",
+        "category": "FURNITURE",
+        "riskLevel": "LOW",
+        "status": "PENDING",
+        "priorityScore": 35.1,
+        "priorityLevel": "MEDIUM",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 30,
+            "weight": 0.35,
+            "contribution": 10.5
+          },
+          "space": {
+            "value": 95.5,
+            "weight": 0.1,
+            "contribution": 9.6
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 40,
+            "weight": 0.25,
+            "contribution": 10
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T13:45:51.783Z",
+        "resolutionDueAt": "2026-11-20T01:45:51.783Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:45:51.783Z",
+        "updatedAt": "2026-11-17T01:45:51.787Z",
+        "stageStartedAt": "2026-11-17T01:45:51.783Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": null,
+        "space": {
+          "id": "d4186e5e-685d-4aff-84fd-98d097412d3a",
+          "code": "402",
+          "name": "Aula 402",
+          "type": "CLASSROOM",
+          "floor": 4,
+          "capacity": 55,
+          "block": {
+            "id": "8b767556-6e1a-43e1-9d61-b3e25172f707",
+            "code": "A",
+            "name": "Bloque A · Aulas"
+          },
+          "campus": {
+            "id": "9d3da020-a7b9-4b8c-8f69-615e560cb551",
+            "code": "PRI",
+            "name": "Sede Principal"
+          }
+        },
+        "reporter": {
+          "id": "8f8d016d-c598-4abf-9c26-6af40a143182",
+          "name": "Camila Ortiz",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null,
+        "evidence": [],
+        "history": [
+          {
+            "id": "b12f0c70-5200-4fcf-a6fa-c7ab8b8e1a84",
+            "fromStatus": null,
+            "toStatus": "PENDING",
+            "changedBy": {
+              "id": "8f8d016d-c598-4abf-9c26-6af40a143182",
+              "name": "Camila Ortiz",
+              "role": "STUDENT"
+            },
+            "changedAt": "2026-11-17T01:45:51.783Z",
+            "durationInPrevMs": null,
+            "reason": "MANUAL",
+            "note": null
+          }
+        ],
+        "events": [
+          {
+            "id": "23c974c2-9327-4e6f-9d65-4f147af0df7e",
+            "type": "CREATED",
+            "payload": {
+              "level": "MEDIUM",
+              "score": 35.1,
+              "breakdown": {
+                "age": {
+                  "value": 0,
+                  "weight": 0.1,
+                  "contribution": 0
+                },
+                "risk": {
+                  "value": 30,
+                  "weight": 0.35,
+                  "contribution": 10.5
+                },
+                "space": {
+                  "value": 95.5,
+                  "weight": 0.1,
+                  "contribution": 9.6
+                },
+                "similar": {
+                  "value": 25,
+                  "weight": 0.2,
+                  "contribution": 5
+                },
+                "damageType": {
+                  "value": 40,
+                  "weight": 0.25,
+                  "contribution": 10
+                }
+              },
+              "joinIncidentId": null
+            },
+            "actor": {
+              "id": "8f8d016d-c598-4abf-9c26-6af40a143182",
+              "name": "Camila Ortiz",
+              "role": "STUDENT"
+            },
+            "createdAt": "2026-11-17T01:45:51.792Z"
+          }
+        ],
+        "clusterMembers": [],
+        "availableTransitions": [
+          {
+            "from": "PENDING",
+            "to": "IN_PROGRESS",
+            "roles": [
+              "TECHNICIAN",
+              "SUPERVISOR"
+            ],
+            "label": "Tomar caso",
+            "description": "El técnico toma el caso o el supervisor lo asigna"
+          }
+        ]
+      },
+      "ms": 17
+    }
+  ]
+}

@@ -1,0 +1,174 @@
+{
+  "caso": "CP-17",
+  "titulo": "CP-17 | Quién puede verificar un arreglo",
+  "ejecucion": "ejecucion-3",
+  "fecha": "2026-11-17T01:54:25.611Z",
+  "estado": "Aprobado",
+  "error": null,
+  "pasos": [
+    {
+      "n": 1,
+      "peticion": "POST /api/incidents",
+      "quien": "estudiante1",
+      "cuerpo": {
+        "spaceId": "ea8fe54b-2bf0-45ed-a058-77cfcac73457",
+        "category": "FURNITURE",
+        "riskLevel": "LOW",
+        "description": "Butaca de la fila siete con el brazo flojo",
+        "hotspot": null
+      },
+      "estado": 201,
+      "respuesta": {
+        "id": "f5c177ee-9c6d-4c2f-b7b6-5d708decc144",
+        "number": 80,
+        "code": "INC-00080",
+        "description": "Butaca de la fila siete con el brazo flojo",
+        "category": "FURNITURE",
+        "riskLevel": "LOW",
+        "status": "PENDING",
+        "priorityScore": 32.5,
+        "priorityLevel": "MEDIUM",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 30,
+            "weight": 0.35,
+            "contribution": 10.5
+          },
+          "space": {
+            "value": 70,
+            "weight": 0.1,
+            "contribution": 7
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 40,
+            "weight": 0.25,
+            "contribution": 10
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T13:54:25.479Z",
+        "resolutionDueAt": "2026-11-20T01:54:25.479Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:54:25.479Z",
+        "updatedAt": "2026-11-17T01:54:25.481Z",
+        "stageStartedAt": "2026-11-17T01:54:25.479Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": null,
+        "space": {
+          "id": "ea8fe54b-2bf0-45ed-a058-77cfcac73457",
+          "code": "AUD",
+          "name": "Auditorio",
+          "type": "COMMON",
+          "floor": 2,
+          "capacity": 200,
+          "block": {
+            "id": "43ca0b05-7a01-4b6d-982d-a75444c86dc0",
+            "code": "C",
+            "name": "Bloque C · Bienestar"
+          },
+          "campus": {
+            "id": "9a0c65ff-7a7d-470b-955a-efbc7b0f11d2",
+            "code": "PRI",
+            "name": "Sede Principal"
+          }
+        },
+        "reporter": {
+          "id": "8d61d3b4-1907-4f2a-b562-340c554fe341",
+          "name": "Valentina Ruiz",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null
+      },
+      "ms": 38
+    },
+    {
+      "n": 2,
+      "peticion": "POST /api/incidents/f5c177ee-9c6d-4c2f-b7b6-5d708decc144/transition",
+      "quien": "tecnico1",
+      "cuerpo": {
+        "to": "IN_PROGRESS"
+      },
+      "estado": 200,
+      "respuesta": {
+        "incidentId": "f5c177ee-9c6d-4c2f-b7b6-5d708decc144",
+        "from": "PENDING",
+        "to": "IN_PROGRESS"
+      },
+      "ms": 25
+    },
+    {
+      "n": 3,
+      "peticion": "POST /api/incidents/f5c177ee-9c6d-4c2f-b7b6-5d708decc144/transition",
+      "quien": "tecnico1",
+      "cuerpo": {
+        "to": "RESOLVED",
+        "note": "Se cambió la pieza dañada"
+      },
+      "estado": 200,
+      "respuesta": {
+        "incidentId": "f5c177ee-9c6d-4c2f-b7b6-5d708decc144",
+        "from": "IN_PROGRESS",
+        "to": "RESOLVED"
+      },
+      "ms": 26
+    },
+    {
+      "n": 4,
+      "peticion": "POST /api/incidents/f5c177ee-9c6d-4c2f-b7b6-5d708decc144/transition",
+      "quien": "estudiante2",
+      "cuerpo": {
+        "to": "VERIFIED"
+      },
+      "estado": 403,
+      "respuesta": {
+        "error": "Un estudiante solo puede actuar sobre sus propios reportes"
+      },
+      "ms": 12
+    },
+    {
+      "n": 5,
+      "peticion": "POST /api/incidents/f5c177ee-9c6d-4c2f-b7b6-5d708decc144/transition",
+      "quien": "tecnico1",
+      "cuerpo": {
+        "to": "VERIFIED"
+      },
+      "estado": 403,
+      "respuesta": {
+        "error": "Tu rol no puede ejecutar esta transición"
+      },
+      "ms": 14
+    },
+    {
+      "n": 6,
+      "peticion": "POST /api/incidents/f5c177ee-9c6d-4c2f-b7b6-5d708decc144/transition",
+      "quien": "estudiante1",
+      "cuerpo": {
+        "to": "VERIFIED"
+      },
+      "estado": 200,
+      "respuesta": {
+        "incidentId": "f5c177ee-9c6d-4c2f-b7b6-5d708decc144",
+        "from": "RESOLVED",
+        "to": "VERIFIED"
+      },
+      "ms": 25
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+[01:43:34] [32mINFO[39m: [36mTarea de SLA programada (0 * * * * *), escala del reloj x1[39m
+[01:43:34] [32mINFO[39m: [36mServer listening at http://127.0.0.1:4000[39m
+[01:43:34] [32mINFO[39m: [36mServer listening at http://192.168.56.1:4000[39m
+[01:43:34] [32mINFO[39m: [36mServer listening at http://192.168.1.7:4000[39m
+[01:43:34] [32mINFO[39m: [36mServer listening at http://172.26.48.1:4000[39m
+[01:44:01] [32mINFO[39m: [36mPasada de SLA[39m
+    [35mbreaches[39m: 0
+    [35mwarned[39m: 1
+    [35mrecomputed[39m: 0
+[01:45:00] [32mINFO[39m: [36mPasada de SLA[39m
+    [35mbreaches[39m: 0
+    [35mwarned[39m: 0
+    [35mrecomputed[39m: 2
+[01:46:01] [32mINFO[39m: [36mPasada de SLA[39m
+    [35mbreaches[39m: 0
+    [35mwarned[39m: 0
+    [35mrecomputed[39m: 1
+[01:47:01] [32mINFO[39m: [36mPasada de SLA[39m
+    [35mbreaches[39m: 0
+    [35mwarned[39m: 0
+    [35mrecomputed[39m: 1
+[01:48:00] [32mINFO[39m: [36mPasada de SLA[39m
+    [35mbreaches[39m: 0
+    [35mwarned[39m: 1
+    [35mrecomputed[39m: 0
+[01:49:01] [32mINFO[39m: [36mPasada de SLA[39m
+    [35mbreaches[39m: 0
+    [35mwarned[39m: 0
+    [35mrecomputed[39m: 2
+[01:50:01] [32mINFO[39m: [36mPasada de SLA[39m
+    [35mbreaches[39m: 0
+    [35mwarned[39m: 0
+    [35mrecomputed[39m: 1
+[01:52:01] [32mINFO[39m: [36mPasada de SLA[39m
+    [35mbreaches[39m: 0
+    [35mwarned[39m: 0
+    [35mrecomputed[39m: 1
+[01:53:00] [32mINFO[39m: [36mPasada de SLA[39m
+    [35mbreaches[39m: 0
+    [35mwarned[39m: 1
+    [35mrecomputed[39m: 0
+[01:54:00] [32mINFO[39m: [36mPasada de SLA[39m
+    [35mbreaches[39m: 0
+    [35mwarned[39m: 0
+    [35mrecomputed[39m: 3
+[cobertura] Señal de parada recibida, apagando la API
+[01:56:58] [32mINFO[39m: [36mSIGTERM recibido, cerrando...[39m
+----------------------------|---------|----------|---------|---------|------------------------------
+File                        | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s            
+----------------------------|---------|----------|---------|---------|------------------------------
+All files                   |   85.82 |     82.3 |   91.66 |   85.82 |                              
+ src                        |    93.1 |    68.75 |     100 |    93.1 |                              
+  main.ts                   |    93.1 |    68.75 |     100 |    93.1 | 46,115-116,119-121,142-145   
+ src/common                 |   92.08 |    81.08 |     100 |   92.08 |                              
+  env.ts                    |    90.9 |       50 |     100 |    90.9 | 34-37                        
+  errors.ts                 |   86.79 |    78.26 |     100 |   86.79 | 38-40,49-52                  
+  events.ts                 |     100 |      100 |     100 |     100 |                              
+  prisma.ts                 |     100 |      100 |     100 |     100 |                              
+ src/common/middleware      |     100 |      100 |     100 |     100 |                              
+  auth.ts                   |     100 |      100 |     100 |     100 |                              
+ src/common/storage         |   87.17 |    71.42 |   83.33 |   87.17 |                              
+  index.ts                  |   87.17 |    71.42 |   83.33 |   87.17 | 33-37                        
+ src/demo                   |       0 |        0 |       0 |       0 |                              
+  content.ts                |       0 |        0 |       0 |       0 | 1-128                        
+ src/modules/dashboard      |   97.34 |    82.97 |    90.9 |   97.34 |                              
+  dashboard.routes.ts       |   91.66 |      100 |     100 |   91.66 | 21-22                        
+  dashboard.service.ts      |   98.01 |    78.94 |   88.88 |   98.01 | 199-202                      
+ src/modules/identity       |   94.04 |       76 |   88.88 |   94.04 |                              
+  identity.routes.ts        |     100 |      100 |     100 |     100 |                              
+  identity.service.ts       |   90.74 |     62.5 |   85.71 |   90.74 | 24,51-54                     
+ src/modules/incidents      |   95.15 |     87.5 |   89.65 |   95.15 |                              
+  incidents.mapper.ts       |     100 |    94.44 |     100 |     100 | 5                            
+  incidents.repository.ts   |   89.25 |       95 |   84.61 |   89.25 | 77-80,83-91                  
+  incidents.routes.ts       |   95.23 |    92.85 |     100 |   95.23 | 59-61                        
+  incidents.service.ts      |   96.77 |    82.35 |      90 |   96.77 | 161-164,260-264              
+ src/modules/locations      |     100 |      100 |     100 |     100 |                              
+  locations.routes.ts       |     100 |      100 |     100 |     100 |                              
+  locations.service.ts      |     100 |      100 |     100 |     100 |                              
+ src/modules/media          |     100 |    88.88 |     100 |     100 |                              
+  media.service.ts          |     100 |    88.88 |     100 |     100 | 22                           
+ src/modules/prioritization |   98.36 |    83.87 |     100 |   98.36 |                              
+  prioritization.service.ts |   98.36 |    83.87 |     100 |   98.36 | 117-118                      
+ src/modules/realtime       |   88.79 |    77.77 |     100 |   88.79 |                              
+  realtime.routes.ts        |   83.33 |       60 |     100 |   83.33 | 13-15                        
+  realtime.service.ts       |   89.79 |    81.81 |     100 |   89.79 | 19-24,83-86                  
+ src/modules/similarity     |   76.28 |    74.24 |      75 |   76.28 |                              
+  embeddings.ts             |   43.58 |    66.66 |   66.66 |   43.58 | 18-39                        
+  similarity.routes.ts      |   70.45 |      100 |     100 |   70.45 | 19-22,28-30,34-36,40-42      
+  similarity.service.ts     |   81.31 |    73.33 |   72.72 |   81.31 | ...5,181-204,213-215,271-288 
+ src/modules/sla            |   75.52 |    71.42 |     100 |   75.52 |                              
+  sla.job.ts                |   96.66 |     62.5 |     100 |   96.66 | 22                           
+  sla.service.ts            |   69.91 |    76.92 |     100 |   69.91 | 45-78                        
+ src/modules/workflow       |   97.79 |    86.53 |     100 |   97.79 |                              
+  workflow.routes.ts        |     100 |      100 |     100 |     100 |                              
+  workflow.service.ts       |   97.56 |    85.71 |     100 |   97.56 | 153-156                      
+----------------------------|---------|----------|---------|---------|------------------------------
+
+=============================== Coverage summary ===============================
+Statements   : 85.82% ( 2034/2370 )
+Branches     : 82.3% ( 400/486 )
+Functions    : 91.66% ( 121/132 )
+Lines        : 85.82% ( 2034/2370 )
+================================================================================

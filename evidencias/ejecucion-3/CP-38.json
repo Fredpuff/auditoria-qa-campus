@@ -1,0 +1,124 @@
+{
+  "caso": "CP-38",
+  "titulo": "CP-38 | Foto de exactamente 5 MB",
+  "ejecucion": "ejecucion-3",
+  "fecha": "2026-11-17T01:54:24.263Z",
+  "estado": "Aprobado",
+  "error": null,
+  "pasos": [
+    {
+      "n": 1,
+      "peticion": "POST /api/incidents",
+      "quien": "estudiante4",
+      "cuerpo": {
+        "spaceId": "e264e57f-ba9e-4d84-9fe3-1c368608fc0f",
+        "category": "STRUCTURAL",
+        "riskLevel": "LOW",
+        "description": "Persiana rota en la ventana del fondo del aula",
+        "hotspot": null
+      },
+      "estado": 201,
+      "respuesta": {
+        "id": "ef0011b6-be79-42f5-b3c8-54c063fc21d5",
+        "number": 74,
+        "code": "INC-00074",
+        "description": "Persiana rota en la ventana del fondo del aula",
+        "category": "STRUCTURAL",
+        "riskLevel": "LOW",
+        "status": "PENDING",
+        "priorityScore": 42.5,
+        "priorityLevel": "MEDIUM",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 30,
+            "weight": 0.35,
+            "contribution": 10.5
+          },
+          "space": {
+            "value": 94.5,
+            "weight": 0.1,
+            "contribution": 9.5
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 70,
+            "weight": 0.25,
+            "contribution": 17.5
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T13:54:24.092Z",
+        "resolutionDueAt": "2026-11-20T01:54:24.092Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:54:24.092Z",
+        "updatedAt": "2026-11-17T01:54:24.095Z",
+        "stageStartedAt": "2026-11-17T01:54:24.092Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": null,
+        "space": {
+          "id": "e264e57f-ba9e-4d84-9fe3-1c368608fc0f",
+          "code": "302",
+          "name": "Aula 302",
+          "type": "CLASSROOM",
+          "floor": 3,
+          "capacity": 45,
+          "block": {
+            "id": "dba5fded-436c-4a92-b5f1-216a87d1cbe9",
+            "code": "E",
+            "name": "Bloque E · Aulas"
+          },
+          "campus": {
+            "id": "490a0c63-cb4e-4d95-ab63-2d1f9178367f",
+            "code": "NOR",
+            "name": "Sede Norte"
+          }
+        },
+        "reporter": {
+          "id": "661a9c77-758b-4e46-9cb0-ebf61a13e1e0",
+          "name": "Juan Esteban Díaz",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null
+      },
+      "ms": 53
+    },
+    {
+      "n": 2,
+      "peticion": "POST /api/incidents/ef0011b6-be79-42f5-b3c8-54c063fc21d5/evidence",
+      "quien": "estudiante4",
+      "cuerpo": {
+        "archivo": "justa.png",
+        "tipo": "image/png",
+        "bytes": 5242880
+      },
+      "estado": 201,
+      "respuesta": {
+        "id": "08fa6bc7-ed6c-4e73-9fc8-c92d4f6a8187",
+        "stage": "REPORT",
+        "kind": "PHOTO",
+        "url": "/uploads/f2817287-2cb2-4be0-9d43-1264882841d7.webp",
+        "text": null,
+        "width": 1,
+        "height": 1,
+        "createdAt": "2026-11-17T01:54:24.254Z"
+      },
+      "ms": 67
+    }
+  ]
+}

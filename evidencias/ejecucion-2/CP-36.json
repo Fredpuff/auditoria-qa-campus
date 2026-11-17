@@ -1,0 +1,102 @@
+{
+  "caso": "CP-36",
+  "titulo": "CP-36 | Descripción de 1000 caracteres (máximo)",
+  "ejecucion": "ejecucion-2",
+  "fecha": "2026-11-17T01:49:36.873Z",
+  "estado": "Aprobado",
+  "error": null,
+  "pasos": [
+    {
+      "n": 1,
+      "peticion": "POST /api/incidents",
+      "quien": "estudiante3",
+      "cuerpo": {
+        "spaceId": "ba00bd68-a367-4b18-a845-62de611f02d5",
+        "category": "SANITARY",
+        "riskLevel": "LOW",
+        "description": "El inodoro del fondo descarga sin parar y moja el piso. El inodoro del fondo descarga sin parar y moja el piso. El inodoro del fondo descarga sin parar y moja el piso. El inodoro del fondo descarga sin parar y moja el piso. El inodoro del fondo descarga sin parar y moja el piso. El inodoro del fondo… (1000 caracteres)",
+        "hotspot": null
+      },
+      "estado": 201,
+      "respuesta": {
+        "id": "c2344545-61b1-4b88-b1fb-a4c8c4d03d48",
+        "number": 73,
+        "code": "INC-00073",
+        "description": "El inodoro del fondo descarga sin parar y moja el piso. El inodoro del fondo descarga sin parar y moja el piso. El inodoro del fondo descarga sin parar y moja el piso. El inodoro del fondo descarga sin parar y moja el piso. El inodoro del fondo descarga sin parar y moja el piso. El inodoro del fondo… (1000 caracteres)",
+        "category": "SANITARY",
+        "riskLevel": "LOW",
+        "status": "PENDING",
+        "priorityScore": 38.6,
+        "priorityLevel": "MEDIUM",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 30,
+            "weight": 0.35,
+            "contribution": 10.5
+          },
+          "space": {
+            "value": 81,
+            "weight": 0.1,
+            "contribution": 8.1
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 60,
+            "weight": 0.25,
+            "contribution": 15
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T13:49:36.840Z",
+        "resolutionDueAt": "2026-11-20T01:49:36.840Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:49:36.840Z",
+        "updatedAt": "2026-11-17T01:49:36.846Z",
+        "stageStartedAt": "2026-11-17T01:49:36.840Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": null,
+        "space": {
+          "id": "ba00bd68-a367-4b18-a845-62de611f02d5",
+          "code": "B1",
+          "name": "Baño laboratorios",
+          "type": "BATHROOM",
+          "floor": 1,
+          "capacity": 10,
+          "block": {
+            "id": "44c5c424-a9af-4dbf-8279-429ec0fc4576",
+            "code": "B",
+            "name": "Bloque B · Laboratorios"
+          },
+          "campus": {
+            "id": "d48328b3-aeba-4d7e-b677-20b6a5627fe1",
+            "code": "PRI",
+            "name": "Sede Principal"
+          }
+        },
+        "reporter": {
+          "id": "5e43a375-07dd-491b-ac25-2db1034f13ed",
+          "name": "Camila Ortiz",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null
+      },
+      "ms": 42
+    }
+  ]
+}

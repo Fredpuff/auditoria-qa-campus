@@ -1,0 +1,228 @@
+{
+  "caso": "CP-46",
+  "titulo": "CP-46 | Quién adjunta evidencia del daño y del arreglo",
+  "ejecucion": "ejecucion-1",
+  "fecha": "2026-11-17T01:44:54.132Z",
+  "estado": "Aprobado",
+  "error": null,
+  "pasos": [
+    {
+      "n": 1,
+      "peticion": "POST /api/incidents",
+      "quien": "estudiante1",
+      "cuerpo": {
+        "spaceId": "069f87ab-292a-4857-bf70-54e65a270fa7",
+        "category": "FURNITURE",
+        "riskLevel": "LOW",
+        "description": "Perchero de pared arrancado del muro",
+        "hotspot": null
+      },
+      "estado": 201,
+      "respuesta": {
+        "id": "6107fd00-30d6-43b6-b8bc-9e47fc28ab37",
+        "number": 82,
+        "code": "INC-00082",
+        "description": "Perchero de pared arrancado del muro",
+        "category": "FURNITURE",
+        "riskLevel": "LOW",
+        "status": "PENDING",
+        "priorityScore": 35,
+        "priorityLevel": "MEDIUM",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 30,
+            "weight": 0.35,
+            "contribution": 10.5
+          },
+          "space": {
+            "value": 94.5,
+            "weight": 0.1,
+            "contribution": 9.5
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 40,
+            "weight": 0.25,
+            "contribution": 10
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T13:44:53.964Z",
+        "resolutionDueAt": "2026-11-20T01:44:53.964Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:44:53.964Z",
+        "updatedAt": "2026-11-17T01:44:53.967Z",
+        "stageStartedAt": "2026-11-17T01:44:53.964Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": null,
+        "space": {
+          "id": "069f87ab-292a-4857-bf70-54e65a270fa7",
+          "code": "101",
+          "name": "Aula 101",
+          "type": "CLASSROOM",
+          "floor": 1,
+          "capacity": 45,
+          "block": {
+            "id": "cb911031-7809-476c-b53d-edd8f42fbf85",
+            "code": "E",
+            "name": "Bloque E · Aulas"
+          },
+          "campus": {
+            "id": "d13b72e9-002b-4bdc-a642-7ff811b30038",
+            "code": "NOR",
+            "name": "Sede Norte"
+          }
+        },
+        "reporter": {
+          "id": "713f52b5-7328-4cb8-8d44-cfd59dd8b7f5",
+          "name": "Valentina Ruiz",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null
+      },
+      "ms": 34
+    },
+    {
+      "n": 2,
+      "peticion": "POST /api/incidents/6107fd00-30d6-43b6-b8bc-9e47fc28ab37/evidence?stage=REPORT",
+      "quien": "estudiante1",
+      "cuerpo": {
+        "archivo": "foto-dano.png",
+        "tipo": "image/png",
+        "bytes": 69
+      },
+      "estado": 201,
+      "respuesta": {
+        "id": "51dd6bb2-1996-416e-8473-e65251a498c2",
+        "stage": "REPORT",
+        "kind": "PHOTO",
+        "url": "/uploads/20058a06-5aa8-4feb-b4ed-1d052087db3a.webp",
+        "text": null,
+        "width": 1,
+        "height": 1,
+        "createdAt": "2026-11-17T01:44:54.010Z"
+      },
+      "ms": 30
+    },
+    {
+      "n": 3,
+      "peticion": "POST /api/incidents/6107fd00-30d6-43b6-b8bc-9e47fc28ab37/evidence?stage=REPORT",
+      "quien": "estudiante2",
+      "cuerpo": {
+        "archivo": "foto-dano.png",
+        "tipo": "image/png",
+        "bytes": 69
+      },
+      "estado": 403,
+      "respuesta": {
+        "error": "Solo quien reporta puede adjuntar evidencia del daño"
+      },
+      "ms": 13
+    },
+    {
+      "n": 4,
+      "peticion": "POST /api/incidents/6107fd00-30d6-43b6-b8bc-9e47fc28ab37/evidence?stage=REPORT",
+      "quien": "supervisor",
+      "cuerpo": {
+        "archivo": "foto-dano.png",
+        "tipo": "image/png",
+        "bytes": 69
+      },
+      "estado": 201,
+      "respuesta": {
+        "id": "5fd55b70-b976-443e-9ffd-a0edb9113242",
+        "stage": "REPORT",
+        "kind": "PHOTO",
+        "url": "/uploads/b230acd3-e37b-4287-80f9-2ebb25ac0c62.webp",
+        "text": null,
+        "width": 1,
+        "height": 1,
+        "createdAt": "2026-11-17T01:44:54.049Z"
+      },
+      "ms": 22
+    },
+    {
+      "n": 5,
+      "peticion": "POST /api/incidents/6107fd00-30d6-43b6-b8bc-9e47fc28ab37/transition",
+      "quien": "tecnico1",
+      "cuerpo": {
+        "to": "IN_PROGRESS"
+      },
+      "estado": 200,
+      "respuesta": {
+        "incidentId": "6107fd00-30d6-43b6-b8bc-9e47fc28ab37",
+        "from": "PENDING",
+        "to": "IN_PROGRESS"
+      },
+      "ms": 24
+    },
+    {
+      "n": 6,
+      "peticion": "POST /api/incidents/6107fd00-30d6-43b6-b8bc-9e47fc28ab37/evidence?stage=FIX",
+      "quien": "tecnico1",
+      "cuerpo": {
+        "archivo": "foto-dano.png",
+        "tipo": "image/png",
+        "bytes": 69
+      },
+      "estado": 201,
+      "respuesta": {
+        "id": "f99148ef-8371-4f87-81e3-8fe9eade9d88",
+        "stage": "FIX",
+        "kind": "PHOTO",
+        "url": "/uploads/d4868e1c-73f5-49d5-91d2-45b0958777d2.webp",
+        "text": null,
+        "width": 1,
+        "height": 1,
+        "createdAt": "2026-11-17T01:44:54.096Z"
+      },
+      "ms": 22
+    },
+    {
+      "n": 7,
+      "peticion": "POST /api/incidents/6107fd00-30d6-43b6-b8bc-9e47fc28ab37/evidence?stage=FIX",
+      "quien": "tecnico2",
+      "cuerpo": {
+        "archivo": "foto-dano.png",
+        "tipo": "image/png",
+        "bytes": 69
+      },
+      "estado": 403,
+      "respuesta": {
+        "error": "Solo el técnico asignado adjunta evidencia del arreglo"
+      },
+      "ms": 13
+    },
+    {
+      "n": 8,
+      "peticion": "POST /api/incidents/6107fd00-30d6-43b6-b8bc-9e47fc28ab37/evidence?stage=FIX",
+      "quien": "estudiante1",
+      "cuerpo": {
+        "archivo": "foto-dano.png",
+        "tipo": "image/png",
+        "bytes": 69
+      },
+      "estado": 403,
+      "respuesta": {
+        "error": "Solo el técnico asignado adjunta evidencia del arreglo"
+      },
+      "ms": 15
+    }
+  ]
+}

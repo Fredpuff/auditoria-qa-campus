@@ -1,0 +1,801 @@
+{
+  "caso": "CP-55",
+  "titulo": "CP-55 | Un reporte agrupado no cambia de estado por su cuenta",
+  "ejecucion": "ejecucion-2",
+  "fecha": "2026-11-17T01:50:39.393Z",
+  "estado": "Aprobado",
+  "error": null,
+  "pasos": [
+    {
+      "n": 1,
+      "peticion": "POST /api/incidents",
+      "quien": "estudiante2",
+      "cuerpo": {
+        "spaceId": "3691f06a-21b0-4c22-bfd6-29e1bd162013",
+        "category": "WATER_LEAK",
+        "riskLevel": "MEDIUM",
+        "description": "La llave del orinal queda abierta y bota agua",
+        "hotspot": {
+          "x": 1,
+          "y": 1,
+          "z": -2
+        }
+      },
+      "estado": 201,
+      "respuesta": {
+        "id": "c0d74dc9-b8bc-49d6-a783-e50a966075ac",
+        "number": 98,
+        "code": "INC-00098",
+        "description": "La llave del orinal queda abierta y bota agua",
+        "category": "WATER_LEAK",
+        "riskLevel": "MEDIUM",
+        "status": "PENDING",
+        "priorityScore": 54.1,
+        "priorityLevel": "HIGH",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 60,
+            "weight": 0.35,
+            "contribution": 21
+          },
+          "space": {
+            "value": 81.2,
+            "weight": 0.1,
+            "contribution": 8.1
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 80,
+            "weight": 0.25,
+            "contribution": 20
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T05:50:38.718Z",
+        "resolutionDueAt": "2026-11-18T01:50:38.718Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:50:38.718Z",
+        "updatedAt": "2026-11-17T01:50:38.720Z",
+        "stageStartedAt": "2026-11-17T01:50:38.718Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": {
+          "x": 1,
+          "y": 1,
+          "z": -2
+        },
+        "space": {
+          "id": "3691f06a-21b0-4c22-bfd6-29e1bd162013",
+          "code": "B1",
+          "name": "Baño principal",
+          "type": "BATHROOM",
+          "floor": 1,
+          "capacity": 12,
+          "block": {
+            "id": "e1f583d4-f9f5-4528-80c5-003c8d650bfe",
+            "code": "E",
+            "name": "Bloque E · Aulas"
+          },
+          "campus": {
+            "id": "c6404dc8-3b3c-4ec7-bb52-b29273b4660b",
+            "code": "NOR",
+            "name": "Sede Norte"
+          }
+        },
+        "reporter": {
+          "id": "49e71824-b4e7-45aa-9b27-4e14d445dba5",
+          "name": "Santiago Herrera",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null
+      },
+      "ms": 56
+    },
+    {
+      "n": 2,
+      "peticion": "POST /api/incidents",
+      "quien": "estudiante4",
+      "cuerpo": {
+        "spaceId": "3691f06a-21b0-4c22-bfd6-29e1bd162013",
+        "category": "WATER_LEAK",
+        "riskLevel": "MEDIUM",
+        "description": "Bota agua la llave del orinal porque queda abierta",
+        "hotspot": {
+          "x": 1.4,
+          "y": 1,
+          "z": -2
+        }
+      },
+      "estado": 201,
+      "respuesta": {
+        "id": "445b5ebb-10be-4b68-b14d-f9d930086686",
+        "number": 99,
+        "code": "INC-00099",
+        "description": "Bota agua la llave del orinal porque queda abierta",
+        "category": "WATER_LEAK",
+        "riskLevel": "MEDIUM",
+        "status": "PENDING",
+        "priorityScore": 54.1,
+        "priorityLevel": "HIGH",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 60,
+            "weight": 0.35,
+            "contribution": 21
+          },
+          "space": {
+            "value": 81.2,
+            "weight": 0.1,
+            "contribution": 8.1
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 80,
+            "weight": 0.25,
+            "contribution": 20
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T05:50:38.765Z",
+        "resolutionDueAt": "2026-11-18T01:50:38.765Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:50:38.765Z",
+        "updatedAt": "2026-11-17T01:50:38.769Z",
+        "stageStartedAt": "2026-11-17T01:50:38.765Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": {
+          "x": 1.4,
+          "y": 1,
+          "z": -2
+        },
+        "space": {
+          "id": "3691f06a-21b0-4c22-bfd6-29e1bd162013",
+          "code": "B1",
+          "name": "Baño principal",
+          "type": "BATHROOM",
+          "floor": 1,
+          "capacity": 12,
+          "block": {
+            "id": "e1f583d4-f9f5-4528-80c5-003c8d650bfe",
+            "code": "E",
+            "name": "Bloque E · Aulas"
+          },
+          "campus": {
+            "id": "c6404dc8-3b3c-4ec7-bb52-b29273b4660b",
+            "code": "NOR",
+            "name": "Sede Norte"
+          }
+        },
+        "reporter": {
+          "id": "5f020a81-5af3-40bf-9839-0f0bf73b022f",
+          "name": "Juan Esteban Díaz",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null
+      },
+      "ms": 36
+    },
+    {
+      "n": 3,
+      "peticion": "GET /api/incidents/445b5ebb-10be-4b68-b14d-f9d930086686",
+      "quien": "supervisor",
+      "estado": 200,
+      "respuesta": {
+        "id": "445b5ebb-10be-4b68-b14d-f9d930086686",
+        "number": 99,
+        "code": "INC-00099",
+        "description": "Bota agua la llave del orinal porque queda abierta",
+        "category": "WATER_LEAK",
+        "riskLevel": "MEDIUM",
+        "status": "PENDING",
+        "priorityScore": 54.1,
+        "priorityLevel": "HIGH",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 60,
+            "weight": 0.35,
+            "contribution": 21
+          },
+          "space": {
+            "value": 81.2,
+            "weight": 0.1,
+            "contribution": 8.1
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 80,
+            "weight": 0.25,
+            "contribution": 20
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T05:50:38.765Z",
+        "resolutionDueAt": "2026-11-18T01:50:38.765Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:50:38.765Z",
+        "updatedAt": "2026-11-17T01:50:38.769Z",
+        "stageStartedAt": "2026-11-17T01:50:38.765Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": {
+          "x": 1.4,
+          "y": 1,
+          "z": -2
+        },
+        "space": {
+          "id": "3691f06a-21b0-4c22-bfd6-29e1bd162013",
+          "code": "B1",
+          "name": "Baño principal",
+          "type": "BATHROOM",
+          "floor": 1,
+          "capacity": 12,
+          "block": {
+            "id": "e1f583d4-f9f5-4528-80c5-003c8d650bfe",
+            "code": "E",
+            "name": "Bloque E · Aulas"
+          },
+          "campus": {
+            "id": "c6404dc8-3b3c-4ec7-bb52-b29273b4660b",
+            "code": "NOR",
+            "name": "Sede Norte"
+          }
+        },
+        "reporter": {
+          "id": "5f020a81-5af3-40bf-9839-0f0bf73b022f",
+          "name": "Juan Esteban Díaz",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null,
+        "evidence": [],
+        "history": [
+          {
+            "id": "09476cae-7db5-4342-bd58-bf9cb5f5eccc",
+            "fromStatus": null,
+            "toStatus": "PENDING",
+            "changedBy": {
+              "id": "5f020a81-5af3-40bf-9839-0f0bf73b022f",
+              "name": "Juan Esteban Díaz",
+              "role": "STUDENT"
+            },
+            "changedAt": "2026-11-17T01:50:38.765Z",
+            "durationInPrevMs": null,
+            "reason": "MANUAL",
+            "note": null
+          }
+        ],
+        "events": [
+          {
+            "id": "4d559a3c-cc8d-4c75-9253-827699d92f58",
+            "type": "CREATED",
+            "payload": {
+              "level": "HIGH",
+              "score": 54.1,
+              "breakdown": {
+                "age": {
+                  "value": 0,
+                  "weight": 0.1,
+                  "contribution": 0
+                },
+                "risk": {
+                  "value": 60,
+                  "weight": 0.35,
+                  "contribution": 21
+                },
+                "space": {
+                  "value": 81.2,
+                  "weight": 0.1,
+                  "contribution": 8.1
+                },
+                "similar": {
+                  "value": 25,
+                  "weight": 0.2,
+                  "contribution": 5
+                },
+                "damageType": {
+                  "value": 80,
+                  "weight": 0.25,
+                  "contribution": 20
+                }
+              },
+              "joinIncidentId": null
+            },
+            "actor": {
+              "id": "5f020a81-5af3-40bf-9839-0f0bf73b022f",
+              "name": "Juan Esteban Díaz",
+              "role": "STUDENT"
+            },
+            "createdAt": "2026-11-17T01:50:38.773Z"
+          }
+        ],
+        "clusterMembers": [],
+        "availableTransitions": [
+          {
+            "from": "PENDING",
+            "to": "IN_PROGRESS",
+            "roles": [
+              "TECHNICIAN",
+              "SUPERVISOR"
+            ],
+            "label": "Tomar caso",
+            "description": "El técnico toma el caso o el supervisor lo asigna"
+          }
+        ]
+      },
+      "ms": 18
+    },
+    {
+      "n": 4,
+      "peticion": "GET /api/incidents/445b5ebb-10be-4b68-b14d-f9d930086686",
+      "quien": "supervisor",
+      "estado": 200,
+      "respuesta": {
+        "id": "445b5ebb-10be-4b68-b14d-f9d930086686",
+        "number": 99,
+        "code": "INC-00099",
+        "description": "Bota agua la llave del orinal porque queda abierta",
+        "category": "WATER_LEAK",
+        "riskLevel": "MEDIUM",
+        "status": "PENDING",
+        "priorityScore": 57,
+        "priorityLevel": "HIGH",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 60,
+            "weight": 0.35,
+            "contribution": 21
+          },
+          "space": {
+            "value": 81.2,
+            "weight": 0.1,
+            "contribution": 8.1
+          },
+          "similar": {
+            "value": 39.6,
+            "weight": 0.2,
+            "contribution": 7.9
+          },
+          "damageType": {
+            "value": 80,
+            "weight": 0.25,
+            "contribution": 20
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T05:50:38.718Z",
+        "resolutionDueAt": "2026-11-18T01:50:38.718Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:50:38.765Z",
+        "updatedAt": "2026-11-17T01:50:38.871Z",
+        "stageStartedAt": "2026-11-17T01:50:38.765Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": {
+          "x": 1.4,
+          "y": 1,
+          "z": -2
+        },
+        "space": {
+          "id": "3691f06a-21b0-4c22-bfd6-29e1bd162013",
+          "code": "B1",
+          "name": "Baño principal",
+          "type": "BATHROOM",
+          "floor": 1,
+          "capacity": 12,
+          "block": {
+            "id": "e1f583d4-f9f5-4528-80c5-003c8d650bfe",
+            "code": "E",
+            "name": "Bloque E · Aulas"
+          },
+          "campus": {
+            "id": "c6404dc8-3b3c-4ec7-bb52-b29273b4660b",
+            "code": "NOR",
+            "name": "Sede Norte"
+          }
+        },
+        "reporter": {
+          "id": "5f020a81-5af3-40bf-9839-0f0bf73b022f",
+          "name": "Juan Esteban Díaz",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": "9dc54a49-6d96-4d44-aa02-b779af0f9e2b",
+        "isClusterPrimary": false,
+        "clusterSize": 2,
+        "thumbnailUrl": null,
+        "evidence": [],
+        "history": [
+          {
+            "id": "09476cae-7db5-4342-bd58-bf9cb5f5eccc",
+            "fromStatus": null,
+            "toStatus": "PENDING",
+            "changedBy": {
+              "id": "5f020a81-5af3-40bf-9839-0f0bf73b022f",
+              "name": "Juan Esteban Díaz",
+              "role": "STUDENT"
+            },
+            "changedAt": "2026-11-17T01:50:38.765Z",
+            "durationInPrevMs": null,
+            "reason": "MANUAL",
+            "note": null
+          }
+        ],
+        "events": [
+          {
+            "id": "4d559a3c-cc8d-4c75-9253-827699d92f58",
+            "type": "CREATED",
+            "payload": {
+              "level": "HIGH",
+              "score": 54.1,
+              "breakdown": {
+                "age": {
+                  "value": 0,
+                  "weight": 0.1,
+                  "contribution": 0
+                },
+                "risk": {
+                  "value": 60,
+                  "weight": 0.35,
+                  "contribution": 21
+                },
+                "space": {
+                  "value": 81.2,
+                  "weight": 0.1,
+                  "contribution": 8.1
+                },
+                "similar": {
+                  "value": 25,
+                  "weight": 0.2,
+                  "contribution": 5
+                },
+                "damageType": {
+                  "value": 80,
+                  "weight": 0.25,
+                  "contribution": 20
+                }
+              },
+              "joinIncidentId": null
+            },
+            "actor": {
+              "id": "5f020a81-5af3-40bf-9839-0f0bf73b022f",
+              "name": "Juan Esteban Díaz",
+              "role": "STUDENT"
+            },
+            "createdAt": "2026-11-17T01:50:38.773Z"
+          },
+          {
+            "id": "671719af-6b71-4b60-9aeb-b6f48f529873",
+            "type": "GROUPED",
+            "payload": {
+              "mode": "auto",
+              "moved": 1,
+              "clusterId": "9dc54a49-6d96-4d44-aa02-b779af0f9e2b",
+              "similarity": {
+                "text": 1,
+                "time": 1,
+                "score": 1,
+                "category": 1,
+                "location": 1,
+                "textSource": "tfidf",
+                "hotspotDistance": 0.4
+              },
+              "primaryIncidentId": "c0d74dc9-b8bc-49d6-a783-e50a966075ac"
+            },
+            "actor": null,
+            "createdAt": "2026-11-17T01:50:38.847Z"
+          }
+        ],
+        "clusterMembers": [
+          {
+            "id": "c0d74dc9-b8bc-49d6-a783-e50a966075ac",
+            "code": "INC-00098",
+            "description": "La llave del orinal queda abierta y bota agua",
+            "status": "PENDING",
+            "createdAt": "2026-11-17T01:50:38.718Z",
+            "isClusterPrimary": true,
+            "reporterName": "Santiago Herrera",
+            "similarity": null
+          },
+          {
+            "id": "445b5ebb-10be-4b68-b14d-f9d930086686",
+            "code": "INC-00099",
+            "description": "Bota agua la llave del orinal porque queda abierta",
+            "status": "PENDING",
+            "createdAt": "2026-11-17T01:50:38.765Z",
+            "isClusterPrimary": false,
+            "reporterName": "Juan Esteban Díaz",
+            "similarity": {
+              "text": 1,
+              "time": 1,
+              "score": 1,
+              "category": 1,
+              "location": 1,
+              "textSource": "tfidf",
+              "hotspotDistance": 0.4
+            }
+          }
+        ],
+        "availableTransitions": []
+      },
+      "ms": 18
+    },
+    {
+      "n": 5,
+      "peticion": "POST /api/incidents/445b5ebb-10be-4b68-b14d-f9d930086686/transition",
+      "quien": "tecnico1",
+      "cuerpo": {
+        "to": "IN_PROGRESS"
+      },
+      "estado": 400,
+      "respuesta": {
+        "error": "Este reporte está agrupado: el estado se cambia en la incidencia madre INC-00098"
+      },
+      "ms": 23
+    },
+    {
+      "n": 6,
+      "peticion": "GET /api/incidents/c0d74dc9-b8bc-49d6-a783-e50a966075ac",
+      "quien": "supervisor",
+      "estado": 200,
+      "respuesta": {
+        "id": "c0d74dc9-b8bc-49d6-a783-e50a966075ac",
+        "number": 98,
+        "code": "INC-00098",
+        "description": "La llave del orinal queda abierta y bota agua",
+        "category": "WATER_LEAK",
+        "riskLevel": "MEDIUM",
+        "status": "PENDING",
+        "priorityScore": 57,
+        "priorityLevel": "HIGH",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 60,
+            "weight": 0.35,
+            "contribution": 21
+          },
+          "space": {
+            "value": 81.2,
+            "weight": 0.1,
+            "contribution": 8.1
+          },
+          "similar": {
+            "value": 39.6,
+            "weight": 0.2,
+            "contribution": 7.9
+          },
+          "damageType": {
+            "value": 80,
+            "weight": 0.25,
+            "contribution": 20
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T05:50:38.718Z",
+        "resolutionDueAt": "2026-11-18T01:50:38.718Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:50:38.718Z",
+        "updatedAt": "2026-11-17T01:50:38.871Z",
+        "stageStartedAt": "2026-11-17T01:50:38.718Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": {
+          "x": 1,
+          "y": 1,
+          "z": -2
+        },
+        "space": {
+          "id": "3691f06a-21b0-4c22-bfd6-29e1bd162013",
+          "code": "B1",
+          "name": "Baño principal",
+          "type": "BATHROOM",
+          "floor": 1,
+          "capacity": 12,
+          "block": {
+            "id": "e1f583d4-f9f5-4528-80c5-003c8d650bfe",
+            "code": "E",
+            "name": "Bloque E · Aulas"
+          },
+          "campus": {
+            "id": "c6404dc8-3b3c-4ec7-bb52-b29273b4660b",
+            "code": "NOR",
+            "name": "Sede Norte"
+          }
+        },
+        "reporter": {
+          "id": "49e71824-b4e7-45aa-9b27-4e14d445dba5",
+          "name": "Santiago Herrera",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": "9dc54a49-6d96-4d44-aa02-b779af0f9e2b",
+        "isClusterPrimary": true,
+        "clusterSize": 2,
+        "thumbnailUrl": null,
+        "evidence": [],
+        "history": [
+          {
+            "id": "34c79a1b-bd47-421e-acdf-e24c9502f921",
+            "fromStatus": null,
+            "toStatus": "PENDING",
+            "changedBy": {
+              "id": "49e71824-b4e7-45aa-9b27-4e14d445dba5",
+              "name": "Santiago Herrera",
+              "role": "STUDENT"
+            },
+            "changedAt": "2026-11-17T01:50:38.718Z",
+            "durationInPrevMs": null,
+            "reason": "MANUAL",
+            "note": null
+          }
+        ],
+        "events": [
+          {
+            "id": "a53985e0-7763-4584-a59c-2148813a4e49",
+            "type": "CREATED",
+            "payload": {
+              "level": "HIGH",
+              "score": 54.1,
+              "breakdown": {
+                "age": {
+                  "value": 0,
+                  "weight": 0.1,
+                  "contribution": 0
+                },
+                "risk": {
+                  "value": 60,
+                  "weight": 0.35,
+                  "contribution": 21
+                },
+                "space": {
+                  "value": 81.2,
+                  "weight": 0.1,
+                  "contribution": 8.1
+                },
+                "similar": {
+                  "value": 25,
+                  "weight": 0.2,
+                  "contribution": 5
+                },
+                "damageType": {
+                  "value": 80,
+                  "weight": 0.25,
+                  "contribution": 20
+                }
+              },
+              "joinIncidentId": null
+            },
+            "actor": {
+              "id": "49e71824-b4e7-45aa-9b27-4e14d445dba5",
+              "name": "Santiago Herrera",
+              "role": "STUDENT"
+            },
+            "createdAt": "2026-11-17T01:50:38.725Z"
+          },
+          {
+            "id": "6ebbefc0-9ebb-46bf-b38b-a35990bccef7",
+            "type": "GROUPED",
+            "payload": {
+              "mode": "auto",
+              "clusterId": "9dc54a49-6d96-4d44-aa02-b779af0f9e2b",
+              "similarity": {
+                "text": 1,
+                "time": 1,
+                "score": 1,
+                "category": 1,
+                "location": 1,
+                "textSource": "tfidf",
+                "hotspotDistance": 0.4
+              },
+              "reportsCount": 2,
+              "joinedIncidentId": "445b5ebb-10be-4b68-b14d-f9d930086686"
+            },
+            "actor": null,
+            "createdAt": "2026-11-17T01:50:38.848Z"
+          }
+        ],
+        "clusterMembers": [
+          {
+            "id": "c0d74dc9-b8bc-49d6-a783-e50a966075ac",
+            "code": "INC-00098",
+            "description": "La llave del orinal queda abierta y bota agua",
+            "status": "PENDING",
+            "createdAt": "2026-11-17T01:50:38.718Z",
+            "isClusterPrimary": true,
+            "reporterName": "Santiago Herrera",
+            "similarity": null
+          },
+          {
+            "id": "445b5ebb-10be-4b68-b14d-f9d930086686",
+            "code": "INC-00099",
+            "description": "Bota agua la llave del orinal porque queda abierta",
+            "status": "PENDING",
+            "createdAt": "2026-11-17T01:50:38.765Z",
+            "isClusterPrimary": false,
+            "reporterName": "Juan Esteban Díaz",
+            "similarity": {
+              "text": 1,
+              "time": 1,
+              "score": 1,
+              "category": 1,
+              "location": 1,
+              "textSource": "tfidf",
+              "hotspotDistance": 0.4
+            }
+          }
+        ],
+        "availableTransitions": [
+          {
+            "from": "PENDING",
+            "to": "IN_PROGRESS",
+            "roles": [
+              "TECHNICIAN",
+              "SUPERVISOR"
+            ],
+            "label": "Tomar caso",
+            "description": "El técnico toma el caso o el supervisor lo asigna"
+          }
+        ]
+      },
+      "ms": 25
+    }
+  ]
+}

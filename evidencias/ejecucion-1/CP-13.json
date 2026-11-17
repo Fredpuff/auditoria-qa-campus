@@ -1,0 +1,118 @@
+{
+  "caso": "CP-13",
+  "titulo": "CP-13 | Foto de 5 MB + 1 byte",
+  "ejecucion": "ejecucion-1",
+  "fecha": "2026-11-17T01:44:51.166Z",
+  "estado": "Aprobado",
+  "error": null,
+  "pasos": [
+    {
+      "n": 1,
+      "peticion": "POST /api/incidents",
+      "quien": "estudiante1",
+      "cuerpo": {
+        "spaceId": "46660ef2-fbb9-459b-ad8e-f11db7dad192",
+        "category": "COSMETIC",
+        "riskLevel": "NONE",
+        "description": "Mancha de humedad sobre el escritorio de dirección",
+        "hotspot": null
+      },
+      "estado": 201,
+      "respuesta": {
+        "id": "9c8b8b58-a93d-40fa-9e4e-c34d359faa65",
+        "number": 72,
+        "code": "INC-00072",
+        "description": "Mancha de humedad sobre el escritorio de dirección",
+        "category": "COSMETIC",
+        "riskLevel": "NONE",
+        "status": "PENDING",
+        "priorityScore": 12.8,
+        "priorityLevel": "LOW",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 0,
+            "weight": 0.35,
+            "contribution": 0
+          },
+          "space": {
+            "value": 40.6,
+            "weight": 0.1,
+            "contribution": 4.1
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 15,
+            "weight": 0.25,
+            "contribution": 3.8
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-19T01:44:50.992Z",
+        "resolutionDueAt": "2026-11-24T01:44:50.992Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:44:50.992Z",
+        "updatedAt": "2026-11-17T01:44:50.995Z",
+        "stageStartedAt": "2026-11-17T01:44:50.992Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": null,
+        "space": {
+          "id": "46660ef2-fbb9-459b-ad8e-f11db7dad192",
+          "code": "301",
+          "name": "Dirección de sede",
+          "type": "OFFICE",
+          "floor": 3,
+          "capacity": 6,
+          "block": {
+            "id": "2e86b92d-d5e4-4d45-a0ce-a00081d57ea2",
+            "code": "D",
+            "name": "Bloque D · Administrativo"
+          },
+          "campus": {
+            "id": "9d3da020-a7b9-4b8c-8f69-615e560cb551",
+            "code": "PRI",
+            "name": "Sede Principal"
+          }
+        },
+        "reporter": {
+          "id": "713f52b5-7328-4cb8-8d44-cfd59dd8b7f5",
+          "name": "Valentina Ruiz",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null
+      },
+      "ms": 47
+    },
+    {
+      "n": 2,
+      "peticion": "POST /api/incidents/9c8b8b58-a93d-40fa-9e4e-c34d359faa65/evidence",
+      "quien": "estudiante1",
+      "cuerpo": {
+        "archivo": "pesada.png",
+        "tipo": "image/png",
+        "bytes": 5242881
+      },
+      "estado": 413,
+      "respuesta": {
+        "error": "La imagen supera el tamaño máximo de 5 MB",
+        "field": "file"
+      },
+      "ms": 56
+    }
+  ]
+}

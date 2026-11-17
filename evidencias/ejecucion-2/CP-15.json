@@ -1,0 +1,406 @@
+{
+  "caso": "CP-15",
+  "titulo": "CP-15 | Quién puede marcar Resuelto y con qué evidencia",
+  "ejecucion": "ejecucion-2",
+  "fecha": "2026-11-17T01:49:39.027Z",
+  "estado": "Aprobado",
+  "error": null,
+  "pasos": [
+    {
+      "n": 1,
+      "peticion": "POST /api/incidents",
+      "quien": "estudiante1",
+      "cuerpo": {
+        "spaceId": "89c78383-e103-475d-8946-02025e6d8f85",
+        "category": "COSMETIC",
+        "riskLevel": "NONE",
+        "description": "Pared del rack rayada con marcador negro",
+        "hotspot": null
+      },
+      "estado": 201,
+      "respuesta": {
+        "id": "62d68b61-4978-46ce-942f-e108b1bd21f5",
+        "number": 78,
+        "code": "INC-00078",
+        "description": "Pared del rack rayada con marcador negro",
+        "category": "COSMETIC",
+        "riskLevel": "NONE",
+        "status": "PENDING",
+        "priorityScore": 18.8,
+        "priorityLevel": "LOW",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 0,
+            "weight": 0.35,
+            "contribution": 0
+          },
+          "space": {
+            "value": 100,
+            "weight": 0.1,
+            "contribution": 10
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 15,
+            "weight": 0.25,
+            "contribution": 3.8
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-19T01:49:38.867Z",
+        "resolutionDueAt": "2026-11-24T01:49:38.867Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:49:38.867Z",
+        "updatedAt": "2026-11-17T01:49:38.870Z",
+        "stageStartedAt": "2026-11-17T01:49:38.867Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": null,
+        "space": {
+          "id": "89c78383-e103-475d-8946-02025e6d8f85",
+          "code": "302",
+          "name": "Laboratorio de Redes",
+          "type": "LAB",
+          "floor": 3,
+          "capacity": 25,
+          "block": {
+            "id": "44c5c424-a9af-4dbf-8279-429ec0fc4576",
+            "code": "B",
+            "name": "Bloque B · Laboratorios"
+          },
+          "campus": {
+            "id": "d48328b3-aeba-4d7e-b677-20b6a5627fe1",
+            "code": "PRI",
+            "name": "Sede Principal"
+          }
+        },
+        "reporter": {
+          "id": "ef8cdb81-b899-4829-96aa-29208ad05e35",
+          "name": "Valentina Ruiz",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null
+      },
+      "ms": 34
+    },
+    {
+      "n": 2,
+      "peticion": "POST /api/incidents/62d68b61-4978-46ce-942f-e108b1bd21f5/transition",
+      "quien": "tecnico1",
+      "cuerpo": {
+        "to": "IN_PROGRESS"
+      },
+      "estado": 200,
+      "respuesta": {
+        "incidentId": "62d68b61-4978-46ce-942f-e108b1bd21f5",
+        "from": "PENDING",
+        "to": "IN_PROGRESS"
+      },
+      "ms": 37
+    },
+    {
+      "n": 3,
+      "peticion": "POST /api/incidents/62d68b61-4978-46ce-942f-e108b1bd21f5/transition",
+      "quien": "tecnico1",
+      "cuerpo": {
+        "to": "RESOLVED"
+      },
+      "estado": 400,
+      "respuesta": {
+        "error": "Adjunta una foto o una nota del arreglo",
+        "field": "note"
+      },
+      "ms": 14
+    },
+    {
+      "n": 4,
+      "peticion": "POST /api/incidents/62d68b61-4978-46ce-942f-e108b1bd21f5/transition",
+      "quien": "tecnico2",
+      "cuerpo": {
+        "to": "RESOLVED",
+        "note": "Se pintó la pared"
+      },
+      "estado": 403,
+      "respuesta": {
+        "error": "Solo el técnico asignado puede resolverlo"
+      },
+      "ms": 13
+    },
+    {
+      "n": 5,
+      "peticion": "POST /api/incidents/62d68b61-4978-46ce-942f-e108b1bd21f5/transition",
+      "quien": "estudiante1",
+      "cuerpo": {
+        "to": "RESOLVED",
+        "note": "Se pintó la pared"
+      },
+      "estado": 403,
+      "respuesta": {
+        "error": "Tu rol no puede ejecutar esta transición"
+      },
+      "ms": 18
+    },
+    {
+      "n": 6,
+      "peticion": "POST /api/incidents/62d68b61-4978-46ce-942f-e108b1bd21f5/transition",
+      "quien": "tecnico1",
+      "cuerpo": {
+        "to": "RESOLVED",
+        "note": "Se pintó la pared"
+      },
+      "estado": 200,
+      "respuesta": {
+        "incidentId": "62d68b61-4978-46ce-942f-e108b1bd21f5",
+        "from": "IN_PROGRESS",
+        "to": "RESOLVED"
+      },
+      "ms": 30
+    },
+    {
+      "n": 7,
+      "peticion": "GET /api/incidents/62d68b61-4978-46ce-942f-e108b1bd21f5",
+      "quien": "supervisor",
+      "estado": 200,
+      "respuesta": {
+        "id": "62d68b61-4978-46ce-942f-e108b1bd21f5",
+        "number": 78,
+        "code": "INC-00078",
+        "description": "Pared del rack rayada con marcador negro",
+        "category": "COSMETIC",
+        "riskLevel": "NONE",
+        "status": "RESOLVED",
+        "priorityScore": 18.8,
+        "priorityLevel": "LOW",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 0,
+            "weight": 0.35,
+            "contribution": 0
+          },
+          "space": {
+            "value": 100,
+            "weight": 0.1,
+            "contribution": 10
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 15,
+            "weight": 0.25,
+            "contribution": 3.8
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-19T01:49:38.867Z",
+        "resolutionDueAt": "2026-11-24T01:49:38.867Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:49:38.867Z",
+        "updatedAt": "2026-11-17T01:49:38.992Z",
+        "stageStartedAt": "2026-11-17T01:49:38.989Z",
+        "firstResponseAt": "2026-11-17T01:49:38.902Z",
+        "resolvedAt": "2026-11-17T01:49:38.989Z",
+        "verifiedAt": null,
+        "hotspot": null,
+        "space": {
+          "id": "89c78383-e103-475d-8946-02025e6d8f85",
+          "code": "302",
+          "name": "Laboratorio de Redes",
+          "type": "LAB",
+          "floor": 3,
+          "capacity": 25,
+          "block": {
+            "id": "44c5c424-a9af-4dbf-8279-429ec0fc4576",
+            "code": "B",
+            "name": "Bloque B · Laboratorios"
+          },
+          "campus": {
+            "id": "d48328b3-aeba-4d7e-b677-20b6a5627fe1",
+            "code": "PRI",
+            "name": "Sede Principal"
+          }
+        },
+        "reporter": {
+          "id": "ef8cdb81-b899-4829-96aa-29208ad05e35",
+          "name": "Valentina Ruiz",
+          "role": "STUDENT"
+        },
+        "assignee": {
+          "id": "bf8b7142-8763-49fc-a7f7-bac3dc547dfd",
+          "name": "Carlos Rojas",
+          "role": "TECHNICIAN"
+        },
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null,
+        "evidence": [
+          {
+            "id": "2873a60e-4e89-46af-b043-5abd0cbc3813",
+            "stage": "FIX",
+            "kind": "TEXT",
+            "url": null,
+            "text": "Se pintó la pared",
+            "width": null,
+            "height": null,
+            "createdAt": "2026-11-17T01:49:38.997Z"
+          }
+        ],
+        "history": [
+          {
+            "id": "5d20f44f-3114-45c8-ab0b-fbbd8c8425a0",
+            "fromStatus": null,
+            "toStatus": "PENDING",
+            "changedBy": {
+              "id": "ef8cdb81-b899-4829-96aa-29208ad05e35",
+              "name": "Valentina Ruiz",
+              "role": "STUDENT"
+            },
+            "changedAt": "2026-11-17T01:49:38.867Z",
+            "durationInPrevMs": null,
+            "reason": "MANUAL",
+            "note": null
+          },
+          {
+            "id": "b7e6baa7-22e5-40af-8235-ac93b9f4b903",
+            "fromStatus": "PENDING",
+            "toStatus": "IN_PROGRESS",
+            "changedBy": {
+              "id": "bf8b7142-8763-49fc-a7f7-bac3dc547dfd",
+              "name": "Carlos Rojas",
+              "role": "TECHNICIAN"
+            },
+            "changedAt": "2026-11-17T01:49:38.902Z",
+            "durationInPrevMs": 35,
+            "reason": "MANUAL",
+            "note": null
+          },
+          {
+            "id": "151ac2f2-cbba-4591-9086-e321507a73a1",
+            "fromStatus": "IN_PROGRESS",
+            "toStatus": "RESOLVED",
+            "changedBy": {
+              "id": "bf8b7142-8763-49fc-a7f7-bac3dc547dfd",
+              "name": "Carlos Rojas",
+              "role": "TECHNICIAN"
+            },
+            "changedAt": "2026-11-17T01:49:38.989Z",
+            "durationInPrevMs": 87,
+            "reason": "MANUAL",
+            "note": "Se pintó la pared"
+          }
+        ],
+        "events": [
+          {
+            "id": "8530eac9-5208-4926-8925-82f32d8f081d",
+            "type": "CREATED",
+            "payload": {
+              "level": "LOW",
+              "score": 18.8,
+              "breakdown": {
+                "age": {
+                  "value": 0,
+                  "weight": 0.1,
+                  "contribution": 0
+                },
+                "risk": {
+                  "value": 0,
+                  "weight": 0.35,
+                  "contribution": 0
+                },
+                "space": {
+                  "value": 100,
+                  "weight": 0.1,
+                  "contribution": 10
+                },
+                "similar": {
+                  "value": 25,
+                  "weight": 0.2,
+                  "contribution": 5
+                },
+                "damageType": {
+                  "value": 15,
+                  "weight": 0.25,
+                  "contribution": 3.8
+                }
+              },
+              "joinIncidentId": null
+            },
+            "actor": {
+              "id": "ef8cdb81-b899-4829-96aa-29208ad05e35",
+              "name": "Valentina Ruiz",
+              "role": "STUDENT"
+            },
+            "createdAt": "2026-11-17T01:49:38.875Z"
+          },
+          {
+            "id": "d3855ace-2817-4d0a-b26d-d95b36fecd23",
+            "type": "ASSIGNED",
+            "payload": {
+              "by": "bf8b7142-8763-49fc-a7f7-bac3dc547dfd",
+              "assigneeId": "bf8b7142-8763-49fc-a7f7-bac3dc547dfd"
+            },
+            "actor": {
+              "id": "bf8b7142-8763-49fc-a7f7-bac3dc547dfd",
+              "name": "Carlos Rojas",
+              "role": "TECHNICIAN"
+            },
+            "createdAt": "2026-11-17T01:49:38.921Z"
+          }
+        ],
+        "clusterMembers": [],
+        "availableTransitions": [
+          {
+            "from": "RESOLVED",
+            "to": "VERIFIED",
+            "roles": [
+              "SUPERVISOR",
+              "STUDENT"
+            ],
+            "condition": "reporterIfStudent",
+            "label": "Verificar",
+            "description": "El supervisor o el estudiante que reportó confirman el arreglo"
+          },
+          {
+            "from": "RESOLVED",
+            "to": "IN_PROGRESS",
+            "roles": [
+              "SUPERVISOR",
+              "STUDENT"
+            ],
+            "condition": "reporterIfStudent",
+            "requires": [
+              "note"
+            ],
+            "label": "Reabrir",
+            "description": "El arreglo no funcionó; se reabre con una nota"
+          }
+        ]
+      },
+      "ms": 19
+    }
+  ]
+}

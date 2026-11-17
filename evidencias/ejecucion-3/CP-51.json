@@ -1,0 +1,423 @@
+{
+  "caso": "CP-51",
+  "titulo": "CP-51 | Un caso verificado no cambia a ningún estado",
+  "ejecucion": "ejecucion-3",
+  "fecha": "2026-11-17T01:55:23.947Z",
+  "estado": "Aprobado",
+  "error": null,
+  "pasos": [
+    {
+      "n": 1,
+      "peticion": "POST /api/incidents",
+      "quien": "estudiante2",
+      "cuerpo": {
+        "spaceId": "ca0c80b8-09e2-4a84-aaa3-5457b59376fa",
+        "category": "FURNITURE",
+        "riskLevel": "LOW",
+        "description": "Tablero de corcho desprendido de la pared lateral",
+        "hotspot": null
+      },
+      "estado": 201,
+      "respuesta": {
+        "id": "c386a3df-4b48-4983-911c-016cdaad1458",
+        "number": 94,
+        "code": "INC-00094",
+        "description": "Tablero de corcho desprendido de la pared lateral",
+        "category": "FURNITURE",
+        "riskLevel": "LOW",
+        "status": "PENDING",
+        "priorityScore": 34.9,
+        "priorityLevel": "MEDIUM",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 30,
+            "weight": 0.35,
+            "contribution": 10.5
+          },
+          "space": {
+            "value": 93.5,
+            "weight": 0.1,
+            "contribution": 9.4
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 40,
+            "weight": 0.25,
+            "contribution": 10
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T13:55:23.741Z",
+        "resolutionDueAt": "2026-11-20T01:55:23.741Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:55:23.741Z",
+        "updatedAt": "2026-11-17T01:55:23.743Z",
+        "stageStartedAt": "2026-11-17T01:55:23.741Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": null,
+        "space": {
+          "id": "ca0c80b8-09e2-4a84-aaa3-5457b59376fa",
+          "code": "301",
+          "name": "Aula 301",
+          "type": "CLASSROOM",
+          "floor": 3,
+          "capacity": 35,
+          "block": {
+            "id": "9fcdb09f-e967-45ab-89a6-417bb046bf6b",
+            "code": "A",
+            "name": "Bloque A · Aulas"
+          },
+          "campus": {
+            "id": "9a0c65ff-7a7d-470b-955a-efbc7b0f11d2",
+            "code": "PRI",
+            "name": "Sede Principal"
+          }
+        },
+        "reporter": {
+          "id": "f16abaae-5754-49bb-a28e-acf02bd5c531",
+          "name": "Santiago Herrera",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null
+      },
+      "ms": 37
+    },
+    {
+      "n": 2,
+      "peticion": "POST /api/incidents/c386a3df-4b48-4983-911c-016cdaad1458/transition",
+      "quien": "tecnico1",
+      "cuerpo": {
+        "to": "IN_PROGRESS"
+      },
+      "estado": 200,
+      "respuesta": {
+        "incidentId": "c386a3df-4b48-4983-911c-016cdaad1458",
+        "from": "PENDING",
+        "to": "IN_PROGRESS"
+      },
+      "ms": 34
+    },
+    {
+      "n": 3,
+      "peticion": "POST /api/incidents/c386a3df-4b48-4983-911c-016cdaad1458/transition",
+      "quien": "tecnico1",
+      "cuerpo": {
+        "to": "RESOLVED",
+        "note": "Se cambió la pieza dañada"
+      },
+      "estado": 200,
+      "respuesta": {
+        "incidentId": "c386a3df-4b48-4983-911c-016cdaad1458",
+        "from": "IN_PROGRESS",
+        "to": "RESOLVED"
+      },
+      "ms": 33
+    },
+    {
+      "n": 4,
+      "peticion": "POST /api/incidents/c386a3df-4b48-4983-911c-016cdaad1458/transition",
+      "quien": "supervisor",
+      "cuerpo": {
+        "to": "VERIFIED"
+      },
+      "estado": 200,
+      "respuesta": {
+        "incidentId": "c386a3df-4b48-4983-911c-016cdaad1458",
+        "from": "RESOLVED",
+        "to": "VERIFIED"
+      },
+      "ms": 29
+    },
+    {
+      "n": 5,
+      "peticion": "POST /api/incidents/c386a3df-4b48-4983-911c-016cdaad1458/transition",
+      "quien": "supervisor",
+      "cuerpo": {
+        "to": "PENDING",
+        "note": "Intento de cambio"
+      },
+      "estado": 403,
+      "respuesta": {
+        "error": "Esa transición no existe en el flujo"
+      },
+      "ms": 14
+    },
+    {
+      "n": 6,
+      "peticion": "POST /api/incidents/c386a3df-4b48-4983-911c-016cdaad1458/transition",
+      "quien": "supervisor",
+      "cuerpo": {
+        "to": "IN_PROGRESS",
+        "note": "Intento de cambio"
+      },
+      "estado": 403,
+      "respuesta": {
+        "error": "Esa transición no existe en el flujo"
+      },
+      "ms": 16
+    },
+    {
+      "n": 7,
+      "peticion": "POST /api/incidents/c386a3df-4b48-4983-911c-016cdaad1458/transition",
+      "quien": "supervisor",
+      "cuerpo": {
+        "to": "RESOLVED",
+        "note": "Intento de cambio"
+      },
+      "estado": 403,
+      "respuesta": {
+        "error": "Esa transición no existe en el flujo"
+      },
+      "ms": 14
+    },
+    {
+      "n": 8,
+      "peticion": "POST /api/incidents/c386a3df-4b48-4983-911c-016cdaad1458/transition",
+      "quien": "supervisor",
+      "cuerpo": {
+        "to": "VERIFIED",
+        "note": "Intento de cambio"
+      },
+      "estado": 403,
+      "respuesta": {
+        "error": "Esa transición no existe en el flujo"
+      },
+      "ms": 14
+    },
+    {
+      "n": 9,
+      "peticion": "GET /api/incidents/c386a3df-4b48-4983-911c-016cdaad1458",
+      "quien": "supervisor",
+      "estado": 200,
+      "respuesta": {
+        "id": "c386a3df-4b48-4983-911c-016cdaad1458",
+        "number": 94,
+        "code": "INC-00094",
+        "description": "Tablero de corcho desprendido de la pared lateral",
+        "category": "FURNITURE",
+        "riskLevel": "LOW",
+        "status": "VERIFIED",
+        "priorityScore": 34.9,
+        "priorityLevel": "MEDIUM",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 30,
+            "weight": 0.35,
+            "contribution": 10.5
+          },
+          "space": {
+            "value": 93.5,
+            "weight": 0.1,
+            "contribution": 9.4
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 40,
+            "weight": 0.25,
+            "contribution": 10
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T13:55:23.741Z",
+        "resolutionDueAt": "2026-11-20T01:55:23.741Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:55:23.741Z",
+        "updatedAt": "2026-11-17T01:55:23.849Z",
+        "stageStartedAt": "2026-11-17T01:55:23.846Z",
+        "firstResponseAt": "2026-11-17T01:55:23.778Z",
+        "resolvedAt": "2026-11-17T01:55:23.815Z",
+        "verifiedAt": "2026-11-17T01:55:23.846Z",
+        "hotspot": null,
+        "space": {
+          "id": "ca0c80b8-09e2-4a84-aaa3-5457b59376fa",
+          "code": "301",
+          "name": "Aula 301",
+          "type": "CLASSROOM",
+          "floor": 3,
+          "capacity": 35,
+          "block": {
+            "id": "9fcdb09f-e967-45ab-89a6-417bb046bf6b",
+            "code": "A",
+            "name": "Bloque A · Aulas"
+          },
+          "campus": {
+            "id": "9a0c65ff-7a7d-470b-955a-efbc7b0f11d2",
+            "code": "PRI",
+            "name": "Sede Principal"
+          }
+        },
+        "reporter": {
+          "id": "f16abaae-5754-49bb-a28e-acf02bd5c531",
+          "name": "Santiago Herrera",
+          "role": "STUDENT"
+        },
+        "assignee": {
+          "id": "24a54ba6-a302-451f-b360-0af2bcea4dfb",
+          "name": "Carlos Rojas",
+          "role": "TECHNICIAN"
+        },
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null,
+        "evidence": [
+          {
+            "id": "f9dc279f-0d1d-4160-9294-42434f4ca690",
+            "stage": "FIX",
+            "kind": "TEXT",
+            "url": null,
+            "text": "Se cambió la pieza dañada",
+            "width": null,
+            "height": null,
+            "createdAt": "2026-11-17T01:55:23.825Z"
+          }
+        ],
+        "history": [
+          {
+            "id": "2d590030-6966-4e94-88e7-4975f5ecf6c7",
+            "fromStatus": null,
+            "toStatus": "PENDING",
+            "changedBy": {
+              "id": "f16abaae-5754-49bb-a28e-acf02bd5c531",
+              "name": "Santiago Herrera",
+              "role": "STUDENT"
+            },
+            "changedAt": "2026-11-17T01:55:23.741Z",
+            "durationInPrevMs": null,
+            "reason": "MANUAL",
+            "note": null
+          },
+          {
+            "id": "64fc25d4-2a7c-4900-84a4-833bdac9d2dd",
+            "fromStatus": "PENDING",
+            "toStatus": "IN_PROGRESS",
+            "changedBy": {
+              "id": "24a54ba6-a302-451f-b360-0af2bcea4dfb",
+              "name": "Carlos Rojas",
+              "role": "TECHNICIAN"
+            },
+            "changedAt": "2026-11-17T01:55:23.778Z",
+            "durationInPrevMs": 37,
+            "reason": "MANUAL",
+            "note": null
+          },
+          {
+            "id": "dc154f6f-bd7f-44be-9ef7-e540c52ed15a",
+            "fromStatus": "IN_PROGRESS",
+            "toStatus": "RESOLVED",
+            "changedBy": {
+              "id": "24a54ba6-a302-451f-b360-0af2bcea4dfb",
+              "name": "Carlos Rojas",
+              "role": "TECHNICIAN"
+            },
+            "changedAt": "2026-11-17T01:55:23.815Z",
+            "durationInPrevMs": 37,
+            "reason": "MANUAL",
+            "note": "Se cambió la pieza dañada"
+          },
+          {
+            "id": "af410908-95b1-4066-90dd-722edec4cd3d",
+            "fromStatus": "RESOLVED",
+            "toStatus": "VERIFIED",
+            "changedBy": {
+              "id": "85097184-9f92-4da7-a80c-77f0a3198962",
+              "name": "Laura Méndez",
+              "role": "SUPERVISOR"
+            },
+            "changedAt": "2026-11-17T01:55:23.846Z",
+            "durationInPrevMs": 31,
+            "reason": "MANUAL",
+            "note": null
+          }
+        ],
+        "events": [
+          {
+            "id": "ba16adc2-9dd0-48b2-800c-585f025cb4ff",
+            "type": "CREATED",
+            "payload": {
+              "level": "MEDIUM",
+              "score": 34.9,
+              "breakdown": {
+                "age": {
+                  "value": 0,
+                  "weight": 0.1,
+                  "contribution": 0
+                },
+                "risk": {
+                  "value": 30,
+                  "weight": 0.35,
+                  "contribution": 10.5
+                },
+                "space": {
+                  "value": 93.5,
+                  "weight": 0.1,
+                  "contribution": 9.4
+                },
+                "similar": {
+                  "value": 25,
+                  "weight": 0.2,
+                  "contribution": 5
+                },
+                "damageType": {
+                  "value": 40,
+                  "weight": 0.25,
+                  "contribution": 10
+                }
+              },
+              "joinIncidentId": null
+            },
+            "actor": {
+              "id": "f16abaae-5754-49bb-a28e-acf02bd5c531",
+              "name": "Santiago Herrera",
+              "role": "STUDENT"
+            },
+            "createdAt": "2026-11-17T01:55:23.751Z"
+          },
+          {
+            "id": "7c717743-6555-41f5-b90c-e538b4d5cc06",
+            "type": "ASSIGNED",
+            "payload": {
+              "by": "24a54ba6-a302-451f-b360-0af2bcea4dfb",
+              "assigneeId": "24a54ba6-a302-451f-b360-0af2bcea4dfb"
+            },
+            "actor": {
+              "id": "24a54ba6-a302-451f-b360-0af2bcea4dfb",
+              "name": "Carlos Rojas",
+              "role": "TECHNICIAN"
+            },
+            "createdAt": "2026-11-17T01:55:23.793Z"
+          }
+        ],
+        "clusterMembers": [],
+        "availableTransitions": []
+      },
+      "ms": 19
+    }
+  ]
+}

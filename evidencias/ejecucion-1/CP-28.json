@@ -1,0 +1,20 @@
+{
+  "caso": "CP-28",
+  "titulo": "CP-28 | Token firmado con otra clave",
+  "ejecucion": "ejecucion-1",
+  "fecha": "2026-11-17T01:44:48.433Z",
+  "estado": "Aprobado",
+  "error": null,
+  "pasos": [
+    {
+      "n": 1,
+      "peticion": "GET /api/similarity/suggestions",
+      "quien": "token firmado con otra clave",
+      "estado": 401,
+      "respuesta": {
+        "error": "Tu sesión expiró, vuelve a iniciar sesión"
+      },
+      "ms": 9
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "caso": "CP-16",
+  "titulo": "CP-16 | Técnico intenta resolver su propio reporte",
+  "ejecucion": "ejecucion-3",
+  "fecha": "2026-11-17T01:54:25.446Z",
+  "estado": "Aprobado",
+  "error": null,
+  "pasos": [
+    {
+      "n": 1,
+      "peticion": "POST /api/incidents",
+      "quien": "tecnico1",
+      "cuerpo": {
+        "spaceId": "0ef1ab79-4ff8-4cbe-80a2-f620fe4d3054",
+        "category": "SANITARY",
+        "riskLevel": "LOW",
+        "description": "El secador de manos no arranca al acercar las manos",
+        "hotspot": null
+      },
+      "estado": 201,
+      "respuesta": {
+        "id": "8bd7f1d0-68e4-4069-b94a-ea3005dd0fe6",
+        "number": 79,
+        "code": "INC-00079",
+        "description": "El secador de manos no arranca al acercar las manos",
+        "category": "SANITARY",
+        "riskLevel": "LOW",
+        "status": "PENDING",
+        "priorityScore": 38.6,
+        "priorityLevel": "MEDIUM",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 30,
+            "weight": 0.35,
+            "contribution": 10.5
+          },
+          "space": {
+            "value": 81.4,
+            "weight": 0.1,
+            "contribution": 8.1
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 60,
+            "weight": 0.25,
+            "contribution": 15
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T13:54:25.377Z",
+        "resolutionDueAt": "2026-11-20T01:54:25.377Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:54:25.377Z",
+        "updatedAt": "2026-11-17T01:54:25.379Z",
+        "stageStartedAt": "2026-11-17T01:54:25.377Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": null,
+        "space": {
+          "id": "0ef1ab79-4ff8-4cbe-80a2-f620fe4d3054",
+          "code": "B2",
+          "name": "Baño bienestar",
+          "type": "BATHROOM",
+          "floor": 2,
+          "capacity": 14,
+          "block": {
+            "id": "43ca0b05-7a01-4b6d-982d-a75444c86dc0",
+            "code": "C",
+            "name": "Bloque C · Bienestar"
+          },
+          "campus": {
+            "id": "9a0c65ff-7a7d-470b-955a-efbc7b0f11d2",
+            "code": "PRI",
+            "name": "Sede Principal"
+          }
+        },
+        "reporter": {
+          "id": "24a54ba6-a302-451f-b360-0af2bcea4dfb",
+          "name": "Carlos Rojas",
+          "role": "TECHNICIAN"
+        },
+        "assignee": null,
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null
+      },
+      "ms": 33
+    },
+    {
+      "n": 2,
+      "peticion": "POST /api/incidents/8bd7f1d0-68e4-4069-b94a-ea3005dd0fe6/transition",
+      "quien": "tecnico1",
+      "cuerpo": {
+        "to": "IN_PROGRESS"
+      },
+      "estado": 200,
+      "respuesta": {
+        "incidentId": "8bd7f1d0-68e4-4069-b94a-ea3005dd0fe6",
+        "from": "PENDING",
+        "to": "IN_PROGRESS"
+      },
+      "ms": 31
+    },
+    {
+      "n": 3,
+      "peticion": "POST /api/incidents/8bd7f1d0-68e4-4069-b94a-ea3005dd0fe6/transition",
+      "quien": "tecnico1",
+      "cuerpo": {
+        "to": "RESOLVED",
+        "note": "Arreglado"
+      },
+      "estado": 403,
+      "respuesta": {
+        "error": "Nadie puede resolver un reporte propio"
+      },
+      "ms": 14
+    }
+  ]
+}

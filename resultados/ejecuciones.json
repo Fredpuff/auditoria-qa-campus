@@ -1,0 +1,17 @@
+[
+  {
+    "ejecucion": "ejecucion-1",
+    "codigoSalida": 1,
+    "minutos": 3.9
+  },
+  {
+    "ejecucion": "ejecucion-2",
+    "codigoSalida": 1,
+    "minutos": 4.8
+  },
+  {
+    "ejecucion": "ejecucion-3",
+    "codigoSalida": 1,
+    "minutos": 4.7
+  }
+]

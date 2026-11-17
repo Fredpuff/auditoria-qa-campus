@@ -1,0 +1,353 @@
+{
+  "caso": "CP-54",
+  "titulo": "CP-54 | BUG-06 | Dos técnicos toman el mismo caso al mismo tiempo",
+  "ejecucion": "ejecucion-1",
+  "fecha": "2026-11-17T01:45:52.328Z",
+  "estado": "Fallido",
+  "error": "Error: respuestas 200\n\nexpect(received).toHaveLength(expected)\n\nExpected length: 1\nReceived length: 2\nReceived array:  [200, 200]",
+  "pasos": [
+    {
+      "n": 1,
+      "peticion": "POST /api/incidents",
+      "quien": "estudiante1",
+      "cuerpo": {
+        "spaceId": "e9359293-9b94-4f79-b9b9-970852b4486f",
+        "category": "SANITARY",
+        "riskLevel": "LOW",
+        "description": "Dispensador de jabón despegado de la pared",
+        "hotspot": null
+      },
+      "estado": 201,
+      "respuesta": {
+        "id": "a6892ecd-2d4b-4f76-ab2d-5e6657c63a99",
+        "number": 97,
+        "code": "INC-00097",
+        "description": "Dispensador de jabón despegado de la pared",
+        "category": "SANITARY",
+        "riskLevel": "LOW",
+        "status": "PENDING",
+        "priorityScore": 38.6,
+        "priorityLevel": "MEDIUM",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 30,
+            "weight": 0.35,
+            "contribution": 10.5
+          },
+          "space": {
+            "value": 81.2,
+            "weight": 0.1,
+            "contribution": 8.1
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 60,
+            "weight": 0.25,
+            "contribution": 15
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T13:45:52.241Z",
+        "resolutionDueAt": "2026-11-20T01:45:52.241Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:45:52.241Z",
+        "updatedAt": "2026-11-17T01:45:52.244Z",
+        "stageStartedAt": "2026-11-17T01:45:52.241Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": null,
+        "space": {
+          "id": "e9359293-9b94-4f79-b9b9-970852b4486f",
+          "code": "B3",
+          "name": "Baño tercer piso",
+          "type": "BATHROOM",
+          "floor": 3,
+          "capacity": 12,
+          "block": {
+            "id": "8b767556-6e1a-43e1-9d61-b3e25172f707",
+            "code": "A",
+            "name": "Bloque A · Aulas"
+          },
+          "campus": {
+            "id": "9d3da020-a7b9-4b8c-8f69-615e560cb551",
+            "code": "PRI",
+            "name": "Sede Principal"
+          }
+        },
+        "reporter": {
+          "id": "713f52b5-7328-4cb8-8d44-cfd59dd8b7f5",
+          "name": "Valentina Ruiz",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null
+      },
+      "ms": 35
+    },
+    {
+      "n": 2,
+      "peticion": "POST /api/incidents/a6892ecd-2d4b-4f76-ab2d-5e6657c63a99/transition",
+      "quien": "tecnico1",
+      "cuerpo": {
+        "to": "IN_PROGRESS"
+      },
+      "estado": 200,
+      "respuesta": {
+        "incidentId": "a6892ecd-2d4b-4f76-ab2d-5e6657c63a99",
+        "from": "PENDING",
+        "to": "IN_PROGRESS"
+      },
+      "ms": 29
+    },
+    {
+      "n": 3,
+      "peticion": "POST /api/incidents/a6892ecd-2d4b-4f76-ab2d-5e6657c63a99/transition",
+      "quien": "tecnico2",
+      "cuerpo": {
+        "to": "IN_PROGRESS"
+      },
+      "estado": 200,
+      "respuesta": {
+        "incidentId": "a6892ecd-2d4b-4f76-ab2d-5e6657c63a99",
+        "from": "PENDING",
+        "to": "IN_PROGRESS"
+      },
+      "ms": 38
+    },
+    {
+      "n": 4,
+      "peticion": "GET /api/incidents/a6892ecd-2d4b-4f76-ab2d-5e6657c63a99",
+      "quien": "supervisor",
+      "estado": 200,
+      "respuesta": {
+        "id": "a6892ecd-2d4b-4f76-ab2d-5e6657c63a99",
+        "number": 97,
+        "code": "INC-00097",
+        "description": "Dispensador de jabón despegado de la pared",
+        "category": "SANITARY",
+        "riskLevel": "LOW",
+        "status": "IN_PROGRESS",
+        "priorityScore": 38.6,
+        "priorityLevel": "MEDIUM",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 30,
+            "weight": 0.35,
+            "contribution": 10.5
+          },
+          "space": {
+            "value": 81.2,
+            "weight": 0.1,
+            "contribution": 8.1
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 60,
+            "weight": 0.25,
+            "contribution": 15
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T13:45:52.241Z",
+        "resolutionDueAt": "2026-11-20T01:45:52.241Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:45:52.241Z",
+        "updatedAt": "2026-11-17T01:45:52.286Z",
+        "stageStartedAt": "2026-11-17T01:45:52.284Z",
+        "firstResponseAt": "2026-11-17T01:45:52.284Z",
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": null,
+        "space": {
+          "id": "e9359293-9b94-4f79-b9b9-970852b4486f",
+          "code": "B3",
+          "name": "Baño tercer piso",
+          "type": "BATHROOM",
+          "floor": 3,
+          "capacity": 12,
+          "block": {
+            "id": "8b767556-6e1a-43e1-9d61-b3e25172f707",
+            "code": "A",
+            "name": "Bloque A · Aulas"
+          },
+          "campus": {
+            "id": "9d3da020-a7b9-4b8c-8f69-615e560cb551",
+            "code": "PRI",
+            "name": "Sede Principal"
+          }
+        },
+        "reporter": {
+          "id": "713f52b5-7328-4cb8-8d44-cfd59dd8b7f5",
+          "name": "Valentina Ruiz",
+          "role": "STUDENT"
+        },
+        "assignee": {
+          "id": "df8e5e4b-66f8-4b8a-9620-70ce19167cb0",
+          "name": "Andrea Pineda",
+          "role": "TECHNICIAN"
+        },
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null,
+        "evidence": [],
+        "history": [
+          {
+            "id": "5b3bedf1-cad5-4e6a-9f5c-b6ba85cf58ec",
+            "fromStatus": null,
+            "toStatus": "PENDING",
+            "changedBy": {
+              "id": "713f52b5-7328-4cb8-8d44-cfd59dd8b7f5",
+              "name": "Valentina Ruiz",
+              "role": "STUDENT"
+            },
+            "changedAt": "2026-11-17T01:45:52.241Z",
+            "durationInPrevMs": null,
+            "reason": "MANUAL",
+            "note": null
+          },
+          {
+            "id": "9673168a-3ca7-4bf6-b980-6f0bbf040e6d",
+            "fromStatus": "PENDING",
+            "toStatus": "IN_PROGRESS",
+            "changedBy": {
+              "id": "5ab89084-815e-4f26-8183-974fdbd91b8e",
+              "name": "Carlos Rojas",
+              "role": "TECHNICIAN"
+            },
+            "changedAt": "2026-11-17T01:45:52.276Z",
+            "durationInPrevMs": 35,
+            "reason": "MANUAL",
+            "note": null
+          },
+          {
+            "id": "f1e6ee6c-e484-4a74-98bf-3f4a9846c9d0",
+            "fromStatus": "PENDING",
+            "toStatus": "IN_PROGRESS",
+            "changedBy": {
+              "id": "df8e5e4b-66f8-4b8a-9620-70ce19167cb0",
+              "name": "Andrea Pineda",
+              "role": "TECHNICIAN"
+            },
+            "changedAt": "2026-11-17T01:45:52.284Z",
+            "durationInPrevMs": 8,
+            "reason": "MANUAL",
+            "note": null
+          }
+        ],
+        "events": [
+          {
+            "id": "25a19bb8-4dad-41cd-a3ff-f39f677da6eb",
+            "type": "CREATED",
+            "payload": {
+              "level": "MEDIUM",
+              "score": 38.6,
+              "breakdown": {
+                "age": {
+                  "value": 0,
+                  "weight": 0.1,
+                  "contribution": 0
+                },
+                "risk": {
+                  "value": 30,
+                  "weight": 0.35,
+                  "contribution": 10.5
+                },
+                "space": {
+                  "value": 81.2,
+                  "weight": 0.1,
+                  "contribution": 8.1
+                },
+                "similar": {
+                  "value": 25,
+                  "weight": 0.2,
+                  "contribution": 5
+                },
+                "damageType": {
+                  "value": 60,
+                  "weight": 0.25,
+                  "contribution": 15
+                }
+              },
+              "joinIncidentId": null
+            },
+            "actor": {
+              "id": "713f52b5-7328-4cb8-8d44-cfd59dd8b7f5",
+              "name": "Valentina Ruiz",
+              "role": "STUDENT"
+            },
+            "createdAt": "2026-11-17T01:45:52.249Z"
+          },
+          {
+            "id": "2e47399f-fe48-4b9e-8ed4-44389623a715",
+            "type": "ASSIGNED",
+            "payload": {
+              "by": "5ab89084-815e-4f26-8183-974fdbd91b8e",
+              "assigneeId": "5ab89084-815e-4f26-8183-974fdbd91b8e"
+            },
+            "actor": {
+              "id": "5ab89084-815e-4f26-8183-974fdbd91b8e",
+              "name": "Carlos Rojas",
+              "role": "TECHNICIAN"
+            },
+            "createdAt": "2026-11-17T01:45:52.289Z"
+          },
+          {
+            "id": "16e8571e-5c58-4436-acf3-3a9f47165784",
+            "type": "ASSIGNED",
+            "payload": {
+              "by": "df8e5e4b-66f8-4b8a-9620-70ce19167cb0",
+              "assigneeId": "df8e5e4b-66f8-4b8a-9620-70ce19167cb0"
+            },
+            "actor": {
+              "id": "df8e5e4b-66f8-4b8a-9620-70ce19167cb0",
+              "name": "Andrea Pineda",
+              "role": "TECHNICIAN"
+            },
+            "createdAt": "2026-11-17T01:45:52.299Z"
+          }
+        ],
+        "clusterMembers": [],
+        "availableTransitions": []
+      },
+      "ms": 16
+    },
+    {
+      "n": 5,
+      "peticion": "Resultado de la carrera",
+      "quien": "-",
+      "estado": 0,
+      "respuesta": {
+        "tecnico1": 200,
+        "tecnico2": 200,
+        "asignado": "Andrea Pineda",
+        "tomasEnHistorial": 2
+      },
+      "ms": 0
+    }
+  ]
+}

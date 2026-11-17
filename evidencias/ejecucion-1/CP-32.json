@@ -1,0 +1,101 @@
+{
+  "caso": "CP-32",
+  "titulo": "CP-32 | BUG-04 | Acceso rápido sin contraseña habilitado en la configuración de ejemplo",
+  "ejecucion": "ejecucion-1",
+  "fecha": "2026-11-17T01:44:49.334Z",
+  "estado": "Fallido",
+  "error": "Error: sin sesión no debería listar usuarios con su correo\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 0\nReceived: 10",
+  "pasos": [
+    {
+      "n": 1,
+      "peticion": "GET /api/auth/dev-users",
+      "quien": "sin sesión",
+      "estado": 200,
+      "respuesta": {
+        "enabled": true,
+        "users": [
+          {
+            "id": "2ccdb222-e2d1-412d-9d65-04218da73688",
+            "name": "Laura Méndez",
+            "email": "supervisor@campus.edu.co",
+            "role": "SUPERVISOR"
+          },
+          {
+            "id": "5ab89084-815e-4f26-8183-974fdbd91b8e",
+            "name": "Carlos Rojas",
+            "email": "tecnico1@campus.edu.co",
+            "role": "TECHNICIAN"
+          },
+          {
+            "id": "df8e5e4b-66f8-4b8a-9620-70ce19167cb0",
+            "name": "Andrea Pineda",
+            "email": "tecnico2@campus.edu.co",
+            "role": "TECHNICIAN"
+          },
+          {
+            "id": "93f81485-6245-44c0-9b02-5bcdef15c971",
+            "name": "Miguel Torres",
+            "email": "tecnico3@campus.edu.co",
+            "role": "TECHNICIAN"
+          },
+          {
+            "id": "713f52b5-7328-4cb8-8d44-cfd59dd8b7f5",
+            "name": "Valentina Ruiz",
+            "email": "estudiante1@campus.edu.co",
+            "role": "STUDENT"
+          },
+          {
+            "id": "1d59cb73-da3b-458e-9e47-507107691453",
+            "name": "Santiago Herrera",
+            "email": "estudiante2@campus.edu.co",
+            "role": "STUDENT"
+          },
+          {
+            "id": "8f8d016d-c598-4abf-9c26-6af40a143182",
+            "name": "Camila Ortiz",
+            "email": "estudiante3@campus.edu.co",
+            "role": "STUDENT"
+          },
+          {
+            "id": "6d26d94d-0501-4cee-95fc-d0629e9c45b0",
+            "name": "Juan Esteban Díaz",
+            "email": "estudiante4@campus.edu.co",
+            "role": "STUDENT"
+          },
+          {
+            "id": "766b859e-a959-4ab5-ad27-973fefb89ec6",
+            "name": "Sofía Castro",
+            "email": "estudiante5@campus.edu.co",
+            "role": "STUDENT"
+          },
+          {
+            "id": "47ab83d8-b900-4bb1-a094-773fee2daf64",
+            "name": "Mateo Vargas",
+            "email": "estudiante6@campus.edu.co",
+            "role": "STUDENT"
+          }
+        ]
+      },
+      "ms": 36
+    },
+    {
+      "n": 2,
+      "peticion": "POST /api/auth/dev-login",
+      "quien": "sin sesión",
+      "cuerpo": {
+        "role": "SUPERVISOR"
+      },
+      "estado": 200,
+      "respuesta": {
+        "token": "eyJhbGciOiJIUzI1NiIs…",
+        "user": {
+          "id": "2ccdb222-e2d1-412d-9d65-04218da73688",
+          "name": "Laura Méndez",
+          "email": "supervisor@campus.edu.co",
+          "role": "SUPERVISOR"
+        }
+      },
+      "ms": 12
+    }
+  ]
+}

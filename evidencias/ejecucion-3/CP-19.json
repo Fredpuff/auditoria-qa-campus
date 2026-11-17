@@ -1,0 +1,275 @@
+{
+  "caso": "CP-19",
+  "titulo": "CP-19 | Saltar de Pendiente a Resuelto",
+  "ejecucion": "ejecucion-3",
+  "fecha": "2026-11-17T01:55:23.472Z",
+  "estado": "Aprobado",
+  "error": null,
+  "pasos": [
+    {
+      "n": 1,
+      "peticion": "POST /api/incidents",
+      "quien": "estudiante1",
+      "cuerpo": {
+        "spaceId": "8fd5f2b1-7efd-4fb7-aed2-c22f5582f706",
+        "category": "STRUCTURAL",
+        "riskLevel": "LOW",
+        "description": "La ventana junto al segundo estante no cierra",
+        "hotspot": null
+      },
+      "estado": 201,
+      "respuesta": {
+        "id": "5d0b01d0-47b0-4539-9d82-2ac2a95b8c94",
+        "number": 92,
+        "code": "INC-00092",
+        "description": "La ventana junto al segundo estante no cierra",
+        "category": "STRUCTURAL",
+        "riskLevel": "LOW",
+        "status": "PENDING",
+        "priorityScore": 39.9,
+        "priorityLevel": "MEDIUM",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 30,
+            "weight": 0.35,
+            "contribution": 10.5
+          },
+          "space": {
+            "value": 69,
+            "weight": 0.1,
+            "contribution": 6.9
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 70,
+            "weight": 0.25,
+            "contribution": 17.5
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T13:55:23.401Z",
+        "resolutionDueAt": "2026-11-20T01:55:23.401Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:55:23.401Z",
+        "updatedAt": "2026-11-17T01:55:23.403Z",
+        "stageStartedAt": "2026-11-17T01:55:23.401Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": null,
+        "space": {
+          "id": "8fd5f2b1-7efd-4fb7-aed2-c22f5582f706",
+          "code": "BIB",
+          "name": "Biblioteca",
+          "type": "COMMON",
+          "floor": 1,
+          "capacity": 90,
+          "block": {
+            "id": "43ca0b05-7a01-4b6d-982d-a75444c86dc0",
+            "code": "C",
+            "name": "Bloque C · Bienestar"
+          },
+          "campus": {
+            "id": "9a0c65ff-7a7d-470b-955a-efbc7b0f11d2",
+            "code": "PRI",
+            "name": "Sede Principal"
+          }
+        },
+        "reporter": {
+          "id": "8d61d3b4-1907-4f2a-b562-340c554fe341",
+          "name": "Valentina Ruiz",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null
+      },
+      "ms": 43
+    },
+    {
+      "n": 2,
+      "peticion": "POST /api/incidents/5d0b01d0-47b0-4539-9d82-2ac2a95b8c94/transition",
+      "quien": "tecnico1",
+      "cuerpo": {
+        "to": "RESOLVED",
+        "note": "Saltando etapa"
+      },
+      "estado": 403,
+      "respuesta": {
+        "error": "Esa transición no existe en el flujo"
+      },
+      "ms": 18
+    },
+    {
+      "n": 3,
+      "peticion": "GET /api/incidents/5d0b01d0-47b0-4539-9d82-2ac2a95b8c94",
+      "quien": "supervisor",
+      "estado": 200,
+      "respuesta": {
+        "id": "5d0b01d0-47b0-4539-9d82-2ac2a95b8c94",
+        "number": 92,
+        "code": "INC-00092",
+        "description": "La ventana junto al segundo estante no cierra",
+        "category": "STRUCTURAL",
+        "riskLevel": "LOW",
+        "status": "PENDING",
+        "priorityScore": 39.9,
+        "priorityLevel": "MEDIUM",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 30,
+            "weight": 0.35,
+            "contribution": 10.5
+          },
+          "space": {
+            "value": 69,
+            "weight": 0.1,
+            "contribution": 6.9
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 70,
+            "weight": 0.25,
+            "contribution": 17.5
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T13:55:23.401Z",
+        "resolutionDueAt": "2026-11-20T01:55:23.401Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:55:23.401Z",
+        "updatedAt": "2026-11-17T01:55:23.403Z",
+        "stageStartedAt": "2026-11-17T01:55:23.401Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": null,
+        "space": {
+          "id": "8fd5f2b1-7efd-4fb7-aed2-c22f5582f706",
+          "code": "BIB",
+          "name": "Biblioteca",
+          "type": "COMMON",
+          "floor": 1,
+          "capacity": 90,
+          "block": {
+            "id": "43ca0b05-7a01-4b6d-982d-a75444c86dc0",
+            "code": "C",
+            "name": "Bloque C · Bienestar"
+          },
+          "campus": {
+            "id": "9a0c65ff-7a7d-470b-955a-efbc7b0f11d2",
+            "code": "PRI",
+            "name": "Sede Principal"
+          }
+        },
+        "reporter": {
+          "id": "8d61d3b4-1907-4f2a-b562-340c554fe341",
+          "name": "Valentina Ruiz",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null,
+        "evidence": [],
+        "history": [
+          {
+            "id": "44131d4b-3cea-40b0-9cf5-b705f8d3f4e1",
+            "fromStatus": null,
+            "toStatus": "PENDING",
+            "changedBy": {
+              "id": "8d61d3b4-1907-4f2a-b562-340c554fe341",
+              "name": "Valentina Ruiz",
+              "role": "STUDENT"
+            },
+            "changedAt": "2026-11-17T01:55:23.401Z",
+            "durationInPrevMs": null,
+            "reason": "MANUAL",
+            "note": null
+          }
+        ],
+        "events": [
+          {
+            "id": "56e9c223-fc16-4557-a154-47bf8fc18fbb",
+            "type": "CREATED",
+            "payload": {
+              "level": "MEDIUM",
+              "score": 39.9,
+              "breakdown": {
+                "age": {
+                  "value": 0,
+                  "weight": 0.1,
+                  "contribution": 0
+                },
+                "risk": {
+                  "value": 30,
+                  "weight": 0.35,
+                  "contribution": 10.5
+                },
+                "space": {
+                  "value": 69,
+                  "weight": 0.1,
+                  "contribution": 6.9
+                },
+                "similar": {
+                  "value": 25,
+                  "weight": 0.2,
+                  "contribution": 5
+                },
+                "damageType": {
+                  "value": 70,
+                  "weight": 0.25,
+                  "contribution": 17.5
+                }
+              },
+              "joinIncidentId": null
+            },
+            "actor": {
+              "id": "8d61d3b4-1907-4f2a-b562-340c554fe341",
+              "name": "Valentina Ruiz",
+              "role": "STUDENT"
+            },
+            "createdAt": "2026-11-17T01:55:23.411Z"
+          }
+        ],
+        "clusterMembers": [],
+        "availableTransitions": [
+          {
+            "from": "PENDING",
+            "to": "IN_PROGRESS",
+            "roles": [
+              "TECHNICIAN",
+              "SUPERVISOR"
+            ],
+            "label": "Tomar caso",
+            "description": "El técnico toma el caso o el supervisor lo asigna"
+          }
+        ]
+      },
+      "ms": 21
+    }
+  ]
+}

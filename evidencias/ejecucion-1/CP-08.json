@@ -1,0 +1,100 @@
+{
+  "caso": "CP-08",
+  "titulo": "CP-08 | BUG-03 | Un filtro de estado inexistente se ignora",
+  "ejecucion": "ejecucion-1",
+  "fecha": "2026-11-17T01:44:46.610Z",
+  "estado": "Fallido",
+  "error": "Error: devolvió 58 de 58 incidencias\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 0\nReceived: 58",
+  "pasos": [
+    {
+      "n": 1,
+      "peticion": "GET /api/incidents",
+      "quien": "supervisor",
+      "estado": 200,
+      "respuesta": {
+        "total": 58,
+        "primeros": [
+          {
+            "code": "INC-00048",
+            "status": "PENDING",
+            "isOverdue": true,
+            "priorityLevel": "CRITICAL"
+          },
+          {
+            "code": "INC-00013",
+            "status": "VERIFIED",
+            "isOverdue": true,
+            "priorityLevel": "CRITICAL"
+          },
+          {
+            "code": "INC-00062",
+            "status": "PENDING",
+            "isOverdue": true,
+            "priorityLevel": "CRITICAL"
+          }
+        ]
+      },
+      "ms": 72
+    },
+    {
+      "n": 2,
+      "peticion": "GET /api/incidents?status=FOO",
+      "quien": "supervisor",
+      "estado": 200,
+      "respuesta": {
+        "total": 58,
+        "primeros": [
+          {
+            "code": "INC-00048",
+            "status": "PENDING",
+            "isOverdue": true,
+            "priorityLevel": "CRITICAL"
+          },
+          {
+            "code": "INC-00013",
+            "status": "VERIFIED",
+            "isOverdue": true,
+            "priorityLevel": "CRITICAL"
+          },
+          {
+            "code": "INC-00062",
+            "status": "PENDING",
+            "isOverdue": true,
+            "priorityLevel": "CRITICAL"
+          }
+        ]
+      },
+      "ms": 34
+    },
+    {
+      "n": 3,
+      "peticion": "GET /api/incidents?level=FOO",
+      "quien": "supervisor",
+      "estado": 200,
+      "respuesta": {
+        "total": 58,
+        "primeros": [
+          {
+            "code": "INC-00048",
+            "status": "PENDING",
+            "isOverdue": true,
+            "priorityLevel": "CRITICAL"
+          },
+          {
+            "code": "INC-00013",
+            "status": "VERIFIED",
+            "isOverdue": true,
+            "priorityLevel": "CRITICAL"
+          },
+          {
+            "code": "INC-00062",
+            "status": "PENDING",
+            "isOverdue": true,
+            "priorityLevel": "CRITICAL"
+          }
+        ]
+      },
+      "ms": 28
+    }
+  ]
+}

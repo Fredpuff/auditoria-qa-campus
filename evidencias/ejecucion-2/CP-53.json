@@ -1,0 +1,1279 @@
+{
+  "caso": "CP-53",
+  "titulo": "CP-53 | Reabrir el mismo caso tres veces",
+  "ejecucion": "ejecucion-2",
+  "fecha": "2026-11-17T01:50:37.765Z",
+  "estado": "Aprobado",
+  "error": null,
+  "pasos": [
+    {
+      "n": 1,
+      "peticion": "POST /api/incidents",
+      "quien": "estudiante5",
+      "cuerpo": {
+        "spaceId": "ff2d3c86-a3ee-432d-9e85-8d979b67ea28",
+        "category": "SANITARY",
+        "riskLevel": "LOW",
+        "description": "Lavamanos de la izquierda no tiene desagüe",
+        "hotspot": null
+      },
+      "estado": 201,
+      "respuesta": {
+        "id": "87abe8dd-4196-478a-9b91-075b418262c3",
+        "number": 96,
+        "code": "INC-00096",
+        "description": "Lavamanos de la izquierda no tiene desagüe",
+        "category": "SANITARY",
+        "riskLevel": "LOW",
+        "status": "PENDING",
+        "priorityScore": 38.6,
+        "priorityLevel": "MEDIUM",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 30,
+            "weight": 0.35,
+            "contribution": 10.5
+          },
+          "space": {
+            "value": 81.2,
+            "weight": 0.1,
+            "contribution": 8.1
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 60,
+            "weight": 0.25,
+            "contribution": 15
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T13:50:37.433Z",
+        "resolutionDueAt": "2026-11-20T01:50:37.433Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:50:37.433Z",
+        "updatedAt": "2026-11-17T01:50:37.436Z",
+        "stageStartedAt": "2026-11-17T01:50:37.433Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": null,
+        "space": {
+          "id": "ff2d3c86-a3ee-432d-9e85-8d979b67ea28",
+          "code": "B1",
+          "name": "Baño primer piso",
+          "type": "BATHROOM",
+          "floor": 1,
+          "capacity": 12,
+          "block": {
+            "id": "b3da74da-a88b-480a-8379-5189c725d659",
+            "code": "A",
+            "name": "Bloque A · Aulas"
+          },
+          "campus": {
+            "id": "d48328b3-aeba-4d7e-b677-20b6a5627fe1",
+            "code": "PRI",
+            "name": "Sede Principal"
+          }
+        },
+        "reporter": {
+          "id": "4ba98cb3-9ebb-4f85-83c8-729c7d7dcbfc",
+          "name": "Sofía Castro",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null
+      },
+      "ms": 38
+    },
+    {
+      "n": 2,
+      "peticion": "POST /api/incidents/87abe8dd-4196-478a-9b91-075b418262c3/transition",
+      "quien": "tecnico1",
+      "cuerpo": {
+        "to": "IN_PROGRESS"
+      },
+      "estado": 200,
+      "respuesta": {
+        "incidentId": "87abe8dd-4196-478a-9b91-075b418262c3",
+        "from": "PENDING",
+        "to": "IN_PROGRESS"
+      },
+      "ms": 37
+    },
+    {
+      "n": 3,
+      "peticion": "POST /api/incidents/87abe8dd-4196-478a-9b91-075b418262c3/transition",
+      "quien": "tecnico1",
+      "cuerpo": {
+        "to": "RESOLVED",
+        "note": "Arreglo número 1"
+      },
+      "estado": 200,
+      "respuesta": {
+        "incidentId": "87abe8dd-4196-478a-9b91-075b418262c3",
+        "from": "IN_PROGRESS",
+        "to": "RESOLVED"
+      },
+      "ms": 29
+    },
+    {
+      "n": 4,
+      "peticion": "POST /api/incidents/87abe8dd-4196-478a-9b91-075b418262c3/transition",
+      "quien": "estudiante5",
+      "cuerpo": {
+        "to": "IN_PROGRESS",
+        "note": "Sigue igual, vuelta 1"
+      },
+      "estado": 200,
+      "respuesta": {
+        "incidentId": "87abe8dd-4196-478a-9b91-075b418262c3",
+        "from": "RESOLVED",
+        "to": "IN_PROGRESS"
+      },
+      "ms": 28
+    },
+    {
+      "n": 5,
+      "peticion": "GET /api/incidents/87abe8dd-4196-478a-9b91-075b418262c3",
+      "quien": "supervisor",
+      "estado": 200,
+      "respuesta": {
+        "id": "87abe8dd-4196-478a-9b91-075b418262c3",
+        "number": 96,
+        "code": "INC-00096",
+        "description": "Lavamanos de la izquierda no tiene desagüe",
+        "category": "SANITARY",
+        "riskLevel": "LOW",
+        "status": "IN_PROGRESS",
+        "priorityScore": 38.6,
+        "priorityLevel": "MEDIUM",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 30,
+            "weight": 0.35,
+            "contribution": 10.5
+          },
+          "space": {
+            "value": 81.2,
+            "weight": 0.1,
+            "contribution": 8.1
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 60,
+            "weight": 0.25,
+            "contribution": 15
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T13:50:37.433Z",
+        "resolutionDueAt": "2026-11-20T01:50:37.537Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:50:37.433Z",
+        "updatedAt": "2026-11-17T01:50:37.539Z",
+        "stageStartedAt": "2026-11-17T01:50:37.537Z",
+        "firstResponseAt": "2026-11-17T01:50:37.471Z",
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": null,
+        "space": {
+          "id": "ff2d3c86-a3ee-432d-9e85-8d979b67ea28",
+          "code": "B1",
+          "name": "Baño primer piso",
+          "type": "BATHROOM",
+          "floor": 1,
+          "capacity": 12,
+          "block": {
+            "id": "b3da74da-a88b-480a-8379-5189c725d659",
+            "code": "A",
+            "name": "Bloque A · Aulas"
+          },
+          "campus": {
+            "id": "d48328b3-aeba-4d7e-b677-20b6a5627fe1",
+            "code": "PRI",
+            "name": "Sede Principal"
+          }
+        },
+        "reporter": {
+          "id": "4ba98cb3-9ebb-4f85-83c8-729c7d7dcbfc",
+          "name": "Sofía Castro",
+          "role": "STUDENT"
+        },
+        "assignee": {
+          "id": "bf8b7142-8763-49fc-a7f7-bac3dc547dfd",
+          "name": "Carlos Rojas",
+          "role": "TECHNICIAN"
+        },
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null,
+        "evidence": [
+          {
+            "id": "e33498b2-e7f3-4611-894f-6a1738b2a388",
+            "stage": "FIX",
+            "kind": "TEXT",
+            "url": null,
+            "text": "Arreglo número 1",
+            "width": null,
+            "height": null,
+            "createdAt": "2026-11-17T01:50:37.520Z"
+          }
+        ],
+        "history": [
+          {
+            "id": "b91897c3-9713-424d-816c-fb550a9c0cfb",
+            "fromStatus": null,
+            "toStatus": "PENDING",
+            "changedBy": {
+              "id": "4ba98cb3-9ebb-4f85-83c8-729c7d7dcbfc",
+              "name": "Sofía Castro",
+              "role": "STUDENT"
+            },
+            "changedAt": "2026-11-17T01:50:37.433Z",
+            "durationInPrevMs": null,
+            "reason": "MANUAL",
+            "note": null
+          },
+          {
+            "id": "512dd732-8271-4ae9-a694-88cd2199d571",
+            "fromStatus": "PENDING",
+            "toStatus": "IN_PROGRESS",
+            "changedBy": {
+              "id": "bf8b7142-8763-49fc-a7f7-bac3dc547dfd",
+              "name": "Carlos Rojas",
+              "role": "TECHNICIAN"
+            },
+            "changedAt": "2026-11-17T01:50:37.471Z",
+            "durationInPrevMs": 38,
+            "reason": "MANUAL",
+            "note": null
+          },
+          {
+            "id": "da75f6cf-1cdf-4f8a-bb51-21729ee48f89",
+            "fromStatus": "IN_PROGRESS",
+            "toStatus": "RESOLVED",
+            "changedBy": {
+              "id": "bf8b7142-8763-49fc-a7f7-bac3dc547dfd",
+              "name": "Carlos Rojas",
+              "role": "TECHNICIAN"
+            },
+            "changedAt": "2026-11-17T01:50:37.509Z",
+            "durationInPrevMs": 38,
+            "reason": "MANUAL",
+            "note": "Arreglo número 1"
+          },
+          {
+            "id": "feb860fc-3d0c-4e0b-9a9a-bb4a700891b6",
+            "fromStatus": "RESOLVED",
+            "toStatus": "IN_PROGRESS",
+            "changedBy": {
+              "id": "4ba98cb3-9ebb-4f85-83c8-729c7d7dcbfc",
+              "name": "Sofía Castro",
+              "role": "STUDENT"
+            },
+            "changedAt": "2026-11-17T01:50:37.537Z",
+            "durationInPrevMs": 28,
+            "reason": "MANUAL",
+            "note": "Sigue igual, vuelta 1"
+          }
+        ],
+        "events": [
+          {
+            "id": "40e3ab30-7a99-479f-84d8-5c2bd9b83171",
+            "type": "CREATED",
+            "payload": {
+              "level": "MEDIUM",
+              "score": 38.6,
+              "breakdown": {
+                "age": {
+                  "value": 0,
+                  "weight": 0.1,
+                  "contribution": 0
+                },
+                "risk": {
+                  "value": 30,
+                  "weight": 0.35,
+                  "contribution": 10.5
+                },
+                "space": {
+                  "value": 81.2,
+                  "weight": 0.1,
+                  "contribution": 8.1
+                },
+                "similar": {
+                  "value": 25,
+                  "weight": 0.2,
+                  "contribution": 5
+                },
+                "damageType": {
+                  "value": 60,
+                  "weight": 0.25,
+                  "contribution": 15
+                }
+              },
+              "joinIncidentId": null
+            },
+            "actor": {
+              "id": "4ba98cb3-9ebb-4f85-83c8-729c7d7dcbfc",
+              "name": "Sofía Castro",
+              "role": "STUDENT"
+            },
+            "createdAt": "2026-11-17T01:50:37.443Z"
+          },
+          {
+            "id": "82ddf00d-d8f2-4574-a266-7ab9fbb9f915",
+            "type": "ASSIGNED",
+            "payload": {
+              "by": "bf8b7142-8763-49fc-a7f7-bac3dc547dfd",
+              "assigneeId": "bf8b7142-8763-49fc-a7f7-bac3dc547dfd"
+            },
+            "actor": {
+              "id": "bf8b7142-8763-49fc-a7f7-bac3dc547dfd",
+              "name": "Carlos Rojas",
+              "role": "TECHNICIAN"
+            },
+            "createdAt": "2026-11-17T01:50:37.485Z"
+          }
+        ],
+        "clusterMembers": [],
+        "availableTransitions": []
+      },
+      "ms": 19
+    },
+    {
+      "n": 6,
+      "peticion": "POST /api/incidents/87abe8dd-4196-478a-9b91-075b418262c3/transition",
+      "quien": "tecnico1",
+      "cuerpo": {
+        "to": "RESOLVED",
+        "note": "Arreglo número 2"
+      },
+      "estado": 200,
+      "respuesta": {
+        "incidentId": "87abe8dd-4196-478a-9b91-075b418262c3",
+        "from": "IN_PROGRESS",
+        "to": "RESOLVED"
+      },
+      "ms": 32
+    },
+    {
+      "n": 7,
+      "peticion": "POST /api/incidents/87abe8dd-4196-478a-9b91-075b418262c3/transition",
+      "quien": "estudiante5",
+      "cuerpo": {
+        "to": "IN_PROGRESS",
+        "note": "Sigue igual, vuelta 2"
+      },
+      "estado": 200,
+      "respuesta": {
+        "incidentId": "87abe8dd-4196-478a-9b91-075b418262c3",
+        "from": "RESOLVED",
+        "to": "IN_PROGRESS"
+      },
+      "ms": 29
+    },
+    {
+      "n": 8,
+      "peticion": "GET /api/incidents/87abe8dd-4196-478a-9b91-075b418262c3",
+      "quien": "supervisor",
+      "estado": 200,
+      "respuesta": {
+        "id": "87abe8dd-4196-478a-9b91-075b418262c3",
+        "number": 96,
+        "code": "INC-00096",
+        "description": "Lavamanos de la izquierda no tiene desagüe",
+        "category": "SANITARY",
+        "riskLevel": "LOW",
+        "status": "IN_PROGRESS",
+        "priorityScore": 38.6,
+        "priorityLevel": "MEDIUM",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 30,
+            "weight": 0.35,
+            "contribution": 10.5
+          },
+          "space": {
+            "value": 81.2,
+            "weight": 0.1,
+            "contribution": 8.1
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 60,
+            "weight": 0.25,
+            "contribution": 15
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T13:50:37.433Z",
+        "resolutionDueAt": "2026-11-20T01:50:37.617Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:50:37.433Z",
+        "updatedAt": "2026-11-17T01:50:37.619Z",
+        "stageStartedAt": "2026-11-17T01:50:37.617Z",
+        "firstResponseAt": "2026-11-17T01:50:37.471Z",
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": null,
+        "space": {
+          "id": "ff2d3c86-a3ee-432d-9e85-8d979b67ea28",
+          "code": "B1",
+          "name": "Baño primer piso",
+          "type": "BATHROOM",
+          "floor": 1,
+          "capacity": 12,
+          "block": {
+            "id": "b3da74da-a88b-480a-8379-5189c725d659",
+            "code": "A",
+            "name": "Bloque A · Aulas"
+          },
+          "campus": {
+            "id": "d48328b3-aeba-4d7e-b677-20b6a5627fe1",
+            "code": "PRI",
+            "name": "Sede Principal"
+          }
+        },
+        "reporter": {
+          "id": "4ba98cb3-9ebb-4f85-83c8-729c7d7dcbfc",
+          "name": "Sofía Castro",
+          "role": "STUDENT"
+        },
+        "assignee": {
+          "id": "bf8b7142-8763-49fc-a7f7-bac3dc547dfd",
+          "name": "Carlos Rojas",
+          "role": "TECHNICIAN"
+        },
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null,
+        "evidence": [
+          {
+            "id": "e33498b2-e7f3-4611-894f-6a1738b2a388",
+            "stage": "FIX",
+            "kind": "TEXT",
+            "url": null,
+            "text": "Arreglo número 1",
+            "width": null,
+            "height": null,
+            "createdAt": "2026-11-17T01:50:37.520Z"
+          },
+          {
+            "id": "54a45725-2ade-4b87-a8a3-33e42fc4cbe7",
+            "stage": "FIX",
+            "kind": "TEXT",
+            "url": null,
+            "text": "Arreglo número 2",
+            "width": null,
+            "height": null,
+            "createdAt": "2026-11-17T01:50:37.598Z"
+          }
+        ],
+        "history": [
+          {
+            "id": "b91897c3-9713-424d-816c-fb550a9c0cfb",
+            "fromStatus": null,
+            "toStatus": "PENDING",
+            "changedBy": {
+              "id": "4ba98cb3-9ebb-4f85-83c8-729c7d7dcbfc",
+              "name": "Sofía Castro",
+              "role": "STUDENT"
+            },
+            "changedAt": "2026-11-17T01:50:37.433Z",
+            "durationInPrevMs": null,
+            "reason": "MANUAL",
+            "note": null
+          },
+          {
+            "id": "512dd732-8271-4ae9-a694-88cd2199d571",
+            "fromStatus": "PENDING",
+            "toStatus": "IN_PROGRESS",
+            "changedBy": {
+              "id": "bf8b7142-8763-49fc-a7f7-bac3dc547dfd",
+              "name": "Carlos Rojas",
+              "role": "TECHNICIAN"
+            },
+            "changedAt": "2026-11-17T01:50:37.471Z",
+            "durationInPrevMs": 38,
+            "reason": "MANUAL",
+            "note": null
+          },
+          {
+            "id": "da75f6cf-1cdf-4f8a-bb51-21729ee48f89",
+            "fromStatus": "IN_PROGRESS",
+            "toStatus": "RESOLVED",
+            "changedBy": {
+              "id": "bf8b7142-8763-49fc-a7f7-bac3dc547dfd",
+              "name": "Carlos Rojas",
+              "role": "TECHNICIAN"
+            },
+            "changedAt": "2026-11-17T01:50:37.509Z",
+            "durationInPrevMs": 38,
+            "reason": "MANUAL",
+            "note": "Arreglo número 1"
+          },
+          {
+            "id": "feb860fc-3d0c-4e0b-9a9a-bb4a700891b6",
+            "fromStatus": "RESOLVED",
+            "toStatus": "IN_PROGRESS",
+            "changedBy": {
+              "id": "4ba98cb3-9ebb-4f85-83c8-729c7d7dcbfc",
+              "name": "Sofía Castro",
+              "role": "STUDENT"
+            },
+            "changedAt": "2026-11-17T01:50:37.537Z",
+            "durationInPrevMs": 28,
+            "reason": "MANUAL",
+            "note": "Sigue igual, vuelta 1"
+          },
+          {
+            "id": "825e80ac-5d11-453b-a8ad-09911c42d88c",
+            "fromStatus": "IN_PROGRESS",
+            "toStatus": "RESOLVED",
+            "changedBy": {
+              "id": "bf8b7142-8763-49fc-a7f7-bac3dc547dfd",
+              "name": "Carlos Rojas",
+              "role": "TECHNICIAN"
+            },
+            "changedAt": "2026-11-17T01:50:37.587Z",
+            "durationInPrevMs": 50,
+            "reason": "MANUAL",
+            "note": "Arreglo número 2"
+          },
+          {
+            "id": "7ffd22c2-9677-479e-a1ef-cf6680d5976f",
+            "fromStatus": "RESOLVED",
+            "toStatus": "IN_PROGRESS",
+            "changedBy": {
+              "id": "4ba98cb3-9ebb-4f85-83c8-729c7d7dcbfc",
+              "name": "Sofía Castro",
+              "role": "STUDENT"
+            },
+            "changedAt": "2026-11-17T01:50:37.617Z",
+            "durationInPrevMs": 30,
+            "reason": "MANUAL",
+            "note": "Sigue igual, vuelta 2"
+          }
+        ],
+        "events": [
+          {
+            "id": "40e3ab30-7a99-479f-84d8-5c2bd9b83171",
+            "type": "CREATED",
+            "payload": {
+              "level": "MEDIUM",
+              "score": 38.6,
+              "breakdown": {
+                "age": {
+                  "value": 0,
+                  "weight": 0.1,
+                  "contribution": 0
+                },
+                "risk": {
+                  "value": 30,
+                  "weight": 0.35,
+                  "contribution": 10.5
+                },
+                "space": {
+                  "value": 81.2,
+                  "weight": 0.1,
+                  "contribution": 8.1
+                },
+                "similar": {
+                  "value": 25,
+                  "weight": 0.2,
+                  "contribution": 5
+                },
+                "damageType": {
+                  "value": 60,
+                  "weight": 0.25,
+                  "contribution": 15
+                }
+              },
+              "joinIncidentId": null
+            },
+            "actor": {
+              "id": "4ba98cb3-9ebb-4f85-83c8-729c7d7dcbfc",
+              "name": "Sofía Castro",
+              "role": "STUDENT"
+            },
+            "createdAt": "2026-11-17T01:50:37.443Z"
+          },
+          {
+            "id": "82ddf00d-d8f2-4574-a266-7ab9fbb9f915",
+            "type": "ASSIGNED",
+            "payload": {
+              "by": "bf8b7142-8763-49fc-a7f7-bac3dc547dfd",
+              "assigneeId": "bf8b7142-8763-49fc-a7f7-bac3dc547dfd"
+            },
+            "actor": {
+              "id": "bf8b7142-8763-49fc-a7f7-bac3dc547dfd",
+              "name": "Carlos Rojas",
+              "role": "TECHNICIAN"
+            },
+            "createdAt": "2026-11-17T01:50:37.485Z"
+          }
+        ],
+        "clusterMembers": [],
+        "availableTransitions": []
+      },
+      "ms": 21
+    },
+    {
+      "n": 9,
+      "peticion": "POST /api/incidents/87abe8dd-4196-478a-9b91-075b418262c3/transition",
+      "quien": "tecnico1",
+      "cuerpo": {
+        "to": "RESOLVED",
+        "note": "Arreglo número 3"
+      },
+      "estado": 200,
+      "respuesta": {
+        "incidentId": "87abe8dd-4196-478a-9b91-075b418262c3",
+        "from": "IN_PROGRESS",
+        "to": "RESOLVED"
+      },
+      "ms": 32
+    },
+    {
+      "n": 10,
+      "peticion": "POST /api/incidents/87abe8dd-4196-478a-9b91-075b418262c3/transition",
+      "quien": "estudiante5",
+      "cuerpo": {
+        "to": "IN_PROGRESS",
+        "note": "Sigue igual, vuelta 3"
+      },
+      "estado": 200,
+      "respuesta": {
+        "incidentId": "87abe8dd-4196-478a-9b91-075b418262c3",
+        "from": "RESOLVED",
+        "to": "IN_PROGRESS"
+      },
+      "ms": 32
+    },
+    {
+      "n": 11,
+      "peticion": "GET /api/incidents/87abe8dd-4196-478a-9b91-075b418262c3",
+      "quien": "supervisor",
+      "estado": 200,
+      "respuesta": {
+        "id": "87abe8dd-4196-478a-9b91-075b418262c3",
+        "number": 96,
+        "code": "INC-00096",
+        "description": "Lavamanos de la izquierda no tiene desagüe",
+        "category": "SANITARY",
+        "riskLevel": "LOW",
+        "status": "IN_PROGRESS",
+        "priorityScore": 38.6,
+        "priorityLevel": "MEDIUM",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 30,
+            "weight": 0.35,
+            "contribution": 10.5
+          },
+          "space": {
+            "value": 81.2,
+            "weight": 0.1,
+            "contribution": 8.1
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 60,
+            "weight": 0.25,
+            "contribution": 15
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T13:50:37.433Z",
+        "resolutionDueAt": "2026-11-20T01:50:37.703Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:50:37.433Z",
+        "updatedAt": "2026-11-17T01:50:37.705Z",
+        "stageStartedAt": "2026-11-17T01:50:37.703Z",
+        "firstResponseAt": "2026-11-17T01:50:37.471Z",
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": null,
+        "space": {
+          "id": "ff2d3c86-a3ee-432d-9e85-8d979b67ea28",
+          "code": "B1",
+          "name": "Baño primer piso",
+          "type": "BATHROOM",
+          "floor": 1,
+          "capacity": 12,
+          "block": {
+            "id": "b3da74da-a88b-480a-8379-5189c725d659",
+            "code": "A",
+            "name": "Bloque A · Aulas"
+          },
+          "campus": {
+            "id": "d48328b3-aeba-4d7e-b677-20b6a5627fe1",
+            "code": "PRI",
+            "name": "Sede Principal"
+          }
+        },
+        "reporter": {
+          "id": "4ba98cb3-9ebb-4f85-83c8-729c7d7dcbfc",
+          "name": "Sofía Castro",
+          "role": "STUDENT"
+        },
+        "assignee": {
+          "id": "bf8b7142-8763-49fc-a7f7-bac3dc547dfd",
+          "name": "Carlos Rojas",
+          "role": "TECHNICIAN"
+        },
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null,
+        "evidence": [
+          {
+            "id": "e33498b2-e7f3-4611-894f-6a1738b2a388",
+            "stage": "FIX",
+            "kind": "TEXT",
+            "url": null,
+            "text": "Arreglo número 1",
+            "width": null,
+            "height": null,
+            "createdAt": "2026-11-17T01:50:37.520Z"
+          },
+          {
+            "id": "54a45725-2ade-4b87-a8a3-33e42fc4cbe7",
+            "stage": "FIX",
+            "kind": "TEXT",
+            "url": null,
+            "text": "Arreglo número 2",
+            "width": null,
+            "height": null,
+            "createdAt": "2026-11-17T01:50:37.598Z"
+          },
+          {
+            "id": "668f1cab-bc74-4e31-8398-76fb7b60167a",
+            "stage": "FIX",
+            "kind": "TEXT",
+            "url": null,
+            "text": "Arreglo número 3",
+            "width": null,
+            "height": null,
+            "createdAt": "2026-11-17T01:50:37.683Z"
+          }
+        ],
+        "history": [
+          {
+            "id": "b91897c3-9713-424d-816c-fb550a9c0cfb",
+            "fromStatus": null,
+            "toStatus": "PENDING",
+            "changedBy": {
+              "id": "4ba98cb3-9ebb-4f85-83c8-729c7d7dcbfc",
+              "name": "Sofía Castro",
+              "role": "STUDENT"
+            },
+            "changedAt": "2026-11-17T01:50:37.433Z",
+            "durationInPrevMs": null,
+            "reason": "MANUAL",
+            "note": null
+          },
+          {
+            "id": "512dd732-8271-4ae9-a694-88cd2199d571",
+            "fromStatus": "PENDING",
+            "toStatus": "IN_PROGRESS",
+            "changedBy": {
+              "id": "bf8b7142-8763-49fc-a7f7-bac3dc547dfd",
+              "name": "Carlos Rojas",
+              "role": "TECHNICIAN"
+            },
+            "changedAt": "2026-11-17T01:50:37.471Z",
+            "durationInPrevMs": 38,
+            "reason": "MANUAL",
+            "note": null
+          },
+          {
+            "id": "da75f6cf-1cdf-4f8a-bb51-21729ee48f89",
+            "fromStatus": "IN_PROGRESS",
+            "toStatus": "RESOLVED",
+            "changedBy": {
+              "id": "bf8b7142-8763-49fc-a7f7-bac3dc547dfd",
+              "name": "Carlos Rojas",
+              "role": "TECHNICIAN"
+            },
+            "changedAt": "2026-11-17T01:50:37.509Z",
+            "durationInPrevMs": 38,
+            "reason": "MANUAL",
+            "note": "Arreglo número 1"
+          },
+          {
+            "id": "feb860fc-3d0c-4e0b-9a9a-bb4a700891b6",
+            "fromStatus": "RESOLVED",
+            "toStatus": "IN_PROGRESS",
+            "changedBy": {
+              "id": "4ba98cb3-9ebb-4f85-83c8-729c7d7dcbfc",
+              "name": "Sofía Castro",
+              "role": "STUDENT"
+            },
+            "changedAt": "2026-11-17T01:50:37.537Z",
+            "durationInPrevMs": 28,
+            "reason": "MANUAL",
+            "note": "Sigue igual, vuelta 1"
+          },
+          {
+            "id": "825e80ac-5d11-453b-a8ad-09911c42d88c",
+            "fromStatus": "IN_PROGRESS",
+            "toStatus": "RESOLVED",
+            "changedBy": {
+              "id": "bf8b7142-8763-49fc-a7f7-bac3dc547dfd",
+              "name": "Carlos Rojas",
+              "role": "TECHNICIAN"
+            },
+            "changedAt": "2026-11-17T01:50:37.587Z",
+            "durationInPrevMs": 50,
+            "reason": "MANUAL",
+            "note": "Arreglo número 2"
+          },
+          {
+            "id": "7ffd22c2-9677-479e-a1ef-cf6680d5976f",
+            "fromStatus": "RESOLVED",
+            "toStatus": "IN_PROGRESS",
+            "changedBy": {
+              "id": "4ba98cb3-9ebb-4f85-83c8-729c7d7dcbfc",
+              "name": "Sofía Castro",
+              "role": "STUDENT"
+            },
+            "changedAt": "2026-11-17T01:50:37.617Z",
+            "durationInPrevMs": 30,
+            "reason": "MANUAL",
+            "note": "Sigue igual, vuelta 2"
+          },
+          {
+            "id": "be08ab6d-98e7-45b9-90ee-1107f334c3bb",
+            "fromStatus": "IN_PROGRESS",
+            "toStatus": "RESOLVED",
+            "changedBy": {
+              "id": "bf8b7142-8763-49fc-a7f7-bac3dc547dfd",
+              "name": "Carlos Rojas",
+              "role": "TECHNICIAN"
+            },
+            "changedAt": "2026-11-17T01:50:37.672Z",
+            "durationInPrevMs": 55,
+            "reason": "MANUAL",
+            "note": "Arreglo número 3"
+          },
+          {
+            "id": "ceb9058d-5d48-4ef8-8469-06f3d21a0736",
+            "fromStatus": "RESOLVED",
+            "toStatus": "IN_PROGRESS",
+            "changedBy": {
+              "id": "4ba98cb3-9ebb-4f85-83c8-729c7d7dcbfc",
+              "name": "Sofía Castro",
+              "role": "STUDENT"
+            },
+            "changedAt": "2026-11-17T01:50:37.703Z",
+            "durationInPrevMs": 31,
+            "reason": "MANUAL",
+            "note": "Sigue igual, vuelta 3"
+          }
+        ],
+        "events": [
+          {
+            "id": "40e3ab30-7a99-479f-84d8-5c2bd9b83171",
+            "type": "CREATED",
+            "payload": {
+              "level": "MEDIUM",
+              "score": 38.6,
+              "breakdown": {
+                "age": {
+                  "value": 0,
+                  "weight": 0.1,
+                  "contribution": 0
+                },
+                "risk": {
+                  "value": 30,
+                  "weight": 0.35,
+                  "contribution": 10.5
+                },
+                "space": {
+                  "value": 81.2,
+                  "weight": 0.1,
+                  "contribution": 8.1
+                },
+                "similar": {
+                  "value": 25,
+                  "weight": 0.2,
+                  "contribution": 5
+                },
+                "damageType": {
+                  "value": 60,
+                  "weight": 0.25,
+                  "contribution": 15
+                }
+              },
+              "joinIncidentId": null
+            },
+            "actor": {
+              "id": "4ba98cb3-9ebb-4f85-83c8-729c7d7dcbfc",
+              "name": "Sofía Castro",
+              "role": "STUDENT"
+            },
+            "createdAt": "2026-11-17T01:50:37.443Z"
+          },
+          {
+            "id": "82ddf00d-d8f2-4574-a266-7ab9fbb9f915",
+            "type": "ASSIGNED",
+            "payload": {
+              "by": "bf8b7142-8763-49fc-a7f7-bac3dc547dfd",
+              "assigneeId": "bf8b7142-8763-49fc-a7f7-bac3dc547dfd"
+            },
+            "actor": {
+              "id": "bf8b7142-8763-49fc-a7f7-bac3dc547dfd",
+              "name": "Carlos Rojas",
+              "role": "TECHNICIAN"
+            },
+            "createdAt": "2026-11-17T01:50:37.485Z"
+          }
+        ],
+        "clusterMembers": [],
+        "availableTransitions": []
+      },
+      "ms": 18
+    },
+    {
+      "n": 12,
+      "peticion": "GET /api/incidents/87abe8dd-4196-478a-9b91-075b418262c3",
+      "quien": "supervisor",
+      "estado": 200,
+      "respuesta": {
+        "id": "87abe8dd-4196-478a-9b91-075b418262c3",
+        "number": 96,
+        "code": "INC-00096",
+        "description": "Lavamanos de la izquierda no tiene desagüe",
+        "category": "SANITARY",
+        "riskLevel": "LOW",
+        "status": "IN_PROGRESS",
+        "priorityScore": 38.6,
+        "priorityLevel": "MEDIUM",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 30,
+            "weight": 0.35,
+            "contribution": 10.5
+          },
+          "space": {
+            "value": 81.2,
+            "weight": 0.1,
+            "contribution": 8.1
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 60,
+            "weight": 0.25,
+            "contribution": 15
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T13:50:37.433Z",
+        "resolutionDueAt": "2026-11-20T01:50:37.703Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:50:37.433Z",
+        "updatedAt": "2026-11-17T01:50:37.705Z",
+        "stageStartedAt": "2026-11-17T01:50:37.703Z",
+        "firstResponseAt": "2026-11-17T01:50:37.471Z",
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": null,
+        "space": {
+          "id": "ff2d3c86-a3ee-432d-9e85-8d979b67ea28",
+          "code": "B1",
+          "name": "Baño primer piso",
+          "type": "BATHROOM",
+          "floor": 1,
+          "capacity": 12,
+          "block": {
+            "id": "b3da74da-a88b-480a-8379-5189c725d659",
+            "code": "A",
+            "name": "Bloque A · Aulas"
+          },
+          "campus": {
+            "id": "d48328b3-aeba-4d7e-b677-20b6a5627fe1",
+            "code": "PRI",
+            "name": "Sede Principal"
+          }
+        },
+        "reporter": {
+          "id": "4ba98cb3-9ebb-4f85-83c8-729c7d7dcbfc",
+          "name": "Sofía Castro",
+          "role": "STUDENT"
+        },
+        "assignee": {
+          "id": "bf8b7142-8763-49fc-a7f7-bac3dc547dfd",
+          "name": "Carlos Rojas",
+          "role": "TECHNICIAN"
+        },
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null,
+        "evidence": [
+          {
+            "id": "e33498b2-e7f3-4611-894f-6a1738b2a388",
+            "stage": "FIX",
+            "kind": "TEXT",
+            "url": null,
+            "text": "Arreglo número 1",
+            "width": null,
+            "height": null,
+            "createdAt": "2026-11-17T01:50:37.520Z"
+          },
+          {
+            "id": "54a45725-2ade-4b87-a8a3-33e42fc4cbe7",
+            "stage": "FIX",
+            "kind": "TEXT",
+            "url": null,
+            "text": "Arreglo número 2",
+            "width": null,
+            "height": null,
+            "createdAt": "2026-11-17T01:50:37.598Z"
+          },
+          {
+            "id": "668f1cab-bc74-4e31-8398-76fb7b60167a",
+            "stage": "FIX",
+            "kind": "TEXT",
+            "url": null,
+            "text": "Arreglo número 3",
+            "width": null,
+            "height": null,
+            "createdAt": "2026-11-17T01:50:37.683Z"
+          }
+        ],
+        "history": [
+          {
+            "id": "b91897c3-9713-424d-816c-fb550a9c0cfb",
+            "fromStatus": null,
+            "toStatus": "PENDING",
+            "changedBy": {
+              "id": "4ba98cb3-9ebb-4f85-83c8-729c7d7dcbfc",
+              "name": "Sofía Castro",
+              "role": "STUDENT"
+            },
+            "changedAt": "2026-11-17T01:50:37.433Z",
+            "durationInPrevMs": null,
+            "reason": "MANUAL",
+            "note": null
+          },
+          {
+            "id": "512dd732-8271-4ae9-a694-88cd2199d571",
+            "fromStatus": "PENDING",
+            "toStatus": "IN_PROGRESS",
+            "changedBy": {
+              "id": "bf8b7142-8763-49fc-a7f7-bac3dc547dfd",
+              "name": "Carlos Rojas",
+              "role": "TECHNICIAN"
+            },
+            "changedAt": "2026-11-17T01:50:37.471Z",
+            "durationInPrevMs": 38,
+            "reason": "MANUAL",
+            "note": null
+          },
+          {
+            "id": "da75f6cf-1cdf-4f8a-bb51-21729ee48f89",
+            "fromStatus": "IN_PROGRESS",
+            "toStatus": "RESOLVED",
+            "changedBy": {
+              "id": "bf8b7142-8763-49fc-a7f7-bac3dc547dfd",
+              "name": "Carlos Rojas",
+              "role": "TECHNICIAN"
+            },
+            "changedAt": "2026-11-17T01:50:37.509Z",
+            "durationInPrevMs": 38,
+            "reason": "MANUAL",
+            "note": "Arreglo número 1"
+          },
+          {
+            "id": "feb860fc-3d0c-4e0b-9a9a-bb4a700891b6",
+            "fromStatus": "RESOLVED",
+            "toStatus": "IN_PROGRESS",
+            "changedBy": {
+              "id": "4ba98cb3-9ebb-4f85-83c8-729c7d7dcbfc",
+              "name": "Sofía Castro",
+              "role": "STUDENT"
+            },
+            "changedAt": "2026-11-17T01:50:37.537Z",
+            "durationInPrevMs": 28,
+            "reason": "MANUAL",
+            "note": "Sigue igual, vuelta 1"
+          },
+          {
+            "id": "825e80ac-5d11-453b-a8ad-09911c42d88c",
+            "fromStatus": "IN_PROGRESS",
+            "toStatus": "RESOLVED",
+            "changedBy": {
+              "id": "bf8b7142-8763-49fc-a7f7-bac3dc547dfd",
+              "name": "Carlos Rojas",
+              "role": "TECHNICIAN"
+            },
+            "changedAt": "2026-11-17T01:50:37.587Z",
+            "durationInPrevMs": 50,
+            "reason": "MANUAL",
+            "note": "Arreglo número 2"
+          },
+          {
+            "id": "7ffd22c2-9677-479e-a1ef-cf6680d5976f",
+            "fromStatus": "RESOLVED",
+            "toStatus": "IN_PROGRESS",
+            "changedBy": {
+              "id": "4ba98cb3-9ebb-4f85-83c8-729c7d7dcbfc",
+              "name": "Sofía Castro",
+              "role": "STUDENT"
+            },
+            "changedAt": "2026-11-17T01:50:37.617Z",
+            "durationInPrevMs": 30,
+            "reason": "MANUAL",
+            "note": "Sigue igual, vuelta 2"
+          },
+          {
+            "id": "be08ab6d-98e7-45b9-90ee-1107f334c3bb",
+            "fromStatus": "IN_PROGRESS",
+            "toStatus": "RESOLVED",
+            "changedBy": {
+              "id": "bf8b7142-8763-49fc-a7f7-bac3dc547dfd",
+              "name": "Carlos Rojas",
+              "role": "TECHNICIAN"
+            },
+            "changedAt": "2026-11-17T01:50:37.672Z",
+            "durationInPrevMs": 55,
+            "reason": "MANUAL",
+            "note": "Arreglo número 3"
+          },
+          {
+            "id": "ceb9058d-5d48-4ef8-8469-06f3d21a0736",
+            "fromStatus": "RESOLVED",
+            "toStatus": "IN_PROGRESS",
+            "changedBy": {
+              "id": "4ba98cb3-9ebb-4f85-83c8-729c7d7dcbfc",
+              "name": "Sofía Castro",
+              "role": "STUDENT"
+            },
+            "changedAt": "2026-11-17T01:50:37.703Z",
+            "durationInPrevMs": 31,
+            "reason": "MANUAL",
+            "note": "Sigue igual, vuelta 3"
+          }
+        ],
+        "events": [
+          {
+            "id": "40e3ab30-7a99-479f-84d8-5c2bd9b83171",
+            "type": "CREATED",
+            "payload": {
+              "level": "MEDIUM",
+              "score": 38.6,
+              "breakdown": {
+                "age": {
+                  "value": 0,
+                  "weight": 0.1,
+                  "contribution": 0
+                },
+                "risk": {
+                  "value": 30,
+                  "weight": 0.35,
+                  "contribution": 10.5
+                },
+                "space": {
+                  "value": 81.2,
+                  "weight": 0.1,
+                  "contribution": 8.1
+                },
+                "similar": {
+                  "value": 25,
+                  "weight": 0.2,
+                  "contribution": 5
+                },
+                "damageType": {
+                  "value": 60,
+                  "weight": 0.25,
+                  "contribution": 15
+                }
+              },
+              "joinIncidentId": null
+            },
+            "actor": {
+              "id": "4ba98cb3-9ebb-4f85-83c8-729c7d7dcbfc",
+              "name": "Sofía Castro",
+              "role": "STUDENT"
+            },
+            "createdAt": "2026-11-17T01:50:37.443Z"
+          },
+          {
+            "id": "82ddf00d-d8f2-4574-a266-7ab9fbb9f915",
+            "type": "ASSIGNED",
+            "payload": {
+              "by": "bf8b7142-8763-49fc-a7f7-bac3dc547dfd",
+              "assigneeId": "bf8b7142-8763-49fc-a7f7-bac3dc547dfd"
+            },
+            "actor": {
+              "id": "bf8b7142-8763-49fc-a7f7-bac3dc547dfd",
+              "name": "Carlos Rojas",
+              "role": "TECHNICIAN"
+            },
+            "createdAt": "2026-11-17T01:50:37.485Z"
+          }
+        ],
+        "clusterMembers": [],
+        "availableTransitions": []
+      },
+      "ms": 20
+    }
+  ]
+}

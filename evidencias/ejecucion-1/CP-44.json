@@ -1,0 +1,140 @@
+{
+  "caso": "CP-44",
+  "titulo": "CP-44 | Quién puede corregir el riesgo de un reporte",
+  "ejecucion": "ejecucion-1",
+  "fecha": "2026-11-17T01:44:53.847Z",
+  "estado": "Aprobado",
+  "error": null,
+  "pasos": [
+    {
+      "n": 1,
+      "peticion": "POST /api/incidents",
+      "quien": "estudiante1",
+      "cuerpo": {
+        "spaceId": "a1efee17-0885-445a-b4e7-8a4d1a9ab376",
+        "category": "COSMETIC",
+        "riskLevel": "NONE",
+        "description": "Mancha de tinta en el piso junto a la entrada",
+        "hotspot": null
+      },
+      "estado": 201,
+      "respuesta": {
+        "id": "6cf861eb-8f4c-4fd5-a3cf-a644c2f95e1b",
+        "number": 81,
+        "code": "INC-00081",
+        "description": "Mancha de tinta en el piso junto a la entrada",
+        "category": "COSMETIC",
+        "riskLevel": "NONE",
+        "status": "PENDING",
+        "priorityScore": 18.3,
+        "priorityLevel": "LOW",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 0,
+            "weight": 0.35,
+            "contribution": 0
+          },
+          "space": {
+            "value": 95.5,
+            "weight": 0.1,
+            "contribution": 9.6
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 15,
+            "weight": 0.25,
+            "contribution": 3.8
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-19T01:44:53.789Z",
+        "resolutionDueAt": "2026-11-24T01:44:53.789Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:44:53.789Z",
+        "updatedAt": "2026-11-17T01:44:53.791Z",
+        "stageStartedAt": "2026-11-17T01:44:53.789Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": null,
+        "space": {
+          "id": "a1efee17-0885-445a-b4e7-8a4d1a9ab376",
+          "code": "201",
+          "name": "Aula 201",
+          "type": "CLASSROOM",
+          "floor": 2,
+          "capacity": 55,
+          "block": {
+            "id": "8b767556-6e1a-43e1-9d61-b3e25172f707",
+            "code": "A",
+            "name": "Bloque A · Aulas"
+          },
+          "campus": {
+            "id": "9d3da020-a7b9-4b8c-8f69-615e560cb551",
+            "code": "PRI",
+            "name": "Sede Principal"
+          }
+        },
+        "reporter": {
+          "id": "713f52b5-7328-4cb8-8d44-cfd59dd8b7f5",
+          "name": "Valentina Ruiz",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null
+      },
+      "ms": 30
+    },
+    {
+      "n": 2,
+      "peticion": "PATCH /api/incidents/6cf861eb-8f4c-4fd5-a3cf-a644c2f95e1b/risk",
+      "quien": "tecnico1",
+      "cuerpo": {
+        "riskLevel": "LOW"
+      },
+      "estado": 403,
+      "respuesta": {
+        "error": "No tienes permiso para esta acción"
+      },
+      "ms": 7
+    },
+    {
+      "n": 3,
+      "peticion": "PATCH /api/incidents/6cf861eb-8f4c-4fd5-a3cf-a644c2f95e1b/risk",
+      "quien": "estudiante1",
+      "cuerpo": {
+        "riskLevel": "LOW"
+      },
+      "estado": 403,
+      "respuesta": {
+        "error": "No tienes permiso para esta acción"
+      },
+      "ms": 4
+    },
+    {
+      "n": 4,
+      "peticion": "PATCH /api/incidents/6cf861eb-8f4c-4fd5-a3cf-a644c2f95e1b/risk",
+      "quien": "supervisor",
+      "cuerpo": {
+        "riskLevel": "LOW",
+        "note": "Alguien puede resbalar"
+      },
+      "estado": 204,
+      "respuesta": null,
+      "ms": 25
+    }
+  ]
+}

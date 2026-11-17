@@ -1,0 +1,23 @@
+{
+  "caso": "CP-05",
+  "titulo": "CP-05 | Ingreso con contraseña incorrecta",
+  "ejecucion": "ejecucion-1",
+  "fecha": "2026-11-17T01:46:05.213Z",
+  "estado": "Aprobado",
+  "error": null,
+  "pasos": [
+    {
+      "n": 1,
+      "peticion": "POST /api/auth/login desde la web",
+      "quien": "-",
+      "estado": 0,
+      "respuesta": {
+        "estado": 401,
+        "respuesta": {
+          "error": "Correo o contraseña incorrectos"
+        }
+      },
+      "ms": 0
+    }
+  ]
+}

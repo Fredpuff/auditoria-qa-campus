@@ -1,0 +1,172 @@
+{
+  "caso": "CP-34",
+  "titulo": "CP-34 | Archivos que no son imagen y nombre con ../",
+  "ejecucion": "ejecucion-2",
+  "fecha": "2026-11-17T01:49:36.014Z",
+  "estado": "Aprobado",
+  "error": null,
+  "pasos": [
+    {
+      "n": 1,
+      "peticion": "POST /api/incidents",
+      "quien": "estudiante1",
+      "cuerpo": {
+        "spaceId": "0d617c99-fd0d-4e5f-93e3-e59dbaff9807",
+        "category": "COSMETIC",
+        "riskLevel": "NONE",
+        "description": "Mesa de corte con marcas profundas de bisturí",
+        "hotspot": null
+      },
+      "estado": 201,
+      "respuesta": {
+        "id": "24f9e099-d790-4207-a52d-faa7a49fff8b",
+        "number": 70,
+        "code": "INC-00070",
+        "description": "Mesa de corte con marcas profundas de bisturí",
+        "category": "COSMETIC",
+        "riskLevel": "NONE",
+        "status": "PENDING",
+        "priorityScore": 18.8,
+        "priorityLevel": "LOW",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 0,
+            "weight": 0.35,
+            "contribution": 0
+          },
+          "space": {
+            "value": 100,
+            "weight": 0.1,
+            "contribution": 10
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 15,
+            "weight": 0.25,
+            "contribution": 3.8
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-19T01:49:35.892Z",
+        "resolutionDueAt": "2026-11-24T01:49:35.892Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:49:35.892Z",
+        "updatedAt": "2026-11-17T01:49:35.895Z",
+        "stageStartedAt": "2026-11-17T01:49:35.892Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": null,
+        "space": {
+          "id": "0d617c99-fd0d-4e5f-93e3-e59dbaff9807",
+          "code": "102",
+          "name": "Taller de Diseño",
+          "type": "LAB",
+          "floor": 1,
+          "capacity": 30,
+          "block": {
+            "id": "1ad96267-f0a2-4341-b721-29eb1f6a0472",
+            "code": "F",
+            "name": "Bloque F · Laboratorios"
+          },
+          "campus": {
+            "id": "c6404dc8-3b3c-4ec7-bb52-b29273b4660b",
+            "code": "NOR",
+            "name": "Sede Norte"
+          }
+        },
+        "reporter": {
+          "id": "ef8cdb81-b899-4829-96aa-29208ad05e35",
+          "name": "Valentina Ruiz",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null
+      },
+      "ms": 43
+    },
+    {
+      "n": 2,
+      "peticion": "POST /api/incidents/24f9e099-d790-4207-a52d-faa7a49fff8b/evidence",
+      "quien": "estudiante1",
+      "cuerpo": {
+        "archivo": "falsa.png",
+        "tipo": "image/png",
+        "bytes": 35
+      },
+      "estado": 400,
+      "respuesta": {
+        "error": "El archivo no es una imagen válida",
+        "field": "file"
+      },
+      "ms": 23
+    },
+    {
+      "n": 3,
+      "peticion": "POST /api/incidents/24f9e099-d790-4207-a52d-faa7a49fff8b/evidence",
+      "quien": "estudiante1",
+      "cuerpo": {
+        "archivo": "dibujo.svg",
+        "tipo": "image/svg+xml",
+        "bytes": 71
+      },
+      "estado": 400,
+      "respuesta": {
+        "error": "Formato no permitido: usa JPG, PNG o WebP",
+        "field": "file"
+      },
+      "ms": 19
+    },
+    {
+      "n": 4,
+      "peticion": "POST /api/incidents/24f9e099-d790-4207-a52d-faa7a49fff8b/evidence",
+      "quien": "estudiante1",
+      "cuerpo": {
+        "archivo": "anim.gif",
+        "tipo": "image/gif",
+        "bytes": 6
+      },
+      "estado": 400,
+      "respuesta": {
+        "error": "Formato no permitido: usa JPG, PNG o WebP",
+        "field": "file"
+      },
+      "ms": 18
+    },
+    {
+      "n": 5,
+      "peticion": "POST /api/incidents/24f9e099-d790-4207-a52d-faa7a49fff8b/evidence",
+      "quien": "estudiante1",
+      "cuerpo": {
+        "archivo": "../../../etc/evil.png",
+        "tipo": "image/png",
+        "bytes": 69
+      },
+      "estado": 201,
+      "respuesta": {
+        "id": "90c76a94-110d-4bd4-841a-ff12fd63a53d",
+        "stage": "REPORT",
+        "kind": "PHOTO",
+        "url": "/uploads/8e4f634f-6777-428c-81e4-2f075612dada.webp",
+        "text": null,
+        "width": 1,
+        "height": 1,
+        "createdAt": "2026-11-17T01:49:36.002Z"
+      },
+      "ms": 27
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "caso": "CP-06",
+  "titulo": "CP-06 | Consultar incidencias sin token",
+  "ejecucion": "ejecucion-1",
+  "fecha": "2026-11-17T01:44:45.558Z",
+  "estado": "Aprobado",
+  "error": null,
+  "pasos": [
+    {
+      "n": 1,
+      "peticion": "GET /api/incidents",
+      "quien": "sin sesión",
+      "estado": 401,
+      "respuesta": {
+        "error": "Tu sesión expiró, vuelve a iniciar sesión"
+      },
+      "ms": 10
+    }
+  ]
+}

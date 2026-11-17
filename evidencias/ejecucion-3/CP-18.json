@@ -1,0 +1,367 @@
+{
+  "caso": "CP-18",
+  "titulo": "CP-18 | Flujo completo Pendiente → Verificado con historial",
+  "ejecucion": "ejecucion-3",
+  "fecha": "2026-11-17T01:55:23.356Z",
+  "estado": "Aprobado",
+  "error": null,
+  "pasos": [
+    {
+      "n": 1,
+      "peticion": "POST /api/incidents",
+      "quien": "estudiante1",
+      "cuerpo": {
+        "spaceId": "3a744123-ff05-4c5e-bc31-5033325a80dc",
+        "category": "COSMETIC",
+        "riskLevel": "NONE",
+        "description": "Azulejo despegado detrás de la caja registradora",
+        "hotspot": null
+      },
+      "estado": 201,
+      "respuesta": {
+        "id": "219976f2-60ff-4c6e-84ad-5b178be4cd33",
+        "number": 91,
+        "code": "INC-00091",
+        "description": "Azulejo despegado detrás de la caja registradora",
+        "category": "COSMETIC",
+        "riskLevel": "NONE",
+        "status": "PENDING",
+        "priorityScore": 15.8,
+        "priorityLevel": "LOW",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 0,
+            "weight": 0.35,
+            "contribution": 0
+          },
+          "space": {
+            "value": 70,
+            "weight": 0.1,
+            "contribution": 7
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 15,
+            "weight": 0.25,
+            "contribution": 3.8
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-19T01:55:23.214Z",
+        "resolutionDueAt": "2026-11-24T01:55:23.214Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:55:23.214Z",
+        "updatedAt": "2026-11-17T01:55:23.215Z",
+        "stageStartedAt": "2026-11-17T01:55:23.214Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": null,
+        "space": {
+          "id": "3a744123-ff05-4c5e-bc31-5033325a80dc",
+          "code": "CAF",
+          "name": "Cafetería",
+          "type": "COMMON",
+          "floor": 1,
+          "capacity": 120,
+          "block": {
+            "id": "43ca0b05-7a01-4b6d-982d-a75444c86dc0",
+            "code": "C",
+            "name": "Bloque C · Bienestar"
+          },
+          "campus": {
+            "id": "9a0c65ff-7a7d-470b-955a-efbc7b0f11d2",
+            "code": "PRI",
+            "name": "Sede Principal"
+          }
+        },
+        "reporter": {
+          "id": "8d61d3b4-1907-4f2a-b562-340c554fe341",
+          "name": "Valentina Ruiz",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null
+      },
+      "ms": 45
+    },
+    {
+      "n": 2,
+      "peticion": "POST /api/incidents/219976f2-60ff-4c6e-84ad-5b178be4cd33/transition",
+      "quien": "tecnico1",
+      "cuerpo": {
+        "to": "IN_PROGRESS"
+      },
+      "estado": 200,
+      "respuesta": {
+        "incidentId": "219976f2-60ff-4c6e-84ad-5b178be4cd33",
+        "from": "PENDING",
+        "to": "IN_PROGRESS"
+      },
+      "ms": 29
+    },
+    {
+      "n": 3,
+      "peticion": "POST /api/incidents/219976f2-60ff-4c6e-84ad-5b178be4cd33/transition",
+      "quien": "tecnico1",
+      "cuerpo": {
+        "to": "RESOLVED",
+        "note": "Pintado"
+      },
+      "estado": 200,
+      "respuesta": {
+        "incidentId": "219976f2-60ff-4c6e-84ad-5b178be4cd33",
+        "from": "IN_PROGRESS",
+        "to": "RESOLVED"
+      },
+      "ms": 33
+    },
+    {
+      "n": 4,
+      "peticion": "POST /api/incidents/219976f2-60ff-4c6e-84ad-5b178be4cd33/transition",
+      "quien": "supervisor",
+      "cuerpo": {
+        "to": "VERIFIED"
+      },
+      "estado": 200,
+      "respuesta": {
+        "incidentId": "219976f2-60ff-4c6e-84ad-5b178be4cd33",
+        "from": "RESOLVED",
+        "to": "VERIFIED"
+      },
+      "ms": 25
+    },
+    {
+      "n": 5,
+      "peticion": "GET /api/incidents/219976f2-60ff-4c6e-84ad-5b178be4cd33",
+      "quien": "supervisor",
+      "estado": 200,
+      "respuesta": {
+        "id": "219976f2-60ff-4c6e-84ad-5b178be4cd33",
+        "number": 91,
+        "code": "INC-00091",
+        "description": "Azulejo despegado detrás de la caja registradora",
+        "category": "COSMETIC",
+        "riskLevel": "NONE",
+        "status": "VERIFIED",
+        "priorityScore": 15.8,
+        "priorityLevel": "LOW",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 0,
+            "weight": 0.35,
+            "contribution": 0
+          },
+          "space": {
+            "value": 70,
+            "weight": 0.1,
+            "contribution": 7
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 15,
+            "weight": 0.25,
+            "contribution": 3.8
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-19T01:55:23.214Z",
+        "resolutionDueAt": "2026-11-24T01:55:23.214Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:55:23.214Z",
+        "updatedAt": "2026-11-17T01:55:23.322Z",
+        "stageStartedAt": "2026-11-17T01:55:23.319Z",
+        "firstResponseAt": "2026-11-17T01:55:23.255Z",
+        "resolvedAt": "2026-11-17T01:55:23.289Z",
+        "verifiedAt": "2026-11-17T01:55:23.319Z",
+        "hotspot": null,
+        "space": {
+          "id": "3a744123-ff05-4c5e-bc31-5033325a80dc",
+          "code": "CAF",
+          "name": "Cafetería",
+          "type": "COMMON",
+          "floor": 1,
+          "capacity": 120,
+          "block": {
+            "id": "43ca0b05-7a01-4b6d-982d-a75444c86dc0",
+            "code": "C",
+            "name": "Bloque C · Bienestar"
+          },
+          "campus": {
+            "id": "9a0c65ff-7a7d-470b-955a-efbc7b0f11d2",
+            "code": "PRI",
+            "name": "Sede Principal"
+          }
+        },
+        "reporter": {
+          "id": "8d61d3b4-1907-4f2a-b562-340c554fe341",
+          "name": "Valentina Ruiz",
+          "role": "STUDENT"
+        },
+        "assignee": {
+          "id": "24a54ba6-a302-451f-b360-0af2bcea4dfb",
+          "name": "Carlos Rojas",
+          "role": "TECHNICIAN"
+        },
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null,
+        "evidence": [
+          {
+            "id": "d1aaa749-f9ba-4d3f-8e49-84761c2fb755",
+            "stage": "FIX",
+            "kind": "TEXT",
+            "url": null,
+            "text": "Pintado",
+            "width": null,
+            "height": null,
+            "createdAt": "2026-11-17T01:55:23.299Z"
+          }
+        ],
+        "history": [
+          {
+            "id": "f7742996-2d6b-4dc8-8d18-8c0fd4755eeb",
+            "fromStatus": null,
+            "toStatus": "PENDING",
+            "changedBy": {
+              "id": "8d61d3b4-1907-4f2a-b562-340c554fe341",
+              "name": "Valentina Ruiz",
+              "role": "STUDENT"
+            },
+            "changedAt": "2026-11-17T01:55:23.214Z",
+            "durationInPrevMs": null,
+            "reason": "MANUAL",
+            "note": null
+          },
+          {
+            "id": "5c7e7c25-5913-40db-94be-6130eecce5ab",
+            "fromStatus": "PENDING",
+            "toStatus": "IN_PROGRESS",
+            "changedBy": {
+              "id": "24a54ba6-a302-451f-b360-0af2bcea4dfb",
+              "name": "Carlos Rojas",
+              "role": "TECHNICIAN"
+            },
+            "changedAt": "2026-11-17T01:55:23.255Z",
+            "durationInPrevMs": 41,
+            "reason": "MANUAL",
+            "note": null
+          },
+          {
+            "id": "73b9cefb-b455-4f61-908c-93cfc1151f56",
+            "fromStatus": "IN_PROGRESS",
+            "toStatus": "RESOLVED",
+            "changedBy": {
+              "id": "24a54ba6-a302-451f-b360-0af2bcea4dfb",
+              "name": "Carlos Rojas",
+              "role": "TECHNICIAN"
+            },
+            "changedAt": "2026-11-17T01:55:23.289Z",
+            "durationInPrevMs": 34,
+            "reason": "MANUAL",
+            "note": "Pintado"
+          },
+          {
+            "id": "a8586b10-7111-4da7-ba89-85e118b91969",
+            "fromStatus": "RESOLVED",
+            "toStatus": "VERIFIED",
+            "changedBy": {
+              "id": "85097184-9f92-4da7-a80c-77f0a3198962",
+              "name": "Laura Méndez",
+              "role": "SUPERVISOR"
+            },
+            "changedAt": "2026-11-17T01:55:23.319Z",
+            "durationInPrevMs": 30,
+            "reason": "MANUAL",
+            "note": null
+          }
+        ],
+        "events": [
+          {
+            "id": "af8904af-4721-411d-92e4-b39552d35d9b",
+            "type": "CREATED",
+            "payload": {
+              "level": "LOW",
+              "score": 15.8,
+              "breakdown": {
+                "age": {
+                  "value": 0,
+                  "weight": 0.1,
+                  "contribution": 0
+                },
+                "risk": {
+                  "value": 0,
+                  "weight": 0.35,
+                  "contribution": 0
+                },
+                "space": {
+                  "value": 70,
+                  "weight": 0.1,
+                  "contribution": 7
+                },
+                "similar": {
+                  "value": 25,
+                  "weight": 0.2,
+                  "contribution": 5
+                },
+                "damageType": {
+                  "value": 15,
+                  "weight": 0.25,
+                  "contribution": 3.8
+                }
+              },
+              "joinIncidentId": null
+            },
+            "actor": {
+              "id": "8d61d3b4-1907-4f2a-b562-340c554fe341",
+              "name": "Valentina Ruiz",
+              "role": "STUDENT"
+            },
+            "createdAt": "2026-11-17T01:55:23.225Z"
+          },
+          {
+            "id": "90715b53-e920-4a20-ad4c-c113a1fde0c3",
+            "type": "ASSIGNED",
+            "payload": {
+              "by": "24a54ba6-a302-451f-b360-0af2bcea4dfb",
+              "assigneeId": "24a54ba6-a302-451f-b360-0af2bcea4dfb"
+            },
+            "actor": {
+              "id": "24a54ba6-a302-451f-b360-0af2bcea4dfb",
+              "name": "Carlos Rojas",
+              "role": "TECHNICIAN"
+            },
+            "createdAt": "2026-11-17T01:55:23.265Z"
+          }
+        ],
+        "clusterMembers": [],
+        "availableTransitions": []
+      },
+      "ms": 19
+    }
+  ]
+}

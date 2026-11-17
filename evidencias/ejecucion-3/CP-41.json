@@ -1,0 +1,25 @@
+{
+  "caso": "CP-41",
+  "titulo": "CP-41 | Aviso de SLA al 80 % y vencimiento al 100 %",
+  "ejecucion": "ejecucion-3",
+  "fecha": "2026-11-17T01:54:24.977Z",
+  "estado": "Aprobado",
+  "error": null,
+  "pasos": [
+    {
+      "n": 1,
+      "peticion": "slaState (packages/shared/src/domain/sla.ts)",
+      "quien": "-",
+      "estado": 0,
+      "respuesta": {
+        "79%": "ok",
+        "80%": "warning",
+        "99%": "warning",
+        "100%": "breach",
+        "120%": "breach",
+        "100% con estado RESOLVED": "done"
+      },
+      "ms": 0
+    }
+  ]
+}

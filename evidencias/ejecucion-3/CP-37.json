@@ -1,0 +1,28 @@
+{
+  "caso": "CP-37",
+  "titulo": "CP-37 | BUG-09 | Descripción de 1001 caracteres responde un mensaje en inglés",
+  "ejecucion": "ejecucion-3",
+  "fecha": "2026-11-17T01:54:23.283Z",
+  "estado": "Fallido",
+  "error": "Error: el mensaje que ve el usuario debe estar en español\n\nexpect(received).toMatch(expected)\n\nExpected pattern: /caracteres/\nReceived string:  \"String must contain at most 1000 character(s)\"",
+  "pasos": [
+    {
+      "n": 1,
+      "peticion": "POST /api/incidents",
+      "quien": "estudiante3",
+      "cuerpo": {
+        "spaceId": "4f5ca84e-bc6c-45d2-aa9c-4a845ca894d1",
+        "category": "SANITARY",
+        "riskLevel": "LOW",
+        "description": "El inodoro del fondo descarga sin parar y moja el piso. El inodoro del fondo descarga sin parar y moja el piso. El inodoro del fondo descarga sin parar y moja el piso. El inodoro del fondo descarga sin parar y moja el piso. El inodoro del fondo descarga sin parar y moja el piso. El inodoro del fondo… (1001 caracteres)",
+        "hotspot": null
+      },
+      "estado": 400,
+      "respuesta": {
+        "error": "String must contain at most 1000 character(s)",
+        "field": "description"
+      },
+      "ms": 16
+    }
+  ]
+}

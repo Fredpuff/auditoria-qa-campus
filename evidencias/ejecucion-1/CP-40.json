@@ -1,0 +1,91 @@
+{
+  "caso": "CP-40",
+  "titulo": "CP-40 | Parámetro limit en 0, 1, 500 y 501",
+  "ejecucion": "ejecucion-1",
+  "fecha": "2026-11-17T01:44:52.587Z",
+  "estado": "Aprobado",
+  "error": null,
+  "pasos": [
+    {
+      "n": 1,
+      "peticion": "GET /api/incidents?limit=0",
+      "quien": "supervisor",
+      "estado": 400,
+      "respuesta": {
+        "error": "Number must be greater than or equal to 1",
+        "field": "limit"
+      },
+      "ms": 15
+    },
+    {
+      "n": 2,
+      "peticion": "GET /api/incidents?limit=1",
+      "quien": "supervisor",
+      "estado": 200,
+      "respuesta": {
+        "total": 1,
+        "primeros": [
+          {
+            "code": "INC-00048",
+            "status": "PENDING",
+            "isOverdue": true,
+            "priorityLevel": "CRITICAL"
+          }
+        ]
+      },
+      "ms": 21
+    },
+    {
+      "n": 3,
+      "peticion": "GET /api/incidents?limit=500",
+      "quien": "supervisor",
+      "estado": 200,
+      "respuesta": {
+        "total": 65,
+        "primeros": [
+          {
+            "code": "INC-00048",
+            "status": "PENDING",
+            "isOverdue": true,
+            "priorityLevel": "CRITICAL"
+          },
+          {
+            "code": "INC-00013",
+            "status": "VERIFIED",
+            "isOverdue": true,
+            "priorityLevel": "CRITICAL"
+          },
+          {
+            "code": "INC-00062",
+            "status": "PENDING",
+            "isOverdue": true,
+            "priorityLevel": "CRITICAL"
+          }
+        ]
+      },
+      "ms": 38
+    },
+    {
+      "n": 4,
+      "peticion": "GET /api/incidents?limit=501",
+      "quien": "supervisor",
+      "estado": 400,
+      "respuesta": {
+        "error": "Number must be less than or equal to 500",
+        "field": "limit"
+      },
+      "ms": 7
+    },
+    {
+      "n": 5,
+      "peticion": "GET /api/incidents?limit=-1",
+      "quien": "supervisor",
+      "estado": 400,
+      "respuesta": {
+        "error": "Number must be greater than or equal to 1",
+        "field": "limit"
+      },
+      "ms": 5
+    }
+  ]
+}

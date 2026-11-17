@@ -1,0 +1,1154 @@
+{
+  "caso": "CP-45",
+  "titulo": "CP-45 | Consultas reservadas al personal según el rol",
+  "ejecucion": "ejecucion-3",
+  "fecha": "2026-11-17T01:54:25.807Z",
+  "estado": "Aprobado",
+  "error": null,
+  "pasos": [
+    {
+      "n": 1,
+      "peticion": "GET /api/similarity/suggestions",
+      "quien": "supervisor",
+      "estado": 200,
+      "respuesta": {
+        "total": 3,
+        "primeros": [
+          {
+            "id": "c93110d9-a640-4642-a75d-c58c00c16a0a",
+            "score": 0.571,
+            "breakdown": {
+              "text": 0.381,
+              "time": 0.933,
+              "score": 0.571,
+              "category": 1,
+              "location": 0.5,
+              "textSource": "tfidf",
+              "hotspotDistance": null
+            },
+            "explanation": "mismo bloque y piso, misma categoría, texto 38 % similar",
+            "createdAt": "2026-11-16T21:52:18.964Z",
+            "incident": {
+              "id": "c3543c3d-4577-4334-b835-2485e5375bf1",
+              "number": 63,
+              "code": "INC-00063",
+              "description": "El enchufe junto al computador huele a quemado",
+              "category": "ELECTRICAL",
+              "riskLevel": "HIGH",
+              "status": "PENDING",
+              "priorityScore": 83.1,
+              "priorityLevel": "CRITICAL",
+              "priorityBreakdown": {
+                "age": {
+                  "value": 80.6,
+                  "weight": 0.1,
+                  "contribution": 8.1
+                },
+                "risk": {
+                  "value": 100,
+                  "weight": 0.35,
+                  "contribution": 35
+                },
+                "space": {
+                  "value": 100,
+                  "weight": 0.1,
+                  "contribution": 10
+                },
+                "similar": {
+                  "value": 25,
+                  "weight": 0.2,
+                  "contribution": 5
+                },
+                "damageType": {
+                  "value": 100,
+                  "weight": 0.25,
+                  "contribution": 25
+                }
+              },
+              "escalationSteps": 1,
+              "isOverdue": true,
+              "responseDueAt": "2026-11-16T23:52:18.964Z",
+              "resolutionDueAt": "2026-11-17T02:52:18.964Z",
+              "slaWarnedAt": null,
+              "createdAt": "2026-11-16T21:52:18.964Z",
+              "updatedAt": "2026-11-17T01:54:00.373Z",
+              "stageStartedAt": "2026-11-16T21:52:18.964Z",
+              "firstResponseAt": null,
+              "resolvedAt": null,
+              "verifiedAt": null,
+              "hotspot": null,
+              "space": {
+                "id": "ffd28ecb-c8d7-40a8-aba2-fcc884d475ea",
+                "code": "202",
+                "name": "Sala de Cómputo 1",
+                "type": "LAB",
+                "floor": 2,
+                "capacity": 40,
+                "block": {
+                  "id": "d36f5a58-7076-484d-85fc-fe93cb59a5a4",
+                  "code": "B",
+                  "name": "Bloque B · Laboratorios"
+                },
+                "campus": {
+                  "id": "9a0c65ff-7a7d-470b-955a-efbc7b0f11d2",
+                  "code": "PRI",
+                  "name": "Sede Principal"
+                }
+              },
+              "reporter": {
+                "id": "661a9c77-758b-4e46-9cb0-ebf61a13e1e0",
+                "name": "Juan Esteban Díaz",
+                "role": "STUDENT"
+              },
+              "assignee": null,
+              "clusterId": null,
+              "isClusterPrimary": true,
+              "clusterSize": 1,
+              "thumbnailUrl": null
+            },
+            "candidate": {
+              "id": "9b7cc791-a57a-41b5-99dd-7c29ea9de5f4",
+              "number": 62,
+              "code": "INC-00062",
+              "description": "La toma del mesón central no funciona y huele a quemado",
+              "category": "ELECTRICAL",
+              "riskLevel": "HIGH",
+              "status": "PENDING",
+              "priorityScore": 85,
+              "priorityLevel": "CRITICAL",
+              "priorityBreakdown": {
+                "age": {
+                  "value": 100,
+                  "weight": 0.1,
+                  "contribution": 10
+                },
+                "risk": {
+                  "value": 100,
+                  "weight": 0.35,
+                  "contribution": 35
+                },
+                "space": {
+                  "value": 100,
+                  "weight": 0.1,
+                  "contribution": 10
+                },
+                "similar": {
+                  "value": 25,
+                  "weight": 0.2,
+                  "contribution": 5
+                },
+                "damageType": {
+                  "value": 100,
+                  "weight": 0.25,
+                  "contribution": 25
+                }
+              },
+              "escalationSteps": 1,
+              "isOverdue": true,
+              "responseDueAt": "2026-11-16T18:52:18.964Z",
+              "resolutionDueAt": "2026-11-16T21:52:18.964Z",
+              "slaWarnedAt": null,
+              "createdAt": "2026-11-16T16:52:18.964Z",
+              "updatedAt": "2026-11-17T01:54:00.364Z",
+              "stageStartedAt": "2026-11-16T16:52:18.964Z",
+              "firstResponseAt": null,
+              "resolvedAt": null,
+              "verifiedAt": null,
+              "hotspot": null,
+              "space": {
+                "id": "46183a6b-ca37-48b3-b34c-ff08476aadee",
+                "code": "201",
+                "name": "Laboratorio de Física",
+                "type": "LAB",
+                "floor": 2,
+                "capacity": 30,
+                "block": {
+                  "id": "d36f5a58-7076-484d-85fc-fe93cb59a5a4",
+                  "code": "B",
+                  "name": "Bloque B · Laboratorios"
+                },
+                "campus": {
+                  "id": "9a0c65ff-7a7d-470b-955a-efbc7b0f11d2",
+                  "code": "PRI",
+                  "name": "Sede Principal"
+                }
+              },
+              "reporter": {
+                "id": "93b6ea52-32ce-477d-8b7b-1c2862f2d927",
+                "name": "Camila Ortiz",
+                "role": "STUDENT"
+              },
+              "assignee": null,
+              "clusterId": null,
+              "isClusterPrimary": true,
+              "clusterSize": 1,
+              "thumbnailUrl": null
+            }
+          },
+          {
+            "id": "763b3512-c772-4cce-8a6b-fd2ebe730c11",
+            "score": 0.552,
+            "breakdown": {
+              "text": 0.07,
+              "time": 0.946,
+              "score": 0.552,
+              "category": 1,
+              "location": 0.8,
+              "textSource": "tfidf",
+              "hotspotDistance": null
+            },
+            "explanation": "mismo salón, misma categoría, texto 7 % similar",
+            "createdAt": "2026-11-17T01:54:24.366Z",
+            "incident": {
+              "id": "b353a86c-d613-45da-9f09-275279fd5eb2",
+              "number": 75,
+              "code": "INC-00075",
+              "description": "Reflector del techo cuelga de un solo cable",
+              "category": "LIGHTING",
+              "riskLevel": "MEDIUM",
+              "status": "PENDING",
+              "priorityScore": 48,
+              "priorityLevel": "MEDIUM",
+              "priorityBreakdown": {
+                "age": {
+                  "value": 0,
+                  "weight": 0.1,
+                  "contribution": 0
+                },
+                "risk": {
+                  "value": 60,
+                  "weight": 0.35,
+                  "contribution": 21
+                },
+                "space": {
+                  "value": 94.5,
+                  "weight": 0.1,
+                  "contribution": 9.5
+                },
+                "similar": {
+                  "value": 25,
+                  "weight": 0.2,
+                  "contribution": 5
+                },
+                "damageType": {
+                  "value": 50,
+                  "weight": 0.25,
+                  "contribution": 12.5
+                }
+              },
+              "escalationSteps": 0,
+              "isOverdue": false,
+              "responseDueAt": "2026-11-17T13:54:24.306Z",
+              "resolutionDueAt": "2026-11-20T01:54:24.306Z",
+              "slaWarnedAt": null,
+              "createdAt": "2026-11-17T01:54:24.306Z",
+              "updatedAt": "2026-11-17T01:54:24.309Z",
+              "stageStartedAt": "2026-11-17T01:54:24.306Z",
+              "firstResponseAt": null,
+              "resolvedAt": null,
+              "verifiedAt": null,
+              "hotspot": {
+                "x": 50,
+                "y": 20,
+                "z": -50
+              },
+              "space": {
+                "id": "66499786-7688-49b3-b724-044caf241e7a",
+                "code": "302",
+                "name": "Aula 302",
+                "type": "CLASSROOM",
+                "floor": 3,
+                "capacity": 45,
+                "block": {
+                  "id": "9fcdb09f-e967-45ab-89a6-417bb046bf6b",
+                  "code": "A",
+                  "name": "Bloque A · Aulas"
+                },
+                "campus": {
+                  "id": "9a0c65ff-7a7d-470b-955a-efbc7b0f11d2",
+                  "code": "PRI",
+                  "name": "Sede Principal"
+                }
+              },
+              "reporter": {
+                "id": "3b2febad-848d-4e28-b8a1-55f16e00d328",
+                "name": "Sofía Castro",
+                "role": "STUDENT"
+              },
+              "assignee": null,
+              "clusterId": null,
+              "isClusterPrimary": true,
+              "clusterSize": 1,
+              "thumbnailUrl": null
+            },
+            "candidate": {
+              "id": "1a785e76-866e-4f5b-929c-a82e576f5bfd",
+              "number": 61,
+              "code": "INC-00061",
+              "description": "Las luces titilan todo el tiempo, parece que se van a fundir",
+              "category": "LIGHTING",
+              "riskLevel": "LOW",
+              "status": "PENDING",
+              "priorityScore": 38,
+              "priorityLevel": "MEDIUM",
+              "priorityBreakdown": {
+                "age": {
+                  "value": 5.6,
+                  "weight": 0.1,
+                  "contribution": 0.6
+                },
+                "risk": {
+                  "value": 30,
+                  "weight": 0.35,
+                  "contribution": 10.5
+                },
+                "space": {
+                  "value": 94.5,
+                  "weight": 0.1,
+                  "contribution": 9.5
+                },
+                "similar": {
+                  "value": 25,
+                  "weight": 0.2,
+                  "contribution": 5
+                },
+                "damageType": {
+                  "value": 50,
+                  "weight": 0.25,
+                  "contribution": 12.5
+                }
+              },
+              "escalationSteps": 0,
+              "isOverdue": false,
+              "responseDueAt": "2026-11-17T09:52:18.964Z",
+              "resolutionDueAt": "2026-11-19T21:52:18.964Z",
+              "slaWarnedAt": null,
+              "createdAt": "2026-11-16T21:52:18.964Z",
+              "updatedAt": "2026-11-17T01:54:00.383Z",
+              "stageStartedAt": "2026-11-16T21:52:18.964Z",
+              "firstResponseAt": null,
+              "resolvedAt": null,
+              "verifiedAt": null,
+              "hotspot": null,
+              "space": {
+                "id": "66499786-7688-49b3-b724-044caf241e7a",
+                "code": "302",
+                "name": "Aula 302",
+                "type": "CLASSROOM",
+                "floor": 3,
+                "capacity": 45,
+                "block": {
+                  "id": "9fcdb09f-e967-45ab-89a6-417bb046bf6b",
+                  "code": "A",
+                  "name": "Bloque A · Aulas"
+                },
+                "campus": {
+                  "id": "9a0c65ff-7a7d-470b-955a-efbc7b0f11d2",
+                  "code": "PRI",
+                  "name": "Sede Principal"
+                }
+              },
+              "reporter": {
+                "id": "661a9c77-758b-4e46-9cb0-ebf61a13e1e0",
+                "name": "Juan Esteban Díaz",
+                "role": "STUDENT"
+              },
+              "assignee": null,
+              "clusterId": null,
+              "isClusterPrimary": true,
+              "clusterSize": 1,
+              "thumbnailUrl": null
+            }
+          },
+          {
+            "id": "3b92bd7e-3e4d-45a7-8daf-9155984663d8",
+            "score": 0.473,
+            "breakdown": {
+              "text": 0.136,
+              "time": 0.933,
+              "score": 0.473,
+              "category": 1,
+              "location": 0.5,
+              "textSource": "tfidf",
+              "hotspotDistance": null
+            },
+            "explanation": "mismo bloque y piso, misma categoría, texto 14 % similar",
+            "createdAt": "2026-11-16T21:52:18.964Z",
+            "incident": {
+              "id": "1a785e76-866e-4f5b-929c-a82e576f5bfd",
+              "number": 61,
+              "code": "INC-00061",
+              "description": "Las luces titilan todo el tiempo, parece que se van a fundir",
+              "category": "LIGHTING",
+              "riskLevel": "LOW",
+              "status": "PENDING",
+              "priorityScore": 38,
+              "priorityLevel": "MEDIUM",
+              "priorityBreakdown": {
+                "age": {
+                  "value": 5.6,
+                  "weight": 0.1,
+                  "contribution": 0.6
+                },
+                "risk": {
+                  "value": 30,
+                  "weight": 0.35,
+                  "contribution": 10.5
+                },
+                "space": {
+                  "value": 94.5,
+                  "weight": 0.1,
+                  "contribution": 9.5
+                },
+                "similar": {
+                  "value": 25,
+                  "weight": 0.2,
+                  "contribution": 5
+                },
+                "damageType": {
+                  "value": 50,
+                  "weight": 0.25,
+                  "contribution": 12.5
+                }
+              },
+              "escalationSteps": 0,
+              "isOverdue": false,
+              "responseDueAt": "2026-11-17T09:52:18.964Z",
+              "resolutionDueAt": "2026-11-19T21:52:18.964Z",
+              "slaWarnedAt": null,
+              "createdAt": "2026-11-16T21:52:18.964Z",
+              "updatedAt": "2026-11-17T01:54:00.383Z",
+              "stageStartedAt": "2026-11-16T21:52:18.964Z",
+              "firstResponseAt": null,
+              "resolvedAt": null,
+              "verifiedAt": null,
+              "hotspot": null,
+              "space": {
+                "id": "66499786-7688-49b3-b724-044caf241e7a",
+                "code": "302",
+                "name": "Aula 302",
+                "type": "CLASSROOM",
+                "floor": 3,
+                "capacity": 45,
+                "block": {
+                  "id": "9fcdb09f-e967-45ab-89a6-417bb046bf6b",
+                  "code": "A",
+                  "name": "Bloque A · Aulas"
+                },
+                "campus": {
+                  "id": "9a0c65ff-7a7d-470b-955a-efbc7b0f11d2",
+                  "code": "PRI",
+                  "name": "Sede Principal"
+                }
+              },
+              "reporter": {
+                "id": "661a9c77-758b-4e46-9cb0-ebf61a13e1e0",
+                "name": "Juan Esteban Díaz",
+                "role": "STUDENT"
+              },
+              "assignee": null,
+              "clusterId": null,
+              "isClusterPrimary": true,
+              "clusterSize": 1,
+              "thumbnailUrl": null
+            },
+            "candidate": {
+              "id": "d5470fa9-a0e4-48f8-81f8-fd596bdf4236",
+              "number": 60,
+              "code": "INC-00060",
+              "description": "La lámpara del salón parpadea y se apaga",
+              "category": "LIGHTING",
+              "riskLevel": "LOW",
+              "status": "PENDING",
+              "priorityScore": 38.6,
+              "priorityLevel": "MEDIUM",
+              "priorityBreakdown": {
+                "age": {
+                  "value": 12.5,
+                  "weight": 0.1,
+                  "contribution": 1.3
+                },
+                "risk": {
+                  "value": 30,
+                  "weight": 0.35,
+                  "contribution": 10.5
+                },
+                "space": {
+                  "value": 93.5,
+                  "weight": 0.1,
+                  "contribution": 9.4
+                },
+                "similar": {
+                  "value": 25,
+                  "weight": 0.2,
+                  "contribution": 5
+                },
+                "damageType": {
+                  "value": 50,
+                  "weight": 0.25,
+                  "contribution": 12.5
+                }
+              },
+              "escalationSteps": 0,
+              "isOverdue": false,
+              "responseDueAt": "2026-11-17T04:52:18.964Z",
+              "resolutionDueAt": "2026-11-19T16:52:18.964Z",
+              "slaWarnedAt": null,
+              "createdAt": "2026-11-16T16:52:18.964Z",
+              "updatedAt": "2026-11-17T01:54:00.357Z",
+              "stageStartedAt": "2026-11-16T16:52:18.964Z",
+              "firstResponseAt": null,
+              "resolvedAt": null,
+              "verifiedAt": null,
+              "hotspot": null,
+              "space": {
+                "id": "ca0c80b8-09e2-4a84-aaa3-5457b59376fa",
+                "code": "301",
+                "name": "Aula 301",
+                "type": "CLASSROOM",
+                "floor": 3,
+                "capacity": 35,
+                "block": {
+                  "id": "9fcdb09f-e967-45ab-89a6-417bb046bf6b",
+                  "code": "A",
+                  "name": "Bloque A · Aulas"
+                },
+                "campus": {
+                  "id": "9a0c65ff-7a7d-470b-955a-efbc7b0f11d2",
+                  "code": "PRI",
+                  "name": "Sede Principal"
+                }
+              },
+              "reporter": {
+                "id": "93b6ea52-32ce-477d-8b7b-1c2862f2d927",
+                "name": "Camila Ortiz",
+                "role": "STUDENT"
+              },
+              "assignee": null,
+              "clusterId": null,
+              "isClusterPrimary": true,
+              "clusterSize": 1,
+              "thumbnailUrl": null
+            }
+          }
+        ]
+      },
+      "ms": 23
+    },
+    {
+      "n": 2,
+      "peticion": "GET /api/auth/technicians",
+      "quien": "supervisor",
+      "estado": 200,
+      "respuesta": {
+        "total": 3,
+        "primeros": [
+          {
+            "id": "44c084a9-3316-4b99-a87a-a13c94c61190",
+            "name": "Andrea Pineda",
+            "email": "tecnico2@campus.edu.co",
+            "role": "TECHNICIAN",
+            "openAssigned": 5
+          },
+          {
+            "id": "24a54ba6-a302-451f-b360-0af2bcea4dfb",
+            "name": "Carlos Rojas",
+            "email": "tecnico1@campus.edu.co",
+            "role": "TECHNICIAN",
+            "openAssigned": 3
+          },
+          {
+            "id": "ed7c3138-efaf-45e3-8661-8ad2caa77ca1",
+            "name": "Miguel Torres",
+            "email": "tecnico3@campus.edu.co",
+            "role": "TECHNICIAN",
+            "openAssigned": 0
+          }
+        ]
+      },
+      "ms": 11
+    },
+    {
+      "n": 3,
+      "peticion": "GET /api/similarity/suggestions",
+      "quien": "tecnico1",
+      "estado": 200,
+      "respuesta": {
+        "total": 3,
+        "primeros": [
+          {
+            "id": "c93110d9-a640-4642-a75d-c58c00c16a0a",
+            "score": 0.571,
+            "breakdown": {
+              "text": 0.381,
+              "time": 0.933,
+              "score": 0.571,
+              "category": 1,
+              "location": 0.5,
+              "textSource": "tfidf",
+              "hotspotDistance": null
+            },
+            "explanation": "mismo bloque y piso, misma categoría, texto 38 % similar",
+            "createdAt": "2026-11-16T21:52:18.964Z",
+            "incident": {
+              "id": "c3543c3d-4577-4334-b835-2485e5375bf1",
+              "number": 63,
+              "code": "INC-00063",
+              "description": "El enchufe junto al computador huele a quemado",
+              "category": "ELECTRICAL",
+              "riskLevel": "HIGH",
+              "status": "PENDING",
+              "priorityScore": 83.1,
+              "priorityLevel": "CRITICAL",
+              "priorityBreakdown": {
+                "age": {
+                  "value": 80.6,
+                  "weight": 0.1,
+                  "contribution": 8.1
+                },
+                "risk": {
+                  "value": 100,
+                  "weight": 0.35,
+                  "contribution": 35
+                },
+                "space": {
+                  "value": 100,
+                  "weight": 0.1,
+                  "contribution": 10
+                },
+                "similar": {
+                  "value": 25,
+                  "weight": 0.2,
+                  "contribution": 5
+                },
+                "damageType": {
+                  "value": 100,
+                  "weight": 0.25,
+                  "contribution": 25
+                }
+              },
+              "escalationSteps": 1,
+              "isOverdue": true,
+              "responseDueAt": "2026-11-16T23:52:18.964Z",
+              "resolutionDueAt": "2026-11-17T02:52:18.964Z",
+              "slaWarnedAt": null,
+              "createdAt": "2026-11-16T21:52:18.964Z",
+              "updatedAt": "2026-11-17T01:54:00.373Z",
+              "stageStartedAt": "2026-11-16T21:52:18.964Z",
+              "firstResponseAt": null,
+              "resolvedAt": null,
+              "verifiedAt": null,
+              "hotspot": null,
+              "space": {
+                "id": "ffd28ecb-c8d7-40a8-aba2-fcc884d475ea",
+                "code": "202",
+                "name": "Sala de Cómputo 1",
+                "type": "LAB",
+                "floor": 2,
+                "capacity": 40,
+                "block": {
+                  "id": "d36f5a58-7076-484d-85fc-fe93cb59a5a4",
+                  "code": "B",
+                  "name": "Bloque B · Laboratorios"
+                },
+                "campus": {
+                  "id": "9a0c65ff-7a7d-470b-955a-efbc7b0f11d2",
+                  "code": "PRI",
+                  "name": "Sede Principal"
+                }
+              },
+              "reporter": {
+                "id": "661a9c77-758b-4e46-9cb0-ebf61a13e1e0",
+                "name": "Juan Esteban Díaz",
+                "role": "STUDENT"
+              },
+              "assignee": null,
+              "clusterId": null,
+              "isClusterPrimary": true,
+              "clusterSize": 1,
+              "thumbnailUrl": null
+            },
+            "candidate": {
+              "id": "9b7cc791-a57a-41b5-99dd-7c29ea9de5f4",
+              "number": 62,
+              "code": "INC-00062",
+              "description": "La toma del mesón central no funciona y huele a quemado",
+              "category": "ELECTRICAL",
+              "riskLevel": "HIGH",
+              "status": "PENDING",
+              "priorityScore": 85,
+              "priorityLevel": "CRITICAL",
+              "priorityBreakdown": {
+                "age": {
+                  "value": 100,
+                  "weight": 0.1,
+                  "contribution": 10
+                },
+                "risk": {
+                  "value": 100,
+                  "weight": 0.35,
+                  "contribution": 35
+                },
+                "space": {
+                  "value": 100,
+                  "weight": 0.1,
+                  "contribution": 10
+                },
+                "similar": {
+                  "value": 25,
+                  "weight": 0.2,
+                  "contribution": 5
+                },
+                "damageType": {
+                  "value": 100,
+                  "weight": 0.25,
+                  "contribution": 25
+                }
+              },
+              "escalationSteps": 1,
+              "isOverdue": true,
+              "responseDueAt": "2026-11-16T18:52:18.964Z",
+              "resolutionDueAt": "2026-11-16T21:52:18.964Z",
+              "slaWarnedAt": null,
+              "createdAt": "2026-11-16T16:52:18.964Z",
+              "updatedAt": "2026-11-17T01:54:00.364Z",
+              "stageStartedAt": "2026-11-16T16:52:18.964Z",
+              "firstResponseAt": null,
+              "resolvedAt": null,
+              "verifiedAt": null,
+              "hotspot": null,
+              "space": {
+                "id": "46183a6b-ca37-48b3-b34c-ff08476aadee",
+                "code": "201",
+                "name": "Laboratorio de Física",
+                "type": "LAB",
+                "floor": 2,
+                "capacity": 30,
+                "block": {
+                  "id": "d36f5a58-7076-484d-85fc-fe93cb59a5a4",
+                  "code": "B",
+                  "name": "Bloque B · Laboratorios"
+                },
+                "campus": {
+                  "id": "9a0c65ff-7a7d-470b-955a-efbc7b0f11d2",
+                  "code": "PRI",
+                  "name": "Sede Principal"
+                }
+              },
+              "reporter": {
+                "id": "93b6ea52-32ce-477d-8b7b-1c2862f2d927",
+                "name": "Camila Ortiz",
+                "role": "STUDENT"
+              },
+              "assignee": null,
+              "clusterId": null,
+              "isClusterPrimary": true,
+              "clusterSize": 1,
+              "thumbnailUrl": null
+            }
+          },
+          {
+            "id": "763b3512-c772-4cce-8a6b-fd2ebe730c11",
+            "score": 0.552,
+            "breakdown": {
+              "text": 0.07,
+              "time": 0.946,
+              "score": 0.552,
+              "category": 1,
+              "location": 0.8,
+              "textSource": "tfidf",
+              "hotspotDistance": null
+            },
+            "explanation": "mismo salón, misma categoría, texto 7 % similar",
+            "createdAt": "2026-11-17T01:54:24.366Z",
+            "incident": {
+              "id": "b353a86c-d613-45da-9f09-275279fd5eb2",
+              "number": 75,
+              "code": "INC-00075",
+              "description": "Reflector del techo cuelga de un solo cable",
+              "category": "LIGHTING",
+              "riskLevel": "MEDIUM",
+              "status": "PENDING",
+              "priorityScore": 48,
+              "priorityLevel": "MEDIUM",
+              "priorityBreakdown": {
+                "age": {
+                  "value": 0,
+                  "weight": 0.1,
+                  "contribution": 0
+                },
+                "risk": {
+                  "value": 60,
+                  "weight": 0.35,
+                  "contribution": 21
+                },
+                "space": {
+                  "value": 94.5,
+                  "weight": 0.1,
+                  "contribution": 9.5
+                },
+                "similar": {
+                  "value": 25,
+                  "weight": 0.2,
+                  "contribution": 5
+                },
+                "damageType": {
+                  "value": 50,
+                  "weight": 0.25,
+                  "contribution": 12.5
+                }
+              },
+              "escalationSteps": 0,
+              "isOverdue": false,
+              "responseDueAt": "2026-11-17T13:54:24.306Z",
+              "resolutionDueAt": "2026-11-20T01:54:24.306Z",
+              "slaWarnedAt": null,
+              "createdAt": "2026-11-17T01:54:24.306Z",
+              "updatedAt": "2026-11-17T01:54:24.309Z",
+              "stageStartedAt": "2026-11-17T01:54:24.306Z",
+              "firstResponseAt": null,
+              "resolvedAt": null,
+              "verifiedAt": null,
+              "hotspot": {
+                "x": 50,
+                "y": 20,
+                "z": -50
+              },
+              "space": {
+                "id": "66499786-7688-49b3-b724-044caf241e7a",
+                "code": "302",
+                "name": "Aula 302",
+                "type": "CLASSROOM",
+                "floor": 3,
+                "capacity": 45,
+                "block": {
+                  "id": "9fcdb09f-e967-45ab-89a6-417bb046bf6b",
+                  "code": "A",
+                  "name": "Bloque A · Aulas"
+                },
+                "campus": {
+                  "id": "9a0c65ff-7a7d-470b-955a-efbc7b0f11d2",
+                  "code": "PRI",
+                  "name": "Sede Principal"
+                }
+              },
+              "reporter": {
+                "id": "3b2febad-848d-4e28-b8a1-55f16e00d328",
+                "name": "Sofía Castro",
+                "role": "STUDENT"
+              },
+              "assignee": null,
+              "clusterId": null,
+              "isClusterPrimary": true,
+              "clusterSize": 1,
+              "thumbnailUrl": null
+            },
+            "candidate": {
+              "id": "1a785e76-866e-4f5b-929c-a82e576f5bfd",
+              "number": 61,
+              "code": "INC-00061",
+              "description": "Las luces titilan todo el tiempo, parece que se van a fundir",
+              "category": "LIGHTING",
+              "riskLevel": "LOW",
+              "status": "PENDING",
+              "priorityScore": 38,
+              "priorityLevel": "MEDIUM",
+              "priorityBreakdown": {
+                "age": {
+                  "value": 5.6,
+                  "weight": 0.1,
+                  "contribution": 0.6
+                },
+                "risk": {
+                  "value": 30,
+                  "weight": 0.35,
+                  "contribution": 10.5
+                },
+                "space": {
+                  "value": 94.5,
+                  "weight": 0.1,
+                  "contribution": 9.5
+                },
+                "similar": {
+                  "value": 25,
+                  "weight": 0.2,
+                  "contribution": 5
+                },
+                "damageType": {
+                  "value": 50,
+                  "weight": 0.25,
+                  "contribution": 12.5
+                }
+              },
+              "escalationSteps": 0,
+              "isOverdue": false,
+              "responseDueAt": "2026-11-17T09:52:18.964Z",
+              "resolutionDueAt": "2026-11-19T21:52:18.964Z",
+              "slaWarnedAt": null,
+              "createdAt": "2026-11-16T21:52:18.964Z",
+              "updatedAt": "2026-11-17T01:54:00.383Z",
+              "stageStartedAt": "2026-11-16T21:52:18.964Z",
+              "firstResponseAt": null,
+              "resolvedAt": null,
+              "verifiedAt": null,
+              "hotspot": null,
+              "space": {
+                "id": "66499786-7688-49b3-b724-044caf241e7a",
+                "code": "302",
+                "name": "Aula 302",
+                "type": "CLASSROOM",
+                "floor": 3,
+                "capacity": 45,
+                "block": {
+                  "id": "9fcdb09f-e967-45ab-89a6-417bb046bf6b",
+                  "code": "A",
+                  "name": "Bloque A · Aulas"
+                },
+                "campus": {
+                  "id": "9a0c65ff-7a7d-470b-955a-efbc7b0f11d2",
+                  "code": "PRI",
+                  "name": "Sede Principal"
+                }
+              },
+              "reporter": {
+                "id": "661a9c77-758b-4e46-9cb0-ebf61a13e1e0",
+                "name": "Juan Esteban Díaz",
+                "role": "STUDENT"
+              },
+              "assignee": null,
+              "clusterId": null,
+              "isClusterPrimary": true,
+              "clusterSize": 1,
+              "thumbnailUrl": null
+            }
+          },
+          {
+            "id": "3b92bd7e-3e4d-45a7-8daf-9155984663d8",
+            "score": 0.473,
+            "breakdown": {
+              "text": 0.136,
+              "time": 0.933,
+              "score": 0.473,
+              "category": 1,
+              "location": 0.5,
+              "textSource": "tfidf",
+              "hotspotDistance": null
+            },
+            "explanation": "mismo bloque y piso, misma categoría, texto 14 % similar",
+            "createdAt": "2026-11-16T21:52:18.964Z",
+            "incident": {
+              "id": "1a785e76-866e-4f5b-929c-a82e576f5bfd",
+              "number": 61,
+              "code": "INC-00061",
+              "description": "Las luces titilan todo el tiempo, parece que se van a fundir",
+              "category": "LIGHTING",
+              "riskLevel": "LOW",
+              "status": "PENDING",
+              "priorityScore": 38,
+              "priorityLevel": "MEDIUM",
+              "priorityBreakdown": {
+                "age": {
+                  "value": 5.6,
+                  "weight": 0.1,
+                  "contribution": 0.6
+                },
+                "risk": {
+                  "value": 30,
+                  "weight": 0.35,
+                  "contribution": 10.5
+                },
+                "space": {
+                  "value": 94.5,
+                  "weight": 0.1,
+                  "contribution": 9.5
+                },
+                "similar": {
+                  "value": 25,
+                  "weight": 0.2,
+                  "contribution": 5
+                },
+                "damageType": {
+                  "value": 50,
+                  "weight": 0.25,
+                  "contribution": 12.5
+                }
+              },
+              "escalationSteps": 0,
+              "isOverdue": false,
+              "responseDueAt": "2026-11-17T09:52:18.964Z",
+              "resolutionDueAt": "2026-11-19T21:52:18.964Z",
+              "slaWarnedAt": null,
+              "createdAt": "2026-11-16T21:52:18.964Z",
+              "updatedAt": "2026-11-17T01:54:00.383Z",
+              "stageStartedAt": "2026-11-16T21:52:18.964Z",
+              "firstResponseAt": null,
+              "resolvedAt": null,
+              "verifiedAt": null,
+              "hotspot": null,
+              "space": {
+                "id": "66499786-7688-49b3-b724-044caf241e7a",
+                "code": "302",
+                "name": "Aula 302",
+                "type": "CLASSROOM",
+                "floor": 3,
+                "capacity": 45,
+                "block": {
+                  "id": "9fcdb09f-e967-45ab-89a6-417bb046bf6b",
+                  "code": "A",
+                  "name": "Bloque A · Aulas"
+                },
+                "campus": {
+                  "id": "9a0c65ff-7a7d-470b-955a-efbc7b0f11d2",
+                  "code": "PRI",
+                  "name": "Sede Principal"
+                }
+              },
+              "reporter": {
+                "id": "661a9c77-758b-4e46-9cb0-ebf61a13e1e0",
+                "name": "Juan Esteban Díaz",
+                "role": "STUDENT"
+              },
+              "assignee": null,
+              "clusterId": null,
+              "isClusterPrimary": true,
+              "clusterSize": 1,
+              "thumbnailUrl": null
+            },
+            "candidate": {
+              "id": "d5470fa9-a0e4-48f8-81f8-fd596bdf4236",
+              "number": 60,
+              "code": "INC-00060",
+              "description": "La lámpara del salón parpadea y se apaga",
+              "category": "LIGHTING",
+              "riskLevel": "LOW",
+              "status": "PENDING",
+              "priorityScore": 38.6,
+              "priorityLevel": "MEDIUM",
+              "priorityBreakdown": {
+                "age": {
+                  "value": 12.5,
+                  "weight": 0.1,
+                  "contribution": 1.3
+                },
+                "risk": {
+                  "value": 30,
+                  "weight": 0.35,
+                  "contribution": 10.5
+                },
+                "space": {
+                  "value": 93.5,
+                  "weight": 0.1,
+                  "contribution": 9.4
+                },
+                "similar": {
+                  "value": 25,
+                  "weight": 0.2,
+                  "contribution": 5
+                },
+                "damageType": {
+                  "value": 50,
+                  "weight": 0.25,
+                  "contribution": 12.5
+                }
+              },
+              "escalationSteps": 0,
+              "isOverdue": false,
+              "responseDueAt": "2026-11-17T04:52:18.964Z",
+              "resolutionDueAt": "2026-11-19T16:52:18.964Z",
+              "slaWarnedAt": null,
+              "createdAt": "2026-11-16T16:52:18.964Z",
+              "updatedAt": "2026-11-17T01:54:00.357Z",
+              "stageStartedAt": "2026-11-16T16:52:18.964Z",
+              "firstResponseAt": null,
+              "resolvedAt": null,
+              "verifiedAt": null,
+              "hotspot": null,
+              "space": {
+                "id": "ca0c80b8-09e2-4a84-aaa3-5457b59376fa",
+                "code": "301",
+                "name": "Aula 301",
+                "type": "CLASSROOM",
+                "floor": 3,
+                "capacity": 35,
+                "block": {
+                  "id": "9fcdb09f-e967-45ab-89a6-417bb046bf6b",
+                  "code": "A",
+                  "name": "Bloque A · Aulas"
+                },
+                "campus": {
+                  "id": "9a0c65ff-7a7d-470b-955a-efbc7b0f11d2",
+                  "code": "PRI",
+                  "name": "Sede Principal"
+                }
+              },
+              "reporter": {
+                "id": "93b6ea52-32ce-477d-8b7b-1c2862f2d927",
+                "name": "Camila Ortiz",
+                "role": "STUDENT"
+              },
+              "assignee": null,
+              "clusterId": null,
+              "isClusterPrimary": true,
+              "clusterSize": 1,
+              "thumbnailUrl": null
+            }
+          }
+        ]
+      },
+      "ms": 15
+    },
+    {
+      "n": 4,
+      "peticion": "GET /api/auth/technicians",
+      "quien": "tecnico1",
+      "estado": 200,
+      "respuesta": {
+        "total": 3,
+        "primeros": [
+          {
+            "id": "44c084a9-3316-4b99-a87a-a13c94c61190",
+            "name": "Andrea Pineda",
+            "email": "tecnico2@campus.edu.co",
+            "role": "TECHNICIAN",
+            "openAssigned": 5
+          },
+          {
+            "id": "24a54ba6-a302-451f-b360-0af2bcea4dfb",
+            "name": "Carlos Rojas",
+            "email": "tecnico1@campus.edu.co",
+            "role": "TECHNICIAN",
+            "openAssigned": 3
+          },
+          {
+            "id": "ed7c3138-efaf-45e3-8661-8ad2caa77ca1",
+            "name": "Miguel Torres",
+            "email": "tecnico3@campus.edu.co",
+            "role": "TECHNICIAN",
+            "openAssigned": 0
+          }
+        ]
+      },
+      "ms": 9
+    },
+    {
+      "n": 5,
+      "peticion": "GET /api/similarity/suggestions",
+      "quien": "estudiante1",
+      "estado": 403,
+      "respuesta": {
+        "error": "No tienes permiso para esta acción"
+      },
+      "ms": 4
+    },
+    {
+      "n": 6,
+      "peticion": "GET /api/auth/technicians",
+      "quien": "estudiante1",
+      "estado": 403,
+      "respuesta": {
+        "error": "No tienes permiso para esta acción"
+      },
+      "ms": 7
+    }
+  ]
+}

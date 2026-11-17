@@ -1,0 +1,262 @@
+{
+  "caso": "CP-48",
+  "titulo": "CP-48 | BUG-10 | Se puede cambiar el riesgo de un caso ya verificado",
+  "ejecucion": "ejecucion-1",
+  "fecha": "2026-11-17T01:44:54.552Z",
+  "estado": "Fallido",
+  "error": "Error: un caso verificado es el estado final y no debería modificarse\n\nexpect(received).toBeGreaterThanOrEqual(expected)\n\nExpected: >= 400\nReceived:    204",
+  "pasos": [
+    {
+      "n": 1,
+      "peticion": "POST /api/incidents",
+      "quien": "estudiante3",
+      "cuerpo": {
+        "spaceId": "787867e3-683c-4842-be92-50ba2dc4edad",
+        "category": "FURNITURE",
+        "riskLevel": "NONE",
+        "description": "Cortina enrollable trabada a media altura",
+        "hotspot": null
+      },
+      "estado": 201,
+      "respuesta": {
+        "id": "77eb0cfa-9d93-4cbd-b9c5-df971adfd44c",
+        "number": 84,
+        "code": "INC-00084",
+        "description": "Cortina enrollable trabada a media altura",
+        "category": "FURNITURE",
+        "riskLevel": "NONE",
+        "status": "PENDING",
+        "priorityScore": 24.6,
+        "priorityLevel": "LOW",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 0,
+            "weight": 0.35,
+            "contribution": 0
+          },
+          "space": {
+            "value": 95.5,
+            "weight": 0.1,
+            "contribution": 9.6
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 40,
+            "weight": 0.25,
+            "contribution": 10
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-19T01:44:54.349Z",
+        "resolutionDueAt": "2026-11-24T01:44:54.349Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:44:54.349Z",
+        "updatedAt": "2026-11-17T01:44:54.351Z",
+        "stageStartedAt": "2026-11-17T01:44:54.349Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": null,
+        "space": {
+          "id": "787867e3-683c-4842-be92-50ba2dc4edad",
+          "code": "201",
+          "name": "Aula 201",
+          "type": "CLASSROOM",
+          "floor": 2,
+          "capacity": 55,
+          "block": {
+            "id": "cb911031-7809-476c-b53d-edd8f42fbf85",
+            "code": "E",
+            "name": "Bloque E · Aulas"
+          },
+          "campus": {
+            "id": "d13b72e9-002b-4bdc-a642-7ff811b30038",
+            "code": "NOR",
+            "name": "Sede Norte"
+          }
+        },
+        "reporter": {
+          "id": "8f8d016d-c598-4abf-9c26-6af40a143182",
+          "name": "Camila Ortiz",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null
+      },
+      "ms": 32
+    },
+    {
+      "n": 2,
+      "peticion": "POST /api/incidents",
+      "quien": "estudiante3",
+      "cuerpo": {
+        "spaceId": "171a40de-03ac-47b2-9622-afa6a11ccee4",
+        "category": "COSMETIC",
+        "riskLevel": "NONE",
+        "description": "Pizarra blanca con manchas que no salen",
+        "hotspot": null
+      },
+      "estado": 201,
+      "respuesta": {
+        "id": "ebfd35f5-a663-435d-aea5-f0e6a7294e3e",
+        "number": 85,
+        "code": "INC-00085",
+        "description": "Pizarra blanca con manchas que no salen",
+        "category": "COSMETIC",
+        "riskLevel": "NONE",
+        "status": "PENDING",
+        "priorityScore": 18.2,
+        "priorityLevel": "LOW",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 0,
+            "weight": 0.35,
+            "contribution": 0
+          },
+          "space": {
+            "value": 94.5,
+            "weight": 0.1,
+            "contribution": 9.5
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 15,
+            "weight": 0.25,
+            "contribution": 3.8
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-19T01:44:54.380Z",
+        "resolutionDueAt": "2026-11-24T01:44:54.380Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:44:54.380Z",
+        "updatedAt": "2026-11-17T01:44:54.382Z",
+        "stageStartedAt": "2026-11-17T01:44:54.380Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": null,
+        "space": {
+          "id": "171a40de-03ac-47b2-9622-afa6a11ccee4",
+          "code": "401",
+          "name": "Aula 401",
+          "type": "CLASSROOM",
+          "floor": 4,
+          "capacity": 45,
+          "block": {
+            "id": "8b767556-6e1a-43e1-9d61-b3e25172f707",
+            "code": "A",
+            "name": "Bloque A · Aulas"
+          },
+          "campus": {
+            "id": "9d3da020-a7b9-4b8c-8f69-615e560cb551",
+            "code": "PRI",
+            "name": "Sede Principal"
+          }
+        },
+        "reporter": {
+          "id": "8f8d016d-c598-4abf-9c26-6af40a143182",
+          "name": "Camila Ortiz",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null
+      },
+      "ms": 30
+    },
+    {
+      "n": 3,
+      "peticion": "POST /api/incidents/ebfd35f5-a663-435d-aea5-f0e6a7294e3e/transition",
+      "quien": "tecnico1",
+      "cuerpo": {
+        "to": "IN_PROGRESS"
+      },
+      "estado": 200,
+      "respuesta": {
+        "incidentId": "ebfd35f5-a663-435d-aea5-f0e6a7294e3e",
+        "from": "PENDING",
+        "to": "IN_PROGRESS"
+      },
+      "ms": 35
+    },
+    {
+      "n": 4,
+      "peticion": "POST /api/incidents/ebfd35f5-a663-435d-aea5-f0e6a7294e3e/transition",
+      "quien": "tecnico1",
+      "cuerpo": {
+        "to": "RESOLVED",
+        "note": "Se cambió la pieza dañada"
+      },
+      "estado": 200,
+      "respuesta": {
+        "incidentId": "ebfd35f5-a663-435d-aea5-f0e6a7294e3e",
+        "from": "IN_PROGRESS",
+        "to": "RESOLVED"
+      },
+      "ms": 34
+    },
+    {
+      "n": 5,
+      "peticion": "POST /api/incidents/ebfd35f5-a663-435d-aea5-f0e6a7294e3e/transition",
+      "quien": "supervisor",
+      "cuerpo": {
+        "to": "VERIFIED"
+      },
+      "estado": 200,
+      "respuesta": {
+        "incidentId": "ebfd35f5-a663-435d-aea5-f0e6a7294e3e",
+        "from": "RESOLVED",
+        "to": "VERIFIED"
+      },
+      "ms": 27
+    },
+    {
+      "n": 6,
+      "peticion": "PATCH /api/incidents/77eb0cfa-9d93-4cbd-b9c5-df971adfd44c/risk",
+      "quien": "supervisor",
+      "cuerpo": {
+        "riskLevel": "MEDIUM"
+      },
+      "estado": 204,
+      "respuesta": null,
+      "ms": 24
+    },
+    {
+      "n": 7,
+      "peticion": "PATCH /api/incidents/ebfd35f5-a663-435d-aea5-f0e6a7294e3e/risk",
+      "quien": "supervisor",
+      "cuerpo": {
+        "riskLevel": "HIGH"
+      },
+      "estado": 204,
+      "respuesta": null,
+      "ms": 24
+    }
+  ]
+}

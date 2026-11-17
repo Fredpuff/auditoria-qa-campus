@@ -1,0 +1,327 @@
+{
+  "caso": "CP-14",
+  "titulo": "CP-14 | Supervisor asigna un caso",
+  "ejecucion": "ejecucion-2",
+  "fecha": "2026-11-17T01:49:38.833Z",
+  "estado": "Aprobado",
+  "error": null,
+  "pasos": [
+    {
+      "n": 1,
+      "peticion": "POST /api/incidents",
+      "quien": "estudiante1",
+      "cuerpo": {
+        "spaceId": "c1ed346d-8d39-4302-966d-28d0f7098199",
+        "category": "FURNITURE",
+        "riskLevel": "LOW",
+        "description": "El archivador de planos no cierra el segundo cajón",
+        "hotspot": null
+      },
+      "estado": 201,
+      "respuesta": {
+        "id": "f8b3702e-8e44-40de-a410-3fd5995fc178",
+        "number": 77,
+        "code": "INC-00077",
+        "description": "El archivador de planos no cierra el segundo cajón",
+        "category": "FURNITURE",
+        "riskLevel": "LOW",
+        "status": "PENDING",
+        "priorityScore": 29.6,
+        "priorityLevel": "MEDIUM",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 30,
+            "weight": 0.35,
+            "contribution": 10.5
+          },
+          "space": {
+            "value": 40.8,
+            "weight": 0.1,
+            "contribution": 4.1
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 40,
+            "weight": 0.25,
+            "contribution": 10
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T13:49:38.721Z",
+        "resolutionDueAt": "2026-11-20T01:49:38.721Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:49:38.721Z",
+        "updatedAt": "2026-11-17T01:49:38.724Z",
+        "stageStartedAt": "2026-11-17T01:49:38.721Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": null,
+        "space": {
+          "id": "c1ed346d-8d39-4302-966d-28d0f7098199",
+          "code": "302",
+          "name": "Infraestructura",
+          "type": "OFFICE",
+          "floor": 3,
+          "capacity": 8,
+          "block": {
+            "id": "fa014b7e-82fd-4205-9d13-96a59e2357e3",
+            "code": "D",
+            "name": "Bloque D · Administrativo"
+          },
+          "campus": {
+            "id": "d48328b3-aeba-4d7e-b677-20b6a5627fe1",
+            "code": "PRI",
+            "name": "Sede Principal"
+          }
+        },
+        "reporter": {
+          "id": "ef8cdb81-b899-4829-96aa-29208ad05e35",
+          "name": "Valentina Ruiz",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null
+      },
+      "ms": 35
+    },
+    {
+      "n": 2,
+      "peticion": "POST /api/incidents/f8b3702e-8e44-40de-a410-3fd5995fc178/transition",
+      "quien": "supervisor",
+      "cuerpo": {
+        "to": "IN_PROGRESS"
+      },
+      "estado": 400,
+      "respuesta": {
+        "error": "Elige el técnico al que asignas el caso",
+        "field": "assigneeId"
+      },
+      "ms": 16
+    },
+    {
+      "n": 3,
+      "peticion": "POST /api/incidents/f8b3702e-8e44-40de-a410-3fd5995fc178/transition",
+      "quien": "supervisor",
+      "cuerpo": {
+        "to": "IN_PROGRESS",
+        "assigneeId": "49e71824-b4e7-45aa-9b27-4e14d445dba5"
+      },
+      "estado": 400,
+      "respuesta": {
+        "error": "El usuario elegido no es técnico",
+        "field": "assigneeId"
+      },
+      "ms": 16
+    },
+    {
+      "n": 4,
+      "peticion": "POST /api/incidents/f8b3702e-8e44-40de-a410-3fd5995fc178/transition",
+      "quien": "supervisor",
+      "cuerpo": {
+        "to": "IN_PROGRESS",
+        "assigneeId": "b7df2037-287e-4aa4-af10-a093e5fb3282"
+      },
+      "estado": 200,
+      "respuesta": {
+        "incidentId": "f8b3702e-8e44-40de-a410-3fd5995fc178",
+        "from": "PENDING",
+        "to": "IN_PROGRESS"
+      },
+      "ms": 33
+    },
+    {
+      "n": 5,
+      "peticion": "GET /api/incidents/f8b3702e-8e44-40de-a410-3fd5995fc178",
+      "quien": "supervisor",
+      "estado": 200,
+      "respuesta": {
+        "id": "f8b3702e-8e44-40de-a410-3fd5995fc178",
+        "number": 77,
+        "code": "INC-00077",
+        "description": "El archivador de planos no cierra el segundo cajón",
+        "category": "FURNITURE",
+        "riskLevel": "LOW",
+        "status": "IN_PROGRESS",
+        "priorityScore": 29.6,
+        "priorityLevel": "MEDIUM",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 30,
+            "weight": 0.35,
+            "contribution": 10.5
+          },
+          "space": {
+            "value": 40.8,
+            "weight": 0.1,
+            "contribution": 4.1
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 40,
+            "weight": 0.25,
+            "contribution": 10
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T13:49:38.721Z",
+        "resolutionDueAt": "2026-11-20T01:49:38.721Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:49:38.721Z",
+        "updatedAt": "2026-11-17T01:49:38.792Z",
+        "stageStartedAt": "2026-11-17T01:49:38.789Z",
+        "firstResponseAt": "2026-11-17T01:49:38.789Z",
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": null,
+        "space": {
+          "id": "c1ed346d-8d39-4302-966d-28d0f7098199",
+          "code": "302",
+          "name": "Infraestructura",
+          "type": "OFFICE",
+          "floor": 3,
+          "capacity": 8,
+          "block": {
+            "id": "fa014b7e-82fd-4205-9d13-96a59e2357e3",
+            "code": "D",
+            "name": "Bloque D · Administrativo"
+          },
+          "campus": {
+            "id": "d48328b3-aeba-4d7e-b677-20b6a5627fe1",
+            "code": "PRI",
+            "name": "Sede Principal"
+          }
+        },
+        "reporter": {
+          "id": "ef8cdb81-b899-4829-96aa-29208ad05e35",
+          "name": "Valentina Ruiz",
+          "role": "STUDENT"
+        },
+        "assignee": {
+          "id": "b7df2037-287e-4aa4-af10-a093e5fb3282",
+          "name": "Andrea Pineda",
+          "role": "TECHNICIAN"
+        },
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null,
+        "evidence": [],
+        "history": [
+          {
+            "id": "b2ab14ae-3368-45f2-be1a-489a3cd009a7",
+            "fromStatus": null,
+            "toStatus": "PENDING",
+            "changedBy": {
+              "id": "ef8cdb81-b899-4829-96aa-29208ad05e35",
+              "name": "Valentina Ruiz",
+              "role": "STUDENT"
+            },
+            "changedAt": "2026-11-17T01:49:38.721Z",
+            "durationInPrevMs": null,
+            "reason": "MANUAL",
+            "note": null
+          },
+          {
+            "id": "688c5057-2f39-4c00-9775-354f13f6c1a4",
+            "fromStatus": "PENDING",
+            "toStatus": "IN_PROGRESS",
+            "changedBy": {
+              "id": "9deecb98-d7ea-4833-b13a-345ed3dd149c",
+              "name": "Laura Méndez",
+              "role": "SUPERVISOR"
+            },
+            "changedAt": "2026-11-17T01:49:38.789Z",
+            "durationInPrevMs": 68,
+            "reason": "MANUAL",
+            "note": null
+          }
+        ],
+        "events": [
+          {
+            "id": "29001091-bf0d-449b-a09b-b5930c5bac8c",
+            "type": "CREATED",
+            "payload": {
+              "level": "MEDIUM",
+              "score": 29.6,
+              "breakdown": {
+                "age": {
+                  "value": 0,
+                  "weight": 0.1,
+                  "contribution": 0
+                },
+                "risk": {
+                  "value": 30,
+                  "weight": 0.35,
+                  "contribution": 10.5
+                },
+                "space": {
+                  "value": 40.8,
+                  "weight": 0.1,
+                  "contribution": 4.1
+                },
+                "similar": {
+                  "value": 25,
+                  "weight": 0.2,
+                  "contribution": 5
+                },
+                "damageType": {
+                  "value": 40,
+                  "weight": 0.25,
+                  "contribution": 10
+                }
+              },
+              "joinIncidentId": null
+            },
+            "actor": {
+              "id": "ef8cdb81-b899-4829-96aa-29208ad05e35",
+              "name": "Valentina Ruiz",
+              "role": "STUDENT"
+            },
+            "createdAt": "2026-11-17T01:49:38.732Z"
+          },
+          {
+            "id": "62b281d8-964f-4bfe-98e3-8c89ea17b43f",
+            "type": "ASSIGNED",
+            "payload": {
+              "by": "9deecb98-d7ea-4833-b13a-345ed3dd149c",
+              "assigneeId": "b7df2037-287e-4aa4-af10-a093e5fb3282"
+            },
+            "actor": {
+              "id": "9deecb98-d7ea-4833-b13a-345ed3dd149c",
+              "name": "Laura Méndez",
+              "role": "SUPERVISOR"
+            },
+            "createdAt": "2026-11-17T01:49:38.802Z"
+          }
+        ],
+        "clusterMembers": [],
+        "availableTransitions": []
+      },
+      "ms": 19
+    }
+  ]
+}

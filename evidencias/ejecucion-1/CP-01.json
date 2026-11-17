@@ -1,0 +1,23 @@
+{
+  "caso": "CP-01",
+  "titulo": "CP-01 | Ingreso con credenciales válidas",
+  "ejecucion": "ejecucion-1",
+  "fecha": "2026-11-17T01:45:58.808Z",
+  "estado": "Aprobado",
+  "error": null,
+  "pasos": [
+    {
+      "n": 1,
+      "peticion": "POST /api/auth/login desde la web",
+      "quien": "-",
+      "estado": 0,
+      "respuesta": {
+        "estado": 200,
+        "rol": "SUPERVISOR",
+        "nombre": "Laura Méndez",
+        "token": "JWT recibido"
+      },
+      "ms": 0
+    }
+  ]
+}

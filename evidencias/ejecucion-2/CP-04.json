@@ -1,0 +1,29 @@
+{
+  "caso": "CP-04",
+  "titulo": "CP-04 | Consultar el resumen del panel",
+  "ejecucion": "ejecucion-2",
+  "fecha": "2026-11-17T01:50:49.214Z",
+  "estado": "Aprobado",
+  "error": null,
+  "pasos": [
+    {
+      "n": 1,
+      "peticion": "GET /api/dashboard/summary desde la web",
+      "quien": "-",
+      "estado": 0,
+      "respuesta": {
+        "estado": 200,
+        "campos": [
+          "open",
+          "overdue",
+          "inProgress",
+          "resolvedToday",
+          "verifiedTotal",
+          "slaCompliance",
+          "byLevel"
+        ]
+      },
+      "ms": 0
+    }
+  ]
+}

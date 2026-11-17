@@ -1,0 +1,35 @@
+{
+  "caso": "CP-22",
+  "titulo": "CP-22 | Buscar un espacio por su código QR",
+  "ejecucion": "ejecucion-2",
+  "fecha": "2026-11-17T01:49:29.971Z",
+  "estado": "Aprobado",
+  "error": null,
+  "pasos": [
+    {
+      "n": 1,
+      "peticion": "GET /api/locations/qr/NOR-F-101",
+      "quien": "estudiante2",
+      "estado": 200,
+      "respuesta": {
+        "id": "fc44f927-11b8-40e5-80f4-944ed409fd21",
+        "code": "101",
+        "name": "Laboratorio de Biología",
+        "type": "LAB",
+        "floor": 1,
+        "capacity": 26,
+        "block": {
+          "id": "1ad96267-f0a2-4341-b721-29eb1f6a0472",
+          "code": "F",
+          "name": "Bloque F · Laboratorios"
+        },
+        "campus": {
+          "id": "c6404dc8-3b3c-4ec7-bb52-b29273b4660b",
+          "code": "NOR",
+          "name": "Sede Norte"
+        }
+      },
+      "ms": 17
+    }
+  ]
+}

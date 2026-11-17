@@ -1,0 +1,190 @@
+{
+  "caso": "CP-09",
+  "titulo": "CP-09 | BUG-02 | overdue=false devuelve solo vencidas",
+  "ejecucion": "ejecucion-2",
+  "fecha": "2026-11-17T01:49:33.070Z",
+  "estado": "Fallido",
+  "error": "Error: overdue=false\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 58\nReceived: 30",
+  "pasos": [
+    {
+      "n": 1,
+      "peticion": "GET /api/incidents",
+      "quien": "supervisor",
+      "estado": 200,
+      "respuesta": {
+        "total": 58,
+        "primeros": [
+          {
+            "code": "INC-00048",
+            "status": "PENDING",
+            "isOverdue": true,
+            "priorityLevel": "CRITICAL"
+          },
+          {
+            "code": "INC-00013",
+            "status": "VERIFIED",
+            "isOverdue": true,
+            "priorityLevel": "CRITICAL"
+          },
+          {
+            "code": "INC-00062",
+            "status": "PENDING",
+            "isOverdue": true,
+            "priorityLevel": "CRITICAL"
+          }
+        ]
+      },
+      "ms": 53
+    },
+    {
+      "n": 2,
+      "peticion": "GET /api/incidents?overdue=false",
+      "quien": "supervisor",
+      "estado": 200,
+      "respuesta": {
+        "total": 30,
+        "primeros": [
+          {
+            "code": "INC-00048",
+            "status": "PENDING",
+            "isOverdue": true,
+            "priorityLevel": "CRITICAL"
+          },
+          {
+            "code": "INC-00013",
+            "status": "VERIFIED",
+            "isOverdue": true,
+            "priorityLevel": "CRITICAL"
+          },
+          {
+            "code": "INC-00062",
+            "status": "PENDING",
+            "isOverdue": true,
+            "priorityLevel": "CRITICAL"
+          }
+        ]
+      },
+      "ms": 24
+    },
+    {
+      "n": 3,
+      "peticion": "GET /api/incidents",
+      "quien": "estudiante1",
+      "estado": 200,
+      "respuesta": {
+        "total": 58,
+        "primeros": [
+          {
+            "code": "INC-00048",
+            "status": "PENDING",
+            "isOverdue": true,
+            "priorityLevel": "CRITICAL"
+          },
+          {
+            "code": "INC-00013",
+            "status": "VERIFIED",
+            "isOverdue": true,
+            "priorityLevel": "CRITICAL"
+          },
+          {
+            "code": "INC-00062",
+            "status": "PENDING",
+            "isOverdue": true,
+            "priorityLevel": "CRITICAL"
+          }
+        ]
+      },
+      "ms": 27
+    },
+    {
+      "n": 4,
+      "peticion": "GET /api/incidents?mine=false",
+      "quien": "estudiante1",
+      "estado": 200,
+      "respuesta": {
+        "total": 8,
+        "primeros": [
+          {
+            "code": "INC-00033",
+            "status": "PENDING",
+            "isOverdue": true,
+            "priorityLevel": "CRITICAL"
+          },
+          {
+            "code": "INC-00041",
+            "status": "PENDING",
+            "isOverdue": true,
+            "priorityLevel": "CRITICAL"
+          },
+          {
+            "code": "INC-00023",
+            "status": "IN_PROGRESS",
+            "isOverdue": true,
+            "priorityLevel": "CRITICAL"
+          }
+        ]
+      },
+      "ms": 22
+    },
+    {
+      "n": 5,
+      "peticion": "GET /api/incidents",
+      "quien": "tecnico1",
+      "estado": 200,
+      "respuesta": {
+        "total": 58,
+        "primeros": [
+          {
+            "code": "INC-00048",
+            "status": "PENDING",
+            "isOverdue": true,
+            "priorityLevel": "CRITICAL"
+          },
+          {
+            "code": "INC-00013",
+            "status": "VERIFIED",
+            "isOverdue": true,
+            "priorityLevel": "CRITICAL"
+          },
+          {
+            "code": "INC-00062",
+            "status": "PENDING",
+            "isOverdue": true,
+            "priorityLevel": "CRITICAL"
+          }
+        ]
+      },
+      "ms": 31
+    },
+    {
+      "n": 6,
+      "peticion": "GET /api/incidents?assignedToMe=false",
+      "quien": "tecnico1",
+      "estado": 200,
+      "respuesta": {
+        "total": 14,
+        "primeros": [
+          {
+            "code": "INC-00013",
+            "status": "VERIFIED",
+            "isOverdue": true,
+            "priorityLevel": "CRITICAL"
+          },
+          {
+            "code": "INC-00034",
+            "status": "VERIFIED",
+            "isOverdue": true,
+            "priorityLevel": "CRITICAL"
+          },
+          {
+            "code": "INC-00002",
+            "status": "RESOLVED",
+            "isOverdue": true,
+            "priorityLevel": "CRITICAL"
+          }
+        ]
+      },
+      "ms": 26
+    }
+  ]
+}

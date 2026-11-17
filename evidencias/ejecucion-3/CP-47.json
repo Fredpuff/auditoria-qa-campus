@@ -1,0 +1,191 @@
+{
+  "caso": "CP-47",
+  "titulo": "CP-47 | Quién puede reabrir un arreglo y con qué datos",
+  "ejecucion": "ejecucion-3",
+  "fecha": "2026-11-17T01:54:26.217Z",
+  "estado": "Aprobado",
+  "error": null,
+  "pasos": [
+    {
+      "n": 1,
+      "peticion": "POST /api/incidents",
+      "quien": "estudiante2",
+      "cuerpo": {
+        "spaceId": "4ead5054-591a-4472-a4f1-bbdc091330f7",
+        "category": "COSMETIC",
+        "riskLevel": "NONE",
+        "description": "Puerta del salón con pintura descascarada",
+        "hotspot": null
+      },
+      "estado": 201,
+      "respuesta": {
+        "id": "a7baf34f-fb1a-4bb6-afa9-2bec0e34433e",
+        "number": 83,
+        "code": "INC-00083",
+        "description": "Puerta del salón con pintura descascarada",
+        "category": "COSMETIC",
+        "riskLevel": "NONE",
+        "status": "PENDING",
+        "priorityScore": 18.3,
+        "priorityLevel": "LOW",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 0,
+            "weight": 0.35,
+            "contribution": 0
+          },
+          "space": {
+            "value": 95.5,
+            "weight": 0.1,
+            "contribution": 9.6
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 15,
+            "weight": 0.25,
+            "contribution": 3.8
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-19T01:54:26.043Z",
+        "resolutionDueAt": "2026-11-24T01:54:26.043Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:54:26.043Z",
+        "updatedAt": "2026-11-17T01:54:26.046Z",
+        "stageStartedAt": "2026-11-17T01:54:26.043Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": null,
+        "space": {
+          "id": "4ead5054-591a-4472-a4f1-bbdc091330f7",
+          "code": "102",
+          "name": "Aula 102",
+          "type": "CLASSROOM",
+          "floor": 1,
+          "capacity": 55,
+          "block": {
+            "id": "dba5fded-436c-4a92-b5f1-216a87d1cbe9",
+            "code": "E",
+            "name": "Bloque E · Aulas"
+          },
+          "campus": {
+            "id": "490a0c63-cb4e-4d95-ab63-2d1f9178367f",
+            "code": "NOR",
+            "name": "Sede Norte"
+          }
+        },
+        "reporter": {
+          "id": "f16abaae-5754-49bb-a28e-acf02bd5c531",
+          "name": "Santiago Herrera",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null
+      },
+      "ms": 37
+    },
+    {
+      "n": 2,
+      "peticion": "POST /api/incidents/a7baf34f-fb1a-4bb6-afa9-2bec0e34433e/transition",
+      "quien": "tecnico1",
+      "cuerpo": {
+        "to": "IN_PROGRESS"
+      },
+      "estado": 200,
+      "respuesta": {
+        "incidentId": "a7baf34f-fb1a-4bb6-afa9-2bec0e34433e",
+        "from": "PENDING",
+        "to": "IN_PROGRESS"
+      },
+      "ms": 34
+    },
+    {
+      "n": 3,
+      "peticion": "POST /api/incidents/a7baf34f-fb1a-4bb6-afa9-2bec0e34433e/transition",
+      "quien": "tecnico1",
+      "cuerpo": {
+        "to": "RESOLVED",
+        "note": "Se cambió la pieza dañada"
+      },
+      "estado": 200,
+      "respuesta": {
+        "incidentId": "a7baf34f-fb1a-4bb6-afa9-2bec0e34433e",
+        "from": "IN_PROGRESS",
+        "to": "RESOLVED"
+      },
+      "ms": 37
+    },
+    {
+      "n": 4,
+      "peticion": "POST /api/incidents/a7baf34f-fb1a-4bb6-afa9-2bec0e34433e/transition",
+      "quien": "estudiante3",
+      "cuerpo": {
+        "to": "IN_PROGRESS",
+        "note": "No quedó bien"
+      },
+      "estado": 403,
+      "respuesta": {
+        "error": "Un estudiante solo puede actuar sobre sus propios reportes"
+      },
+      "ms": 15
+    },
+    {
+      "n": 5,
+      "peticion": "POST /api/incidents/a7baf34f-fb1a-4bb6-afa9-2bec0e34433e/transition",
+      "quien": "tecnico2",
+      "cuerpo": {
+        "to": "IN_PROGRESS",
+        "note": "No quedó bien"
+      },
+      "estado": 403,
+      "respuesta": {
+        "error": "Tu rol no puede ejecutar esta transición"
+      },
+      "ms": 14
+    },
+    {
+      "n": 6,
+      "peticion": "POST /api/incidents/a7baf34f-fb1a-4bb6-afa9-2bec0e34433e/transition",
+      "quien": "supervisor",
+      "cuerpo": {
+        "to": "IN_PROGRESS"
+      },
+      "estado": 400,
+      "respuesta": {
+        "error": "Esta transición necesita una nota",
+        "field": "note"
+      },
+      "ms": 14
+    },
+    {
+      "n": 7,
+      "peticion": "POST /api/incidents/a7baf34f-fb1a-4bb6-afa9-2bec0e34433e/transition",
+      "quien": "estudiante2",
+      "cuerpo": {
+        "to": "IN_PROGRESS",
+        "note": "La pintura se volvió a caer"
+      },
+      "estado": 200,
+      "respuesta": {
+        "incidentId": "a7baf34f-fb1a-4bb6-afa9-2bec0e34433e",
+        "from": "RESOLVED",
+        "to": "IN_PROGRESS"
+      },
+      "ms": 28
+    }
+  ]
+}

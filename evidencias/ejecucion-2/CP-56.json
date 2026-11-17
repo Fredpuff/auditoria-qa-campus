@@ -1,0 +1,869 @@
+{
+  "caso": "CP-56",
+  "titulo": "CP-56 | Cerrar la incidencia madre cierra también la hija",
+  "ejecucion": "ejecucion-2",
+  "fecha": "2026-11-17T01:50:40.183Z",
+  "estado": "Aprobado",
+  "error": null,
+  "pasos": [
+    {
+      "n": 1,
+      "peticion": "POST /api/incidents",
+      "quien": "estudiante3",
+      "cuerpo": {
+        "spaceId": "d1c7616d-7e66-4203-b43e-21fe4089f2a8",
+        "category": "WATER_LEAK",
+        "riskLevel": "MEDIUM",
+        "description": "Escurre agua del techo sobre el osciloscopio",
+        "hotspot": {
+          "x": 4,
+          "y": 3,
+          "z": -1
+        }
+      },
+      "estado": 201,
+      "respuesta": {
+        "id": "7a2de6e1-8c08-4ee2-be50-5ab7ccc50723",
+        "number": 100,
+        "code": "INC-00100",
+        "description": "Escurre agua del techo sobre el osciloscopio",
+        "category": "WATER_LEAK",
+        "riskLevel": "MEDIUM",
+        "status": "PENDING",
+        "priorityScore": 56,
+        "priorityLevel": "HIGH",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 60,
+            "weight": 0.35,
+            "contribution": 21
+          },
+          "space": {
+            "value": 100,
+            "weight": 0.1,
+            "contribution": 10
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 80,
+            "weight": 0.25,
+            "contribution": 20
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T05:50:39.431Z",
+        "resolutionDueAt": "2026-11-18T01:50:39.431Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:50:39.431Z",
+        "updatedAt": "2026-11-17T01:50:39.433Z",
+        "stageStartedAt": "2026-11-17T01:50:39.431Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": {
+          "x": 4,
+          "y": 3,
+          "z": -1
+        },
+        "space": {
+          "id": "d1c7616d-7e66-4203-b43e-21fe4089f2a8",
+          "code": "101",
+          "name": "Laboratorio de Electrónica",
+          "type": "LAB",
+          "floor": 1,
+          "capacity": 30,
+          "block": {
+            "id": "44c5c424-a9af-4dbf-8279-429ec0fc4576",
+            "code": "B",
+            "name": "Bloque B · Laboratorios"
+          },
+          "campus": {
+            "id": "d48328b3-aeba-4d7e-b677-20b6a5627fe1",
+            "code": "PRI",
+            "name": "Sede Principal"
+          }
+        },
+        "reporter": {
+          "id": "5e43a375-07dd-491b-ac25-2db1034f13ed",
+          "name": "Camila Ortiz",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null
+      },
+      "ms": 30
+    },
+    {
+      "n": 2,
+      "peticion": "POST /api/incidents",
+      "quien": "estudiante5",
+      "cuerpo": {
+        "spaceId": "d1c7616d-7e66-4203-b43e-21fe4089f2a8",
+        "category": "WATER_LEAK",
+        "riskLevel": "MEDIUM",
+        "description": "Sobre el osciloscopio escurre agua del techo",
+        "hotspot": {
+          "x": 4.5,
+          "y": 3,
+          "z": -1
+        }
+      },
+      "estado": 201,
+      "respuesta": {
+        "id": "3580c1d3-ba1c-4d6e-9cf5-29c9673851f2",
+        "number": 101,
+        "code": "INC-00101",
+        "description": "Sobre el osciloscopio escurre agua del techo",
+        "category": "WATER_LEAK",
+        "riskLevel": "MEDIUM",
+        "status": "PENDING",
+        "priorityScore": 56,
+        "priorityLevel": "HIGH",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 60,
+            "weight": 0.35,
+            "contribution": 21
+          },
+          "space": {
+            "value": 100,
+            "weight": 0.1,
+            "contribution": 10
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 80,
+            "weight": 0.25,
+            "contribution": 20
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T05:50:39.461Z",
+        "resolutionDueAt": "2026-11-18T01:50:39.461Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:50:39.461Z",
+        "updatedAt": "2026-11-17T01:50:39.463Z",
+        "stageStartedAt": "2026-11-17T01:50:39.461Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": {
+          "x": 4.5,
+          "y": 3,
+          "z": -1
+        },
+        "space": {
+          "id": "d1c7616d-7e66-4203-b43e-21fe4089f2a8",
+          "code": "101",
+          "name": "Laboratorio de Electrónica",
+          "type": "LAB",
+          "floor": 1,
+          "capacity": 30,
+          "block": {
+            "id": "44c5c424-a9af-4dbf-8279-429ec0fc4576",
+            "code": "B",
+            "name": "Bloque B · Laboratorios"
+          },
+          "campus": {
+            "id": "d48328b3-aeba-4d7e-b677-20b6a5627fe1",
+            "code": "PRI",
+            "name": "Sede Principal"
+          }
+        },
+        "reporter": {
+          "id": "4ba98cb3-9ebb-4f85-83c8-729c7d7dcbfc",
+          "name": "Sofía Castro",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null
+      },
+      "ms": 39
+    },
+    {
+      "n": 3,
+      "peticion": "GET /api/incidents/3580c1d3-ba1c-4d6e-9cf5-29c9673851f2",
+      "quien": "supervisor",
+      "estado": 200,
+      "respuesta": {
+        "id": "3580c1d3-ba1c-4d6e-9cf5-29c9673851f2",
+        "number": 101,
+        "code": "INC-00101",
+        "description": "Sobre el osciloscopio escurre agua del techo",
+        "category": "WATER_LEAK",
+        "riskLevel": "MEDIUM",
+        "status": "PENDING",
+        "priorityScore": 56,
+        "priorityLevel": "HIGH",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 60,
+            "weight": 0.35,
+            "contribution": 21
+          },
+          "space": {
+            "value": 100,
+            "weight": 0.1,
+            "contribution": 10
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 80,
+            "weight": 0.25,
+            "contribution": 20
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T05:50:39.461Z",
+        "resolutionDueAt": "2026-11-18T01:50:39.461Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:50:39.461Z",
+        "updatedAt": "2026-11-17T01:50:39.463Z",
+        "stageStartedAt": "2026-11-17T01:50:39.461Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": {
+          "x": 4.5,
+          "y": 3,
+          "z": -1
+        },
+        "space": {
+          "id": "d1c7616d-7e66-4203-b43e-21fe4089f2a8",
+          "code": "101",
+          "name": "Laboratorio de Electrónica",
+          "type": "LAB",
+          "floor": 1,
+          "capacity": 30,
+          "block": {
+            "id": "44c5c424-a9af-4dbf-8279-429ec0fc4576",
+            "code": "B",
+            "name": "Bloque B · Laboratorios"
+          },
+          "campus": {
+            "id": "d48328b3-aeba-4d7e-b677-20b6a5627fe1",
+            "code": "PRI",
+            "name": "Sede Principal"
+          }
+        },
+        "reporter": {
+          "id": "4ba98cb3-9ebb-4f85-83c8-729c7d7dcbfc",
+          "name": "Sofía Castro",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null,
+        "evidence": [],
+        "history": [
+          {
+            "id": "bb733d4e-5754-411e-ae70-e3a90005bde4",
+            "fromStatus": null,
+            "toStatus": "PENDING",
+            "changedBy": {
+              "id": "4ba98cb3-9ebb-4f85-83c8-729c7d7dcbfc",
+              "name": "Sofía Castro",
+              "role": "STUDENT"
+            },
+            "changedAt": "2026-11-17T01:50:39.461Z",
+            "durationInPrevMs": null,
+            "reason": "MANUAL",
+            "note": null
+          }
+        ],
+        "events": [
+          {
+            "id": "b5c0fc36-e29b-46e6-9cba-a26c2c7e96fc",
+            "type": "CREATED",
+            "payload": {
+              "level": "HIGH",
+              "score": 56,
+              "breakdown": {
+                "age": {
+                  "value": 0,
+                  "weight": 0.1,
+                  "contribution": 0
+                },
+                "risk": {
+                  "value": 60,
+                  "weight": 0.35,
+                  "contribution": 21
+                },
+                "space": {
+                  "value": 100,
+                  "weight": 0.1,
+                  "contribution": 10
+                },
+                "similar": {
+                  "value": 25,
+                  "weight": 0.2,
+                  "contribution": 5
+                },
+                "damageType": {
+                  "value": 80,
+                  "weight": 0.25,
+                  "contribution": 20
+                }
+              },
+              "joinIncidentId": null
+            },
+            "actor": {
+              "id": "4ba98cb3-9ebb-4f85-83c8-729c7d7dcbfc",
+              "name": "Sofía Castro",
+              "role": "STUDENT"
+            },
+            "createdAt": "2026-11-17T01:50:39.476Z"
+          }
+        ],
+        "clusterMembers": [],
+        "availableTransitions": [
+          {
+            "from": "PENDING",
+            "to": "IN_PROGRESS",
+            "roles": [
+              "TECHNICIAN",
+              "SUPERVISOR"
+            ],
+            "label": "Tomar caso",
+            "description": "El técnico toma el caso o el supervisor lo asigna"
+          }
+        ]
+      },
+      "ms": 23
+    },
+    {
+      "n": 4,
+      "peticion": "GET /api/incidents/3580c1d3-ba1c-4d6e-9cf5-29c9673851f2",
+      "quien": "supervisor",
+      "estado": 200,
+      "respuesta": {
+        "id": "3580c1d3-ba1c-4d6e-9cf5-29c9673851f2",
+        "number": 101,
+        "code": "INC-00101",
+        "description": "Sobre el osciloscopio escurre agua del techo",
+        "category": "WATER_LEAK",
+        "riskLevel": "MEDIUM",
+        "status": "PENDING",
+        "priorityScore": 58.9,
+        "priorityLevel": "HIGH",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 60,
+            "weight": 0.35,
+            "contribution": 21
+          },
+          "space": {
+            "value": 100,
+            "weight": 0.1,
+            "contribution": 10
+          },
+          "similar": {
+            "value": 39.6,
+            "weight": 0.2,
+            "contribution": 7.9
+          },
+          "damageType": {
+            "value": 80,
+            "weight": 0.25,
+            "contribution": 20
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T05:50:39.431Z",
+        "resolutionDueAt": "2026-11-18T01:50:39.431Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:50:39.461Z",
+        "updatedAt": "2026-11-17T01:50:39.567Z",
+        "stageStartedAt": "2026-11-17T01:50:39.461Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": {
+          "x": 4.5,
+          "y": 3,
+          "z": -1
+        },
+        "space": {
+          "id": "d1c7616d-7e66-4203-b43e-21fe4089f2a8",
+          "code": "101",
+          "name": "Laboratorio de Electrónica",
+          "type": "LAB",
+          "floor": 1,
+          "capacity": 30,
+          "block": {
+            "id": "44c5c424-a9af-4dbf-8279-429ec0fc4576",
+            "code": "B",
+            "name": "Bloque B · Laboratorios"
+          },
+          "campus": {
+            "id": "d48328b3-aeba-4d7e-b677-20b6a5627fe1",
+            "code": "PRI",
+            "name": "Sede Principal"
+          }
+        },
+        "reporter": {
+          "id": "4ba98cb3-9ebb-4f85-83c8-729c7d7dcbfc",
+          "name": "Sofía Castro",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": "7d125c5e-9083-411c-a6b8-d5a59ecaa52d",
+        "isClusterPrimary": false,
+        "clusterSize": 2,
+        "thumbnailUrl": null,
+        "evidence": [],
+        "history": [
+          {
+            "id": "bb733d4e-5754-411e-ae70-e3a90005bde4",
+            "fromStatus": null,
+            "toStatus": "PENDING",
+            "changedBy": {
+              "id": "4ba98cb3-9ebb-4f85-83c8-729c7d7dcbfc",
+              "name": "Sofía Castro",
+              "role": "STUDENT"
+            },
+            "changedAt": "2026-11-17T01:50:39.461Z",
+            "durationInPrevMs": null,
+            "reason": "MANUAL",
+            "note": null
+          }
+        ],
+        "events": [
+          {
+            "id": "b5c0fc36-e29b-46e6-9cba-a26c2c7e96fc",
+            "type": "CREATED",
+            "payload": {
+              "level": "HIGH",
+              "score": 56,
+              "breakdown": {
+                "age": {
+                  "value": 0,
+                  "weight": 0.1,
+                  "contribution": 0
+                },
+                "risk": {
+                  "value": 60,
+                  "weight": 0.35,
+                  "contribution": 21
+                },
+                "space": {
+                  "value": 100,
+                  "weight": 0.1,
+                  "contribution": 10
+                },
+                "similar": {
+                  "value": 25,
+                  "weight": 0.2,
+                  "contribution": 5
+                },
+                "damageType": {
+                  "value": 80,
+                  "weight": 0.25,
+                  "contribution": 20
+                }
+              },
+              "joinIncidentId": null
+            },
+            "actor": {
+              "id": "4ba98cb3-9ebb-4f85-83c8-729c7d7dcbfc",
+              "name": "Sofía Castro",
+              "role": "STUDENT"
+            },
+            "createdAt": "2026-11-17T01:50:39.476Z"
+          },
+          {
+            "id": "5326301c-84e4-4984-8c9a-5356700a06d1",
+            "type": "GROUPED",
+            "payload": {
+              "mode": "auto",
+              "moved": 1,
+              "clusterId": "7d125c5e-9083-411c-a6b8-d5a59ecaa52d",
+              "similarity": {
+                "text": 1,
+                "time": 1,
+                "score": 1,
+                "category": 1,
+                "location": 1,
+                "textSource": "tfidf",
+                "hotspotDistance": 0.5
+              },
+              "primaryIncidentId": "7a2de6e1-8c08-4ee2-be50-5ab7ccc50723"
+            },
+            "actor": null,
+            "createdAt": "2026-11-17T01:50:39.547Z"
+          }
+        ],
+        "clusterMembers": [
+          {
+            "id": "7a2de6e1-8c08-4ee2-be50-5ab7ccc50723",
+            "code": "INC-00100",
+            "description": "Escurre agua del techo sobre el osciloscopio",
+            "status": "PENDING",
+            "createdAt": "2026-11-17T01:50:39.431Z",
+            "isClusterPrimary": true,
+            "reporterName": "Camila Ortiz",
+            "similarity": null
+          },
+          {
+            "id": "3580c1d3-ba1c-4d6e-9cf5-29c9673851f2",
+            "code": "INC-00101",
+            "description": "Sobre el osciloscopio escurre agua del techo",
+            "status": "PENDING",
+            "createdAt": "2026-11-17T01:50:39.461Z",
+            "isClusterPrimary": false,
+            "reporterName": "Sofía Castro",
+            "similarity": {
+              "text": 1,
+              "time": 1,
+              "score": 1,
+              "category": 1,
+              "location": 1,
+              "textSource": "tfidf",
+              "hotspotDistance": 0.5
+            }
+          }
+        ],
+        "availableTransitions": []
+      },
+      "ms": 21
+    },
+    {
+      "n": 5,
+      "peticion": "POST /api/incidents/7a2de6e1-8c08-4ee2-be50-5ab7ccc50723/transition",
+      "quien": "tecnico1",
+      "cuerpo": {
+        "to": "IN_PROGRESS"
+      },
+      "estado": 200,
+      "respuesta": {
+        "incidentId": "7a2de6e1-8c08-4ee2-be50-5ab7ccc50723",
+        "from": "PENDING",
+        "to": "IN_PROGRESS"
+      },
+      "ms": 40
+    },
+    {
+      "n": 6,
+      "peticion": "POST /api/incidents/7a2de6e1-8c08-4ee2-be50-5ab7ccc50723/transition",
+      "quien": "tecnico1",
+      "cuerpo": {
+        "to": "RESOLVED",
+        "note": "Se cambió la pieza dañada"
+      },
+      "estado": 200,
+      "respuesta": {
+        "incidentId": "7a2de6e1-8c08-4ee2-be50-5ab7ccc50723",
+        "from": "IN_PROGRESS",
+        "to": "RESOLVED"
+      },
+      "ms": 36
+    },
+    {
+      "n": 7,
+      "peticion": "POST /api/incidents/7a2de6e1-8c08-4ee2-be50-5ab7ccc50723/transition",
+      "quien": "supervisor",
+      "cuerpo": {
+        "to": "VERIFIED"
+      },
+      "estado": 200,
+      "respuesta": {
+        "incidentId": "7a2de6e1-8c08-4ee2-be50-5ab7ccc50723",
+        "from": "RESOLVED",
+        "to": "VERIFIED"
+      },
+      "ms": 33
+    },
+    {
+      "n": 8,
+      "peticion": "GET /api/incidents/3580c1d3-ba1c-4d6e-9cf5-29c9673851f2",
+      "quien": "supervisor",
+      "estado": 200,
+      "respuesta": {
+        "id": "3580c1d3-ba1c-4d6e-9cf5-29c9673851f2",
+        "number": 101,
+        "code": "INC-00101",
+        "description": "Sobre el osciloscopio escurre agua del techo",
+        "category": "WATER_LEAK",
+        "riskLevel": "MEDIUM",
+        "status": "VERIFIED",
+        "priorityScore": 58.9,
+        "priorityLevel": "HIGH",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 60,
+            "weight": 0.35,
+            "contribution": 21
+          },
+          "space": {
+            "value": 100,
+            "weight": 0.1,
+            "contribution": 10
+          },
+          "similar": {
+            "value": 39.6,
+            "weight": 0.2,
+            "contribution": 7.9
+          },
+          "damageType": {
+            "value": 80,
+            "weight": 0.25,
+            "contribution": 20
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T05:50:39.431Z",
+        "resolutionDueAt": "2026-11-18T01:50:39.431Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:50:39.461Z",
+        "updatedAt": "2026-11-17T01:50:40.149Z",
+        "stageStartedAt": "2026-11-17T01:50:40.135Z",
+        "firstResponseAt": "2026-11-17T01:50:40.058Z",
+        "resolvedAt": "2026-11-17T01:50:40.102Z",
+        "verifiedAt": "2026-11-17T01:50:40.135Z",
+        "hotspot": {
+          "x": 4.5,
+          "y": 3,
+          "z": -1
+        },
+        "space": {
+          "id": "d1c7616d-7e66-4203-b43e-21fe4089f2a8",
+          "code": "101",
+          "name": "Laboratorio de Electrónica",
+          "type": "LAB",
+          "floor": 1,
+          "capacity": 30,
+          "block": {
+            "id": "44c5c424-a9af-4dbf-8279-429ec0fc4576",
+            "code": "B",
+            "name": "Bloque B · Laboratorios"
+          },
+          "campus": {
+            "id": "d48328b3-aeba-4d7e-b677-20b6a5627fe1",
+            "code": "PRI",
+            "name": "Sede Principal"
+          }
+        },
+        "reporter": {
+          "id": "4ba98cb3-9ebb-4f85-83c8-729c7d7dcbfc",
+          "name": "Sofía Castro",
+          "role": "STUDENT"
+        },
+        "assignee": {
+          "id": "bf8b7142-8763-49fc-a7f7-bac3dc547dfd",
+          "name": "Carlos Rojas",
+          "role": "TECHNICIAN"
+        },
+        "clusterId": "7d125c5e-9083-411c-a6b8-d5a59ecaa52d",
+        "isClusterPrimary": false,
+        "clusterSize": 2,
+        "thumbnailUrl": null,
+        "evidence": [],
+        "history": [
+          {
+            "id": "bb733d4e-5754-411e-ae70-e3a90005bde4",
+            "fromStatus": null,
+            "toStatus": "PENDING",
+            "changedBy": {
+              "id": "4ba98cb3-9ebb-4f85-83c8-729c7d7dcbfc",
+              "name": "Sofía Castro",
+              "role": "STUDENT"
+            },
+            "changedAt": "2026-11-17T01:50:39.461Z",
+            "durationInPrevMs": null,
+            "reason": "MANUAL",
+            "note": null
+          },
+          {
+            "id": "47316c40-42f0-4aab-9686-6a57ab352886",
+            "fromStatus": "PENDING",
+            "toStatus": "IN_PROGRESS",
+            "changedBy": {
+              "id": "bf8b7142-8763-49fc-a7f7-bac3dc547dfd",
+              "name": "Carlos Rojas",
+              "role": "TECHNICIAN"
+            },
+            "changedAt": "2026-11-17T01:50:40.058Z",
+            "durationInPrevMs": 597,
+            "reason": "CLUSTER_PROPAGATION",
+            "note": null
+          },
+          {
+            "id": "3aadb68e-89ce-4620-992d-424e7b57beaf",
+            "fromStatus": "IN_PROGRESS",
+            "toStatus": "RESOLVED",
+            "changedBy": {
+              "id": "bf8b7142-8763-49fc-a7f7-bac3dc547dfd",
+              "name": "Carlos Rojas",
+              "role": "TECHNICIAN"
+            },
+            "changedAt": "2026-11-17T01:50:40.102Z",
+            "durationInPrevMs": 44,
+            "reason": "CLUSTER_PROPAGATION",
+            "note": null
+          },
+          {
+            "id": "e8731843-9598-4a1c-a958-0d49a0243e28",
+            "fromStatus": "RESOLVED",
+            "toStatus": "VERIFIED",
+            "changedBy": {
+              "id": "9deecb98-d7ea-4833-b13a-345ed3dd149c",
+              "name": "Laura Méndez",
+              "role": "SUPERVISOR"
+            },
+            "changedAt": "2026-11-17T01:50:40.135Z",
+            "durationInPrevMs": 33,
+            "reason": "CLUSTER_PROPAGATION",
+            "note": null
+          }
+        ],
+        "events": [
+          {
+            "id": "b5c0fc36-e29b-46e6-9cba-a26c2c7e96fc",
+            "type": "CREATED",
+            "payload": {
+              "level": "HIGH",
+              "score": 56,
+              "breakdown": {
+                "age": {
+                  "value": 0,
+                  "weight": 0.1,
+                  "contribution": 0
+                },
+                "risk": {
+                  "value": 60,
+                  "weight": 0.35,
+                  "contribution": 21
+                },
+                "space": {
+                  "value": 100,
+                  "weight": 0.1,
+                  "contribution": 10
+                },
+                "similar": {
+                  "value": 25,
+                  "weight": 0.2,
+                  "contribution": 5
+                },
+                "damageType": {
+                  "value": 80,
+                  "weight": 0.25,
+                  "contribution": 20
+                }
+              },
+              "joinIncidentId": null
+            },
+            "actor": {
+              "id": "4ba98cb3-9ebb-4f85-83c8-729c7d7dcbfc",
+              "name": "Sofía Castro",
+              "role": "STUDENT"
+            },
+            "createdAt": "2026-11-17T01:50:39.476Z"
+          },
+          {
+            "id": "5326301c-84e4-4984-8c9a-5356700a06d1",
+            "type": "GROUPED",
+            "payload": {
+              "mode": "auto",
+              "moved": 1,
+              "clusterId": "7d125c5e-9083-411c-a6b8-d5a59ecaa52d",
+              "similarity": {
+                "text": 1,
+                "time": 1,
+                "score": 1,
+                "category": 1,
+                "location": 1,
+                "textSource": "tfidf",
+                "hotspotDistance": 0.5
+              },
+              "primaryIncidentId": "7a2de6e1-8c08-4ee2-be50-5ab7ccc50723"
+            },
+            "actor": null,
+            "createdAt": "2026-11-17T01:50:39.547Z"
+          }
+        ],
+        "clusterMembers": [
+          {
+            "id": "7a2de6e1-8c08-4ee2-be50-5ab7ccc50723",
+            "code": "INC-00100",
+            "description": "Escurre agua del techo sobre el osciloscopio",
+            "status": "VERIFIED",
+            "createdAt": "2026-11-17T01:50:39.431Z",
+            "isClusterPrimary": true,
+            "reporterName": "Camila Ortiz",
+            "similarity": null
+          },
+          {
+            "id": "3580c1d3-ba1c-4d6e-9cf5-29c9673851f2",
+            "code": "INC-00101",
+            "description": "Sobre el osciloscopio escurre agua del techo",
+            "status": "VERIFIED",
+            "createdAt": "2026-11-17T01:50:39.461Z",
+            "isClusterPrimary": false,
+            "reporterName": "Sofía Castro",
+            "similarity": {
+              "text": 1,
+              "time": 1,
+              "score": 1,
+              "category": 1,
+              "location": 1,
+              "textSource": "tfidf",
+              "hotspotDistance": 0.5
+            }
+          }
+        ],
+        "availableTransitions": []
+      },
+      "ms": 22
+    }
+  ]
+}

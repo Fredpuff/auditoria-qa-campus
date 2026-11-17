@@ -1,0 +1,254 @@
+{
+  "caso": "CP-39",
+  "titulo": "CP-39 | Punto exacto (hotspot) en los bordes del salón",
+  "ejecucion": "ejecucion-1",
+  "fecha": "2026-11-17T01:44:52.466Z",
+  "estado": "Aprobado",
+  "error": null,
+  "pasos": [
+    {
+      "n": 1,
+      "peticion": "POST /api/incidents",
+      "quien": "estudiante5",
+      "cuerpo": {
+        "spaceId": "0be47446-8f08-4c67-87ce-d96fa05ef670",
+        "category": "LIGHTING",
+        "riskLevel": "MEDIUM",
+        "description": "Reflector del techo cuelga de un solo cable",
+        "hotspot": {
+          "x": 50,
+          "y": 20,
+          "z": -50
+        }
+      },
+      "estado": 201,
+      "respuesta": {
+        "id": "c64a3de5-3bbc-4381-a0e5-99ce4b36677f",
+        "number": 75,
+        "code": "INC-00075",
+        "description": "Reflector del techo cuelga de un solo cable",
+        "category": "LIGHTING",
+        "riskLevel": "MEDIUM",
+        "status": "PENDING",
+        "priorityScore": 48,
+        "priorityLevel": "MEDIUM",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 60,
+            "weight": 0.35,
+            "contribution": 21
+          },
+          "space": {
+            "value": 94.5,
+            "weight": 0.1,
+            "contribution": 9.5
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 50,
+            "weight": 0.25,
+            "contribution": 12.5
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T13:44:52.344Z",
+        "resolutionDueAt": "2026-11-20T01:44:52.344Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:44:52.344Z",
+        "updatedAt": "2026-11-17T01:44:52.346Z",
+        "stageStartedAt": "2026-11-17T01:44:52.344Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": {
+          "x": 50,
+          "y": 20,
+          "z": -50
+        },
+        "space": {
+          "id": "0be47446-8f08-4c67-87ce-d96fa05ef670",
+          "code": "302",
+          "name": "Aula 302",
+          "type": "CLASSROOM",
+          "floor": 3,
+          "capacity": 45,
+          "block": {
+            "id": "8b767556-6e1a-43e1-9d61-b3e25172f707",
+            "code": "A",
+            "name": "Bloque A · Aulas"
+          },
+          "campus": {
+            "id": "9d3da020-a7b9-4b8c-8f69-615e560cb551",
+            "code": "PRI",
+            "name": "Sede Principal"
+          }
+        },
+        "reporter": {
+          "id": "766b859e-a959-4ab5-ad27-973fefb89ec6",
+          "name": "Sofía Castro",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null
+      },
+      "ms": 61
+    },
+    {
+      "n": 2,
+      "peticion": "POST /api/incidents",
+      "quien": "estudiante5",
+      "cuerpo": {
+        "spaceId": "3bec7dec-81fe-485e-b4d4-c064bafbb251",
+        "category": "STRUCTURAL",
+        "riskLevel": "LOW",
+        "description": "Zócalo despegado en la esquina de la puerta",
+        "hotspot": {
+          "x": -50,
+          "y": -10,
+          "z": 50
+        }
+      },
+      "estado": 201,
+      "respuesta": {
+        "id": "6dbe8745-e759-4150-8d95-a2dacd893a6a",
+        "number": 76,
+        "code": "INC-00076",
+        "description": "Zócalo despegado en la esquina de la puerta",
+        "category": "STRUCTURAL",
+        "riskLevel": "LOW",
+        "status": "PENDING",
+        "priorityScore": 42.4,
+        "priorityLevel": "MEDIUM",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 30,
+            "weight": 0.35,
+            "contribution": 10.5
+          },
+          "space": {
+            "value": 93.5,
+            "weight": 0.1,
+            "contribution": 9.4
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 70,
+            "weight": 0.25,
+            "contribution": 17.5
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-17T13:44:52.408Z",
+        "resolutionDueAt": "2026-11-20T01:44:52.408Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:44:52.408Z",
+        "updatedAt": "2026-11-17T01:44:52.411Z",
+        "stageStartedAt": "2026-11-17T01:44:52.408Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": {
+          "x": -50,
+          "y": -10,
+          "z": 50
+        },
+        "space": {
+          "id": "3bec7dec-81fe-485e-b4d4-c064bafbb251",
+          "code": "202",
+          "name": "Aula 202",
+          "type": "CLASSROOM",
+          "floor": 2,
+          "capacity": 35,
+          "block": {
+            "id": "cb911031-7809-476c-b53d-edd8f42fbf85",
+            "code": "E",
+            "name": "Bloque E · Aulas"
+          },
+          "campus": {
+            "id": "d13b72e9-002b-4bdc-a642-7ff811b30038",
+            "code": "NOR",
+            "name": "Sede Norte"
+          }
+        },
+        "reporter": {
+          "id": "766b859e-a959-4ab5-ad27-973fefb89ec6",
+          "name": "Sofía Castro",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null
+      },
+      "ms": 49
+    },
+    {
+      "n": 3,
+      "peticion": "POST /api/incidents",
+      "quien": "estudiante5",
+      "cuerpo": {
+        "spaceId": "5ef80763-ea43-4691-8d91-6efdeae49c81",
+        "category": "STRUCTURAL",
+        "riskLevel": "LOW",
+        "description": "Grieta fina en el muro al lado del tablero",
+        "hotspot": {
+          "x": 50.01,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "estado": 400,
+      "respuesta": {
+        "error": "Number must be less than or equal to 50",
+        "field": "hotspot.x"
+      },
+      "ms": 8
+    },
+    {
+      "n": 4,
+      "peticion": "POST /api/incidents",
+      "quien": "estudiante5",
+      "cuerpo": {
+        "spaceId": "5ef80763-ea43-4691-8d91-6efdeae49c81",
+        "category": "STRUCTURAL",
+        "riskLevel": "LOW",
+        "description": "Grieta fina en el muro al lado del tablero",
+        "hotspot": {
+          "x": 0,
+          "y": 20.01,
+          "z": 0
+        }
+      },
+      "estado": 400,
+      "respuesta": {
+        "error": "Number must be less than or equal to 20",
+        "field": "hotspot.y"
+      },
+      "ms": 9
+    }
+  ]
+}

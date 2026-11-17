@@ -1,0 +1,274 @@
+{
+  "caso": "CP-25",
+  "titulo": "CP-25 | Comentario en un reporte propio queda en el detalle",
+  "ejecucion": "ejecucion-1",
+  "fecha": "2026-11-17T01:44:45.513Z",
+  "estado": "Aprobado",
+  "error": null,
+  "pasos": [
+    {
+      "n": 1,
+      "peticion": "POST /api/incidents",
+      "quien": "estudiante5",
+      "cuerpo": {
+        "spaceId": "e7ed8795-9274-48c5-b5da-d79e831302a8",
+        "category": "COSMETIC",
+        "riskLevel": "NONE",
+        "description": "La pantalla del puesto tres tiene un rayón en la esquina",
+        "hotspot": null
+      },
+      "estado": 201,
+      "respuesta": {
+        "id": "9d333e71-29b3-4f9e-be16-445d2a31daf4",
+        "number": 68,
+        "code": "INC-00068",
+        "description": "La pantalla del puesto tres tiene un rayón en la esquina",
+        "category": "COSMETIC",
+        "riskLevel": "NONE",
+        "status": "PENDING",
+        "priorityScore": 18.8,
+        "priorityLevel": "LOW",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 0,
+            "weight": 0.35,
+            "contribution": 0
+          },
+          "space": {
+            "value": 100,
+            "weight": 0.1,
+            "contribution": 10
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 15,
+            "weight": 0.25,
+            "contribution": 3.8
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-19T01:44:45.443Z",
+        "resolutionDueAt": "2026-11-24T01:44:45.443Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:44:45.443Z",
+        "updatedAt": "2026-11-17T01:44:45.446Z",
+        "stageStartedAt": "2026-11-17T01:44:45.443Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": null,
+        "space": {
+          "id": "e7ed8795-9274-48c5-b5da-d79e831302a8",
+          "code": "201",
+          "name": "Sala de Cómputo Norte",
+          "type": "LAB",
+          "floor": 2,
+          "capacity": 36,
+          "block": {
+            "id": "446b2bba-6bd6-47a0-804b-b1e1e0a57f68",
+            "code": "F",
+            "name": "Bloque F · Laboratorios"
+          },
+          "campus": {
+            "id": "d13b72e9-002b-4bdc-a642-7ff811b30038",
+            "code": "NOR",
+            "name": "Sede Norte"
+          }
+        },
+        "reporter": {
+          "id": "766b859e-a959-4ab5-ad27-973fefb89ec6",
+          "name": "Sofía Castro",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null
+      },
+      "ms": 45
+    },
+    {
+      "n": 2,
+      "peticion": "POST /api/incidents/9d333e71-29b3-4f9e-be16-445d2a31daf4/comments",
+      "quien": "estudiante5",
+      "cuerpo": {
+        "text": "Sigue igual esta tarde, ya van dos días"
+      },
+      "estado": 204,
+      "respuesta": null,
+      "ms": 16
+    },
+    {
+      "n": 3,
+      "peticion": "GET /api/incidents/9d333e71-29b3-4f9e-be16-445d2a31daf4",
+      "quien": "estudiante5",
+      "estado": 200,
+      "respuesta": {
+        "id": "9d333e71-29b3-4f9e-be16-445d2a31daf4",
+        "number": 68,
+        "code": "INC-00068",
+        "description": "La pantalla del puesto tres tiene un rayón en la esquina",
+        "category": "COSMETIC",
+        "riskLevel": "NONE",
+        "status": "PENDING",
+        "priorityScore": 18.8,
+        "priorityLevel": "LOW",
+        "priorityBreakdown": {
+          "age": {
+            "value": 0,
+            "weight": 0.1,
+            "contribution": 0
+          },
+          "risk": {
+            "value": 0,
+            "weight": 0.35,
+            "contribution": 0
+          },
+          "space": {
+            "value": 100,
+            "weight": 0.1,
+            "contribution": 10
+          },
+          "similar": {
+            "value": 25,
+            "weight": 0.2,
+            "contribution": 5
+          },
+          "damageType": {
+            "value": 15,
+            "weight": 0.25,
+            "contribution": 3.8
+          }
+        },
+        "escalationSteps": 0,
+        "isOverdue": false,
+        "responseDueAt": "2026-11-19T01:44:45.443Z",
+        "resolutionDueAt": "2026-11-24T01:44:45.443Z",
+        "slaWarnedAt": null,
+        "createdAt": "2026-11-17T01:44:45.443Z",
+        "updatedAt": "2026-11-17T01:44:45.446Z",
+        "stageStartedAt": "2026-11-17T01:44:45.443Z",
+        "firstResponseAt": null,
+        "resolvedAt": null,
+        "verifiedAt": null,
+        "hotspot": null,
+        "space": {
+          "id": "e7ed8795-9274-48c5-b5da-d79e831302a8",
+          "code": "201",
+          "name": "Sala de Cómputo Norte",
+          "type": "LAB",
+          "floor": 2,
+          "capacity": 36,
+          "block": {
+            "id": "446b2bba-6bd6-47a0-804b-b1e1e0a57f68",
+            "code": "F",
+            "name": "Bloque F · Laboratorios"
+          },
+          "campus": {
+            "id": "d13b72e9-002b-4bdc-a642-7ff811b30038",
+            "code": "NOR",
+            "name": "Sede Norte"
+          }
+        },
+        "reporter": {
+          "id": "766b859e-a959-4ab5-ad27-973fefb89ec6",
+          "name": "Sofía Castro",
+          "role": "STUDENT"
+        },
+        "assignee": null,
+        "clusterId": null,
+        "isClusterPrimary": true,
+        "clusterSize": 1,
+        "thumbnailUrl": null,
+        "evidence": [],
+        "history": [
+          {
+            "id": "49cdecc8-a130-4163-b2b0-ad05337d1251",
+            "fromStatus": null,
+            "toStatus": "PENDING",
+            "changedBy": {
+              "id": "766b859e-a959-4ab5-ad27-973fefb89ec6",
+              "name": "Sofía Castro",
+              "role": "STUDENT"
+            },
+            "changedAt": "2026-11-17T01:44:45.443Z",
+            "durationInPrevMs": null,
+            "reason": "MANUAL",
+            "note": null
+          }
+        ],
+        "events": [
+          {
+            "id": "f1018a79-ceb9-4fec-9b5c-e3184ac2341c",
+            "type": "CREATED",
+            "payload": {
+              "level": "LOW",
+              "score": 18.8,
+              "breakdown": {
+                "age": {
+                  "value": 0,
+                  "weight": 0.1,
+                  "contribution": 0
+                },
+                "risk": {
+                  "value": 0,
+                  "weight": 0.35,
+                  "contribution": 0
+                },
+                "space": {
+                  "value": 100,
+                  "weight": 0.1,
+                  "contribution": 10
+                },
+                "similar": {
+                  "value": 25,
+                  "weight": 0.2,
+                  "contribution": 5
+                },
+                "damageType": {
+                  "value": 15,
+                  "weight": 0.25,
+                  "contribution": 3.8
+                }
+              },
+              "joinIncidentId": null
+            },
+            "actor": {
+              "id": "766b859e-a959-4ab5-ad27-973fefb89ec6",
+              "name": "Sofía Castro",
+              "role": "STUDENT"
+            },
+            "createdAt": "2026-11-17T01:44:45.458Z"
+          },
+          {
+            "id": "bd921ee9-7dc0-4fe2-a6c1-e36575e884f2",
+            "type": "COMMENT",
+            "payload": {
+              "text": "Sigue igual esta tarde, ya van dos días"
+            },
+            "actor": {
+              "id": "766b859e-a959-4ab5-ad27-973fefb89ec6",
+              "name": "Sofía Castro",
+              "role": "STUDENT"
+            },
+            "createdAt": "2026-11-17T01:44:45.488Z"
+          }
+        ],
+        "clusterMembers": [],
+        "availableTransitions": []
+      },
+      "ms": 20
+    }
+  ]
+}
