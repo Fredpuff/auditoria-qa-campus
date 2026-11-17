@@ -32,7 +32,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: MrRoar154/Hackaton
-          ref: 16ebe4d
+          ref: 16ebe4dd0108e1f434b63b857005303aacf1938d   # commit 16ebe4d (checkout necesita el SHA completo)
           path: app
 
       - uses: actions/setup-node@v4
